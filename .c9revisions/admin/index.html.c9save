@@ -150,3 +150,41 @@
 {"ts":1362135871956,"patch":[[{"diffs":[[0,"er\" id=\""],[1,"btn"],[0,"\">Proble"]],"start1":2512,"start2":2512,"length1":16,"length2":19}]],"length":2635,"saved":false}
 {"ts":1362135873259,"patch":[[{"diffs":[[0," id=\"btn"],[1,"-p"],[0,"\">Proble"]],"start1":2515,"start2":2515,"length1":16,"length2":18}]],"length":2637,"saved":false}
 {"ts":1362135875238,"patch":[[{"diffs":[[0,"d=\"btn-p"],[1,"roblems"],[0,"\">Proble"]],"start1":2517,"start2":2517,"length1":16,"length2":23}]],"length":2644,"saved":false}
+{"ts":1362136896855,"patch":[[{"diffs":[[0,"ontainer\">\r\n"],[1,"            \r\n"],[0,"            "]],"start1":1800,"start2":1800,"length1":24,"length2":38}]],"length":2658,"saved":false}
+{"ts":1362136899900,"patch":[[{"diffs":[[0,"\">\r\n            "],[1,"<div>"],[0,"\r\n              "]],"start1":1808,"start2":1808,"length1":32,"length2":37}]],"length":2663,"saved":false}
+{"ts":1362136902399,"patch":[[{"diffs":[[0,"       <div>"],[1,"<>"],[0,"\r\n          "]],"start1":1817,"start2":1817,"length1":24,"length2":26}]],"length":2665,"saved":false}
+{"ts":1362136903954,"patch":[[{"diffs":[[0,"  <div><"],[1,"div"],[0,">\r\n     "]],"start1":1822,"start2":1822,"length1":16,"length2":19}]],"length":2668,"saved":false}
+{"ts":1362136905462,"patch":[[{"diffs":[[0,"  <div><"],[1,"/"],[0,"div>\r\n  "]],"start1":1822,"start2":1822,"length1":16,"length2":17}]],"length":2669,"saved":false}
+{"ts":1362136908658,"patch":[[{"diffs":[[0,"   <div>"],[-1,"</div>"],[0,"\r\n      "]],"start1":1821,"start2":1821,"length1":22,"length2":16}]],"length":2663,"saved":false}
+{"ts":1362136909681,"patch":[[{"diffs":[[0,"on</a>\r\n"],[1,"                    \r\n"],[0,"        "]],"start1":1900,"start2":1900,"length1":16,"length2":38}]],"length":2685,"saved":false}
+{"ts":1362136910769,"patch":[[{"diffs":[[0,"                "],[1,"</div>"],[0,"\r\n              "]],"start1":1912,"start2":1912,"length1":32,"length2":38}]],"length":2691,"saved":false}
+{"ts":1362136914322,"patch":[[{"diffs":[[0,"            "],[1,"        "],[0,"<div>\r\n     "]],"start1":1812,"start2":1812,"length1":24,"length2":32}]],"length":2699,"saved":false}
+{"ts":1362136915407,"patch":[[{"diffs":[[0,"        "],[1,"    "],[0,"<a class"]],"start1":1851,"start2":1851,"length1":16,"length2":20}]],"length":2703,"saved":false}
+{"ts":1362136919600,"patch":[[{"diffs":[[0,"    <div"],[1," clas"],[0,">\r\n     "]],"start1":1828,"start2":1828,"length1":16,"length2":21}]],"length":2708,"saved":false}
+{"ts":1362136920688,"patch":[[{"diffs":[[0,"div clas"],[1,"s"],[0,">\r\n     "]],"start1":1833,"start2":1833,"length1":16,"length2":17}]],"length":2709,"saved":false}
+{"ts":1362136921657,"patch":[[{"diffs":[[0,"iv class"],[1,"=\"\""],[0,">\r\n     "]],"start1":1834,"start2":1834,"length1":16,"length2":19}]],"length":2712,"saved":false}
+{"ts":1362136925113,"patch":[[{"diffs":[[0," class=\""],[1,"navbar"],[0,"\">\r\n    "]],"start1":1836,"start2":1836,"length1":16,"length2":22}]],"length":2718,"saved":false}
+{"ts":1362137025662,"patch":[[{"diffs":[[0,"=\"navbar\">\r\n"],[1,"                    <>\r\n"],[0,"            "]],"start1":1842,"start2":1842,"length1":24,"length2":48}]],"length":2742,"saved":false}
+{"ts":1362137026518,"patch":[[{"diffs":[[0,"       <"],[1,"div"],[0,">\r\n     "]],"start1":1867,"start2":1867,"length1":16,"length2":19}]],"length":2745,"saved":false}
+{"ts":1362137029293,"patch":[[{"diffs":[[0,"    <div"],[1," class"],[0,">\r\n     "]],"start1":1870,"start2":1870,"length1":16,"length2":22}]],"length":2751,"saved":false}
+{"ts":1362137031590,"patch":[[{"diffs":[[0,"iv class"],[1,"=\"\""],[0,">\r\n     "]],"start1":1876,"start2":1876,"length1":16,"length2":19}]],"length":2754,"saved":false}
+{"ts":1362137035238,"patch":[[{"diffs":[[0," class=\""],[1,"navbar-in"],[0,"\">\r\n    "]],"start1":1878,"start2":1878,"length1":16,"length2":25}]],"length":2763,"saved":false}
+{"ts":1362137036841,"patch":[[{"diffs":[[0,"avbar-in"],[1,"ner"],[0,"\">\r\n    "]],"start1":1887,"start2":1887,"length1":16,"length2":19}]],"length":2766,"saved":false}
+{"ts":1362137038382,"patch":[[{"diffs":[[0,"on</a>\r\n"],[1,"                        <\r\n"],[0,"        "]],"start1":1975,"start2":1975,"length1":16,"length2":43}]],"length":2793,"saved":false}
+{"ts":1362137039621,"patch":[[{"diffs":[[0,"       <"],[1,"/>"],[0,"\r\n      "]],"start1":2000,"start2":2000,"length1":16,"length2":18}]],"length":2795,"saved":false}
+{"ts":1362137041844,"patch":[[{"diffs":[[0,"      </"],[1,"div"],[0,">\r\n     "]],"start1":2001,"start2":2001,"length1":16,"length2":19}]],"length":2798,"saved":false}
+{"ts":1362137056230,"patch":[[{"diffs":[[0,"                "],[-1,"    "],[0,"</div>\r\n        "]],"start1":1987,"start2":1987,"length1":36,"length2":32}]],"length":2794,"saved":false}
+{"ts":1362137066872,"patch":[[{"diffs":[[0,"ontainer\">\r\n"],[1,"            <\r\n"],[0,"            "]],"start1":1800,"start2":1800,"length1":24,"length2":39}]],"length":2809,"saved":false}
+{"ts":1362137067971,"patch":[[{"diffs":[[0,"       <"],[1,">"],[0,"\r\n      "]],"start1":1817,"start2":1817,"length1":16,"length2":17}]],"length":2810,"saved":false}
+{"ts":1362137069775,"patch":[[{"diffs":[[0,"       <"],[1,"div"],[0,">\r\n     "]],"start1":1817,"start2":1817,"length1":16,"length2":19}]],"length":2813,"saved":false}
+{"ts":1362137073133,"patch":[[{"diffs":[[0,"    <div"],[1," id=\"\""],[0,">\r\n     "]],"start1":1820,"start2":1820,"length1":16,"length2":22}]],"length":2819,"saved":false}
+{"ts":1362137074401,"patch":[[{"diffs":[[0,"div id=\""],[1,"fr"],[0,"\">\r\n    "]],"start1":1825,"start2":1825,"length1":16,"length2":18}]],"length":2821,"saved":false}
+{"ts":1362137075472,"patch":[[{"diffs":[[0,"v id=\"fr"],[1,"m-"],[0,"\">\r\n    "]],"start1":1827,"start2":1827,"length1":16,"length2":18}]],"length":2823,"saved":false}
+{"ts":1362137077609,"patch":[[{"diffs":[[0,"id=\"frm-"],[1,"login"],[0,"\">\r\n    "]],"start1":1829,"start2":1829,"length1":16,"length2":21}]],"length":2828,"saved":false}
+{"ts":1362137082719,"patch":[[{"diffs":[[0,"?</button>\r\n"],[1,"                    \r\n"],[0,"    </div>\r\n"]],"start1":2726,"start2":2726,"length1":24,"length2":46}]],"length":2850,"saved":false}
+{"ts":1362137084891,"patch":[[{"diffs":[[0,"            "],[1,"</div>"],[0,"\r\n    </div>"]],"start1":2746,"start2":2746,"length1":24,"length2":30}]],"length":2856,"saved":false}
+{"ts":1362137093367,"patch":[[{"diffs":[[0,"            "],[1,"    "],[0,"<div id=\"frm"]],"start1":1812,"start2":1812,"length1":24,"length2":28}]],"length":2860,"saved":false}
+{"ts":1362137096839,"patch":[[{"diffs":[[0,"                "],[1,"    "],[0,"<div class=\"navb"]],"start1":1896,"start2":1896,"length1":32,"length2":36},{"diffs":[[0,"ar-inner\">\r\n"],[1,"    "],[0,"            "]],"start1":1932,"start2":1932,"length1":24,"length2":28}]],"length":2868,"saved":false}
+{"ts":1362137099232,"patch":[[{"diffs":[[0,"                "],[1,"    "],[0,"</div>\r\n        "]],"start1":2033,"start2":2033,"length1":32,"length2":36}]],"length":2872,"saved":false}
+{"ts":1362137114925,"patch":[[{"diffs":[[0,"                "],[-1,"    "],[0,"</div>\r\n    </di"]],"start1":2754,"start2":2754,"length1":36,"length2":32}]],"length":2868,"saved":false}
+{"ts":1362137118612,"patch":[[{"diffs":[[0,"    </div>\r\n"],[1,"        "],[0,"    </div>\r\n"]],"start1":2766,"start2":2766,"length1":24,"length2":32}]],"length":2876,"saved":false}
