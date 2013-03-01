@@ -1,4 +1,5 @@
 //author= blackmwana
+//deleted categories should be cattered for , maybe a clean up function after a cat is deleted, custom code
 Backbone.View.prototype.close = function() {
         //http://lostechies.com/derickbailey/2011/09/15/zombies-run-managing-page-transitions-in-backbone-apps/
         console.log(this.el.localName);
@@ -22,8 +23,8 @@ $(document).ready(function() {
     var admin;
     var mainView;
     var cats;
-    var users;
-    var jokes;
+    var statii
+    var products;
     function get_gravatar(email, size) {
 
         // MD5 (Message-Digest Algorithm) by WebToolkit
@@ -248,7 +249,7 @@ $(document).ready(function() {
     }
     // if(!curAdmin)alert ('curadmin not set');
     var Cat = StackMob.Model.extend({
-        schemaName:'cat'
+        schemaName:'category'
     });
     var Cats = StackMob.Collection.extend({
         model:Cat
@@ -257,8 +258,8 @@ $(document).ready(function() {
     var LoginView = Backbone.View.extend({
         el: 'body',
         events: {
-            "click #login-btn": "validate",
-            "click #problems-btn":"problem",
+            "click #btn-signin": "validate",
+            "click #btn-problems":"problem",
             "keypress #username": "onEnter",
             "keypress #pass": "onEnter"
         },
@@ -396,12 +397,12 @@ $(document).ready(function() {
             });
            // afrykaAdminApp.navigate('/home',true);  
         },
-         goUsers: function(){
-            console.debug('going users, showing usersview');
-            this.usersView = new UsersView();
-            this.usersView.parent = this;
+         goStatii: function(){
+            console.debug('going statii, showing statiiview');
+            this.statiiView = new StatiiView();
+            this.statiiView.parent = this;
            // afrykaAdminApp.navigate('/home',true);
-           afrykaAdminApp.prm.showView(this.usersView);
+           afrykaAdminApp.prm.showView(this.statiiView);
         },
          goJokes: function(){
             console.debug('going jokes, showing jokesview');
@@ -462,7 +463,7 @@ $(document).ready(function() {
             'click #cats-pane': 'goToCats',
             'click #stats-pane': 'goToStats',
             'click #jokes-pane': 'goToJokes',
-            'click #users-pane': 'goToUsers'
+            'click #statii-pane': 'goToStatii'
         },
         initialize: function() {
             this.template = _.template($('#item-home').html());
@@ -475,9 +476,9 @@ $(document).ready(function() {
          
             return this;
         },
-        goToUsers:function(){
+        goToStatii:function(){
             //navigate
-             afrykaAdminApp.navigate('/users',true);
+             afrykaAdminApp.navigate('/statii',true);
         },
         goToCats:function(){
              afrykaAdminApp.navigate('/categories',true);
@@ -500,11 +501,11 @@ $(document).ready(function() {
             "click #m-jokes-removed":"goJokesRemoved",
             "click #m-cats":"goCats",
             "click #m-cats-new":"goCatsNew",
-            "click #m-users":"goUsers",
-            "click #m-users-new":"goUsersNew",
-            "click #m-users-find":"goUsersFind",
-            "click #m-users-reported":"goUsersReported",
-            "click #m-users-blacklist":"goUsersBlacklist",
+            "click #m-statii":"goStatii",
+            "click #m-statii-new":"goStatiiNew",
+            "click #m-statii-find":"goStatiiFind",
+            "click #m-statii-reported":"goStatiiReported",
+            "click #m-statii-blacklist":"goStatiiBlacklist",
             "click #m-help":"goHelp"
         },
         initialize:function(){
@@ -621,13 +622,13 @@ $(document).ready(function() {
         goStats:function(){
             afrykaAdminApp.navigate('/statistics',true);
         },
-        goUsers:function(){
-            afrykaAdminApp.navigate('/users',true);
+        goStatii:function(){
+            afrykaAdminApp.navigate('/statii',true);
         },
-        goUsersNew:function(){},
-        goUsersFind:function(){},
-        goUsersReported:function(){},
-        goUsersBlacklist:function(){},
+        goStatiiNew:function(){},
+        goStatiiFind:function(){},
+        goStatiiReported:function(){},
+        goStatiiBlacklist:function(){},
         goHelp:function(){}
         
     });
@@ -724,14 +725,14 @@ $(document).ready(function() {
             
         }
     });
-    var UsersView = Backbone.View.extend({
+    var StatiiView = Backbone.View.extend({
         id:"user-content",
         className:"page-region-content ",
         events: {
 
         },
         initialize: function() {
-            this.template= _.template($('#item-users').html());
+            this.template= _.template($('#item-statii').html());
         },
         render: function() {
             var el=this.$el;
@@ -824,7 +825,7 @@ $(document).ready(function() {
             'home':'main',
             'statistics':'toStats',
             'categories':'toCats',
-            'users':'toUsers',
+            'statii':'toStatii',
             'jokes':'toJokes',
             'problem':'toProblem'
         },
@@ -1120,9 +1121,9 @@ $(document).ready(function() {
                 }*/
             });
         },
-        toUsers:function(){
+        toStatii:function(){
              
-              console.debug('to users function :routing to users view');
+              console.debug('to statii function :routing to statii view');
             ar = this;
             StackMob.isLoggedIn({
                 yes:function(username){
@@ -1149,7 +1150,7 @@ $(document).ready(function() {
                                 });
                                // mainView.sidebarVisible=false;//reset it in case the page was refreshed
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goUsers();
+                                mainView.goStatii();
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1164,7 +1165,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goUsers();
+                                mainView.goStatii();
                         //   return admin;
                     }
                     ////////////////////
