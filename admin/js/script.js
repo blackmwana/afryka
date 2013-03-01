@@ -18,14 +18,7 @@ Backbone.View.prototype.close = function() {
         }
     }
     //////////////////
-$(document).ready(function() {
-    
-    var admin;
-    var mainView;
-    var cats;
-    var statii
-    var products;
-    function get_gravatar(email, size) {
+function get_gravatar(email, size) {
 
         // MD5 (Message-Digest Algorithm) by WebToolkit
         // 
@@ -247,12 +240,31 @@ $(document).ready(function() {
 
         return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size+'&d='+d;
     }
-    // if(!curAdmin)alert ('curadmin not set');
+$(document).ready(function() {
+    
+    var admin;
+    var mainView;
+    var cats;
+    var statii
+    var products;
+
     var Cat = StackMob.Model.extend({
         schemaName:'category'
     });
     var Cats = StackMob.Collection.extend({
         model:Cat
+    });
+    var Status = StackMob.Model.extend({
+        schemaName:"status"
+    })
+    var Statii = StackMob.Collection.extend({
+        model:Status
+    });
+    var Product = StackMob.Model.extend({
+        schemaName:"product"
+    })
+    var Products = StackMob.Collection.extend({
+        model:Product
     });
        
     var LoginView = Backbone.View.extend({
