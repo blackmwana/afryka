@@ -19,7 +19,7 @@ body {
     width: 2em;
     margin-top: 0.5em;
 }
-#avatar-image {
+#avatar-image img{
     height: 100%;
     width: 100%;
 }
