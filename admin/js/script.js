@@ -334,11 +334,13 @@ $(document).ready(function() {
     var MainView = Backbone.View.extend({
         el: 'body',
         events: {
-            "click #menu-btn":"toggleSidebar",
-            "click #home-btn":"navHome",
-            "click .user-login":"showUserDialogue"
+            "click #m-home":"navHome",
+            "click #m-products":"navProducts",
+            "click #m-categories":"navCategories",
+            "click #m-other":"navOther",
+            "click #avatar":"showUserDialogue"
         },
-        sidebarVisible:false,
+    //    sidebarVisible:false,
         initialize: function() {
             this.model = this.options.model;
             this.model.bind('all', this.refresh,this);
@@ -353,12 +355,12 @@ $(document).ready(function() {
             var el = this.$el;
         //    el.empty();
             el.append(this.template(this.model.toJSON()));
-            $('.avatar img').attr('src',function(){
+        ////    $('#avatar img').attr('src',function(){
                 //console.debug(admin.toJSON().email);
                 //maybe check to see if email exists
-                return get_gravatar(admin.toJSON().email,80);
-            });
-            this.sidebarVisible=false;
+            /////    return get_gravatar(admin.toJSON().email,80);
+        ////    });
+            //this.sidebarVisible=false;
             //removing this next part to implement region managers
             //this.homeView = new HomeView();
         //    $('.view-container').append(this.homeView.render().el);
@@ -372,6 +374,18 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/home',true);
            // afrykaAdminApp.navigate('/',true);
         },
+        navProducts:function(){
+            afrykaAdminApp.navigate('/products',true);
+           // afrykaAdminApp.navigate('/',true);
+        },
+        navCategories:function(){
+            afrykaAdminApp.navigate('/categories',true);
+           // afrykaAdminApp.navigate('/',true);
+        },
+        navOther:function(){
+            afrykaAdminApp.navigate('/other',true);
+           // afrykaAdminApp.navigate('/',true);
+        },
         goHome: function(){
             console.debug('going home, showing homeview');
             if(!this.homeView){
@@ -382,21 +396,21 @@ $(document).ready(function() {
             }else{
                 console.debug('gohome: homeview exists');
                 this.homeView.delegateEvents();
-                if(this.sideBarView){
-                    this.sideBarView.delegateEvents();
-                }
+               // if(this.sideBarView){
+                 //   this.sideBarView.delegateEvents();
+                //}
                 
             }
            // afrykaAdminApp.navigate('/home',true);
            afrykaAdminApp.prm.showView(this.homeView);
         },
-         goCats: function(){
+         goCategories: function(){
             console.debug('going cats,fetching , showing catsview');
             if(!cats) 
                 cats = new Cats();
             cats.fetch({
                 success:function(){
-                    console.debug('mainview,gocats:cats have been fetched');
+                    console.debug('mainview,goCategories:cats have been fetched');
                     this.catsView = new CatsView({collection:cats});
                     this.catsView.parent = this;
                     afrykaAdminApp.prm.showView(this.catsView);
@@ -404,7 +418,7 @@ $(document).ready(function() {
                 error:function(){
                     //do something
                     //show alert
-                    console.debug('mainview,gocats:cats have been fetched');
+                    console.debug('mainview,goCategories:cats have been fetched');
                 }
             });
            // afrykaAdminApp.navigate('/home',true);  
@@ -511,8 +525,8 @@ $(document).ready(function() {
             "click #m-jokes-new":"goJokesNew",
             "click #m-jokes-reported":"goJokesReported",
             "click #m-jokes-removed":"goJokesRemoved",
-            "click #m-cats":"goCats",
-            "click #m-cats-new":"goCatsNew",
+            "click #m-cats":"goCategories",
+            "click #m-cats-new":"goCategoriesNew",
             "click #m-statii":"goStatii",
             "click #m-statii-new":"goStatiiNew",
             "click #m-statii-find":"goStatiiFind",
@@ -536,10 +550,10 @@ $(document).ready(function() {
         goJokesNew:function(){},
         goJokesReported:function(){},
         goJokesRemoved:function(){},
-        goCats:function(){
+        goCategories:function(){
             afrykaAdminApp.navigate('/categories',true);
         },
-        goCatsNew:function(){
+        goCategoriesNew:function(){
              
                 var el =_.template($('#item-cats-new').html());
                 //var el =;
@@ -564,7 +578,7 @@ $(document).ready(function() {
                  });
               
         },
-        goCatsEdit:function(id){
+        goCategoriesEdit:function(id){
             /*
                             <div>
                                 <label>Title</label>
@@ -586,7 +600,7 @@ $(document).ready(function() {
                                 <label>Icon</label>
                             </div>
             */
-            console.debug('gocatsedit:rendering dialogbox');
+            console.debug('goCategoriesedit:rendering dialogbox');
             var model = cats.get(id);
             console.debug('id:'+id);
             console.debug(model);
@@ -725,7 +739,7 @@ $(document).ready(function() {
            // console.debug(ev);
             //console.debug(ev.target);
             console.debug($(ev.target).parent());
-            this.parent.sideBarView.goCatsEdit($(ev.target).parent().data('id'));
+            this.parent.sideBarView.goCategoriesEdit($(ev.target).parent().data('id'));
             
         },
         showCatNew:function(ev){
@@ -733,7 +747,7 @@ $(document).ready(function() {
                 this.parent.sideBarView=new SideBarView();
                 this.parent.sideBarView.parent = this.parent;
             }
-            this.parent.sideBarView.goCatsNew();
+            this.parent.sideBarView.goCategoriesNew();
             
         }
     });
@@ -1040,7 +1054,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goCats();
+                                mainView.goCategories();
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1055,7 +1069,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goCats();
+                                mainView.goCategories();
                         //   return admin;
                     }
                     ////////////////////
