@@ -1,14 +1,25 @@
-body{
+body {
     background-color:#00a300 !important;
-    }
-#frm-login{
+}
+#frm-login {
     max-width:300px;
     border: 1px solid #e5e5e5;
     margin: 0 auto;
     padding:4em;
-    }
-#avatar{
-    height:90%;
-    width:6em;
-    border: 1px red solid;
+}
+#avatar {
+    cursor: pointer;
+    border-left: 1px solid gray;
+    padding-left: 1em;
+    height: 90%;
+    width: 7.5em;
+}
+#avatar-image {
+    height: 2em;
+    width: 2em;
+    margin-top: 0.5em;
+}
+#avatar-image {
+    height: 100%;
+    width: 100%;
 }
