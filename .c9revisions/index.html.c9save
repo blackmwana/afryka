@@ -235,3 +235,6 @@
 {"ts":1362320963321,"patch":[[{"diffs":[[0,"es\" id=\""],[1,"new-"],[0,"\">\n     "]],"start1":3233,"start2":3233,"length1":16,"length2":20}]],"length":3439,"saved":false}
 {"ts":1362320964516,"patch":[[{"diffs":[[0,"id=\"new-"],[1,"pr"],[0,"\">\n     "]],"start1":3237,"start2":3237,"length1":16,"length2":18}]],"length":3441,"saved":false}
 {"ts":1362320967905,"patch":[[{"diffs":[[0,"=\"new-pr"],[1,"oduct-pane"],[0,"\">\n     "]],"start1":3239,"start2":3239,"length1":16,"length2":26}]],"length":3451,"saved":false}
+{"ts":1362321146805,"patch":[[{"diffs":[[0,"=\"navbar"],[1," nav"],[0,"\">\n     "]],"start1":1798,"start2":1798,"length1":16,"length2":20},{"diffs":[[0,"nner"],[-1,"-inverse"],[0,"\">\n "]],"start1":1849,"start2":1849,"length1":16,"length2":8}]],"length":3447,"saved":false}
+{"ts":1362321147812,"patch":[[{"diffs":[[0,"vbar nav"],[1,"bar"],[0,"\">\n     "]],"start1":1802,"start2":1802,"length1":16,"length2":19}]],"length":3450,"saved":false}
+{"ts":1362321148654,"patch":[[{"diffs":[[0,"r navbar"],[1,"-inverse"],[0,"\">\n     "]],"start1":1805,"start2":1805,"length1":16,"length2":24}]],"length":3458,"saved":false}
