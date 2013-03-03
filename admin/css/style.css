@@ -40,3 +40,9 @@ body {
 .tile h4{
     margin-top: 2em;
 }
+.span2{
+    border: solid 1px blue;
+}
+.span10{
+    border: solid 1px red;
+}
