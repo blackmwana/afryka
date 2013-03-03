@@ -19,7 +19,23 @@ body {
     width: 2em;
     margin-top: 0.5em;
 }
-#avatar-image img{
+#avatar-image img {
     height: 100%;
     width: 100%;
+}
+.tile {
+    height: 8em;
+    width: 8em;
+    border: solid black 1px;
+    padding: 1em;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+}
+.tiles{
+    width: 60%;
+    margin: 0 auto;
+}
+.tile h4{
+    margin-top: 2em;
 }
