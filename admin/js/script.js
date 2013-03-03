@@ -247,6 +247,7 @@ $(document).ready(function() {
     var cats;
     var statii
     var products;
+    var curProd;
 
     var Cat = StackMob.Model.extend({
         schemaName:'category'
@@ -266,7 +267,7 @@ $(document).ready(function() {
     var Products = StackMob.Collection.extend({
         model:Product
     });
-       
+    ////////////////////////////////////////////////////////
     var LoginView = Backbone.View.extend({
         el: 'body',
         events: {
@@ -330,7 +331,42 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/problem',true);
         }
     });
-
+    var ProblemView = Backbone.View.extend({
+        el: 'body',
+        //id:"problem-content",
+        //className:"page-region-content ",
+        events: {
+             
+        },
+        initialize: function() {
+            this.template = _.template($('#item-problem').html());
+            //this.rowTemplate= _.template($('#item-cats-row').html());
+        },
+        render: function() {
+            var el = this.$el;
+            //   el.empty();
+            el.append(this.template());
+            return this;
+        }
+    });
+    var UserView = Backbone.View.extend({
+        el: 'body',
+        //id:"user-content",
+        //className:"page-region-content ",
+        events: {
+             
+        },
+        initialize: function() {
+            this.template = _.template($('#item-user').html());
+            //this.rowTemplate= _.template($('#item-cats-row').html());
+        },
+        render: function() {
+            var el = this.$el;
+            //   el.empty();
+            el.append(this.template());
+            return this;
+        }
+    });
     var MainView = Backbone.View.extend({
         el: 'body',
         events: {
@@ -355,11 +391,11 @@ $(document).ready(function() {
             var el = this.$el;
         //    el.empty();
             el.append(this.template(this.model.toJSON()));
-        ////    $('#avatar img').attr('src',function(){
+            $('#avatar img').attr('src',function(){
                 //console.debug(admin.toJSON().email);
                 //maybe check to see if email exists
-            /////    return get_gravatar(admin.toJSON().email,80);
-        ////    });
+                return get_gravatar(admin.toJSON().email,80);
+            });
             //this.sidebarVisible=false;
             //removing this next part to implement region managers
             //this.homeView = new HomeView();
@@ -378,12 +414,22 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/products',true);
            // afrykaAdminApp.navigate('/',true);
         },
+        navProduct:function(){//maybe not necessary
+        //get id of clicked item
+            afrykaAdminApp.navigate('/product/'+id,true);
+           // afrykaAdminApp.navigate('/',true);
+        },
         navCategories:function(){
             afrykaAdminApp.navigate('/categories',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navOther:function(){
             afrykaAdminApp.navigate('/other',true);
+           // afrykaAdminApp.navigate('/',true);
+        },
+        navUser:function(){//maybe not necessary
+            //get username
+            afrykaAdminApp.navigate('/user/'+username,true);//maybe include user id
            // afrykaAdminApp.navigate('/',true);
         },
         goHome: function(){
@@ -398,13 +444,12 @@ $(document).ready(function() {
                 this.homeView.delegateEvents();
                // if(this.sideBarView){
                  //   this.sideBarView.delegateEvents();
-                //}
-                
+                //}       
             }
            // afrykaAdminApp.navigate('/home',true);
            afrykaAdminApp.prm.showView(this.homeView);
         },
-         goCategories: function(){
+        goCategories: function(){
             console.debug('going cats,fetching , showing catsview');
             if(!cats) 
                 cats = new Cats();
@@ -418,78 +463,110 @@ $(document).ready(function() {
                 error:function(){
                     //do something
                     //show alert
-                    console.debug('mainview,goCategories:cats have been fetched');
+                    console.debug('mainview,goCategories:cats have not been fetched');
                 }
             });
            // afrykaAdminApp.navigate('/home',true);  
         },
-         goStatii: function(){
+        goStatii: function(){
             console.debug('going statii, showing statiiview');
-            this.statiiView = new StatiiView();
-            this.statiiView.parent = this;
+            if(!statii) 
+                statii = new Statii();
+            statii.fetch({
+                success:function(){
+                    console.debug('mainview,goStatii:statii have been fetched');
+                    this.statiiView = new StatiiView({collection:statii});
+                    this.statiiView.parent = this;
+                    afrykaAdminApp.prm.showView(this.statiiView);
+                },
+                error:function(){
+                    //do something
+                    //show alert
+                    console.debug('mainview,goStatii:statii have not been fetched');
+                }
+            });
+            
            // afrykaAdminApp.navigate('/home',true);
            afrykaAdminApp.prm.showView(this.statiiView);
         },
-         goJokes: function(){
-            console.debug('going jokes, showing jokesview');
-            this.jokesView = new JokesView();
-            this.jokesView.parent = this;
+        goProducts: function(){
+            console.debug('going productlist, showing productsview');
+            if(!products) 
+                products = new Products();
+            products.fetch({
+                success:function(){
+                    console.debug('mainview,goProducts:products have been fetched');
+                    this.productsView = new ProductsView({collection:products});
+                    this.productsView.parent = this;
+                    afrykaAdminApp.prm.showView(this.productsView);
+                },
+                error:function(){
+                    //do something
+                    //show alert
+                    console.debug('mainview,goProducts:products have not been fetched');
+                }
+            });
+            
            // afrykaAdminApp.navigate('/home',true);
-           afrykaAdminApp.prm.showView(this.jokesView);
+          // afrykaAdminApp.prm.showView(this.productsView);
         },
-         goStats: function(){
+        goProduct: function(id) {
+            console.debug('going product, showing productview');
+        
+            // afrykaAdminApp.navigate('/home',true);
+            if (!products) {
+                products = new Products();
+                products.fetch({
+                    success: function() {
+                        console.debug('mainview,goProduct:products have been fetched');
+                        curProd = products.get(id);//if product isnt there display error
+                        this.productView = new PoductView({
+                            model: curProd
+                        });
+                        this.productView.parent = this;
+                        afrykaAdminApp.prm.showView(this.productView);
+                    },
+                    error: function() {
+                        //do something
+                        //show alert
+                        console.debug('mainview,goProducts:products have not been fetched');
+                    }
+                });
+            }
+            else {
+                curProd = products.get(id);//if product isnt there display error
+                this.productView = new PoductView({
+                    model: curProd
+                });
+                this.productView.parent = this;
+                afrykaAdminApp.prm.showView(this.productView);
+            }
+        },
+        goOther: function(){
             console.debug('going stats, showing statsview');
-            this.statsView = new StatsView();
-            this.statsView.parent = this;
+            this.otherView = new OtherView();
+            this.otherView.parent = this;
            // afrykaAdminApp.navigate('/home',true);
-           afrykaAdminApp.prm.showView(this.statsView);
+           afrykaAdminApp.prm.showView(this.otherView);
+        },
+        goUser:function(){
+            console.debug('going jokes, showing jokesview');
+            this.userView = new UserView({model:admin});
+            this.userView.parent = this;
+            // afrykaAdminApp.navigate('/home',true);
+            afrykaAdminApp.prm.showView(this.userView);
         },
         showUserDialogue:function(){
             console.debug('user dialog');
-        },
-        toggleSidebar: function() {
-            console.debug('toggling sidebar');
-            if (this.sidebarVisible === false) {
-                this.sidebarVisible = true;
-                console.debug('making sidebar visible');
-                if (!this.sideBarView) {
-                    console.debug('sidebar doesnt exist lets make it');
-                    this.sideBarView = new SideBarView();
-                    this.sideBarView.parent = this;
-                    $('.page-sidebar').append(this.sideBarView.render().el);
-                }
-                else {
-                    console.debug('sidebar exists we just need to show it');
-                    if($('.page-sidebar').html()==''){
-                        $('.page-sidebar').append(this.sideBarView.render().el);
-                        console.debug('rerendering sidebar');
-                    }
-                    }
-                $('.page').addClass('with-sidebar'); //animate
-                $('.page-sidebar').animate({ width: "show"}, 1000, "easeOutBounce");
-
-            }
-            else {
-                console.debug('hiding sidebar');
-                this.sidebarVisible = false;
-                 $('.page').removeClass('with-sidebar');
-                $('.page-sidebar').animate({ width: "hide"}, 1000, "easeOutBounce",function(){
-                       
-                    }
-                );//animate
-            }
-
         }
     });
+    ////////////////////////////////////////////////////////
     var HomeView = Backbone.View.extend({
         /*el: '',*/
         id:"home-content",
-        className:"page-region-content tiles", 
+        className:"page-region-content", 
         events: {
-            'click #cats-pane': 'goToCats',
-            'click #stats-pane': 'goToStats',
-            'click #jokes-pane': 'goToJokes',
-            'click #statii-pane': 'goToStatii'
+            'click #new-product-pane': 'goToNewProduct'
         },
         initialize: function() {
             this.template = _.template($('#item-home').html());
@@ -502,257 +579,69 @@ $(document).ready(function() {
          
             return this;
         },
-        goToStatii:function(){
+        goToNewProduct:function(){
             //navigate
-             afrykaAdminApp.navigate('/statii',true);
-        },
-        goToCats:function(){
-             afrykaAdminApp.navigate('/categories',true);
-        },
-        goToJokes:function(){
-             afrykaAdminApp.navigate('/jokes',true);
-        },
-        goToStats:function(){
-             afrykaAdminApp.navigate('/statistics',true);
+             afrykaAdminApp.navigate('/product/new',true);
         }
     });
-    var SideBarView = Backbone.View.extend({
+    var ProductsView = Backbone.View.extend({
         //el:'',
-        tagName:'ul',
+        //tagName:'ul',
+        id:"products-content",
+        classname:"page-region-content",
         events:{
-            "click #m-stats":"goStats",
-            "click #m-jokes":"goJokes",
-            "click #m-jokes-new":"goJokesNew",
-            "click #m-jokes-reported":"goJokesReported",
-            "click #m-jokes-removed":"goJokesRemoved",
-            "click #m-cats":"goCategories",
-            "click #m-cats-new":"goCategoriesNew",
-            "click #m-statii":"goStatii",
-            "click #m-statii-new":"goStatiiNew",
-            "click #m-statii-find":"goStatiiFind",
-            "click #m-statii-reported":"goStatiiReported",
-            "click #m-statii-blacklist":"goStatiiBlacklist",
-            "click #m-help":"goHelp"
         },
         initialize:function(){
-            this.template=_.template($('#item-sidebar').html());
+            this.template=_.template($('#item-products').html());
         },
         render: function(){
             var el = this.$el;
-            console.debug('rendering sidebarview');
+            console.debug('rendering productsview');
             //$('.page-sidebar').empty();//can be remove on this.class
             el.html(this.template());
             return this;   
-        },
-        goJokes:function(){
-            afrykaAdminApp.navigate('/jokes',true);
-        },
-        goJokesNew:function(){},
-        goJokesReported:function(){},
-        goJokesRemoved:function(){},
-        goCategories:function(){
-            afrykaAdminApp.navigate('/categories',true);
-        },
-        goCategoriesNew:function(){
-             
-                var el =_.template($('#item-cats-new').html());
-                //var el =;
-                 $.Dialog({
-                     'title': 'Add new category',
-                     'content': el(),//el,//el(model.toJSON());n
-                     'draggable': true,
-                     'overlay': true,
-                     'closeButton': true,
-                     'buttonsAlign': 'right',
-                     'position': {
-                         'zone': 'center'
-                     },
-                     'buttons': {
-                         'save': {
-                             'action': function() {}
-                         },
-                         'cancel': {
-                             'action': function() {}
-                         }
-                     }
-                 });
-              
-        },
-        goCategoriesEdit:function(id){
-            /*
-                            <div>
-                                <label>Title</label>
-                                <input id="title" type="text" />
-                            </div>
-                            <div>
-                                <label>title(shona)</label>
-                                <input id="title_sh" type="text" />
-                            </div>
-                            <div>
-                                <label>Title (ndebele)</label>
-                                <input id="title_nd" type="text" />
-                            </div>
-                            <div>
-                                <label>count</label>
-                                <spab>
-                            </div>
-                            <div>
-                                <label>Icon</label>
-                            </div>
-            */
-            console.debug('goCategoriesedit:rendering dialogbox');
-            var model = cats.get(id);
-            console.debug('id:'+id);
-            console.debug(model);
-            var m= model.toJSON();
-            var el ='<div><label>Title</label><input id="title" type="text"'; 
-            if(m.title)el+='value="'+m.title+'"';
-            el+='/></div><div><label>title(shona)</label><input id="title_sh" type="text" ';
-            if(m.title_sh)el+='value="'+m.title_sh+'"';
-            el+='/></div><div><label>Title (ndebele)</label><input id="title_nd" type="text" ';
-            if(m.title_nd)el+='value="'+m.title_nd+'"';
-            el+='/></div><div><label>count</label><span>';
-            if(m.count)el+=m.count;
-              else el+= 0 ;
-            el+='</span></div><div><label>Icon</label></div>';// image gallery in the last div
-                            //_.template($('#item-cats-edit').html());
-                //var el =;
-                 $.Dialog({
-                     model:model,
-                     'title': 'edit category',
-                     'content': el,//el(model.toJSON());n
-                     'draggable': true,
-                     'overlay': true,
-                     'closeButton': true,
-                     'buttonsAlign': 'right',
-                     'position': {
-                         'zone': 'center'
-                     },
-                     'buttons': {
-                         
-                         'save': {
-                             'action': function() {
-                                // console.debug(this);
-                                console.debug(m);//fingers crossed 
-                             }
-                         },
-                         'delete':{
-                             'action':function(){}
-                         },
-                         'cancel': {
-                             'action': function() {}
-                         }
-                     }
-                 });
-        },
-        goStats:function(){
-            afrykaAdminApp.navigate('/statistics',true);
-        },
-        goStatii:function(){
-            afrykaAdminApp.navigate('/statii',true);
-        },
-        goStatiiNew:function(){},
-        goStatiiFind:function(){},
-        goStatiiReported:function(){},
-        goStatiiBlacklist:function(){},
-        goHelp:function(){}
+        } 
         
     });
-    var UpdateView = Backbone.View.extend({// pass in type in the options 
-        id:'',
-       className:'',
-       events:{},
-       initialize:function(){
-           
-       },
-       render:function(){
-           
-       }
-    });
-    var AddView = Backbone.View.extend({});//dialog box no need for view object
-    var FindView = Backbone.View.extend({});//dialog box no need for view object
-    var HelpView = Backbone.View.extend({
-        id:'',
-       className:'',
-       events:{},
-       initialize:function(){
-           
-       },
-       render:function(){
-           
-       }
+    var ProductView = Backbone.View.extend({// pass in type in the options 
+        id:"product-content",
+        classname:"page-region-content",
+        events:{},
+        initialize:function(){
+            this.template=_.template($('#item-product').html());
+        },
+        render:function(){
+            var el = this.$el;
+            console.debug('rendering productsview');
+            //$('.page-sidebar').empty();//can be remove on this.class
+            el.html(this.template());
+            return this;    
+        }
     });
     var CatsView = Backbone.View.extend({
-        //el: '',
-        id:"cat-content",
-        className:"page-region-content ",
-        events: {
-            "click tr":"showCatEdit"
-        },
-        initialize: function() {
+        id:"categories-content",
+        classname:"page-region-content",
+        events:{},
+        initialize:function(){
             this.template = _.template($('#item-cats').html());
-            //this.rowTemplate= _.template($('#item-cats-row').html());
         },
-        render: function() {
-            var el=this.$el;
-            var collection = this.collection;
-          //  $('.page-region-content').remove();
-            el.append(this.template());
-            collection.each(function(cat){
-                var c = cat.toJSON();
-                var row='';
-                    row+='<tr data-id="'+c.cat_id+'">'
-                        row += '<td>';
-                            if (c.title) row += c.title;
-                                else row += 'not set';
-                        row += '</td>'
-                        row += '<td>';
-                            if (c.icon) row += c.icon;
-                                else row += 'not set';
-                        row += '</td>'
-                        row += '<td>';
-                            if (c.title_sh) row += c.title_sh;
-                                else row += 'not set';
-                        row += '</td>'
-                        row += '<td>';
-                            if (c.title_nd) row += c.title_nd;
-                                else row += 'not set';
-                        row += '</td>'
-                        row += '<td>';
-                            if (c.count) row += c.count;
-                                else row += 'not set';
-                        row += '</td>'
-                    row+='</tr>'
-                el.find('tbody').append(row);    
-                //'<img src ='c.icon+'/>'
-            });
-
-            return this;
+        render:function(){
+           
+        }
+    });//dialog box no need for view object
+    var OtherView = Backbone.View.extend({
+        id:"other-content",
+        classname:"page-region-content",
+        events:{},
+        initialize:function(){
+            this.template = _.template($('#item-other').html());   
         },
-        showCatEdit:function(ev){
-            console.debug('showcatedit:tr clicked')
-            if (!this.parent.sideBarView){
-                this.parent.sideBarView=new SideBarView();
-                this.parent.sideBarView.parent = this.parent;
-            }
-            console.debug($(ev.target).data('id'));
-           // console.debug(ev);
-            //console.debug(ev.target);
-            console.debug($(ev.target).parent());
-            this.parent.sideBarView.goCategoriesEdit($(ev.target).parent().data('id'));
-            
-        },
-        showCatNew:function(ev){
-            if (!this.parent.sideBarView){
-                this.parent.sideBarView=new SideBarView();
-                this.parent.sideBarView.parent = this.parent;
-            }
-            this.parent.sideBarView.goCategoriesNew();
-            
+        render:function(){
+        
         }
     });
     var StatiiView = Backbone.View.extend({
-        id:"user-content",
+        id:"statii-content",
         className:"page-region-content ",
         events: {
 
@@ -767,54 +656,8 @@ $(document).ready(function() {
             return this;
         }
     });
-    var JokesView = Backbone.View.extend({
-                //el: '',
-        id:"joke-content",
-        className:"page-region-content ",
-        events: {
-
-        },
-        initialize: function() {
-            this.template= _.template($('#item-jokes').html());
-        },
-        render: function() {
-            var el=this.$el;
-        //    $('.page-region-content').remove();
-            el.append(this.template());
-            return this;
-        }
-    });
-    var StatsView = Backbone.View.extend({
-            //el: '',
-        id:"stat-content",
-        className:"page-region-content ",
-        events: {
-
-        },
-        initialize: function() {
-            this.template= _.template($('#item-stats').html());
-        },
-        render: function() {
-            var el = this.$el;
-           // $('.page-region-content').remove();
-            el.append(this.template());
-            return this;
-        }
-    });
-    var NavBarView = Backbone.View.extend({
-        el:'',
-        events:{
-            
-        },
-        initialize:function(){
-            
-        },
-        render:function(){
-            
-        }
-    });
+    ///////////////////////////////////////////////////////
     function PageRegionManager() {
-
         this.showView = function(view) {
             if(this.currentView && this.currentView!==view) {
                 console.debug('prm: closing currentview');
@@ -845,15 +688,18 @@ $(document).ready(function() {
     
         }
     }
+    //////////////////////////////////////////////////////
     var AppRouter = Backbone.Router.extend({
         routes:{
             '':'login',
             'home':'main',
-            'statistics':'toStats',
+            'products':'toProducts',
+            'product/:id':'toProduct',
             'categories':'toCats',
             'statii':'toStatii',
-            'jokes':'toJokes',
-            'problem':'toProblem'
+            'other':'toOther',
+            'problem':'toProblem',
+            'user/:id':'toUser'
         },
         initialize:function(){
             this.prm = new PageRegionManager();
@@ -965,9 +811,9 @@ $(document).ready(function() {
             });
             
         },
-        toStats:function(){
+        toProducts:function(){
              
-             console.debug('tostats function :routing to stats view');
+             console.debug('toproducts function :routing to products view');
             ar = this;
             StackMob.isLoggedIn({
                 yes:function(username){
@@ -993,7 +839,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goStats();
+                                mainView.goProducts();
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1008,7 +854,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goStats();
+                                mainView.goProducts();
                         //   return admin;
                     }
                     ////////////////////
@@ -1087,9 +933,10 @@ $(document).ready(function() {
             });
              
         },
-        toJokes:function(){
+        /////i left off here// finish off product view,userview,otherview/////////////////////////////////
+        toProduct:function(id){
             
-              console.debug('tojokes function :routing to jokes view');
+              console.debug('tostatii function :routing to statii view');
             ar = this;
             StackMob.isLoggedIn({
                 yes:function(username){
@@ -1115,8 +962,10 @@ $(document).ready(function() {
                                 if (!mainView) mainView = new MainView({
                                     model: admin
                                 });
+                               
+                              
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goJokes();
+                                mainView.goProduct(id);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1131,7 +980,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goJokes();
+                                mainView.goProduct(id);
                         //   return admin;
                     }
                     ////////////////////
@@ -1210,10 +1059,11 @@ $(document).ready(function() {
         },
         toProblem:function(){
             console.debug('problem route fired');
+            ar.brm.showView(new ProblemView());
         }
     });
-afrykaAdminApp = new AppRouter();
-console.log("app launched")
-Backbone.history.start();
-console.log("backbone history start")
+    afrykaAdminApp = new AppRouter();
+    console.log("app launched")
+    Backbone.history.start();
+    console.log("backbone history start")
 });
