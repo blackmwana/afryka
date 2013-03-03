@@ -47,3 +47,6 @@ body {
     border: solid 1px red;
     padding-left:5em;
 }
+.table-holder{
+    width:80%;
+}
