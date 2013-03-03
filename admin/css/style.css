@@ -45,4 +45,5 @@ body {
 }
 .span10{
     border: solid 1px red;
+    padding-left:5em;
 }
