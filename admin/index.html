@@ -96,8 +96,33 @@
             <div>product</div>  
         </script>
         <script type="text/javascript" id="item-cats">
-            <div>cats</div>  
+            <div class="row-fluid">
+                    <div class="span2"></div>
+                    <div class="span10">
+                    <div class="table-holder">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title (en)</th>
+                                    <th>Title (pl)</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div> 
         </script>
+        <script type="text/template" id="item-cats-row">
+            <tr data-id="<%=category_id%>">
+                <td> <%=title_en%> </td>
+                <td> <%=title_pl%> </td>
+                <td> <%=count%> </td>
+            </tr>
+        </sccript>
         <script type="text/javascript" id="item-other">
             <div>other</div>  
         </script>

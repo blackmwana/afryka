@@ -558,6 +558,14 @@ $(document).ready(function() {
         },
         showUserDialogue:function(){
             console.debug('user dialog');
+        },
+        goCatsEdit:function(id){
+            console.debug('gocatsedit:rendering dialogbox');
+            var model = cats.get(id);
+            console.debug('id:'+id);
+            console.debug(model);
+            var m = model.toJSON();
+            
         }
     });
     ////////////////////////////////////////////////////////
@@ -621,12 +629,42 @@ $(document).ready(function() {
     var CatsView = Backbone.View.extend({
         id:"categories-content",
         classname:"page-region-content",
-        events:{},
+        events:{
+            "click tr":"showCatEdit"
+        },
         initialize:function(){
+            //this.model = this.options.model;
+            this.collection.bind('all', this.refresh,this);
             this.template = _.template($('#item-cats').html());
+            this.rowTemplate= _.template($('#item-cats-row').html());
         },
         render:function(){
-           
+           var el = this.$el;
+            var collection = this.collection;
+            rowTemplate = this.rowTemplate;
+          //  $('.page-region-content').remove();
+            el.append(this.template());
+            collection.each(function(cat){
+                el.find('tbody').append(rowTemplate(cat.toJSON()));       
+                });
+            return this;
+        },
+        showCatEdit:function(ev){
+            console.debug('showcatedit:tr clicked')
+            //if (!this.parent.sideBarView){
+              //  this.parent.sideBarView=new SideBarView();
+                //this.parent.sideBarView.parent = this.parent;
+            //}
+            console.debug($(ev.target).data('id'));
+           // console.debug(ev);
+            //console.debug(ev.target);
+            console.debug($(ev.target).parent());
+            //this.parent.sideBarView.goCatsEdit($(ev.target).parent().data('id'));
+            this.parent.goCatsEdit($(ev.target).parent().data('id'));
+            
+        },
+        refresh:function(){
+            //refresh the catview somehowg
         }
     });//dialog box no need for view object
     var OtherView = Backbone.View.extend({
