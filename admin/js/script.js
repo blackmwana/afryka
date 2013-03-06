@@ -374,9 +374,9 @@ $(document).ready(function() {
         }
     });
     var UserView = Backbone.View.extend({
-        el: 'body',
-        //id:"user-content",
-        //className:"page-region-content ",
+        //el: 'body',
+        id:"user-content",
+        className:"page-region-content ",
         events: {
              
         },
@@ -438,7 +438,7 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/products',true);
            // afrykaAdminApp.navigate('/',true);
         },
-        navProduct:function(){//maybe not necessary
+        navProduct:function(id){//maybe not necessary
         //get id of clicked item
             afrykaAdminApp.navigate('/product/'+id,true);
            // afrykaAdminApp.navigate('/',true);
