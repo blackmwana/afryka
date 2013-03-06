@@ -7,6 +7,9 @@
     margin: 0 auto;
     padding:4em;
 }
+.nav a{
+    cursorpointer;
+}
 #avatar {
     cursor: pointer;
     border-left: 1px solid gray;
