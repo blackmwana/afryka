@@ -8,14 +8,14 @@
     padding:4em;
 }
 .nav a{
-    cursorpointer;
+    cursor:pointer;
 }
 #avatar {
     cursor: pointer;
     border-left: 1px solid gray;
     padding-left: 1em;
     height: 90%;
-    width: 7.5em;
+    width: em;
     color:gray;
 }
 #avatar-image {
