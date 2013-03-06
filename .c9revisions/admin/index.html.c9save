@@ -643,3 +643,11 @@
 {"ts":1362609006570,"patch":[[{"diffs":[[0,"ull-left"],[-1,"t"],[0,"\" id=\"av"]],"start1":4168,"start2":4168,"length1":17,"length2":16}]],"length":27450,"saved":false}
 {"ts":1362609008921,"patch":[[{"diffs":[[0,"s=\"pull-"],[-1,"lef"],[0,"t\">\r\n   "]],"start1":3935,"start2":3935,"length1":19,"length2":16}]],"length":27447,"saved":false}
 {"ts":1362609013494,"patch":[[{"diffs":[[0,"s=\"pull-"],[1,"righ"],[0,"t\">\r\n   "]],"start1":3935,"start2":3935,"length1":16,"length2":20}]],"length":27451,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1362613526518,"patch":[[{"diffs":[[0,"         </li>\r\n"],[1,"                        <li id=\"m-categories\">\r\n                            <a >Categories</a>\r\n                        </li>\r\n"],[0,"                "]],"start1":3684,"start2":3684,"length1":32,"length2":159}]],"length":27578,"saved":false}
+{"ts":1362613530447,"patch":[[{"diffs":[[0,"            <a >"],[1,"Sat"],[0,"Categories</a>\r\n"]],"start1":3764,"start2":3764,"length1":32,"length2":35}]],"length":27581,"saved":false}
+{"ts":1362613535369,"patch":[[{"diffs":[[0,"   <a >S"],[1,"t"],[0,"at"],[1,"i"],[0,"Categori"]],"start1":3773,"start2":3773,"length1":18,"length2":20}]],"length":27583,"saved":false}
+{"ts":1362613536692,"patch":[[{"diffs":[[0,"a >Stati"],[-1,"Ca"],[1,"i"],[0,"tegories"]],"start1":3777,"start2":3777,"length1":18,"length2":17}]],"length":27582,"saved":false}
+{"ts":1362613539557,"patch":[[{"diffs":[[0," >Statii"],[-1,"tegorie"],[0,"s</a>\r\n "]],"start1":3778,"start2":3778,"length1":23,"length2":16}]],"length":27575,"saved":false}
+{"ts":1362613542960,"patch":[[{"diffs":[[0," >Statii"],[-1,"s"],[0,"</a>\r\n  "]],"start1":3778,"start2":3778,"length1":17,"length2":16}]],"length":27574,"saved":false}
+{"ts":1362613591268,"patch":[[{"diffs":[[0,"      <li id=\"m-"],[-1,"ca"],[1,"statii"],[0,"tegories\">\r\n    "]],"start1":3718,"start2":3718,"length1":34,"length2":38}]],"length":27578,"saved":false}
+{"ts":1362613594700,"patch":[[{"diffs":[[0,"m-statii"],[-1,"tegories"],[0,"\">\r\n    "]],"start1":3732,"start2":3732,"length1":24,"length2":16}]],"length":27570,"saved":false}

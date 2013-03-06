@@ -398,6 +398,7 @@ $(document).ready(function() {
             "click #m-products":"navProducts",
             "click #m-categories":"navCategories",
             "click #m-other":"navOther",
+            "click #m-statii":"navStatii",
             "click #avatar":"showUserDialogue"
         },
     //    sidebarVisible:false,
@@ -449,6 +450,10 @@ $(document).ready(function() {
         },
         navOther:function(){
             afrykaAdminApp.navigate('/other',true);
+           // afrykaAdminApp.navigate('/',true);
+        },
+        navStatii:function(){
+            afrykaAdminApp.navigate('/statii',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navUser:function(){//maybe not necessary
@@ -655,7 +660,7 @@ $(document).ready(function() {
         id:"categories-content",
         classname:"page-region-content",
         events:{
-            "click tbodytr":"showCatEdit"
+            "click tbody tr":"showCatEdit"
         },
         initialize:function(){
             //this.model = this.options.model;

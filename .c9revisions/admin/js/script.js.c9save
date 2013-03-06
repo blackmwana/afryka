@@ -693,3 +693,14 @@
 {"ts":1362610497801,"patch":[[{"diffs":[[0,"ug(this)"],[1,";"],[0,"\r\n      "]],"start1":18794,"start2":18794,"length1":16,"length2":17}]],"length":50983,"saved":false}
 {"contributors":[],"silentsave":true,"ts":1362612916833,"patch":[[{"diffs":[[0," \"click "],[1,"tbody"],[0,"tr\":\"sho"]],"start1":25474,"start2":25474,"length1":16,"length2":21}]],"length":50988,"saved":false}
 {"ts":1362612916835,"patch":[[{"diffs":[[0,"ck tbody"],[1," "],[0,"tr\":\"sho"]],"start1":25479,"start2":25479,"length1":16,"length2":17}]],"length":50989,"saved":false}
+{"ts":1362613335030,"patch":[[{"diffs":[[0,"navOther\",\r\n"],[1,"            \"click #m-other\":\"navOther\",\r\n"],[0,"            "]],"start1":15198,"start2":15198,"length1":24,"length2":66}]],"length":51031,"saved":false}
+{"ts":1362613338665,"patch":[[{"diffs":[[0,"      \"click #m-"],[1,"stat"],[0,"other\":\"navOther"]],"start1":15216,"start2":15216,"length1":32,"length2":36}]],"length":51035,"saved":false}
+{"ts":1362613343045,"patch":[[{"diffs":[[0," #m-stat"],[-1,"other"],[1,"ii"],[0,"\":\"navOt"]],"start1":15228,"start2":15228,"length1":21,"length2":18}]],"length":51032,"saved":false}
+{"ts":1362613348571,"patch":[[{"diffs":[[0,"statii\":\"nav"],[1,"Statii"],[0,"Other\",\r\n   "]],"start1":15232,"start2":15232,"length1":24,"length2":30}]],"length":51038,"saved":false}
+{"ts":1362613351390,"patch":[[{"diffs":[[0,"avStatii"],[-1,"Other"],[0,"\",\r\n    "]],"start1":15242,"start2":15242,"length1":21,"length2":16}]],"length":51033,"saved":false}
+{"ts":1362613374269,"patch":[[{"diffs":[[0,");\r\n        },\r\n"],[1,"        navOther:function(){\r\n            afrykaAdminApp.navigate('/other',true);\r\n           // afrykaAdminApp.navigate('/',true);\r\n        },\r\n"],[0,"        navUser:"]],"start1":17446,"start2":17446,"length1":32,"length2":177}]],"length":51178,"saved":false}
+{"ts":1362613378663,"patch":[[{"diffs":[[0," },\r\n        nav"],[1,"St"],[0,"Other:function()"]],"start1":17457,"start2":17457,"length1":32,"length2":34}]],"length":51180,"saved":false}
+{"ts":1362613382007,"patch":[[{"diffs":[[0,"   navSt"],[-1,"Othe"],[1,"atii"],[0,"r:functi"]],"start1":17467,"start2":17467,"length1":20,"length2":20}]],"length":51180,"saved":false}
+{"ts":1362613385786,"patch":[[{"diffs":[[0,"avStatii"],[-1,"r"],[0,":functio"]],"start1":17471,"start2":17471,"length1":17,"length2":16}]],"length":51179,"saved":false}
+{"ts":1362613390670,"patch":[[{"diffs":[[0,"nApp.navigate('/"],[-1,"other"],[1,"s"],[0,"',true);\r\n      "]],"start1":17515,"start2":17515,"length1":37,"length2":33}]],"length":51175,"saved":false}
+{"ts":1362613394029,"patch":[[{"diffs":[[0,"gate('/s"],[1,"tatii"],[0,"',true);"]],"start1":17524,"start2":17524,"length1":16,"length2":21}]],"length":51180,"saved":false}
