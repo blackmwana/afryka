@@ -250,19 +250,43 @@ $(document).ready(function() {
     var curProd;
 
     var Cat = StackMob.Model.extend({
-        schemaName:'category'
+        schemaName:'category',
+        defaults:function(){
+            return{
+                title_en:'not set',
+                title_pl:'not set',
+                count:0
+            }
+        }
     });
     var Cats = StackMob.Collection.extend({
         model:Cat
     });
     var Status = StackMob.Model.extend({
-        schemaName:"status"
+        schemaName:"status",
+        defaults:function(){
+            return{
+                name:'not set',
+                description:'not set'
+            }
+        }
     })
     var Statii = StackMob.Collection.extend({
         model:Status
     });
     var Product = StackMob.Model.extend({
-        schemaName:"product"
+        schemaName:"product",
+        defaults:function(){
+            return{
+                title_en:'not set',
+                title_pl:'not set',
+                description_en:'not set',
+                description_pl:'not set',
+                link:"http://afroeuro.istore.pl/",
+                picture:"http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/images/market.png",//change to main folder not admin
+                price:0
+            }
+        }
     })
     var Products = StackMob.Collection.extend({
         model:Product
