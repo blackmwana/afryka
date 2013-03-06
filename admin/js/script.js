@@ -655,7 +655,7 @@ $(document).ready(function() {
         id:"categories-content",
         classname:"page-region-content",
         events:{
-            "click tr":"showCatEdit"
+            "click tbodytr":"showCatEdit"
         },
         initialize:function(){
             //this.model = this.options.model;
