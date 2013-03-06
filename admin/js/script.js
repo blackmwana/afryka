@@ -482,6 +482,7 @@ $(document).ready(function() {
                     console.debug('mainview,goCategories:cats have been fetched');
                     this.catsView = new CatsView({collection:cats});
                     this.catsView.parent = this;
+                    console.debug(this);
                     afrykaAdminApp.prm.showView(this.catsView);
                 },
                 error:function(){
@@ -699,7 +700,10 @@ $(document).ready(function() {
             this.template = _.template($('#item-other').html());   
         },
         render:function(){
-        
+            var el=this.$el;
+             //  $('.page-region-content').remove();
+            el.append(this.template());
+            return this;
         }
     });
     var StatiiView = Backbone.View.extend({
@@ -934,68 +938,6 @@ $(document).ready(function() {
                 }*/
             });
         },
-        toCats:function(){
-             
-              console.debug('tocats function :routing to catsview');
-            ar = this;
-            StackMob.isLoggedIn({
-                yes:function(username){
-                    console.log(username+" :is logged in");
-                   //  ar.getUser(username);
-                    //get user and navigate to home
-                  //  afrykaAdminApp.navigate('/home',true)
-                    //ar.navigate('/home',true)
-                     ////////////////////
-                    if (!admin) {
-                        //console.debug('getUser:about to fetch user');
-                        var user = new StackMob.User({
-                            username: username
-                        });
-                        //console.debug('getUser:fetching user');
-                        user.fetch({
-                            success: function() {
-                                admin = user;
-                                console.debug('user fetched');
-                                console.debug(user);
-                    
-                                if (!mainView) mainView = new MainView({
-                                    model: admin
-                                });
-                                ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goCategories();
-                            },
-                            error: function() {
-                                console.debug('user  fetch error');
-                            }
-                        });
-                        // return user;
-                    }
-                    else {
-                        console.debug('admin already exists');
-                        console.debug(admin);
-                         if (!mainView) mainView = new MainView({
-                                    model: admin
-                                });
-                                ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goCategories();
-                        //   return admin;
-                    }
-                    ////////////////////
-                     //user model to be passed into the constructor
-                    
-                    
-                },
-                no:function(){
-                    console.log("no user logged in");
-                   ar.brm.showView(new LoginView());
-                }/*,
-                error:function(){
-                    console.log("error");
-                }*/
-            });
-             
-        },
-        /////i left off here// finish off product view,userview,otherview/////////////////////////////////
         toProduct:function(id){
             
               console.debug('tostatii function :routing to statii view');
@@ -1058,6 +1000,67 @@ $(document).ready(function() {
                 }*/
             });
         },
+        toCats:function(){
+             
+              console.debug('tocats function :routing to catsview');
+            ar = this;
+            StackMob.isLoggedIn({
+                yes:function(username){
+                    console.log(username+" :is logged in");
+                   //  ar.getUser(username);
+                    //get user and navigate to home
+                  //  afrykaAdminApp.navigate('/home',true)
+                    //ar.navigate('/home',true)
+                     ////////////////////
+                    if (!admin) {
+                        //console.debug('getUser:about to fetch user');
+                        var user = new StackMob.User({
+                            username: username
+                        });
+                        //console.debug('getUser:fetching user');
+                        user.fetch({
+                            success: function() {
+                                admin = user;
+                                console.debug('user fetched');
+                                console.debug(user);
+                    
+                                if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goCategories();
+                            },
+                            error: function() {
+                                console.debug('user  fetch error');
+                            }
+                        });
+                        // return user;
+                    }
+                    else {
+                        console.debug('admin already exists');
+                        console.debug(admin);
+                         if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goCategories();
+                        //   return admin;
+                    }
+                    ////////////////////
+                     //user model to be passed into the constructor
+                    
+                    
+                },
+                no:function(){
+                    console.log("no user logged in");
+                   ar.brm.showView(new LoginView());
+                }/*,
+                error:function(){
+                    console.log("error");
+                }*/
+            });
+             
+        },
         toStatii:function(){
              
               console.debug('to statii function :routing to statii view');
@@ -1119,10 +1122,132 @@ $(document).ready(function() {
                 }*/
             });
         },
+        toOther:function(){
+             
+              console.debug('to other function :routing to other view');
+            ar = this;
+            StackMob.isLoggedIn({
+                yes:function(username){
+                    console.log(username+" :is logged in");
+                    // ar.getUser(username);
+                    //get user and navigate to home
+                  //  afrykaAdminApp.navigate('/home',true)
+                    //ar.navigate('/home',true)
+                     ////////////////////
+                    if (!admin) {
+                        //console.debug('getUser:about to fetch user');
+                        var user = new StackMob.User({
+                            username: username
+                        });
+                        //console.debug('getUser:fetching user');
+                        user.fetch({
+                            success: function() {
+                                admin = user;
+                                console.debug('user fetched');
+                                console.debug(user);
+                    
+                                if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                               // mainView.sidebarVisible=false;//reset it in case the page was refreshed
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goOther();
+                            },
+                            error: function() {
+                                console.debug('user  fetch error');
+                            }
+                        });
+                        // return user;
+                    }
+                    else {
+                        console.debug('admin already exists');
+                        console.debug(admin);
+                        if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goOther();
+                        //   return admin;
+                    }
+                    ////////////////////
+                    // user model to be passed into the constructor
+                   
+                    
+                },
+                no:function(){
+                    console.log("no user logged in");
+                   ar.brm.showView(new LoginView());
+                }/*,
+                error:function(){
+                    console.log("error");
+                }*/
+            });
+        },
         toProblem:function(){
             console.debug('problem route fired');
             ar.brm.showView(new ProblemView());
-        }
+        },
+        toUser:function(){
+             
+            console.debug('to statii function :routing to statii view');
+            ar = this;
+            StackMob.isLoggedIn({
+                yes:function(username){
+                    console.log(username+" :is logged in");
+                    // ar.getUser(username);
+                    //get user and navigate to home
+                  //  afrykaAdminApp.navigate('/home',true)
+                    //ar.navigate('/home',true)
+                     ////////////////////
+                    if (!admin) {
+                        //console.debug('getUser:about to fetch user');
+                        var user = new StackMob.User({
+                            username: username
+                        });
+                        //console.debug('getUser:fetching user');
+                        user.fetch({
+                            success: function() {
+                                admin = user;
+                                console.debug('user fetched');
+                                console.debug(user);
+                    
+                                if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                               // mainView.sidebarVisible=false;//reset it in case the page was refreshed
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goUser();
+                            },
+                            error: function() {
+                                console.debug('user  fetch error');
+                            }
+                        });
+                        // return user;
+                    }
+                    else {
+                        console.debug('admin already exists');
+                        console.debug(admin);
+                        if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goUser();
+                        //   return admin;
+                    }
+                    ////////////////////
+                    // user model to be passed into the constructor
+                   
+                    
+                },
+                no:function(){
+                    console.log("no user logged in");
+                   ar.brm.showView(new LoginView());
+                }/*,
+                error:function(){
+                    console.log("error");
+                }*/
+            });
+        },
     });
     afrykaAdminApp = new AppRouter();
     console.log("app launched")
