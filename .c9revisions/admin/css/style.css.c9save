@@ -165,3 +165,12 @@
 {"ts":1362592737315,"patch":[[{"diffs":[[0,"width:80"],[1,"%"],[0,";\n}"]],"start1":876,"start2":876,"length1":11,"length2":12}]],"length":888,"saved":false}
 {"ts":1362592739658,"patch":[[{"diffs":[[0," width:80%;\n"],[1,"    \n"],[0,"}"]],"start1":875,"start2":875,"length1":13,"length2":18}]],"length":893,"saved":false}
 {"ts":1362592743471,"patch":[[{"diffs":[[0,"th:80%;\n    "],[1,"margin:0 auto;"],[0,"\n}"]],"start1":879,"start2":879,"length1":14,"length2":28}]],"length":907,"saved":false}
+{"ts":1362592917655,"patch":[[{"diffs":[[0,"tons{\n    width:"],[-1,"8"],[1,"5"],[0,"0%;\n    margin:0"]],"start1":866,"start2":866,"length1":33,"length2":33}]],"length":907,"saved":false}
+{"ts":1362592923409,"patch":[[{"diffs":[[0,"th:50%;\n    margin:0 auto;\n}"],[1,"\n.produc"]],"start1":879,"start2":879,"length1":28,"length2":36}]],"length":915,"saved":false}
+{"ts":1362592924160,"patch":[[{"diffs":[[0,"    margin:0 auto;\n}\n.produc"],[1,"t"]],"start1":887,"start2":887,"length1":28,"length2":29}]],"length":916,"saved":false}
+{"ts":1362592925239,"patch":[[{"diffs":[[0,"   margin:0 auto;\n}\n.product"],[1,"-b"]],"start1":888,"start2":888,"length1":28,"length2":30}]],"length":918,"saved":false}
+{"ts":1362592930603,"patch":[[{"diffs":[[0," margin:0 auto;\n}\n.product-b"],[1,"uttons button{"]],"start1":890,"start2":890,"length1":28,"length2":42}]],"length":932,"saved":false}
+{"ts":1362592931266,"patch":[[{"diffs":[[0," button{"],[1,"}"]],"start1":924,"start2":924,"length1":8,"length2":9}]],"length":933,"saved":false}
+{"ts":1362592931901,"patch":[[{"diffs":[[0," button{"],[1,"\n    \n"],[0,"}"]],"start1":924,"start2":924,"length1":9,"length2":15}]],"length":939,"saved":false}
+{"ts":1362592934389,"patch":[[{"diffs":[[0,"button{\n    "],[1,"width"],[0,"\n}"]],"start1":925,"start2":925,"length1":14,"length2":19}]],"length":944,"saved":false}
+{"ts":1362592938804,"patch":[[{"diffs":[[0,"   width"],[1,":9em;"],[0,"\n}"]],"start1":934,"start2":934,"length1":10,"length2":15}]],"length":949,"saved":false}
