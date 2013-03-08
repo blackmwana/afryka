@@ -550,7 +550,7 @@ $(document).ready(function() {
                     success: function() {
                         console.debug('mainview,goProduct:products have been fetched');
                         curProd = products.get(id);//if product isnt there display error
-                        this.productView = new PoductView({
+                        this.productView = new ProductView({
                             model: curProd
                         });
                         this.productView.parent = this;

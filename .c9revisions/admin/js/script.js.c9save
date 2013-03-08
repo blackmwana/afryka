@@ -731,3 +731,4 @@
 {"ts":1362754903860,"patch":[[{"diffs":[[0,"ductView = new P"],[1,"r"],[0,"oductView({\r\n   "]],"start1":22426,"start2":22426,"length1":32,"length2":33}]],"length":51492,"saved":false}
 {"ts":1362754943090,"patch":[[{"diffs":[[0,"    "],[-1,"        //$('.page-sidebar').empty();//can be remove on this.class"],[0,"\r\n  "]],"start1":25409,"start2":25409,"length1":74,"length2":8}]],"length":51426,"saved":false}
 {"ts":1362754946873,"patch":[[{"diffs":[[0,"roductsview');\r\n"],[-1,"    \r\n"],[0,"            el.h"]],"start1":25393,"start2":25393,"length1":38,"length2":32}]],"length":51420,"saved":false}
+{"ts":1362755051798,"patch":[[{"diffs":[[0," = new P"],[1,"r"],[0,"oductVie"]],"start1":21781,"start2":21781,"length1":16,"length2":17}]],"length":51421,"saved":false}
