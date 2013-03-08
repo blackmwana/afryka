@@ -718,3 +718,7 @@
 {"ts":1362751111086,"patch":[[{"diffs":[[0,"ction(st"],[1,"atus"],[0,"){\r\n    "]],"start1":28149,"start2":28149,"length1":16,"length2":20}]],"length":51391,"saved":false}
 {"ts":1362751116056,"patch":[[{"diffs":[[0,"end(rowTemplate("],[-1,"c"],[1,"st"],[0,"at.toJSON()));  "]],"start1":28201,"start2":28201,"length1":33,"length2":34}]],"length":51392,"saved":false}
 {"ts":1362751118976,"patch":[[{"diffs":[[0,"ate(stat"],[1,"us"],[0,".toJSON("]],"start1":28213,"start2":28213,"length1":16,"length2":18}]],"length":51394,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1362751527822,"patch":[[{"diffs":[[0,"r el=this.$el;\r\n"],[1,"            V\r\n"],[0,"            rowT"]],"start1":28016,"start2":28016,"length1":32,"length2":47}]],"length":51409,"saved":false}
+{"ts":1362751530794,"patch":[[{"diffs":[[0,"        "],[-1,"V"],[1,"var collection = this.collection;"],[0,"\r\n      "]],"start1":28036,"start2":28036,"length1":17,"length2":49}]],"length":51441,"saved":false}
+{"ts":1362751643157,"patch":[[{"diffs":[[0,"  \r\n            "],[-1,"  "],[0,"console.debug('t"]],"start1":42770,"start2":42770,"length1":34,"length2":32}]],"length":51439,"saved":false}
+{"ts":1362751774272,"patch":[[{"diffs":[[0,"ue);\r\n          "],[1,"//"],[0," afrykaAdminApp."]],"start1":20190,"start2":20190,"length1":32,"length2":34}]],"length":51441,"saved":false}

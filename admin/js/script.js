@@ -517,7 +517,7 @@ $(document).ready(function() {
             });
             
            // afrykaAdminApp.navigate('/home',true);
-           afrykaAdminApp.prm.showView(this.statiiView);
+          // afrykaAdminApp.prm.showView(this.statiiView);
         },
         goProducts: function(){
             console.debug('going productlist, showing productsview');
@@ -723,6 +723,7 @@ $(document).ready(function() {
         },
         render: function() {
             var el=this.$el;
+            var collection = this.collection;
             rowTemplate = this.rowTemplate;
             el.append(this.template());
             collection.each(function(status){
@@ -1072,7 +1073,7 @@ $(document).ready(function() {
         },
         toStatii:function(){
              
-              console.debug('to statii function :routing to statii view');
+            console.debug('to statii function :routing to statii view');
             ar = this;
             StackMob.isLoggedIn({
                 yes:function(username){
