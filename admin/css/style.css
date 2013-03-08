@@ -54,6 +54,12 @@
     width:80%;
     margin:0 auto;
 }
+table{
+    background-color:white;
+}
+thead{
+    background-color:gray;
+}
 #product-container{
     width:80%;
     margin:0 auto;
