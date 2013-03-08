@@ -13,7 +13,7 @@ Backbone.View.prototype.close = function() {
             console.debug(this.el + ': removing view  el');
         }
         this.unbind();
-        if (this.onClose) {
+        if (this.onClose) {//have to implement these to unbind model bindings
             this.onClose();
         }
     }
@@ -565,7 +565,7 @@ $(document).ready(function() {
             }
             else {
                 curProd = products.get(id);//if product isnt there display error
-                this.productView = new PoductView({
+                this.productView = new ProductView({
                     model: curProd
                 });
                 this.productView.parent = this;
@@ -651,7 +651,6 @@ $(document).ready(function() {
         render:function(){
             var el = this.$el;
             console.debug('rendering productsview');
-            //$('.page-sidebar').empty();//can be remove on this.class
             el.html(this.template());
             return this;    
         }

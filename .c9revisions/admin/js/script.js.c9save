@@ -722,3 +722,12 @@
 {"ts":1362751530794,"patch":[[{"diffs":[[0,"        "],[-1,"V"],[1,"var collection = this.collection;"],[0,"\r\n      "]],"start1":28036,"start2":28036,"length1":17,"length2":49}]],"length":51441,"saved":false}
 {"ts":1362751643157,"patch":[[{"diffs":[[0,"  \r\n            "],[-1,"  "],[0,"console.debug('t"]],"start1":42770,"start2":42770,"length1":34,"length2":32}]],"length":51439,"saved":false}
 {"ts":1362751774272,"patch":[[{"diffs":[[0,"ue);\r\n          "],[1,"//"],[0," afrykaAdminApp."]],"start1":20190,"start2":20190,"length1":32,"length2":34}]],"length":51441,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1362754791936,"patch":[[{"diffs":[[0,"s.onClose) {"],[1,"//have o "],[0,"\r\n          "]],"start1":671,"start2":671,"length1":24,"length2":33}]],"length":51450,"saved":false}
+{"ts":1362754794112,"patch":[[{"diffs":[[0,"{//have "],[1,"t"],[0,"o "],[1,"implem"],[0,"\r\n      "]],"start1":682,"start2":682,"length1":18,"length2":25}]],"length":51457,"saved":false}
+{"ts":1362754797724,"patch":[[{"diffs":[[0,"o implem"],[1,"ent these to unbi"],[0,"\r\n      "]],"start1":691,"start2":691,"length1":16,"length2":33}]],"length":51474,"saved":false}
+{"ts":1362754800688,"patch":[[{"diffs":[[0," to unbi"],[1,"nd model "],[0,"\r\n      "]],"start1":708,"start2":708,"length1":16,"length2":25}]],"length":51483,"saved":false}
+{"ts":1362754804719,"patch":[[{"diffs":[[0,"d model "],[1,"bin"],[0,"\r\n      "]],"start1":717,"start2":717,"length1":16,"length2":19}]],"length":51486,"saved":false}
+{"ts":1362754807715,"patch":[[{"diffs":[[0,"odel bin"],[1,"dings"],[0,"\r\n      "]],"start1":720,"start2":720,"length1":16,"length2":21}]],"length":51491,"saved":false}
+{"ts":1362754903860,"patch":[[{"diffs":[[0,"ductView = new P"],[1,"r"],[0,"oductView({\r\n   "]],"start1":22426,"start2":22426,"length1":32,"length2":33}]],"length":51492,"saved":false}
+{"ts":1362754943090,"patch":[[{"diffs":[[0,"    "],[-1,"        //$('.page-sidebar').empty();//can be remove on this.class"],[0,"\r\n  "]],"start1":25409,"start2":25409,"length1":74,"length2":8}]],"length":51426,"saved":false}
+{"ts":1362754946873,"patch":[[{"diffs":[[0,"roductsview');\r\n"],[-1,"    \r\n"],[0,"            el.h"]],"start1":25393,"start2":25393,"length1":38,"length2":32}]],"length":51420,"saved":false}
