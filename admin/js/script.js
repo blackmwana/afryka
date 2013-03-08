@@ -719,11 +719,15 @@ $(document).ready(function() {
         },
         initialize: function() {
             this.template= _.template($('#item-statii').html());
+            this.rowTemplate= _.template($('#item-statii-row').html());
         },
         render: function() {
             var el=this.$el;
-          //  $('.page-region-content').remove();
+            rowTemplate = this.rowTemplate;
             el.append(this.template());
+            collection.each(function(status){
+                el.find('tbody').append(rowTemplate(status.toJSON()));       
+                });
             return this;
         }
     });
