@@ -873,7 +873,8 @@ $(document).ready(function() {
         activeNav:function(newClass){
             $('.active').removeClass('active');
             $(newClass).addClass('active');
-            console.debug('activated:'+ $(newClass).toJSON());
+            console.debug('activated:');
+            console.debug($(newClass));
         },
         getUser:function(name){
             if(!admin){
