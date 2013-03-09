@@ -617,9 +617,9 @@ $(document).ready(function() {
          
             return this;
         },
-        goToNewProduct:function(){
+        goToNewProduct:function(){//popup
             //navigate
-             afrykaAdminApp.navigate('/product/new',true);
+            // afrykaAdminApp.navigate('/product/new',true);
         }
     });
     var ProductsView = Backbone.View.extend({
@@ -731,6 +731,96 @@ $(document).ready(function() {
             return this;
         }
     });
+    var NewProductModalView = Backbone.View.extend({
+        events: {
+        },
+        initialize: function() {
+            this.template = _.template($('#item-products-new').html());
+        },
+        render: function() {
+            this.$el.html(this.template());
+            return this;
+        },
+        show: function() {
+            $(document.body).append(this.render().el);                
+        },
+        close: function() {
+            this.remove();
+        }
+           
+    });
+    var EditCategoryModalView = Backbone.View.extend({
+        events: {
+        },
+        initialize: function() {
+            this.template = _.template($('#item-cats-edit').html());
+        },
+        render: function() {
+            this.$el.html(this.template());
+            return this;
+        },
+        show: function() {
+            $(document.body).append(this.render().el);                
+        },
+        close: function() {
+            this.remove();
+        }
+           
+    });
+    var NewCategoryModalView = Backbone.View.extend({
+        events: {
+        },
+        initialize: function() {
+            this.template = _.template($('#item-cats-new').html());
+        },
+        render: function() {
+            this.$el.html(this.template());
+            return this;
+        },
+        show: function() {
+            $(document.body).append(this.render().el);                
+        },
+        close: function() {
+            this.remove();
+        }
+           
+    });
+    var EditStatusModalView = Backbone.View.extend({
+        events: {
+        },
+        initialize: function() {
+            this.template = _.template($('#item-statii-edit').html());
+        },
+        render: function() {
+            this.$el.html(this.template());
+            return this;
+        },
+        show: function() {
+            $(document.body).append(this.render().el);                
+        },
+        close: function() {
+            this.remove();
+        }
+           
+    });
+    var NewStatusModalView = Backbone.View.extend({
+        events: {
+        },
+        initialize: function() {
+            this.template = _.template($('#item-statii-new').html());
+        },
+        render: function() {
+            this.$el.html(this.template());
+            return this;
+        },
+        show: function() {
+            $(document.body).append(this.render().el);                
+        },
+        close: function() {
+            this.remove();
+        }
+           
+    });
     ///////////////////////////////////////////////////////
     function PageRegionManager() {
         this.showView = function(view) {
@@ -742,7 +832,6 @@ $(document).ready(function() {
             //this.currentView.render();
             $(".view-container").html(this.currentView.render().el);
         }
-
     }
     function BodyRegionManager() { //for body top level views
         this.showView = function(view) {
@@ -760,9 +849,9 @@ $(document).ready(function() {
                 this.currentView.render();
             }
             else console.debug('cant close and open the same view');
-    
         }
     }
+     
     //////////////////////////////////////////////////////
     var AppRouter = Backbone.Router.extend({
         routes:{
@@ -948,8 +1037,7 @@ $(document).ready(function() {
             });
         },
         toProduct:function(id){
-            
-              console.debug('tostatii function :routing to statii view');
+              console.debug('toproduct function :routing to product');
             ar = this;
             StackMob.isLoggedIn({
                 yes:function(username){

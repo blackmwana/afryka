@@ -171,7 +171,7 @@
                     <div class="span2"></div>
                     <div class="span10">
                     <div class="table-holder">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover .table-striped">
                             <thead>
                                 <tr>
                                     <th>Title (en)</th>
@@ -282,87 +282,6 @@
           </div>
       </div>
         </script>
-        
-        <script type="text/template" id="item-products-edit">
-            <div id="products-edit-modal" class="modal hide fade" tabindex="-1" role="dialog"
-      aria-labelledby="products-edit-label" aria-hidden="true">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h3 id="products-edit-label">Edit category</h3>
-          </div>
-          <div class="modal-body">
-           
-                 
-              <div class="container-fluid">
-              <div class="row-fluid">
-                      <div class="span4">
-                          <label  title="enter product description in english">Picture</label>
-                      </div>
-                      <div class="span6">
-                       <img class="product-modal-img" id="products-edit-picture" src="<%=picture%>"/>
-                      </div>
-                  </div>
-                  <div class="row-fluid">
-                      <div class="span4">
-                          <label for="products-edit-title_en">Title (en)</label>
-                      </div>
-                      <div class="span6">
-                          <input id="products-edit-title_en" type="text" placeholder="<%=title_en%>">
-                      </div>
-                  </div>
-                  <div class="row-fluid">
-                      <div class="span4">
-                          <label for="products-edit-title_pl">Title (pl)</label>
-                      </div>
-                      <div class="span6">
-                          <input id="products-edit-title_pl" type="text" placeholder="<%=title_pl%>">
-                      </div>
-                  </div>
-                  <div class="row-fluid">
-                      <div class="span4">
-                          <label for="products-edit-link" title="enter the link to this product on the webstore">Shop link</label>
-                      </div>
-                      <div class="span6">
-                          <input id="products-edit-link" type="text" placeholder="<%=link%>">
-                      </div>
-                  </div>
-                  <div class="row-fluid">
-                      <div class="span4">
-                          <label for="products-edit-price">Price (zl)</label>
-                      </div>
-                      <div class="span6">
-                          <input id="products-edit-price" type="text" placeholder="<%=price%>">
-                      </div>
-                  </div>
-                  <div class="row-fluid">
-                      <div class="span4">
-                          <label for="products-edit-description_en" title="enter product description in english">Description (en)</label>
-                      </div>
-                      <div class="span6">
-                      <textarea rows="4" id="products-edit-description_en" value="<%=description_en%>">
-                          </textarea>
-                      </div>
-                  </div>
-                  <div class="row-fluid">
-                      <div class="span4">
-                          <label for="products-edit-description_pl" title="enter product description in polish">Description (pl)</label>
-                      </div>
-                      <div class="span6">
-                      <textarea rows="4" id="products-edit-description_pl" value="<%=description_pl%>">
-                          </textarea>
-                      </div>
-                  </div>
-                   
-              </div>
-          </div>
-          <div class="modal-footer">
-              <button id="products-edit-btn-save" class="btn btn-primary">Save changes</button>
-              <button id="products-edit-btn-delete" class="btn btn-danger">Delete Entry</button>
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          </div>
-      </div>
-        </script>
-        
          <script type="text/template" id="item-products-new">
             <div id="products-new-modal" class="modal hide fade" tabindex="-1" role="dialog"
       aria-labelledby="products-new-label" aria-hidden="true">

@@ -732,3 +732,10 @@
 {"ts":1362754943090,"patch":[[{"diffs":[[0,"    "],[-1,"        //$('.page-sidebar').empty();//can be remove on this.class"],[0,"\r\n  "]],"start1":25409,"start2":25409,"length1":74,"length2":8}]],"length":51426,"saved":false}
 {"ts":1362754946873,"patch":[[{"diffs":[[0,"roductsview');\r\n"],[-1,"    \r\n"],[0,"            el.h"]],"start1":25393,"start2":25393,"length1":38,"length2":32}]],"length":51420,"saved":false}
 {"ts":1362755051798,"patch":[[{"diffs":[[0," = new P"],[1,"r"],[0,"oductVie"]],"start1":21781,"start2":21781,"length1":16,"length2":17}]],"length":51421,"saved":false}
+{"ts":1362755300610,"patch":[[{"diffs":[[0,"n(id){\r\n"],[-1,"            \r\n"],[0,"        "]],"start1":37241,"start2":37241,"length1":30,"length2":16}]],"length":51407,"saved":false}
+{"ts":1362755429268,"patch":[[{"diffs":[[0,"te\r\n            "],[1,"//"],[0," afrykaAdminApp."]],"start1":24341,"start2":24341,"length1":32,"length2":34}]],"length":51409,"saved":false}
+{"ts":1362755432227,"patch":[[{"diffs":[[0,"duct:function(){"],[1,"//popup"],[0,"\r\n            //"]],"start1":24303,"start2":24303,"length1":32,"length2":39}]],"length":51416,"saved":false}
+{"ts":1362755707189,"patch":[[{"diffs":[[0,"ebug('to"],[-1,"sta"],[1,"product"],[0,"tii func"]],"start1":37281,"start2":37281,"length1":19,"length2":23}]],"length":51420,"saved":false}
+{"ts":1362755709956,"patch":[[{"diffs":[[0,"oproduct"],[-1,"tii"],[0," functio"]],"start1":37288,"start2":37288,"length1":19,"length2":16}]],"length":51417,"saved":false}
+{"ts":1362755715069,"patch":[[{"diffs":[[0,"ion :routing to "],[-1,"sta"],[1,"product"],[0,"tii view');\r\n   "]],"start1":37302,"start2":37302,"length1":35,"length2":39}]],"length":51421,"saved":false}
+{"ts":1362755720142,"patch":[[{"diffs":[[0," product"],[-1,"tii view"],[0,"');\r\n   "]],"start1":37317,"start2":37317,"length1":24,"length2":16}]],"length":51413,"saved":false}
