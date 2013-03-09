@@ -870,6 +870,10 @@ $(document).ready(function() {
             this.brm = new BodyRegionManager();
             console.debug(this);
         },
+        activeNav:function(newClass){
+            $('.active').removeClass('active');
+            $(newClass).addClass('active');
+        },
         getUser:function(name){
             if(!admin){
             //console.debug('getUser:about to fetch user');
@@ -915,10 +919,10 @@ $(document).ready(function() {
         },
         main:function(){
             //check if user is logged on if user object is not there fetch it
-            $('.active').removeClass('active');
-            $('#m-home').addClass('active');
+          
             console.debug('main function :routing to main view');
             ar = this;
+            ar.activeNav('.m-home');
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -979,7 +983,7 @@ $(document).ready(function() {
             
         },
         toProducts:function(){
-             
+             ar.activeNav('.m-products');
              console.debug('toproducts function :routing to products view');
             ar = this;
             StackMob.isLoggedIn({
@@ -1101,7 +1105,7 @@ $(document).ready(function() {
             });
         },
         toCats:function(){
-             
+            ar.activeNav('.m-categories');
               console.debug('tocats function :routing to catsview');
             ar = this;
             StackMob.isLoggedIn({
@@ -1162,7 +1166,7 @@ $(document).ready(function() {
              
         },
         toStatii:function(){
-             
+            ar.activeNav('.m-statii');
             console.debug('to statii function :routing to statii view');
             ar = this;
             StackMob.isLoggedIn({
@@ -1223,7 +1227,7 @@ $(document).ready(function() {
             });
         },
         toOther:function(){
-             
+            ar.activeNav('.m-other');
               console.debug('to other function :routing to other view');
             ar = this;
             StackMob.isLoggedIn({
