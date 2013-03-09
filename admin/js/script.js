@@ -924,7 +924,7 @@ $(document).ready(function() {
           
             console.debug('main function :routing to main view');
             ar = this;
-            ar.activeNav('.m-home');
+            ar.activeNav('#m-home');
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -988,7 +988,7 @@ $(document).ready(function() {
              
             console.debug('toproducts function :routing to products view');
             ar = this;
-            ar.activeNav('.m-products');
+            ar.activeNav('#m-products');
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -1111,7 +1111,7 @@ $(document).ready(function() {
             
             console.debug('tocats function :routing to catsview');
             ar = this;
-            ar.activeNav('.m-categories');
+            ar.activeNav('#m-categories');
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -1173,7 +1173,7 @@ $(document).ready(function() {
             
             console.debug('to statii function :routing to statii view');
             ar = this;
-            ar.activeNav('.m-statii');
+            ar.activeNav('#m-statii');
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -1235,7 +1235,7 @@ $(document).ready(function() {
             
             console.debug('to other function :routing to other view');
             ar = this;
-            ar.activeNav('.m-other');
+            ar.activeNav('m-other');
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
