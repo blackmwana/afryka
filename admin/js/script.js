@@ -868,6 +868,7 @@ $(document).ready(function() {
         initialize:function(){
             this.prm = new PageRegionManager();
             this.brm = new BodyRegionManager();
+            console.debug(this);
         },
         getUser:function(name){
             if(!admin){
@@ -914,6 +915,8 @@ $(document).ready(function() {
         },
         main:function(){
             //check if user is logged on if user object is not there fetch it
+            $('.active').removeClass('active');
+            $('#m-home').addClass('active');
             console.debug('main function :routing to main view');
             ar = this;
             StackMob.isLoggedIn({
