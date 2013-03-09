@@ -873,7 +873,7 @@ $(document).ready(function() {
         activeNav:function(newClass){
             $('.active').removeClass('active');
             $(newClass).addClass('active');
-            console.debug('activated:');
+            console.debug('activated:'+newClass);
             console.debug($(newClass));
         },
         getUser:function(name){
@@ -1235,7 +1235,7 @@ $(document).ready(function() {
             
             console.debug('to other function :routing to other view');
             ar = this;
-            ar.activeNav('m-other');
+            ar.activeNav('#m-other');
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
