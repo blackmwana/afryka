@@ -832,3 +832,6 @@
 {"ts":1362870227562,"patch":[[{"diffs":[[0,"ted:'+ $"],[1,"()"],[0,");\r\n    "]],"start1":32964,"start2":32964,"length1":16,"length2":18}]],"length":54432,"saved":false}
 {"ts":1362870230646,"patch":[[{"diffs":[[0,"ed:'+ $("],[1,"n"],[0,"));\r\n   "]],"start1":32965,"start2":32965,"length1":16,"length2":17}]],"length":54433,"saved":false}
 {"ts":1362870233485,"patch":[[{"diffs":[[0,"d:'+ $(n"],[1,"ewClass"],[0,"));\r\n   "]],"start1":32966,"start2":32966,"length1":16,"length2":23}]],"length":54440,"saved":false}
+{"ts":1362870303102,"patch":[[{"diffs":[[0,"ewClass)"],[1,".to"],[0,");\r\n    "]],"start1":32974,"start2":32974,"length1":16,"length2":19}]],"length":54443,"saved":false}
+{"ts":1362870304868,"patch":[[{"diffs":[[0,"lass).to"],[1,"JS"],[0,");\r\n    "]],"start1":32977,"start2":32977,"length1":16,"length2":18}]],"length":54445,"saved":false}
+{"ts":1362870310273,"patch":[[{"diffs":[[0,"ss).toJS"],[1,"ON()"],[0,");\r\n    "]],"start1":32979,"start2":32979,"length1":16,"length2":20}]],"length":54449,"saved":false}
