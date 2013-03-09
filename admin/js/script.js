@@ -475,8 +475,9 @@ $(document).ready(function() {
                  //   this.sideBarView.delegateEvents();
                 //}       
             }
-           // afrykaAdminApp.navigate('/home',true);
-           afrykaAdminApp.prm.showView(this.homeView);
+            // afrykaAdminApp.navigate('/home',true);
+            afrykaAdminApp.prm.showView(this.homeView);
+            afrykaAdminApp.activeNav('#m-home');
         },
         goCategories: function(){
             console.debug('going cats,fetching , showing catsview');
@@ -489,6 +490,7 @@ $(document).ready(function() {
                     this.catsView.parent = this;
                     console.debug(this);
                     afrykaAdminApp.prm.showView(this.catsView);
+                    afrykaAdminApp.activeNav('#m-categories');
                 },
                 error:function(){
                     //do something
@@ -508,6 +510,7 @@ $(document).ready(function() {
                     this.statiiView = new StatiiView({collection:statii});
                     this.statiiView.parent = this;
                     afrykaAdminApp.prm.showView(this.statiiView);
+                    afrykaAdminApp.activeNav('#m-statii');
                 },
                 error:function(){
                     //do something
@@ -529,6 +532,7 @@ $(document).ready(function() {
                     this.productsView = new ProductsView({collection:products});
                     this.productsView.parent = this;
                     afrykaAdminApp.prm.showView(this.productsView);
+                    afrykaAdminApp.activeNav('#m-products');
                 },
                 error:function(){
                     //do something
@@ -578,6 +582,7 @@ $(document).ready(function() {
             this.otherView.parent = this;
            // afrykaAdminApp.navigate('/home',true);
            afrykaAdminApp.prm.showView(this.otherView);
+           afrykaAdminApp.activeNav('#m-other');
         },
         goUser:function(){
             console.debug('going jokes, showing jokesview');
@@ -924,7 +929,7 @@ $(document).ready(function() {
           
             console.debug('main function :routing to main view');
             ar = this;
-            ar.activeNav('#m-home');
+           
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -988,7 +993,7 @@ $(document).ready(function() {
              
             console.debug('toproducts function :routing to products view');
             ar = this;
-            ar.activeNav('#m-products');
+            
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -1111,7 +1116,7 @@ $(document).ready(function() {
             
             console.debug('tocats function :routing to catsview');
             ar = this;
-            ar.activeNav('#m-categories');
+            
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -1173,7 +1178,7 @@ $(document).ready(function() {
             
             console.debug('to statii function :routing to statii view');
             ar = this;
-            ar.activeNav('#m-statii');
+            
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
@@ -1235,7 +1240,7 @@ $(document).ready(function() {
             
             console.debug('to other function :routing to other view');
             ar = this;
-            ar.activeNav('#m-other');
+           
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
