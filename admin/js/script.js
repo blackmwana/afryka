@@ -284,7 +284,9 @@ $(document).ready(function() {
                 description_pl:'not set',
                 link:"http://afroeuro.istore.pl/",
                 picture:"http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/images/market.png",//change to main folder not admin
-                price:0
+                price:0,
+                categories:'not set',
+                status:'not set'
             }
         }
     })
@@ -703,7 +705,7 @@ $(document).ready(function() {
            // console.debug(ev);
             //console.debug(ev.target);
             console.debug($(ev.target).parent());
-            console.debug(this.parent)
+            console.debug(this.parent);
             //this.parent.sideBarView.goCatsEdit($(ev.target).parent().data('id'));
             this.parent.goCatsEdit($(ev.target).parent().data('id'));
             

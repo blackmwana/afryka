@@ -901,3 +901,13 @@
 {"ts":1362878564140,"patch":[[{"diffs":[[0," console"],[1,".debug()"],[0,"\r\n      "]],"start1":27630,"start2":27630,"length1":16,"length2":24}]],"length":55272,"saved":false}
 {"ts":1362878568204,"patch":[[{"diffs":[[0,"e.debug("],[1,"this"],[0,")\r\n     "]],"start1":27637,"start2":27637,"length1":16,"length2":20}]],"length":55276,"saved":false}
 {"ts":1362878571401,"patch":[[{"diffs":[[0,"bug(this"],[-1,")"],[1,".parent);"],[0,"\r\n      "]],"start1":27641,"start2":27641,"length1":17,"length2":25}]],"length":55284,"saved":false}
+{"ts":1362878970404,"patch":[[{"diffs":[[0," price:0"],[1,",\r\n                ca"],[0,"\r\n      "]],"start1":11226,"start2":11226,"length1":16,"length2":37}]],"length":55305,"saved":false}
+{"ts":1362878973851,"patch":[[{"diffs":[[0,"      ca"],[1,"tegories:"],[0,"\r\n      "]],"start1":11247,"start2":11247,"length1":16,"length2":25}]],"length":55314,"saved":false}
+{"ts":1362878977618,"patch":[[{"diffs":[[0,"egories:"],[1,"'',\r\n                "],[0,"\r\n      "]],"start1":11256,"start2":11256,"length1":16,"length2":37}]],"length":55335,"saved":false}
+{"ts":1362878981085,"patch":[[{"diffs":[[0,"                "],[1,"statii"],[0,"\r\n            }\r"]],"start1":11269,"start2":11269,"length1":32,"length2":38}]],"length":55341,"saved":false}
+{"ts":1362878983905,"patch":[[{"diffs":[[0,"      statii"],[1,":''"],[0,"\r\n          "]],"start1":11279,"start2":11279,"length1":24,"length2":27}]],"length":55344,"saved":false}
+{"ts":1362878995101,"patch":[[{"diffs":[[0,"    stat"],[-1,"ii"],[1,"us"],[0,":''\r\n   "]],"start1":11281,"start2":11281,"length1":18,"length2":18}]],"length":55344,"saved":false}
+{"ts":1362878998861,"patch":[[{"diffs":[[0,"status:'"],[1,"n"],[0,"'\r\n     "]],"start1":11285,"start2":11285,"length1":16,"length2":17}]],"length":55345,"saved":false}
+{"ts":1362879002761,"patch":[[{"diffs":[[0,"tatus:'n"],[1,"ot set"],[0,"'\r\n     "]],"start1":11286,"start2":11286,"length1":16,"length2":22}]],"length":55351,"saved":false}
+{"ts":1362879006279,"patch":[[{"diffs":[[0,"gories:'"],[1,"notset"],[0,"',\r\n    "]],"start1":11257,"start2":11257,"length1":16,"length2":22}]],"length":55357,"saved":false}
+{"ts":1362879009798,"patch":[[{"diffs":[[0,"ies:'not"],[1," "],[0,"set',\r\n "]],"start1":11260,"start2":11260,"length1":16,"length2":17}]],"length":55358,"saved":false}
