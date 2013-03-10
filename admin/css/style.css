@@ -60,6 +60,9 @@ table{
 thead{
     background-color:gray;
 }
+td img{
+    width :9;
+}
 #product-container{
     width:80%;
     margin:0 auto;
