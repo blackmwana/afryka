@@ -635,14 +635,24 @@ $(document).ready(function() {
         events:{
         },
         initialize:function(){
+            this.collection.bind('all', this.refresh,this);
             this.template=_.template($('#item-products').html());
+            this.rowTemplate= _.template($('#item-products-row').html());
         },
         render: function(){
             var el = this.$el;
             console.debug('rendering productsview');
             //$('.page-sidebar').empty();//can be remove on this.class
+            var collection = this.collection;
+            rowTemplate = this.rowTemplate;
             el.html(this.template());
+            collection.each(function(product){
+                el.find('tbody').append(rowTemplate(product.toJSON()));       
+                });
             return this;   
+        },
+        refresh:function(){
+            //refresh the catview somehowg
         } 
         
     });
@@ -693,6 +703,7 @@ $(document).ready(function() {
            // console.debug(ev);
             //console.debug(ev.target);
             console.debug($(ev.target).parent());
+            console.debug(this.parent)
             //this.parent.sideBarView.goCatsEdit($(ev.target).parent().data('id'));
             this.parent.goCatsEdit($(ev.target).parent().data('id'));
             
@@ -722,8 +733,9 @@ $(document).ready(function() {
 
         },
         initialize: function() {
-            this.template= _.template($('#item-statii').html());
-            this.rowTemplate= _.template($('#item-statii-row').html());
+            this.collection.bind('all', this.refresh,this);
+            this.template = _.template($('#item-statii').html());
+            this.rowTemplate = _.template($('#item-statii-row').html());
         },
         render: function() {
             var el=this.$el;
@@ -734,6 +746,9 @@ $(document).ready(function() {
                 el.find('tbody').append(rowTemplate(status.toJSON()));       
                 });
             return this;
+        },
+        refresh:function(){
+            //refresh the statiiview somehowg
         }
     });
     var NewProductModalView = Backbone.View.extend({
