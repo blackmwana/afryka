@@ -106,6 +106,7 @@
                                     <th>Price (zl)</th>
                                     <th>Status</th>
                                     <th>Title (pl)</th>
+                                    <th>Shop link</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -117,11 +118,12 @@
         </script>
         <script type="text/template" id="item-products-row">
             <tr data-id="<%=product_id%>">
-                <td> <%=picture%> </td><!<img src="<%=picture%>"/>-->
+                <img src="<%=picture%>"/><!--<td> <%=picture%> </td>-->
                 <td> <%=title_en%> </td>
                 <td> <%=price%></td>
                 <td> <%=status%> </td>
                 <td> <%=title_pl%> </td>
+                <td><a title="click to view shop link" href="<%=link%>">click</a> </td>
             </tr>
         </script>
         <script type="text/template" id="item-product">
