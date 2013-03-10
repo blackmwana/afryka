@@ -62,6 +62,7 @@ thead{
 }
 td img{
     width :9em;
+    margin:0 auto;
 }
 #product-container{
     width:80%;
