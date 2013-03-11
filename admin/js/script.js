@@ -463,35 +463,35 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/user/'+username,true);//maybe include user id
            // afrykaAdminApp.navigate('/',true);
         },
-        goHome: function(){
+        goHome: function(mv){//mainvew instance
             console.debug('going home, showing homeview');
-            if(!this.homeView){
+            if(!mv.homeView){
                 
             console.debug('gohome: homeview doesnt exist');
-            this.homeView = new HomeView();
-                    this.homeView.parent = this;
+            mv.homeView = new HomeView();
+                    mv.homeView.parent = mv;
             }else{
                 console.debug('gohome: homeview exists');
-                this.homeView.delegateEvents();
+                mv.homeView.delegateEvents();
                // if(this.sideBarView){
                  //   this.sideBarView.delegateEvents();
                 //}       
             }
             // afrykaAdminApp.navigate('/home',true);
-            afrykaAdminApp.prm.showView(this.homeView);
+            afrykaAdminApp.prm.showView(mv.homeView);
             afrykaAdminApp.activeNav('#m-home');
         },
-        goCategories: function(){
+        goCategories: function(mv){
             console.debug('going cats,fetching , showing catsview');
             if(!cats) 
                 cats = new Cats();
             cats.fetch({
                 success:function(){
                     console.debug('mainview,goCategories:cats have been fetched');
-                    this.catsView = new CatsView({collection:cats});
-                    this.catsView.parent = this;
-                    console.debug(this);
-                    afrykaAdminApp.prm.showView(this.catsView);
+                    mv.catsView = new CatsView({collection:cats});
+                    mv.catsView.parent = mv;
+                    console.debug(mv);
+                    afrykaAdminApp.prm.showView(mv.catsView);
                     afrykaAdminApp.activeNav('#m-categories');
                 },
                 error:function(){
@@ -502,16 +502,16 @@ $(document).ready(function() {
             });
            // afrykaAdminApp.navigate('/home',true);  
         },
-        goStatii: function(){
+        goStatii: function(mv){
             console.debug('going statii, showing statiiview');
             if(!statii) 
                 statii = new Statii();
             statii.fetch({
                 success:function(){
                     console.debug('mainview,goStatii:statii have been fetched');
-                    this.statiiView = new StatiiView({collection:statii});
-                    this.statiiView.parent = this;
-                    afrykaAdminApp.prm.showView(this.statiiView);
+                    mv.statiiView = new StatiiView({collection:statii});
+                    mv.statiiView.parent = mv;
+                    afrykaAdminApp.prm.showView(mv.statiiView);
                     afrykaAdminApp.activeNav('#m-statii');
                 },
                 error:function(){
@@ -524,16 +524,16 @@ $(document).ready(function() {
            // afrykaAdminApp.navigate('/home',true);
           // afrykaAdminApp.prm.showView(this.statiiView);
         },
-        goProducts: function(){
+        goProducts: function(mv){
             console.debug('going productlist, showing productsview');
             if(!products) 
                 products = new Products();
             products.fetch({
                 success:function(){
                     console.debug('mainview,goProducts:products have been fetched');
-                    this.productsView = new ProductsView({collection:products});
-                    this.productsView.parent = this;
-                    afrykaAdminApp.prm.showView(this.productsView);
+                    mv.productsView = new ProductsView({collection:products});
+                    mv.productsView.parent = mv;
+                    afrykaAdminApp.prm.showView(mv.productsView);
                     afrykaAdminApp.activeNav('#m-products');
                 },
                 error:function(){
@@ -546,7 +546,7 @@ $(document).ready(function() {
            // afrykaAdminApp.navigate('/home',true);
           // afrykaAdminApp.prm.showView(this.productsView);
         },
-        goProduct: function(id) {
+        goProduct: function(mv,id) {
             console.debug('going product, showing productview');
         
             // afrykaAdminApp.navigate('/home',true);
@@ -556,11 +556,11 @@ $(document).ready(function() {
                     success: function() {
                         console.debug('mainview,goProduct:products have been fetched');
                         curProd = products.get(id);//if product isnt there display error
-                        this.productView = new ProductView({
+                        mv.productView = new ProductView({
                             model: curProd
                         });
-                        this.productView.parent = this;
-                        afrykaAdminApp.prm.showView(this.productView);
+                        mv.productView.parent = mv;
+                        afrykaAdminApp.prm.showView(mv.productView);
                     },
                     error: function() {
                         //do something
@@ -571,27 +571,27 @@ $(document).ready(function() {
             }
             else {
                 curProd = products.get(id);//if product isnt there display error
-                this.productView = new ProductView({
+                mv.productView = new ProductView({
                     model: curProd
                 });
-                this.productView.parent = this;
-                afrykaAdminApp.prm.showView(this.productView);
+                mv.productView.parent = mv;
+                afrykaAdminApp.prm.showView(mv.productView);
             }
         },
-        goOther: function(){
+        goOther: function(mv){
             console.debug('going stats, showing statsview');
-            this.otherView = new OtherView();
-            this.otherView.parent = this;
+            mv.otherView = new OtherView();
+            mv.otherView.parent = mv;
            // afrykaAdminApp.navigate('/home',true);
-           afrykaAdminApp.prm.showView(this.otherView);
+           afrykaAdminApp.prm.showView(mv.otherView);
            afrykaAdminApp.activeNav('#m-other');
         },
-        goUser:function(){
+        goUser:function(mv){
             console.debug('going jokes, showing jokesview');
-            this.userView = new UserView({model:admin});
-            this.userView.parent = this;
+            mv.userView = new UserView({model:admin});
+            mv.userView.parent = mv;
             // afrykaAdminApp.navigate('/home',true);
-            afrykaAdminApp.prm.showView(this.userView);
+            afrykaAdminApp.prm.showView(mv.userView);
         },
         showUserDialogue:function(){
             console.debug('user dialog');
@@ -968,7 +968,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goHome();
+                                mainView.goHome(mainView);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -986,7 +986,7 @@ $(document).ready(function() {
                                 });}
                                 else console.debug('mainview exists');
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goHome();
+                                mainView.goHome(mainView);
                         //   return admin;
                     }
                     ////////////////////
@@ -1035,7 +1035,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goProducts();
+                                mainView.goProducts(mainView);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1050,7 +1050,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goProducts();
+                                mainView.goProducts(mainView);
                         //   return admin;
                     }
                     ////////////////////
@@ -1098,7 +1098,7 @@ $(document).ready(function() {
                                
                               
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goProduct(id);
+                                mainView.goProduct(mainView,id);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1113,7 +1113,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goProduct(id);
+                                mainView.goProduct(mainView,id);
                         //   return admin;
                     }
                     ////////////////////
@@ -1158,7 +1158,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goCategories();
+                                mainView.goCategories(mainView);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1173,7 +1173,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goCategories();
+                                mainView.goCategories(mainView);
                         //   return admin;
                     }
                     ////////////////////
@@ -1221,7 +1221,7 @@ $(document).ready(function() {
                                 });
                                // mainView.sidebarVisible=false;//reset it in case the page was refreshed
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goStatii();
+                                mainView.goStatii(mainView);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1236,7 +1236,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goStatii();
+                                mainView.goStatii(mainView);
                         //   return admin;
                     }
                     ////////////////////
@@ -1283,7 +1283,7 @@ $(document).ready(function() {
                                 });
                                // mainView.sidebarVisible=false;//reset it in case the page was refreshed
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goOther();
+                                mainView.goOther(mainView);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1298,7 +1298,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goOther();
+                                mainView.goOther(mainView);
                         //   return admin;
                     }
                     ////////////////////
@@ -1348,7 +1348,7 @@ $(document).ready(function() {
                                 });
                                // mainView.sidebarVisible=false;//reset it in case the page was refreshed
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goUser();
+                                mainView.goUser(mainView);
                             },
                             error: function() {
                                 console.debug('user  fetch error');
@@ -1363,7 +1363,7 @@ $(document).ready(function() {
                                     model: admin
                                 });
                                 ar.brm.showView(mainView); // user model to be passed into the constructor
-                                mainView.goUser();
+                                mainView.goUser(mainView);
                         //   return admin;
                     }
                     ////////////////////
