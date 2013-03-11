@@ -302,6 +302,7 @@ $(document).ready(function() {
             "keypress #username": "onEnter",
             "keypress #pass": "onEnter"
         },
+        buttonsActive:true,
         initialize: function() {
             this.template = _.template($('#item-login').html());
             this.loader=_.template($('#item-loader').html());
@@ -324,12 +325,16 @@ $(document).ready(function() {
 
         },
         validate: function() {
+            if(this.buttonsActive){
+            this.toggleButtons();
             $('#ajax-loader').show();
             var u = $('#username').val().replace(/\W/g, '');
             var p = $('#pass').val().replace(/\W/g, '');
             console.log('user: ' + u + " password: " + p);
             if (p === '' || u === '') this.loginError();
             else this.admin_login(u, p);
+            console.debug(this);
+            }
         },
         //logging in---------------------------------------------------------------
         admin_login: function(user_name, user_pass) {
@@ -348,19 +353,28 @@ $(document).ready(function() {
                     afrykaAdminApp.navigate('/home',true);
                 },
                 error: function(model, response) {
+                    this.toggleButtons();
                     console.debug(response);
                 }
             });
             console.debug(user.toJSON());
         },
         loginError: function() {
-             $('#ajax-loader').hide();
+            $('#ajax-loader').hide();
+            this.toggleButtons();
             console.debug('login error function called');
         },
         problem:function(){
+            if(this.buttonsActive){
             console.debug('having problems');//problemview on body
             afrykaAdminApp.navigate('/problem',true);
+            }
+        },
+        toggleButtons: function(){
+            $('button').toggleClass('disabled',this.buttonsActive);
+            this.buttonsActive=!this.buttonsActive;
         }
+        
     });
     var ProblemView = Backbone.View.extend({
         el: 'body',
