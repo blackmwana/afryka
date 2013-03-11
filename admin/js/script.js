@@ -312,7 +312,7 @@ $(document).ready(function() {
             var el = this.$el;
          //   el.empty();
             el.append(this.template());
-            //el.append(this.loader());
+            el.append(this.loader());
             return this;
         },
         onEnter: function(e) {
