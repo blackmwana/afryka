@@ -408,6 +408,7 @@ $(document).ready(function() {
             this.model = this.options.model;
             this.model.bind('all', this.refresh,this);
             this.template=_.template($('#item-main').html());
+            this.loader=_.template($('#item-loader').html());
             //this.add_cat_template=_.template($('#item-add').html);//same for editting
             //this.add_user_template=_.template($('#item-add').html);//same for editing
             //this.add_joke_template=_.template($('#item-add').html);//same for editing
@@ -423,6 +424,7 @@ $(document).ready(function() {
                 //maybe check to see if email exists
                 return get_gravatar(admin.toJSON().email,80);
             });
+            el.append(this.loader());
             //this.sidebarVisible=false;
             //removing this next part to implement region managers
             //this.homeView = new HomeView();

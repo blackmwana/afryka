@@ -7,6 +7,21 @@
     margin: 0 auto;
     padding:4em;
 }
+#ajax-loader{
+    /*display:none;*/
+    position:absolute;
+    opacity:0.5;
+    width:10%;
+    height:10%;
+    top:40%;
+    left:40%;
+}
+#ajax-loader img{
+    /*display:none;*/
+    width:80%;
+    margin:0 auto;
+    height:30%;
+}
 .nav a{
     cursor:pointer;
 }
