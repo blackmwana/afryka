@@ -455,39 +455,39 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/',true);
         },
         navHome:function(){
-            $('#ajax-loader').show();
+          //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/home',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navProducts:function(){
-            $('#ajax-loader').show();
+           // $('#ajax-loader').show();
             afrykaAdminApp.navigate('/products',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navProduct:function(id){//maybe not necessary
         //get id of clicked item
-            $('#ajax-loader').show();
+         //   $('#ajax-loader').show();
             afrykaAdminApp.navigate('/product/'+id,true);
            // afrykaAdminApp.navigate('/',true);
         },
         navCategories:function(){
-            $('#ajax-loader').show();
+         //   $('#ajax-loader').show();
             afrykaAdminApp.navigate('/categories',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navOther:function(){
-            $('#ajax-loader').show();
+          //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/other',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navStatii:function(){
-            $('#ajax-loader').show();
+         //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/statii',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navUser:function(){//maybe not necessary
             //get username
-            $('#ajax-loader').show();
+          //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/user/'+username,true);//maybe include user id
            // afrykaAdminApp.navigate('/',true);
         },
@@ -978,7 +978,7 @@ $(document).ready(function() {
         },
         main:function(){
             //check if user is logged on if user object is not there fetch it
-          
+           $('#ajax-loader').show();
             console.debug('main function :routing to main view');
             ar = this;
            
@@ -1042,7 +1042,7 @@ $(document).ready(function() {
             
         },
         toProducts:function(){
-             
+             $('#ajax-loader').show();
             console.debug('toproducts function :routing to products view');
             ar = this;
             
@@ -1104,6 +1104,7 @@ $(document).ready(function() {
             });
         },
         toProduct:function(id){
+             $('#ajax-loader').show();
               console.debug('toproduct function :routing to product');
             ar = this;
             StackMob.isLoggedIn({
@@ -1165,7 +1166,7 @@ $(document).ready(function() {
             });
         },
         toCats:function(){
-            
+             $('#ajax-loader').show();
             console.debug('tocats function :routing to catsview');
             ar = this;
             
@@ -1227,7 +1228,7 @@ $(document).ready(function() {
              
         },
         toStatii:function(){
-            
+             $('#ajax-loader').show();
             console.debug('to statii function :routing to statii view');
             ar = this;
             
@@ -1289,7 +1290,7 @@ $(document).ready(function() {
             });
         },
         toOther:function(){
-            
+             $('#ajax-loader').show();
             console.debug('to other function :routing to other view');
             ar = this;
            
