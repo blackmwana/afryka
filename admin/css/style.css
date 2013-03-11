@@ -8,7 +8,7 @@
     padding:4em;
 }
 #ajax-loader{
-    /*display:none;*/
+    display:none;
     position:absolute;
     opacity:0.5;
     width:128px;

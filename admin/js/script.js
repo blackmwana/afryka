@@ -304,12 +304,14 @@ $(document).ready(function() {
         },
         initialize: function() {
             this.template = _.template($('#item-login').html());
+            this.loader=_.template($('#item-loader').html());
           //  this.render();//rendering in this.brm 
         },
         render: function() {
             var el = this.$el;
          //   el.empty();
             el.append(this.template());
+            el.append(this.loader());
             return this;
         },
         onEnter: function(e) {
@@ -322,6 +324,7 @@ $(document).ready(function() {
 
         },
         validate: function() {
+            $('#ajax-loader').show();
             var u = $('#username').val().replace(/\W/g, '');
             var p = $('#pass').val().replace(/\W/g, '');
             console.log('user: ' + u + " password: " + p);
@@ -341,6 +344,7 @@ $(document).ready(function() {
                     console.debug(model);//assign this to user object
                     
                     console.debug(' navigating to main view');
+                    
                     afrykaAdminApp.navigate('/home',true);
                 },
                 error: function(model, response) {
@@ -350,6 +354,7 @@ $(document).ready(function() {
             console.debug(user.toJSON());
         },
         loginError: function() {
+             $('#ajax-loader').hide();
             console.debug('login error function called');
         },
         problem:function(){
@@ -408,7 +413,7 @@ $(document).ready(function() {
             this.model = this.options.model;
             this.model.bind('all', this.refresh,this);
             this.template=_.template($('#item-main').html());
-            this.loader=_.template($('#item-loader').html());
+            this.loaderTemplate=_.template($('#item-loader').html());
             //this.add_cat_template=_.template($('#item-add').html);//same for editting
             //this.add_user_template=_.template($('#item-add').html);//same for editing
             //this.add_joke_template=_.template($('#item-add').html);//same for editing
@@ -424,7 +429,7 @@ $(document).ready(function() {
                 //maybe check to see if email exists
                 return get_gravatar(admin.toJSON().email,80);
             });
-            el.append(this.loader());
+            el.append(this.loaderTemplate());
             //this.sidebarVisible=false;
             //removing this next part to implement region managers
             //this.homeView = new HomeView();
@@ -436,32 +441,39 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/',true);
         },
         navHome:function(){
+            $('#ajax-loader').show();
             afrykaAdminApp.navigate('/home',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navProducts:function(){
+            $('#ajax-loader').show();
             afrykaAdminApp.navigate('/products',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navProduct:function(id){//maybe not necessary
         //get id of clicked item
+            $('#ajax-loader').show();
             afrykaAdminApp.navigate('/product/'+id,true);
            // afrykaAdminApp.navigate('/',true);
         },
         navCategories:function(){
+            $('#ajax-loader').show();
             afrykaAdminApp.navigate('/categories',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navOther:function(){
+            $('#ajax-loader').show();
             afrykaAdminApp.navigate('/other',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navStatii:function(){
+            $('#ajax-loader').show();
             afrykaAdminApp.navigate('/statii',true);
            // afrykaAdminApp.navigate('/',true);
         },
         navUser:function(){//maybe not necessary
             //get username
+            $('#ajax-loader').show();
             afrykaAdminApp.navigate('/user/'+username,true);//maybe include user id
            // afrykaAdminApp.navigate('/',true);
         },
@@ -482,6 +494,7 @@ $(document).ready(function() {
             // afrykaAdminApp.navigate('/home',true);
             afrykaAdminApp.prm.showView(mv.homeView);
             afrykaAdminApp.activeNav('#m-home');
+            $('#ajax-loader').hide();
         },
         goCategories: function(mv){
             console.debug('going cats,fetching , showing catsview');
@@ -495,6 +508,7 @@ $(document).ready(function() {
                     console.debug(mv);
                     afrykaAdminApp.prm.showView(mv.catsView);
                     afrykaAdminApp.activeNav('#m-categories');
+                    $('#ajax-loader').hide();
                 },
                 error:function(){
                     //do something
@@ -515,6 +529,7 @@ $(document).ready(function() {
                     mv.statiiView.parent = mv;
                     afrykaAdminApp.prm.showView(mv.statiiView);
                     afrykaAdminApp.activeNav('#m-statii');
+                    $('#ajax-loader').hide();
                 },
                 error:function(){
                     //do something
@@ -537,6 +552,7 @@ $(document).ready(function() {
                     mv.productsView.parent = mv;
                     afrykaAdminApp.prm.showView(mv.productsView);
                     afrykaAdminApp.activeNav('#m-products');
+                    $('#ajax-loader').hide();
                 },
                 error:function(){
                     //do something
@@ -563,6 +579,7 @@ $(document).ready(function() {
                         });
                         mv.productView.parent = mv;
                         afrykaAdminApp.prm.showView(mv.productView);
+                        $('#ajax-loader').hide();
                     },
                     error: function() {
                         //do something
@@ -587,6 +604,7 @@ $(document).ready(function() {
            // afrykaAdminApp.navigate('/home',true);
            afrykaAdminApp.prm.showView(mv.otherView);
            afrykaAdminApp.activeNav('#m-other');
+           $('#ajax-loader').hide();
         },
         goUser:function(mv){
             console.debug('going jokes, showing jokesview');
@@ -594,6 +612,7 @@ $(document).ready(function() {
             mv.userView.parent = mv;
             // afrykaAdminApp.navigate('/home',true);
             afrykaAdminApp.prm.showView(mv.userView);
+            $('#ajax-loader').hide();
         },
         showUserDialogue:function(){
             console.debug('user dialog');
