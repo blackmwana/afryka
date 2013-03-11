@@ -11,16 +11,23 @@
     /*display:none;*/
     position:absolute;
     opacity:0.5;
-    width:10%;
-    height:10%;
+    width:128px;
+    height:41%;
     top:40%;
     left:40%;
+    background-color: black;
+-webkit-border-radius: 47px;
+-moz-border-radius: 47px;
+border-radius: 47px;
 }
 #ajax-loader img{
     /*display:none;*/
     width:80%;
-    margin:0 auto;
+    /*margin:0 auto;*/
     height:30%;
+    margin-left:10%;
+    margin-top:10%;
+    
 }
 .nav a{
     cursor:pointer;
