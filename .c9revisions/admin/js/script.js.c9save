@@ -961,3 +961,4 @@
 {"ts":1363029470729,"patch":[[{"diffs":[[0,"pend(this.loader"],[1,"Template"],[0,"());\r\n          "]],"start1":16666,"start2":16666,"length1":32,"length2":40}]],"length":56315,"saved":false}
 {"ts":1363029583653,"patch":[[{"diffs":[[0,"o main view');\r\n"],[1,"                    $('#ajax-loader').hide();\r\n"],[0,"                "]],"start1":13545,"start2":13545,"length1":32,"length2":79}]],"length":56362,"saved":false}
 {"ts":1363029596845,"patch":[[{"diffs":[[0,"    "],[-1,"$('#ajax-loader').hide();"],[0,"\r\n  "]],"start1":13577,"start2":13577,"length1":33,"length2":8}]],"length":56337,"saved":false}
+{"ts":1363029811677,"patch":[[{"diffs":[[0,");\r\n            "],[1,"//"],[0,"el.append(this.l"]],"start1":12117,"start2":12117,"length1":32,"length2":34}]],"length":56339,"saved":false}
