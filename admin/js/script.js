@@ -837,7 +837,7 @@ $(document).ready(function() {
         hideAndClose:function(){
             //check for changes if changes made then prompt to save yes/no
             $('.modal').modal('hide');
-            afrykaAdminApp.mm.closeView(this);
+          /  afrykaAdminApp.mm.closeView(this);
             
         },
         onClose: function() {
