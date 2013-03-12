@@ -837,7 +837,13 @@ $(document).ready(function() {
         },
         hide:function(){
             //check for changes if changes made then prompt to save yes/no
-            $('.modal').modal('hide');
+            var r= confirm('You have unsaved data are you sure you want to leave?');
+            if (r==true){
+                $('.modal').modal('hide');
+            }
+            else{
+                //do nothing :)
+            }
             
             
         },
