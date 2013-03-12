@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Afryka shop admin</title>
+        <meta name="viewport" content="width = device-width, initial-scale=1.0">
+        <meta name="author" content="ashline m">
+        <link href="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/css/style.css" rel="stylesheet">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.8.0-bundled-min.js"></script>
+        <!--<script type=" text/javascript" src="../js/preloadjs-0.2.0.min.js"></script>-->
+        <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/js/stackmobinit.js"></script>
+       <!-- <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/js/input-control.js"></script>
+        <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/js/jquery-ui-1.10.1.custom.min.js"></script>-->
+        <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/js/script.js"></script>
+        <!--<script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/js/dialog.js"></script>-->
+        
+        <script type="text/template" id="item-login">
+            <div class="container">
+                <div class="navbar navbar-inverse">
+                        <div class="navbar-inner">
+                            <a class="brand" href="#">Afryka Shop Admin section</a>
+                        </div>
+                </div>
+                <div id="frm-login">
+                    <h2 id="login-heading">Welcome</h2>
+                    <input type="text" value='blackmwana'id= "username"class="input-block-level" placeholder="Username">
+                    <input type="password" value="@2836kumba"id="pass" class="input-block-level" placeholder="Password">
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                    <button title="click to sign in"class="btn btn-large btn-primary" id="btn-signin">Sign in</button>
+                    <button title="click if you are having problems" class="btn btn-large btn-danger" id="btn-problems">Problems?</button>
+                </div>
+            </div>
+        </script>
+        <script type="text/template" id="item-main">
+            <div class="container">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Afryka Shop <small> Admin</small> </a>
+                    <ul class="nav">
+                        <li id="m-home">
+                            <a >Home</a>
+                        </li>
+                        <li id="m-products">
+                            <a >Products</a>
+                        </li>
+                        <li id="m-categories">
+                            <a >Categories</a>
+                        </li>
+                        <li id="m-statii">
+                            <a >Statii</a>
+                        </li>
+                        <li id="m-other">
+                            <a >other</a>
+                        </li>
+                    </ul>
+                    <div id="avatar" class="pull-right">
+                        <div class="pull-right">
+                            <div class="username"><%=username%></div>
+                            <div class="logout"><small>logout</small></div>
+                        </div>
+                        <div class="pull-left" id="avatar-image">
+                            <img alt="error"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-container">
+                
+            </div>
+        </div>
+        </script>
+        <script type="text/template" id="item-problem">
+          <div>problem</div>  
+        </script>
+        <script type="text/template" id="item-user">
+            <div>user</div>  
+        </script>
+        <script type="text/template" id="item-home">
+            <div id="home-greeting">
+                <h3>Welcome</h3>
+            </div>
+            <div class="tiles" id="new-product-pane">
+                <div class="tile">
+                    <h4>Add new product<h4>
+                </div>
+            </div>
+        </script>
+        <script type="text/template" id="item-products">
+            <div class="row-fluid">
+                <div class="span2"></div>
+                <div class="span10">
+                    <div class="table-holder">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Picture</th>
+                                    <th>Title (en)</th>
+                                    <th>Price (zl)</th>
+                                    <th>Status</th>
+                                    <th>Title (pl)</th>
+                                    <th>Shop link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>   
+        </script>
+        <script type="text/template" id="item-products-row">
+            <tr data-id="<%=product_id%>">
+                <td class="product-pic"><img src="<%=picture%>"/> </td>
+                <!--<td> <%=picture%> </td>-->
+                <td> <%=title_en%> </td>
+                <td> <%=price%></td>
+                <td> <%=status%> </td>
+                <td> <%=title_pl%> </td>
+                <td><a title="click to view shop link" href="<%=link%>">click</a> </td>
+            </tr>
+        </script>
+        <script type="text/template" id="item-product">
+             <!-- <div id="product-container" >-->
+                    <div class="span10">
+                        <div class="container-fluid">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <label title="enter product description in english">Picture</label>
+                                </div>
+                                <div class="span6">
+                                    <img class="product-modal-img" id="products-edit-picture" src="<%=picture%>"
+                                    />
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <label for="products-edit-title_en">Title (en)</label>
+                                </div>
+                                <div class="span6">
+                                    <input id="products-edit-title_en" type="text" placeholder="<%=title_en%>">
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <label for="products-edit-title_pl">Title (pl)</label>
+                                </div>
+                                <div class="span6">
+                                    <input id="products-edit-title_pl" type="text" placeholder="<%=title_pl%>">
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <label for="products-edit-link" title="enter the link to this product on the webstore">Shop link</label>
+                                </div>
+                                <div class="span6">
+                                    <input id="products-edit-link" type="text" placeholder="<%=link%>">
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <label for="products-edit-price">Price (zl)</label>
+                                </div>
+                                <div class="span6">
+                                    <input id="products-edit-price" type="text" placeholder="<%=price%>">
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <label for="products-edit-description_en" title="enter product description in english">Description (en)</label>
+                                </div>
+                                <div class="span6">
+                                    <textarea rows="4" id="products-edit-description_en" value="<%=description_en%>"></textarea>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <label for="products-edit-description_pl" title="enter product description in polish">Description (pl)</label>
+                                </div>
+                                <div class="span6">
+                                    <textarea rows="4" id="products-edit-description_pl" value="<%=description_pl%>"></textarea>
+                                </div>
+                            </div>
+                            <div class="product-buttons">
+                                <button id="products-edit-btn-save" class="btn btn-primary">Save changes</button>
+                                <button id="products-edit-btn-delete" class="btn btn-danger">Delete Entry</button>
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                            </div>
+                        </div>
+                    </div>
+               <!-- </div>-->
+        </script>
+        <script type="text/template" id="item-cats">
+            <div class="row-fluid">
+                    <div class="span2"></div>
+                    <div class="span10">
+                    <div class="table-holder">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Title (en)</th>
+                                    <th>Title (pl)</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+            </div> 
+        </script>
+        <script type="text/template" id="item-cats-row">
+            <tr data-id="<%=category_id%>">
+                <td> <%=title_en%> </td>
+                <td> <%=title_pl%> </td>
+                <td> <%=count%> </td>
+            </tr>
+        </script>
+        <script type="text/template" id="item-cats-edit">
+            <div id="cats-edit-modal" class="modal hide fade" tabindex="-1" role="dialog"
+      aria-labelledby="cats-edit-label" aria-hidden="true">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="cats-edit-label">Edit category</h3>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="cats-edit-title_en">Title (en)</label>
+                      </div>
+                      <div class="span6">
+                          <input id="cats-edit-title_en" type="text" placeholder="<%=title_en%>">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="cats-edit-title_pl">Title (pl)</label>
+                      </div>
+                      <div class="span6">
+                          <input id="cats-edit-title_pl" type="text" placeholder="<%=title_pl%>">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="cats-edit-count">Count</label>
+                      </div>
+                      <div class="span6">
+                          <span>
+                              <%=count%>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button id="cats-edit-btn-save" class="btn btn-primary">Save changes</button>
+              <button id="cats-edit-btn-delete" class="btn btn-danger">Delete Entry</button>
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+      </div>
+        </script>
+        
+        <script type="text/template" id="item-cats-new">
+            <div id="cats-new-modal" class="modal hide fade" tabindex="-1" role="dialog"
+      aria-labelledby="cats-new-label" aria-hidden="true">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="cats-new-label">Edit category</h3>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="cats-new-title_en">Title (en)</label>
+                      </div>
+                      <div class="span6">
+                          <input id="cats-new-title_en" type="text" placeholder="title in english">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="cats-new-title_pl">Title (pl)</label>
+                      </div>
+                      <div class="span6">
+                          <input id="cats-new-title_pl" type="text" placeholder="title in polish">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="cats-new-count">Count</label>
+                      </div>
+                      <div class="span6">
+                          <span>
+                              0 
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button id="cats-new-btn-save" class="btn btn-primary">Save</button>
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+      </div>
+        </script>
+         <script type="text/template" id="item-products-new">
+            <div id="products-new-modal" class="modal hide fade" tabindex="-1" role="dialog"
+      aria-labelledby="products-new-label" aria-hidden="true">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="products-new-label">Add new product</h3>
+          </div>
+          <div class="modal-body">
+          <div class="row-fluid">
+                      <div class="span4">
+                          <label  title="product picture">Picture</label>
+                      </div>
+                      <div class="span6">
+                       <img class="product-modal-img" id="products-new-picture"/>/*need click to add picture image*/
+                      </div>
+                  </div>
+              <div class="container-fluid">
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="products-new-title_en">Title (en)</label>
+                      </div>
+                      <div class="span6">
+                          <input id="products-new-title_en" type="text" placeholder="enter english title">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="products-new-title_pl">Title (pl)</label>
+                      </div>
+                      <div class="span6">
+                          <input id="products-new-title_pl" type="text" placeholder=" enter polish title">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="products-new-link" title="enter the link to this product on the webstore">Shop link</label>
+                      </div>
+                      <div class="span6">
+                          <input id="products-new-link" type="text" placeholder="enter link to product page in web store">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="products-new-price">Price (zl)</label>
+                      </div>
+                      <div class="span6">
+                          <input id="products-new-price" type="text" placeholder="enter price eg (20)">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="products-new-description_en" title="enter product description in english">Description (en)</label>
+                      </div>
+                      <div class="span6">
+                      <textarea rows="4" id="products-new-description_en" placeholder="enter product description in english" >
+                          </textarea>
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="products-new-description_pl" title="enter product description in polish">Description (pl)</label>
+                      </div>
+                      <div class="span6">
+                      <textarea rows="4" id="products-new-description_pl" placeholder="enter product description in polish">
+                          </textarea>
+                      </div>
+                  </div>
+                   
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button id="products-new-btn-save" class="btn btn-primary">Save changes</button>
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+      </div>
+        </script>
+         <script type="text/template" id="item-statii-edit">
+            <div id="statii-edit-modal" class="modal hide fade" tabindex="-1" role="dialog"
+      aria-labelledby="statii-edit-label" aria-hidden="true">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="statii-edit-label">Edit status</h3>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="statii-edit-name" title="title of the status">Title</label>
+                      </div>
+                      <div class="span6">
+                          <input id="statii-edit-name" type="text" placeholder="<%=name%>">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="statii-edit-description">Description</label>
+                      </div>
+                      <div class="span6">
+                      <textarea rows="4" id="statii-edit-description" type="text" value="<%=description%>">
+                          </textarea>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button id="statii-edit-btn-save" class="btn btn-primary">Save changes</button>
+              <button id="statii-edit-btn-delete" class="btn btn-danger">Delete Entry</button>
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+      </div>
+        </script>
+        <script type="text/template" id="item-statii-new">
+            <div id="statii-new-modal" class="modal hide fade" tabindex="-1" role="dialog"
+      aria-labelledby="statii-new-label" aria-hidden="true">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="statii-new-label">Edit status</h3>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="statii-new-name" title="title of the status">Title</label>
+                      </div>
+                      <div class="span6">
+                          <input id="statii-new-name" type="text" placeholder="enter status title ">
+                      </div>
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label for="statii-new-description">Description</label>
+                      </div>
+                      <div class="span6">
+                      <textarea rows="4" id="statii-new-description" type="text" placeholder="enter status description">
+                          </textarea>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button id="statii-new-btn-save" class="btn btn-primary">Save</button>
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+      </div>
+        </script>
+        <script type="text/template" id="item-other">
+            <div>other</div>  
+        </script>
+        <script type="text/template" id="item-statii">
+            <div class="row-fluid">
+                    <div class="span2"></div>
+                    <div class="span10">
+                    <div class="table-holder">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                     
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div> 
+        </script>
+        <script type="text/template" id="item-statii-row">
+            <tr data-id="<%=status_id%>">
+                <td> <%=name%> </td>
+                <td> <%=description%> </td>
+            </tr>
+        </script>
+        <script type="text/template" id="item-loader">
+            <div id="ajax-loader">
+                <img src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/images/ajax-loader.gif"/>
+            </div>
+        </script>
+    </head>
+<body>
+        
+</body>
+    
+</html>
