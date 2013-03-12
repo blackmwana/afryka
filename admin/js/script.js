@@ -816,7 +816,8 @@ $(document).ready(function() {
     });
     var EditCategoryModalView = Backbone.View.extend({
         events: {
-            'click .modal-close':'hideAndClose'
+            'click .modal-close':'hide',
+            'hidden .modal':'justClose'
         },
         modified:false,
         initialize: function() {
@@ -834,14 +835,15 @@ $(document).ready(function() {
                 });
             return this;
         },
-        hideAndClose:function(){
+        hide:function(){
             //check for changes if changes made then prompt to save yes/no
             $('.modal').modal('hide');
-            afrykaAdminApp.mm.closeView(this);
+            
             
         },
-        onClose: function() {
+        justClose: function() {
         //    this.remove();
+            afrykaAdminApp.mm.closeView(this);
         }
            
     });
