@@ -791,3 +791,5 @@
 {"ts":1363030906903,"patch":[[{"diffs":[[0,"t>\r\n        "],[1,"<scipt type=\"text/template\" id=\"item-loader\">\r\n            <div id=\"ajax-loader\">\r\n                <img src=\"http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/images/ajax-loader.gif\"/>\r\n            </div>\r\n        </scipt>"],[0,"\r\n    </head"]],"start1":24861,"start2":24861,"length1":24,"length2":259}]],"length":25163,"saved":false}
 {"ts":1363030926230,"patch":[[{"diffs":[[0,"     <sc"],[1,"r"],[0,"ipt type"]],"start1":24868,"start2":24868,"length1":16,"length2":17}]],"length":25164,"saved":false}
 {"ts":1363030929848,"patch":[[{"diffs":[[0,"    </sc"],[1,"r"],[0,"ipt>\r\n  "]],"start1":25097,"start2":25097,"length1":16,"length2":17}]],"length":25165,"saved":false}
+{"ts":1363104832039,"patch":[[{"diffs":[[0,"\"close\" "],[-1,"data-dismiss=\"modal"],[0,"\" aria-h"]],"start1":12446,"start2":12446,"length1":35,"length2":16}]],"length":25146,"saved":false}
+{"ts":1363104834528,"patch":[[{"diffs":[[0,"\"close\" "],[-1,"\""],[0," aria-hi"]],"start1":12446,"start2":12446,"length1":17,"length2":16}]],"length":25145,"saved":false}
