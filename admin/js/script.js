@@ -816,6 +816,7 @@ $(document).ready(function() {
     });
     var EditCategoryModalView = Backbone.View.extend({
         events: {
+            'hidden .modal':'close'
         },
         initialize: function() {
             this.template = _.template($('#item-cats-edit').html());
@@ -825,8 +826,14 @@ $(document).ready(function() {
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
             $(document.body).append(this.$el);
-            $('.modal').modal('show');
+            $('.modal').modal({
+                keyboard:true,
+                show:true
+                });
             return this;
+        },
+        close:function(){
+            alert('hideen');
         },
         onClose: function() {
             this.remove();
