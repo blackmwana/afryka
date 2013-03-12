@@ -816,8 +816,9 @@ $(document).ready(function() {
     });
     var EditCategoryModalView = Backbone.View.extend({
         events: {
-            'hidden .modal':'close'
+            'click .modal-close':'hideAndClose'
         },
+        modified:false,
         initialize: function() {
             this.template = _.template($('#item-cats-edit').html());
             this.loaderTemplate=_.template($('#item-loader').html());
@@ -828,15 +829,19 @@ $(document).ready(function() {
             $(document.body).append(this.$el);
             $('.modal').modal({
                 keyboard:true,
+                backdrop: 'static',
                 show:true
                 });
             return this;
         },
-        close:function(){
-            alert('hideen');
+        hideAndCLose:function(){
+            //check for changes if changes made then prompt to save yes/no
+            $('.modal').modal('hide');
+            afrykaAdminApp.mm.closeView(this);
+            
         },
         onClose: function() {
-            this.remove();
+        //    this.remove();
         }
            
     });
