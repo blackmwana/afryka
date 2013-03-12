@@ -424,7 +424,8 @@ $(document).ready(function() {
         },
     //    sidebarVisible:false,
         initialize: function() {
-            this.model = this.options.model;
+           // this.model = this.options.model;
+           console.debug(this.model.toJSON());
             this.model.bind('all', this.refresh,this);
             this.template=_.template($('#item-main').html());
             this.loaderTemplate=_.template($('#item-loader').html());
@@ -613,7 +614,7 @@ $(document).ready(function() {
         },
         goOther: function(mv){
             console.debug('going stats, showing statsview');
-             console.debug(this);
+            console.debug(this);
             mv.otherView = new OtherView();
             mv.otherView.parent = mv;
            // afrykaAdminApp.navigate('/home',true);
@@ -632,13 +633,18 @@ $(document).ready(function() {
         showUserDialogue:function(){
             console.debug('user dialog');
         },
-        goCatsEdit:function(id){
+        goCatsEdit:function(mv,id){
             console.debug('gocatsedit:rendering dialogbox');
             console.debug(this);
             var model = cats.get(id);
             console.debug('id:'+id);
             console.debug(model);
-            var m = model.toJSON();
+            mv.editCategoryModalView 
+            var ecmv = new EditCategoryModalView({model:model});
+            mv.editCategoryModalView = ecmv; 
+            ecmv.parent = mv;
+            afrykaAdminApp.mm.showView(ecmv);
+           // var m = model.toJSON();
             
         }
     });
@@ -744,7 +750,7 @@ $(document).ready(function() {
             console.debug($(ev.target).parent());
             console.debug(this.parent);
             //this.parent.sideBarView.goCatsEdit($(ev.target).parent().data('id'));
-            this.parent.goCatsEdit($(ev.target).parent().data('id'));
+            this.parent.goCatsEdit(this.parent,$(ev.target).parent().data('id'));
             
         },
         refresh:function(){
@@ -813,6 +819,7 @@ $(document).ready(function() {
         },
         initialize: function() {
             this.template = _.template($('#item-cats-edit').html());
+            
         },
         render: function() {
             this.$el.html(this.template());
@@ -910,6 +917,14 @@ $(document).ready(function() {
             else console.debug('cant close and open the same view');
         }
     }
+    function ModalManager(){
+        this.showView = function(view){
+            view.render();
+        }
+        this.closeView= function(view){
+            view.close();
+        }
+    }
      
     //////////////////////////////////////////////////////
     var AppRouter = Backbone.Router.extend({
@@ -927,6 +942,7 @@ $(document).ready(function() {
         initialize:function(){
             this.prm = new PageRegionManager();
             this.brm = new BodyRegionManager();
+            this.mm  = new ModalManager();
             console.debug(this);
         },
         activeNav:function(newClass){
