@@ -82,6 +82,9 @@ table{
 thead{
     background-color:gray;
 }
+tr{
+    cursor:pointer;
+}
 td img{
     width :4em;
     margin:0 auto;
