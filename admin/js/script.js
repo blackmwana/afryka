@@ -819,16 +819,16 @@ $(document).ready(function() {
         },
         initialize: function() {
             this.template = _.template($('#item-cats-edit').html());
+            this.loaderTemplate=_.template($('#item-loader').html());
             
         },
         render: function() {
-            this.$el.html(this.template());
+            this.$el.html(this.template(this.model.toJSON()));
+            $(document.body).append(this.$el);
+            $('.modal').modal('show');
             return this;
         },
-        show: function() {
-            $(document.body).append(this.render().el);                
-        },
-        close: function() {
+        onClose: function() {
             this.remove();
         }
            
