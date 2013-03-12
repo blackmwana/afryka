@@ -1117,3 +1117,4 @@
 {"ts":1363107660283,"patch":[[{"diffs":[[0,"e');\r\n          "],[1,"//"],[0,"  afrykaAdminApp"]],"start1":32422,"start2":32422,"length1":32,"length2":34}]],"length":58077,"saved":false}
 {"ts":1363107728264,"patch":[[{"diffs":[[0,"e');\r\n          "],[-1,"//"],[0,"  afrykaAdminApp"]],"start1":32422,"start2":32422,"length1":34,"length2":32}]],"length":58075,"saved":false}
 {"ts":1363107746544,"patch":[[{"diffs":[[0,"');\r\n           "],[1,"//"],[0," afrykaAdminApp."]],"start1":32423,"start2":32423,"length1":32,"length2":34}]],"length":58077,"saved":false}
+{"ts":1363107897759,"patch":[[{"diffs":[[0,"');\r\n           "],[-1,"//"],[0," afrykaAdminApp."]],"start1":32423,"start2":32423,"length1":34,"length2":32}]],"length":58075,"saved":false}
