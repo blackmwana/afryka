@@ -793,3 +793,5 @@
 {"ts":1363030929848,"patch":[[{"diffs":[[0,"    </sc"],[1,"r"],[0,"ipt>\r\n  "]],"start1":25097,"start2":25097,"length1":16,"length2":17}]],"length":25165,"saved":false}
 {"ts":1363104832039,"patch":[[{"diffs":[[0,"\"close\" "],[-1,"data-dismiss=\"modal"],[0,"\" aria-h"]],"start1":12446,"start2":12446,"length1":35,"length2":16}]],"length":25146,"saved":false}
 {"ts":1363104834528,"patch":[[{"diffs":[[0,"\"close\" "],[-1,"\""],[0," aria-hi"]],"start1":12446,"start2":12446,"length1":17,"length2":16}]],"length":25145,"saved":false}
+{"ts":1363104957814,"patch":[[{"diffs":[[0,"tn\" data"],[-1,"-dismiss=\"modal\""],[0," aria-hi"]],"start1":14119,"start2":14119,"length1":32,"length2":16}]],"length":25129,"saved":false}
+{"ts":1363104962294,"patch":[[{"diffs":[[0,"ss=\"btn\""],[-1," data"],[0," aria-hi"]],"start1":14114,"start2":14114,"length1":21,"length2":16}]],"length":25124,"saved":false}
