@@ -633,6 +633,7 @@ $(document).ready(function() {
         },
         goCatsEdit:function(id){
             console.debug('gocatsedit:rendering dialogbox');
+            console.debug(this);
             var model = cats.get(id);
             console.debug('id:'+id);
             console.debug(model);
