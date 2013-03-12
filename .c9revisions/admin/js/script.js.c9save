@@ -1026,3 +1026,5 @@
 {"ts":1363099198400,"patch":[[{"diffs":[[0," console"],[1,".debug()"],[0,"\r\n      "]],"start1":25172,"start2":25172,"length1":16,"length2":24}]],"length":57007,"saved":false}
 {"ts":1363099200544,"patch":[[{"diffs":[[0,"e.debug("],[1,"this"],[0,")\r\n     "]],"start1":25179,"start2":25179,"length1":16,"length2":20}]],"length":57011,"saved":false}
 {"ts":1363099203977,"patch":[[{"diffs":[[0,"ug(this)"],[1,";"],[0,"\r\n      "]],"start1":25184,"start2":25184,"length1":16,"length2":17}]],"length":57012,"saved":false}
+{"ts":1363099433691,"patch":[[{"diffs":[[0,"g statsview');\r\n"],[1,"            \r\n"],[0,"            mv.o"]],"start1":24316,"start2":24316,"length1":32,"length2":46}]],"length":57026,"saved":false}
+{"ts":1363099437054,"patch":[[{"diffs":[[0,");\r\n            "],[1,"console.debug(this);"],[0,"\r\n            mv"]],"start1":24328,"start2":24328,"length1":32,"length2":52}]],"length":57046,"saved":false}

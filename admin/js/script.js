@@ -613,6 +613,7 @@ $(document).ready(function() {
         },
         goOther: function(mv){
             console.debug('going stats, showing statsview');
+             console.debug(this);
             mv.otherView = new OtherView();
             mv.otherView.parent = mv;
            // afrykaAdminApp.navigate('/home',true);
