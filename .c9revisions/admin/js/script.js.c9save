@@ -1157,3 +1157,4 @@
 {"ts":1363189225201,"patch":[[{"diffs":[[0,"ole.debu"],[1,"g(pl)"],[0,"\r\n      "]],"start1":33154,"start2":33154,"length1":16,"length2":21}]],"length":59040,"saved":false}
 {"ts":1363189228865,"patch":[[{"diffs":[[0,"debug(pl"],[1,".val()"],[0,")\r\n     "]],"start1":33158,"start2":33158,"length1":16,"length2":22}]],"length":59046,"saved":false}
 {"ts":1363189231353,"patch":[[{"diffs":[[0,"l.val())"],[1,";"],[0,"\r\n      "]],"start1":33165,"start2":33165,"length1":16,"length2":17}]],"length":59047,"saved":false}
+{"ts":1363189324841,"patch":[[{"diffs":[[0,"val() !="],[1,"="],[0," '' || e"]],"start1":33191,"start2":33191,"length1":16,"length2":17},{"diffs":[[0,"val() !="],[1,"="],[0," '') {\r\n"]],"start1":33210,"start2":33210,"length1":16,"length2":17}]],"length":59049,"saved":false}
