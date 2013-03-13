@@ -764,7 +764,8 @@ $(document).ready(function() {
             
         },
         refresh:function(){
-            //refresh the catview somehowg
+            //refresh the catview somehow
+            //remove
         }
     });//dialog box no need for view object
     var OtherView = Backbone.View.extend({
@@ -788,7 +789,7 @@ $(document).ready(function() {
 
         },
         initialize: function() {
-            this.collection.bind('all', this.refresh,this);
+            this.collection.bind('all', this.render,this);
             this.template = _.template($('#item-statii').html());
             this.rowTemplate = _.template($('#item-statii-row').html());
         },
@@ -796,14 +797,15 @@ $(document).ready(function() {
             var el=this.$el;
             var collection = this.collection;
             rowTemplate = this.rowTemplate;
-            el.append(this.template());
+            el.html(this.template());
             collection.each(function(status){
                 el.find('tbody').append(rowTemplate(status.toJSON()));       
                 });
             return this;
         },
         refresh:function(){
-            //refresh the statiiview somehowg
+            //refresh the statiiview somehow
+            //remove
         }
     });
     var NewProductModalView = Backbone.View.extend({
@@ -833,7 +835,7 @@ $(document).ready(function() {
         modified:false,
         initialize: function() {
             this.template = _.template($('#item-cats-edit').html());
-            this.loaderTemplate=_.template($('#item-loader').html());
+           // this.loaderTemplate=_.template($('#item-loader').html());
             
         },
         render: function() {
@@ -860,8 +862,10 @@ $(document).ready(function() {
             }
             if (this.modified) {
                 me = this;
+                $('#ajax-loader').show();
                 this.model.save(updated, {
                     success: function(model) {
+                        $('#ajax-loader').hide();
                         mainView.showAlert('success');
                         $('.modal').modal('hide');
                     },
@@ -911,20 +915,72 @@ $(document).ready(function() {
     });
     var EditStatusModalView = Backbone.View.extend({
         events: {
+            'click .modal-close':'hide',
+            'hidden .modal':'justClose',
+            'click #statii-edit-btn-save':'save'
         },
+        modified:false,
         initialize: function() {
             this.template = _.template($('#item-statii-edit').html());
         },
         render: function() {
-            this.$el.html(this.template());
+            this.$el.html(this.template(this.model.toJSON()));
+            $(document.body).append(this.$el);
+            $('.modal').modal({
+                keyboard:true,
+                backdrop: 'static',
+                show:true
+                });
             return this;
         },
         show: function() {
             $(document.body).append(this.render().el);                
         },
-        close: function() {
-            this.remove();
-        }
+        hide:function(){
+            //check for changes if changes made then prompt to save yes/no
+            nm = $('#statii-edit-name');
+            des = $('#statii-edit-description');
+           
+        if (nm.val() !== '' || des.val() !== des.data('oldcontent')) {
+            var r = confirm('You have unsaved data are you sure you want to leave?');
+            if (r == true) {
+                $('.modal').modal('hide');
+            }
+            }
+        else $('.modal').modal('hide');
+        },
+        justClose: function() {
+        //    this.remove();
+            afrykaAdminApp.mm.closeView(this);
+        },
+        save: function() {
+            var updated = {};
+            nm = $('#statii-edit-name');
+            des = $('#statii-edit-description');
+            if (nm.val() != '') {
+                updated.name = pl.val();
+                this.modified = true;
+            }
+            if (des.val() !== des.data('oldcontent')) {
+                updated.description = des.val();
+                this.modified = true;
+            }
+            if (this.modified) {
+                //me = this;
+                $('#ajax-loader').show();
+                this.model.save(updated, {
+                    success: function(model) {
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('success');
+                        $('.modal').modal('hide');
+                    },
+                    error: function(model, response) {
+                        $('.modal').modal('hide');
+                    }
+                });
+            }
+            return this;
+        },
            
     });
     var NewStatusModalView = Backbone.View.extend({

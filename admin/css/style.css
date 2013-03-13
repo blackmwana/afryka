@@ -16,9 +16,9 @@ body {
     top:40%;
     left:40%;
     background-color: black;
--webkit-border-radius: 47px;
--moz-border-radius: 47px;
-border-radius: 47px;
+    -webkit-border-radius: 47px;
+    -moz-border-radius: 47px;
+    border-radius: 47px;
 }
 #ajax-loader img{
     /*display:none;*/
@@ -34,7 +34,7 @@ border-radius: 47px;
     display:none;
     top:10%;
     left:40%;
-    width:7em;
+    width:em;
     height:2em;
 }
 .nav a{
