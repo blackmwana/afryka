@@ -861,6 +861,7 @@ $(document).ready(function() {
             //check for changes if changes made then prompt to save yes/no
             pl=$('#cats-edit-title_pl');
             en=$('#cats-edit-title_en');
+            console.debug(pl.val());
         if (pl.val() != '' || en.val() != '') {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {
