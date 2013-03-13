@@ -986,7 +986,7 @@ $(document).ready(function() {
             nm = $('#statii-edit-name');
             des = $('#statii-edit-description');
             if (nm.val() != '') {
-                updated.name = pl.val();
+                updated.name = nm.val();
                 this.modified = true;
             }
             if (des.val() !== des.data('oldcontent')) {
