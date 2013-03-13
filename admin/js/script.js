@@ -969,8 +969,6 @@ $(document).ready(function() {
             //check for changes if changes made then prompt to save yes/no
             nm = $('#statii-edit-name');
             des = $('#statii-edit-description');
-           alert('*'+des.val()+'*');
-           alert('*'+des.data('oldcontent')+'*');
         if (nm.val() !== '' || des.val() !== des.data('oldcontent')) {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {
