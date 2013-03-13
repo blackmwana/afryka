@@ -802,3 +802,5 @@
 {"ts":1363202376845,"patch":[[{"diffs":[[0,"                "],[1,"  "],[0,"<textarea rows=\""]],"start1":21506,"start2":21506,"length1":32,"length2":34}]],"length":25338,"saved":false}
 {"ts":1363202379609,"patch":[[{"diffs":[[0,"        "],[1,"      "],[0,"<%=descr"]],"start1":21635,"start2":21635,"length1":16,"length2":22},{"diffs":[[0,"cription%>\r\n"],[-1," "],[0,"            "]],"start1":21655,"start2":21655,"length1":25,"length2":24}]],"length":25343,"saved":false}
 {"ts":1363202382672,"patch":[[{"diffs":[[0,"                "],[-1," "],[0,"</textarea>\r\n   "]],"start1":21675,"start2":21675,"length1":33,"length2":32}]],"length":25342,"saved":false}
+{"ts":1363202571028,"patch":[[{"diffs":[[0,"%>\">"],[-1,"\r\n                            "],[0,"<%=d"]],"start1":21615,"start2":21615,"length1":38,"length2":8}]],"length":25312,"saved":false}
+{"ts":1363202575735,"patch":[[{"diffs":[[0,"on%>"],[-1,"\r\n                        "],[0,"</te"]],"start1":21631,"start2":21631,"length1":34,"length2":8}]],"length":25286,"saved":false}
