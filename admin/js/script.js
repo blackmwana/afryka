@@ -723,7 +723,7 @@ $(document).ready(function() {
         },
         initialize:function(){
             //this.model = this.options.model;
-            this.collection.bind('all', this.refresh,this);
+            this.collection.bind('all', this.render,this);
             this.template = _.template($('#item-cats').html());
             this.rowTemplate= _.template($('#item-cats-row').html());
         },
@@ -732,7 +732,7 @@ $(document).ready(function() {
             var collection = this.collection;
             rowTemplate = this.rowTemplate;
           //  $('.page-region-content').remove();
-            el.append(this.template());
+            el.html(this.template());
             collection.each(function(cat){
                 el.find('tbody').append(rowTemplate(cat.toJSON()));       
                 });
@@ -817,7 +817,8 @@ $(document).ready(function() {
     var EditCategoryModalView = Backbone.View.extend({
         events: {
             'click .modal-close':'hide',
-            'hidden .modal':'justClose'
+            'hidden .modal':'justClose',
+            'click #cats-edit-btn-save':'save'
         },
         modified:false,
         initialize: function() {
@@ -835,17 +836,37 @@ $(document).ready(function() {
                 });
             return this;
         },
+        save: function(){
+            var updated = {};
+        pl=$('#cats-edit-title_pl');
+        en=$('#cats-edit-title_en');
+        if(pl.val()!='') {
+            updated.title_pl=pl.val();
+            this.modified=true;
+            }
+        if(en.val()!='') {
+            updated.title_en=en.val();
+            this.modified=true;
+            }    
+        if(this.modified){    
+            this.model.save(updated,{
+                success: function(model) {
+                  
+                }
+              });
+        }
+              return this;
+        },
         hide:function(){
             //check for changes if changes made then prompt to save yes/no
-            var r= confirm('You have unsaved data are you sure you want to leave?');
-            if (r==true){
+            pl=$('#cats-edit-title_pl');
+            en=$('#cats-edit-title_en');
+        if (pl.val() != '' || en.val() != '') {
+            var r = confirm('You have unsaved data are you sure you want to leave?');
+            if (r == true) {
                 $('.modal').modal('hide');
             }
-            else{
-                //do nothing :)
-            }
-            
-            
+        }
         },
         justClose: function() {
         //    this.remove();
