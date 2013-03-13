@@ -846,31 +846,31 @@ $(document).ready(function() {
                 });
             return this;
         },
-        save: function(){
-        var updated = {};
-        pl=$('#cats-edit-title_pl');
-        en=$('#cats-edit-title_en');
-        if(pl.val()!='') {
-            updated.title_pl=pl.val();
-            this.modified=true;
+        save: function() {
+            var updated = {};
+            pl = $('#cats-edit-title_pl');
+            en = $('#cats-edit-title_en');
+            if (pl.val() != '') {
+                updated.title_pl = pl.val();
+                this.modified = true;
             }
-        if(en.val()!='') {
-            updated.title_en=en.val();
-            this.modified=true;
-            }    
-        if(this.modified){    
-            me=this;
-            this.model.save(updated,{
-                success: function(model) {
-                    mainView.showAlert('success');
-                    $('.modal').modal('hide');
-                },
-                error: function(model, response) {
-                    $('.modal').modal('hide');
-    }
-              });
-        }
-              return this;
+            if (en.val() != '') {
+                updated.title_en = en.val();
+                this.modified = true;
+            }
+            if (this.modified) {
+                me = this;
+                this.model.save(updated, {
+                    success: function(model) {
+                        mainView.showAlert('success');
+                        $('.modal').modal('hide');
+                    },
+                    error: function(model, response) {
+                        $('.modal').modal('hide');
+                    }
+                });
+            }
+            return this;
         },
         hide:function(){
             //check for changes if changes made then prompt to save yes/no
