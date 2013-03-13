@@ -29,6 +29,13 @@ border-radius: 47px;
     margin-top:10%;
     
 }
+.alert{
+    position:absolute;
+    top:10%;
+    left:40%;
+    width:4em;
+    height:2em;
+}
 .nav a{
     cursor:pointer;
 }

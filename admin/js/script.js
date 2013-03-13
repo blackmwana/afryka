@@ -646,6 +646,16 @@ $(document).ready(function() {
             afrykaAdminApp.mm.showView(ecmv);
            // var m = model.toJSON();
             
+        },
+        showAlert:function(mode){
+            switch(mode){
+                case 'success':
+                    $('.alert-success').fadeIn().delay(3000).fadeOut();
+                    break;    
+                case 'failed':
+                    $('.alert-error').fadeIn().delay(3000).fadeOut();
+                    break;
+            }       
         }
     });
     ////////////////////////////////////////////////////////
@@ -837,7 +847,7 @@ $(document).ready(function() {
             return this;
         },
         save: function(){
-            var updated = {};
+        var updated = {};
         pl=$('#cats-edit-title_pl');
         en=$('#cats-edit-title_en');
         if(pl.val()!='') {
@@ -851,7 +861,7 @@ $(document).ready(function() {
         if(this.modified){    
             this.model.save(updated,{
                 success: function(model) {
-                  
+                
                 }
               });
         }
@@ -862,12 +872,13 @@ $(document).ready(function() {
             pl=$('#cats-edit-title_pl');
             en=$('#cats-edit-title_en');
             console.debug(pl.val());
-        if (pl.val() !== '' || en.val() != '') {
+        if (pl.val() !== '' || en.val() !== '') {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {
                 $('.modal').modal('hide');
             }
-        }
+            }
+        else $('.modal').modal('hide');
         },
         justClose: function() {
         //    this.remove();
