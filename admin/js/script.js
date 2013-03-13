@@ -859,12 +859,14 @@ $(document).ready(function() {
             this.modified=true;
             }    
         if(this.modified){    
+            me=this;
             this.model.save(updated,{
                 success: function(model) {
                     mainView.showAlert('success');
+                    $('.modal').modal('hide');
                 },
                 error: function(model, response) {
-                    this.parent.showAlert('error');     
+                    $('.modal').modal('hide');
     }
               });
         }
