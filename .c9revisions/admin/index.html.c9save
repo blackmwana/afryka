@@ -804,3 +804,12 @@
 {"ts":1363202382672,"patch":[[{"diffs":[[0,"                "],[-1," "],[0,"</textarea>\r\n   "]],"start1":21675,"start2":21675,"length1":33,"length2":32}]],"length":25342,"saved":false}
 {"ts":1363202571028,"patch":[[{"diffs":[[0,"%>\">"],[-1,"\r\n                            "],[0,"<%=d"]],"start1":21615,"start2":21615,"length1":38,"length2":8}]],"length":25312,"saved":false}
 {"ts":1363202575735,"patch":[[{"diffs":[[0,"on%>"],[-1,"\r\n                        "],[0,"</te"]],"start1":21631,"start2":21631,"length1":34,"length2":8}]],"length":25286,"saved":false}
+{"ts":1363202943631,"patch":[[{"diffs":[[0,"\"close\" "],[-1,"data-dismiss=\"modal\""],[0," aria-hi"]],"start1":20632,"start2":20632,"length1":36,"length2":16}]],"length":25266,"saved":false}
+{"ts":1363202946252,"patch":[[{"diffs":[[0,"lass=\"close\""],[-1," "],[0," aria-hidden"]],"start1":20627,"start2":20627,"length1":25,"length2":24}]],"length":25265,"saved":false}
+{"ts":1363202950575,"patch":[[{"diffs":[[0,"n\" data-dismiss="],[-1,"\"modal\""],[0," aria-hidden=\"tr"]],"start1":21983,"start2":21983,"length1":39,"length2":32}]],"length":25258,"saved":false}
+{"ts":1363202953696,"patch":[[{"diffs":[[0,"s=\"btn\" "],[-1,"data-dismiss="],[0," aria-hi"]],"start1":21978,"start2":21978,"length1":29,"length2":16}]],"length":25245,"saved":false}
+{"ts":1363202958079,"patch":[[{"diffs":[[0,"ss=\"btn\""],[-1," "],[0," aria-hi"]],"start1":21977,"start2":21977,"length1":17,"length2":16}]],"length":25244,"saved":false}
+{"ts":1363202976813,"patch":[[{"diffs":[[0,"ass=\"btn"],[1," modal-"],[0,"\" aria-h"]],"start1":21976,"start2":21976,"length1":16,"length2":23}]],"length":25251,"saved":false}
+{"ts":1363202979664,"patch":[[{"diffs":[[0,"n modal-"],[1,"cl"],[0,"\" aria-h"]],"start1":21983,"start2":21983,"length1":16,"length2":18}]],"length":25253,"saved":false}
+{"ts":1363202981231,"patch":[[{"diffs":[[0,"modal-cl"],[1,"ose"],[0,"\" aria-h"]],"start1":21985,"start2":21985,"length1":16,"length2":19}]],"length":25256,"saved":false}
+{"ts":1363202995862,"patch":[[{"diffs":[[0,"class=\"close"],[1," modal-close"],[0,"\" aria-hidde"]],"start1":20626,"start2":20626,"length1":24,"length2":36}]],"length":25268,"saved":false}
