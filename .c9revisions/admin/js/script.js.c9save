@@ -1168,3 +1168,22 @@
 {"ts":1363191335259,"patch":[[{"diffs":[[0,"      $('.alert-"],[-1,"success"],[1,"failed"],[0,"').fadeIn().dela"]],"start1":25935,"start2":25935,"length1":39,"length2":38}]],"length":59454,"saved":false}
 {"ts":1363191341501,"patch":[[{"diffs":[[0,"'.alert-"],[1,"error"],[0,"failed')"]],"start1":25943,"start2":25943,"length1":16,"length2":21}]],"length":59459,"saved":false}
 {"ts":1363191345402,"patch":[[{"diffs":[[0,"rt-error"],[-1,"failed"],[0,"').fadeI"]],"start1":25948,"start2":25948,"length1":22,"length2":16}]],"length":59453,"saved":false}
+{"ts":1363191556523,"patch":[[{"diffs":[[0,"                "],[1,"    ma"],[0,"\r\n              "]],"start1":33204,"start2":33204,"length1":32,"length2":38}]],"length":59459,"saved":false}
+{"ts":1363191558570,"patch":[[{"diffs":[[0,"      ma"],[1,"in"],[0,"\r\n      "]],"start1":33218,"start2":33218,"length1":16,"length2":18}]],"length":59461,"saved":false}
+{"ts":1363191562052,"patch":[[{"diffs":[[0,"    main"],[1,"Vie"],[0,"\r\n      "]],"start1":33220,"start2":33220,"length1":16,"length2":19}]],"length":59464,"saved":false}
+{"ts":1363191565575,"patch":[[{"diffs":[[0," mainVie"],[1,"w.showAle"],[0,"\r\n      "]],"start1":33223,"start2":33223,"length1":16,"length2":25}]],"length":59473,"saved":false}
+{"ts":1363191569089,"patch":[[{"diffs":[[0,".showAle"],[1,"rt()"],[0,"\r\n      "]],"start1":33232,"start2":33232,"length1":16,"length2":20}]],"length":59477,"saved":false}
+{"ts":1363191572811,"patch":[[{"diffs":[[0,"owAlert("],[-1,")"],[1,"'');"],[0,"\r\n      "]],"start1":33235,"start2":33235,"length1":17,"length2":20}]],"length":59480,"saved":false}
+{"ts":1363191576406,"patch":[[{"diffs":[[0,"wAlert('"],[1,"success"],[0,"');\r\n   "]],"start1":33236,"start2":33236,"length1":16,"length2":23}]],"length":59487,"saved":false}
+{"ts":1363191636976,"patch":[[{"diffs":[[0,");\r\n            "],[1,"    },\r\n    error: function(model, response) {\r\n        console.debug(response);\r\n"],[0,"    }\r\n         "]],"start1":33252,"start2":33252,"length1":32,"length2":114}]],"length":59569,"saved":false}
+{"ts":1363191640922,"patch":[[{"diffs":[[0,"        },\r\n"],[1,"             "],[0,"    error: f"]],"start1":33264,"start2":33264,"length1":24,"length2":37}]],"length":59582,"saved":false}
+{"ts":1363191643289,"patch":[[{"diffs":[[0,"                "],[-1," "],[0,"error: function("]],"start1":33276,"start2":33276,"length1":33,"length2":32}]],"length":59581,"saved":false}
+{"ts":1363191648914,"patch":[[{"diffs":[[0,"l, response) {\r\n"],[1,"                "],[0,"        console."]],"start1":33312,"start2":33312,"length1":32,"length2":48}]],"length":59597,"saved":false}
+{"ts":1363191651161,"patch":[[{"diffs":[[0,"    "],[-1,"console.debug(response);"],[1," "],[0,"\r\n  "]],"start1":33348,"start2":33348,"length1":32,"length2":9}]],"length":59574,"saved":false}
+{"ts":1363191658570,"patch":[[{"diffs":[[0,"                "],[1,"mainView.showAlert('success');"],[0,"     \r\n    }\r\n  "]],"start1":33332,"start2":33332,"length1":32,"length2":62}]],"length":59604,"saved":false}
+{"ts":1363191677491,"patch":[[{"diffs":[[0,"View.showAlert('"],[-1,"su"],[1,"error"],[0,"ccess');     \r\n "]],"start1":33352,"start2":33352,"length1":34,"length2":37}]],"length":59607,"saved":false}
+{"ts":1363191679508,"patch":[[{"diffs":[[0,"t('error"],[-1,"ccess"],[0,"');     "]],"start1":33365,"start2":33365,"length1":21,"length2":16}]],"length":59602,"saved":false}
+{"ts":1363191690583,"patch":[[{"diffs":[[0,"se '"],[-1,"failed"],[1,"e"],[0,"':\r\n"]],"start1":25907,"start2":25907,"length1":14,"length2":9}]],"length":59597,"saved":false}
+{"ts":1363191693589,"patch":[[{"diffs":[[0," case 'e"],[1,"rror"],[0,"':\r\n    "]],"start1":25904,"start2":25904,"length1":16,"length2":20}]],"length":59601,"saved":false}
+{"ts":1363191910565,"patch":[[{"diffs":[[0,"            "],[-1,"mainView"],[1,"thi"],[0,".showAlert('"]],"start1":33335,"start2":33335,"length1":32,"length2":27}]],"length":59596,"saved":false}
+{"ts":1363191914108,"patch":[[{"diffs":[[0,"     thi"],[1,"s.parent"],[0,".showAle"]],"start1":33342,"start2":33342,"length1":16,"length2":24}]],"length":59604,"saved":false}

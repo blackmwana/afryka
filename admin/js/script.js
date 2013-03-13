@@ -652,7 +652,7 @@ $(document).ready(function() {
                 case 'success':
                     $('.alert-success').fadeIn().delay(3000).fadeOut();
                     break;    
-                case 'failed':
+                case 'error':
                     $('.alert-error').fadeIn().delay(3000).fadeOut();
                     break;
             }       
@@ -861,8 +861,11 @@ $(document).ready(function() {
         if(this.modified){    
             this.model.save(updated,{
                 success: function(model) {
-                
-                }
+                    mainView.showAlert('success');
+                },
+                error: function(model, response) {
+                    this.parent.showAlert('error');     
+    }
               });
         }
               return this;

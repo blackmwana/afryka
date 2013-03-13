@@ -31,9 +31,10 @@ border-radius: 47px;
 }
 .alert{
     position:absolute;
+    display:none;
     top:10%;
     left:40%;
-    width:4em;
+    width:7em;
     height:2em;
 }
 .nav a{
