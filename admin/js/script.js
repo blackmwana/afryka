@@ -639,11 +639,25 @@ $(document).ready(function() {
             var model = cats.get(id);
             console.debug('id:'+id);
             console.debug(model);
-            mv.editCategoryModalView 
+            //mv.editCategoryModalView 
             var ecmv = new EditCategoryModalView({model:model});
             mv.editCategoryModalView = ecmv; 
             ecmv.parent = mv;
             afrykaAdminApp.mm.showView(ecmv);
+           // var m = model.toJSON();
+            
+        },
+        goStatiiEdit:function(mv,id){
+            console.debug('gostatiiedit:rendering dialogbox');
+            console.debug(this);
+            var model = statii.get(id);
+            console.debug('id:'+id);
+            console.debug(model);
+            //mv.editCategoryModalView 
+            var esmv = new EditStatusModalView({model:model});
+            mv.editStatusModalView = esmv; 
+            esmv.parent = mv;
+            afrykaAdminApp.mm.showView(esmv);
            // var m = model.toJSON();
             
         },
@@ -786,7 +800,7 @@ $(document).ready(function() {
         id:"statii-content",
         className:"page-region-content ",
         events: {
-
+              "click tbody tr":"showStatEdit"
         },
         initialize: function() {
             this.collection.bind('all', this.render,this);
@@ -806,6 +820,21 @@ $(document).ready(function() {
         refresh:function(){
             //refresh the statiiview somehow
             //remove
+        },
+        showStatEdit:function(ev){
+            console.debug('showStatedit:tr clicked')
+            //if (!this.parent.sideBarView){
+              //  this.parent.sideBarView=new SideBarView();
+                //this.parent.sideBarView.parent = this.parent;
+            //}
+            console.debug($(ev.target).data('id'));
+           // console.debug(ev);
+            //console.debug(ev.target);
+            console.debug($(ev.target).parent());
+            console.debug(this.parent);
+            //this.parent.sideBarView.goCatsEdit($(ev.target).parent().data('id'));
+            this.parent.goStatiiEdit(this.parent,$(ev.target).parent().data('id'));
+            
         }
     });
     var NewProductModalView = Backbone.View.extend({
@@ -1120,7 +1149,7 @@ $(document).ready(function() {
                    // ar.getUser(username);
                     ////////////////////
                     if (!admin) {
-                        //console.debug('getUser:about to fetch user');
+                        console.debug('main:about to fetch user: '+username);
                         var user = new StackMob.User({
                             username: username
                         });
