@@ -707,7 +707,7 @@ $(document).ready(function() {
                 });
             return this;   
         },
-        goProductPage:function(){
+        goProductPage:function(ev){
             console.debug('going product page');
             console.debug($(ev.target).data('id'));
            console.debug(ev);
