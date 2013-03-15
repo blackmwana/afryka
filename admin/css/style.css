@@ -8,6 +8,7 @@ body {
     padding:4em;
 }
 #ajax-loader{
+    z-index:9999;
     display:none;
     position:absolute;
     opacity:0.5;
@@ -58,6 +59,7 @@ body {
     width: 100%;
 }
 .tile {
+    cursor:pointer;
     height: 8em;
     width: 8em;
     border: solid black 1px;

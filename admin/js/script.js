@@ -422,22 +422,14 @@ $(document).ready(function() {
             "click #m-statii":"navStatii",
             "click #avatar":"showUserDialogue"
         },
-    //    sidebarVisible:false,
         initialize: function() {
-           // this.model = this.options.model;
            console.debug(this.model.toJSON());
             this.model.bind('all', this.refresh,this);
             this.template=_.template($('#item-main').html());
             this.loaderTemplate=_.template($('#item-loader').html());
-            //this.add_cat_template=_.template($('#item-add').html);//same for editting
-            //this.add_user_template=_.template($('#item-add').html);//same for editing
-            //this.add_joke_template=_.template($('#item-add').html);//same for editing
-            //this.render();//rendering in this.brm 
-
         },
         render: function() {
             var el = this.$el;
-        //    el.empty();
             el.append(this.template(this.model.toJSON()));
             $('#avatar img').attr('src',function(){
                 //console.debug(admin.toJSON().email);
@@ -445,52 +437,32 @@ $(document).ready(function() {
                 return get_gravatar(admin.toJSON().email,80);
             });
             el.append(this.loaderTemplate());
-            //this.sidebarVisible=false;
-            //removing this next part to implement region managers
-            //this.homeView = new HomeView();
-        //    $('.view-container').append(this.homeView.render().el);
-          //  this.goHome();
             return this;
         },
         refresh:function(){
             afrykaAdminApp.navigate('/',true);
         },
         navHome:function(){
-          //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/home',true);
-           // afrykaAdminApp.navigate('/',true);
         },
         navProducts:function(){
-           // $('#ajax-loader').show();
             afrykaAdminApp.navigate('/products',true);
-           // afrykaAdminApp.navigate('/',true);
         },
-        navProduct:function(id){//maybe not necessary
-        //get id of clicked item
-         //   $('#ajax-loader').show();
+        navProduct:function(id){//maybe not necessary??
             afrykaAdminApp.navigate('/product/'+id,true);
-           // afrykaAdminApp.navigate('/',true);
         },
         navCategories:function(){
-         //   $('#ajax-loader').show();
             afrykaAdminApp.navigate('/categories',true);
-           // afrykaAdminApp.navigate('/',true);
         },
         navOther:function(){
-          //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/other',true);
-           // afrykaAdminApp.navigate('/',true);
         },
         navStatii:function(){
-         //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/statii',true);
-           // afrykaAdminApp.navigate('/',true);
         },
         navUser:function(){//maybe not necessary
             //get username
-          //  $('#ajax-loader').show();
             afrykaAdminApp.navigate('/user/'+username,true);//maybe include user id
-           // afrykaAdminApp.navigate('/',true);
         },
         goHome: function(mv){//mainvew instance
             console.debug('going home, showing homeview');
@@ -661,6 +633,20 @@ $(document).ready(function() {
            // var m = model.toJSON();
             
         },
+        goProductNew:function(mv,id){
+            console.debug('goproductsedit:rendering dialogbox');
+            console.debug(this);
+            var model = p.get(id);
+            console.debug('id:'+id);
+            console.debug(model);
+            //mv.editCategoryModalView 
+            var npmv = new NewProductModalView();
+            mv.newProductModalView = npmv; 
+            npmv.parent = mv;
+            afrykaAdminApp.mm.showView(npmv);
+           // var m = model.toJSON();
+            
+        },
         showAlert:function(mode){
             switch(mode){
                 case 'success':
@@ -702,9 +688,10 @@ $(document).ready(function() {
         id:"products-content",
         classname:"page-region-content",
         events:{
+             "click tbody tr":"goProductPage"
         },
         initialize:function(){
-            this.collection.bind('all', this.refresh,this);
+            this.collection.bind('all', this.render,this);
             this.template=_.template($('#item-products').html());
             this.rowTemplate= _.template($('#item-products-row').html());
         },
@@ -720,9 +707,27 @@ $(document).ready(function() {
                 });
             return this;   
         },
-        refresh:function(){
-            //refresh the catview somehowg
-        } 
+        goProductPage:function(){
+            console.debug('going product page');
+            console.debug($(ev.target).data('id'));
+           console.debug(ev);
+            console.debug(ev.target);
+            console.debug($(ev.target).parent());
+            console.debug(this.parent);
+             
+            this.parent.navProduct($(ev.target).parent().data('id'));
+        },
+        showProductEdit:function(ev){
+            console.debug('showproductedit:tr clicked')
+            console.debug($(ev.target).data('id'));
+           console.debug(ev);
+            console.debug(ev.target);
+            console.debug($(ev.target).parent());
+            console.debug(this.parent);
+             
+            this.parent.goProductsEdit(this.parent,$(ev.target).parent().data('id'));
+            
+        }
         
     });
     var ProductView = Backbone.View.extend({// pass in type in the options 
@@ -902,6 +907,9 @@ $(document).ready(function() {
                         $('.modal').modal('hide');
                     }
                 });
+            }
+            else{
+                alert('You havent made any changes');
             }
             return this;
         },
@@ -1270,12 +1278,6 @@ $(document).ready(function() {
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
-                    // ar.getUser(username);
-                    //get user and navigate to home
-                  //  afrykaAdminApp.navigate('/home',true)
-                    //ar.navigate('/home',true)
-                     // user model to be passed into the constructor
-                      ////////////////////
                     if (!admin) {
                         //console.debug('getUser:about to fetch user');
                         var user = new StackMob.User({
@@ -1395,11 +1397,6 @@ $(document).ready(function() {
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
-                    // ar.getUser(username);
-                    //get user and navigate to home
-                  //  afrykaAdminApp.navigate('/home',true)
-                    //ar.navigate('/home',true)
-                     ////////////////////
                     if (!admin) {
                         //console.debug('getUser:about to fetch user');
                         var user = new StackMob.User({
@@ -1522,11 +1519,6 @@ $(document).ready(function() {
             StackMob.isLoggedIn({
                 yes:function(username){
                     console.log(username+" :is logged in");
-                    // ar.getUser(username);
-                    //get user and navigate to home
-                  //  afrykaAdminApp.navigate('/home',true)
-                    //ar.navigate('/home',true)
-                     ////////////////////
                     if (!admin) {
                         //console.debug('getUser:about to fetch user');
                         var user = new StackMob.User({
