@@ -775,7 +775,7 @@ $(document).ready(function() {
                         //var fileName = theFile.name;
                         this.fName = theFile.name;
                         //var fileType = theFile.type;
-                        $('#product-edit-btn-upload').html(fname).attr({title:fname+': uploaded'}).addClass('btn-success');
+                        $('#product-edit-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
                         
                         this.fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
