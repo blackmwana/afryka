@@ -765,6 +765,9 @@ $(document).ready(function() {
             price = $('#products-edit-price').val();
             des_en = $('#products-edit-description_en').val();
             des_pl = $('#products-edit-description_pl').val();
+            base64Content=this.base64Content;
+            fType=this.fType;
+            fName=this.fName;
             if (tit_pl != '') {
                 updated.title_pl = tit_pl;
                 this.modified = true;
