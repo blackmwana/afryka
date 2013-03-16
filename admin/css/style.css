@@ -121,3 +121,6 @@ td img{
 .product-form{
     padding-top:3em;
 }
+.product-form .row-fluid:first{
+    padding-bottom:2em;
+}
