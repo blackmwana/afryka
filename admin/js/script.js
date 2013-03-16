@@ -774,7 +774,7 @@ $(document).ready(function() {
             console.debug('fType:'+this.fType);
             console.debug('fName:'+this.fName);
             console.debug('base64Content:'+this.base64Content);
-            console.debug('fieldName+'this.fieldName)
+            console.debug('fieldName:'+this.fieldName)
             if (tit_pl != '') {
                 updated.title_pl = tit_pl;
                 this.modified = true;
@@ -868,7 +868,7 @@ $(document).ready(function() {
                         $('#product-edit-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
                        
                         
-                        .fType = theFile.type;        
+                        me.fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
                         console.debug(e.target.result);
