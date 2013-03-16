@@ -578,6 +578,7 @@ $(document).ready(function() {
             }
             else {
                 curProd = products.get(id);//if product isnt there display error
+                 console.debug(curProd.toJSON());
                 mv.productView = new ProductView({
                     model: curProd
                 });
