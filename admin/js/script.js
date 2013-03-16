@@ -774,6 +774,7 @@ $(document).ready(function() {
             console.debug('fType:'+this.fType);
             console.debug('fName:'+this.fName);
             console.debug('base64Content:'+this.base64Content);
+            console.debug('fieldName+'this.fieldName)
             if (tit_pl != '') {
                 updated.title_pl = tit_pl;
                 this.modified = true;
@@ -845,7 +846,7 @@ $(document).ready(function() {
         },
         handleFileSelect: function(evt) {
             var files = evt.target.files; // FileList object
-        
+            me=this;
             // Loop through the FileList
             for (var i = 0, f; f = files[i]; i++) {
         
@@ -860,14 +861,14 @@ $(document).ready(function() {
                              We only want the "[base64 encoded data] portion, so strip out the first part
                            */
                         //var base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
-                         this.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                         me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
                         //var fileName = theFile.name;
-                        this.fName = theFile.name;
+                        me.fName = theFile.name;
                         //var fileType = theFile.type;
                         $('#product-edit-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
                        
                         
-                        this.fType = theFile.type;        
+                        .fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
                         console.debug(e.target.result);
