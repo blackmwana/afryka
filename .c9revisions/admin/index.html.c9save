@@ -865,3 +865,4 @@
 {"ts":1363451152217,"patch":[[{"diffs":[[0,"e\" id=\"p"],[1,"roduct"],[0,"-pic-upl"]],"start1":7780,"start2":7780,"length1":16,"length2":22}]],"length":25685,"saved":false}
 {"ts":1363456545930,"patch":[[{"diffs":[[0,"-upload\""],[1,"accept=\"image/jpg,image/jpeg,image/png,image/gif,image/bmp,image/tiff\""],[0,"/>\r\n    "]],"start1":7798,"start2":7798,"length1":16,"length2":86}]],"length":25755,"saved":false}
 {"ts":1363456548738,"patch":[[{"diffs":[[0,"-upload\""],[1," "],[0,"accept=\""]],"start1":7798,"start2":7798,"length1":16,"length2":17}]],"length":25756,"saved":false}
+{"ts":1363457527945,"patch":[[{"diffs":[[0,"roduct-modal-img"],[1," img-rounded"],[0,"\" id=\"products-e"]],"start1":7396,"start2":7396,"length1":32,"length2":44}]],"length":25768,"saved":false}
