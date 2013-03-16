@@ -796,6 +796,7 @@ $(document).ready(function() {
                 this.modified = true;
             }
             if (base64Content != '' && fType != '' && fName != '') {
+                alert('picture changed');
                 this.model.setBinaryFile(fieldName, fName, fType, base64Content);
                 this.modified = true;
             }
@@ -813,12 +814,13 @@ $(document).ready(function() {
                         error: function(model, response) {
                             $('#ajax-loader').hide();
                             mainView.showAlert('error');
-                            console.error();
+                            console.error(model);
                             console.error(response);
                         }
                     });
                 }
                 else {
+                    console.debug('only image changed');
                     this, model.save({
                         success: function(model) {
                             $('#ajax-loader').hide();
