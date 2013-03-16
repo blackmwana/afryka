@@ -114,6 +114,9 @@ td img{
     width:9em;
 }
 /*product page baba*/
+#product-pic-upload{
+    display:none;
+}
 .product-modal-img{
     height:12em;
     padding-bottom:1em;

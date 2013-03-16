@@ -584,6 +584,7 @@ $(document).ready(function() {
                 });
                 mv.productView.parent = mv;
                 afrykaAdminApp.prm.showView(mv.productView);
+                $('#ajax-loader').hide();
             }
         },
         goOther: function(mv){
@@ -735,7 +736,15 @@ $(document).ready(function() {
     var ProductView = Backbone.View.extend({// pass in type in the options 
         id:"product-content",
         classname:"page-region-content",
-        events:{},
+        events:{
+            'click #product-edit-btn-upload':'filePick',
+            'change #product-pic-upload':'handleFileSelect'
+        },
+        fieldName:'picture',
+        fName:'',
+        fType:'',
+        base64Content:'',
+        
         initialize:function(){
             this.template=_.template($('#item-product').html());
         },
@@ -744,7 +753,53 @@ $(document).ready(function() {
             console.debug('rendering productsview');
             el.html(this.template(this.model.toJSON()));
             return this;    
-        }
+        },
+        handleFileSelect: function(evt) {
+            var files = evt.target.files; // FileList object
+        
+            // Loop through the FileList
+            for (var i = 0, f; f = files[i]; i++) {
+        
+                var reader = new FileReader();
+        
+                // Closure to capture the file information
+                reader.onload = (function(theFile) {
+                    return function(e) {
+        
+                        /*
+                             e.target.result will return "data:image/jpeg;base64,[base64 encoded data]...".
+                             We only want the "[base64 encoded data] portion, so strip out the first part
+                           */
+                        //var base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                         this.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        //var fileName = theFile.name;
+                        this.fName = theFile.name;
+                        //var fileType = theFile.type;
+                        $('#product-edit-btn-upload').html(fname).attr({title:fname+': uploaded'}).addClass('btn-success');
+                        
+                        this.fType = theFile.type;        
+                        //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
+                        //todoInstance.save();
+        
+                    };
+                })(f);
+        
+                // Read in the file as a data URL
+                var fileContent = reader.readAsDataURL(f);
+        
+            }
+        },
+        filePick: function() {
+            // Check for the various File API support.
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                // Great success! All the File APIs are supported.
+                $('#product-pic-upload').click();
+            }
+            else {
+                 alert('Uploading Files is not fully supported in this browser please try using a modern browser.');
+            }
+             
+         }
     });
     var CatsView = Backbone.View.extend({
         id:"categories-content",
