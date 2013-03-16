@@ -1169,6 +1169,7 @@ $(document).ready(function() {
             if (this.modified) {
                 //me = this;
                 $('#ajax-loader').show();
+                console.debug(updated)
                 this.model.save(updated, {
                     success: function(model) {
                         $('#ajax-loader').hide();

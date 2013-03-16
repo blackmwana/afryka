@@ -1612,3 +1612,4 @@
 {"ts":1363462475836,"patch":[[{"diffs":[[0,"l, response) {\r\n"],[1,"                        $('#ajax-loader').hide();\r\n"],[0,"                "]],"start1":45838,"start2":45838,"length1":32,"length2":83}]],"length":69754,"saved":false}
 {"ts":1363462482928,"patch":[[{"diffs":[[0,"l, response) {\r\n"],[1,"                            $('#ajax-loader').hide();\r\n"],[0,"                "]],"start1":32138,"start2":32138,"length1":32,"length2":87}]],"length":69809,"saved":false}
 {"ts":1363462487931,"patch":[[{"diffs":[[0,"l, response) {\r\n"],[1,"                            $('#ajax-loader').hide();\r\n"],[0,"                "]],"start1":31636,"start2":31636,"length1":32,"length2":87}]],"length":69864,"saved":false}
+{"ts":1363462894568,"patch":[[{"diffs":[[0,"ader').show();\r\n"],[1,"                console.debug(updated)\r\n"],[0,"                "]],"start1":45617,"start2":45617,"length1":32,"length2":72}]],"length":69904,"saved":false}
