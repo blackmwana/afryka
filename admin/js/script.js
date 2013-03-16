@@ -286,7 +286,8 @@ $(document).ready(function() {
                 picture:"http://afrykashop.s3.amazonaws.com/images/market.png",//change to main folder not admin
                 price:'0',
                 categories:[],
-                status:
+                status:[]
+                
             }
         }
     })
