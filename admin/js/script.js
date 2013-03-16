@@ -285,8 +285,8 @@ $(document).ready(function() {
                 link:"http://afroeuro.istore.pl/",
                 picture:"http://afrykashop.s3.amazonaws.com/images/market.png",//change to main folder not admin
                 price:'0',
-                categories:{},
-                status:{}
+                categories:[],
+                status:
             }
         }
     })
