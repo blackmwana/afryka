@@ -283,10 +283,11 @@ $(document).ready(function() {
                 description_en:'not set',
                 description_pl:'not set',
                 link:"http://afroeuro.istore.pl/",
-                picture:"http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/images/market.png",//change to main folder not admin
-                price:0,
-                categories:'not set',
-                status:'not set'
+
+                picture:"http://afrykashop.s3.amazonaws.com/images/market.png",//change to main folder not admin
+                price:'0'//,
+                categories:{},
+                status:{}
             }
         }
     })
@@ -770,7 +771,7 @@ $(document).ready(function() {
             base64Content=this.base64Content;
             fType=this.fType;
             fName=this.fName;
-            fieldName=this.fieldName
+            fieldName=this.fieldName;
             console.debug(this);
             console.debug('fType:'+this.fType);
             console.debug('fName:'+this.fName);
