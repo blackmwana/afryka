@@ -811,6 +811,7 @@ $(document).ready(function() {
                             me.parent.navProducts();
                         },
                         error: function(model, response) {
+                            $('#ajax-loader').hide();
                             mainView.showAlert('error');
                         }
                     });
@@ -823,6 +824,7 @@ $(document).ready(function() {
                             me.parent.navProducts();
                         },
                         error: function(model, response) {
+                            $('#ajax-loader').hide();
                             mainView.showAlert('error');
                         }
                     });
@@ -1174,6 +1176,7 @@ $(document).ready(function() {
                         $('.modal').modal('hide');
                     },
                     error: function(model, response) {
+                        $('#ajax-loader').hide();
                         mainView.showAlert('error');
                         $('.modal').modal('hide');
                     }
