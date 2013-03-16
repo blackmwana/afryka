@@ -781,8 +781,8 @@ $(document).ready(function() {
                         this.fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
-                        console.debug(theFile.target.result);
-                        $('.product-modal-img').attr({src:theFile.target.result}).addClass('image-updated');
+                        console.debug(e.target.result);
+                        $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated');
                     };
                 })(f);
         
