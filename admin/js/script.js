@@ -813,6 +813,8 @@ $(document).ready(function() {
                         error: function(model, response) {
                             $('#ajax-loader').hide();
                             mainView.showAlert('error');
+                            console.error();
+                            console.error(response);
                         }
                     });
                 }
