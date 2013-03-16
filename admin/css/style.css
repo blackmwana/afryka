@@ -113,3 +113,11 @@ td img{
 .product-buttons button{
     width:9em;
 }
+/*product page baba*/
+.product-modal-img{
+    height:12em;
+    padding-bottom:2em;
+}
+.product-form{
+    padding-top:3em;
+}
