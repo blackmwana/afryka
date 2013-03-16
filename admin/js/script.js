@@ -742,7 +742,7 @@ $(document).ready(function() {
         render:function(){
             var el = this.$el;
             console.debug('rendering productsview');
-            el.html(this.template());
+            el.html(this.template(this.model.toJSON()));
             return this;    
         }
     });
