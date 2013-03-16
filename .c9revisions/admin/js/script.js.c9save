@@ -1392,3 +1392,5 @@
 {"ts":1363456700294,"patch":[[{"diffs":[[0,"src:theF"],[1,"ile"],[0,".target."]],"start1":30898,"start2":30898,"length1":16,"length2":19}]],"length":65266,"saved":false}
 {"ts":1363456706232,"patch":[[{"diffs":[[0,"ce.save();\r\n"],[1,"                        console.debug(reader.result);\r\n"],[0,"            "]],"start1":30832,"start2":30832,"length1":24,"length2":79}]],"length":65321,"saved":false}
 {"ts":1363456716199,"patch":[[{"diffs":[[0,"  console.debug("],[-1,"reader"],[1,"theFile.target"],[0,".result);\r\n     "]],"start1":30866,"start2":30866,"length1":38,"length2":46}]],"length":65329,"saved":false}
+{"ts":1363456815054,"patch":[[{"diffs":[[0,"        "],[-1,"//"],[0,"  var fi"]],"start1":31132,"start2":31132,"length1":18,"length2":16}]],"length":65327,"saved":false}
+{"ts":1363456824302,"patch":[[{"diffs":[[0,"            "],[-1,"var"],[0," fileContent"]],"start1":31130,"start2":31130,"length1":27,"length2":24}]],"length":65324,"saved":false}

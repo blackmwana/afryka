@@ -787,7 +787,7 @@ $(document).ready(function() {
                 })(f);
         
                 // Read in the file as a data URL
-              //  var fileContent = reader.readAsDataURL(f);
+                 fileContent = reader.readAsDataURL(f);
                 //console.debug(fileContent);
                 //console.debug(reader.result);
                  
