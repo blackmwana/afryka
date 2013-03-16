@@ -119,16 +119,16 @@ td img{
 }
 .product-modal-img{
     height:12em;
-    padding-bottom:1em;
+    margin-bottom:1em;
 }
 .image-updated{
     border: solid 2px green;
 }
 .product-form{
-    padding-top:3em;
+    margin-top:3em;
 }
 .product-form>.row-fluid:first-child{
-    padding-bottom:1.5em;
+    margin-bottom:1.5em;
 }
 #product-edit-btn-upload{
     width:50%;
