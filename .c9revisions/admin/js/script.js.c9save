@@ -1580,3 +1580,4 @@
 {"ts":1363460754310,"patch":[[{"diffs":[[0,"close':'"],[1,"goBack"],[0,"'\r\n     "]],"start1":28949,"start2":28949,"length1":16,"length2":22}]],"length":69280,"saved":false}
 {"ts":1363460870385,"patch":[[{"diffs":[[0,"ion_pl')"],[-1,";"],[0,".val();\r"]],"start1":35161,"start2":35161,"length1":17,"length2":16}]],"length":69279,"saved":false}
 {"ts":1363460890118,"patch":[[{"diffs":[[0,"pl !== d"],[-1,"e"],[0,"pl.data("]],"start1":35383,"start2":35383,"length1":17,"length2":16}]],"length":69278,"saved":false}
+{"ts":1363460943109,"patch":[[{"diffs":[[0,");\r\n            "],[1,"//"],[0,"console.debug(pl"]],"start1":35174,"start2":35174,"length1":32,"length2":34}]],"length":69280,"saved":false}
