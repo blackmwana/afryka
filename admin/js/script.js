@@ -770,7 +770,7 @@ $(document).ready(function() {
             den=$('#products-edit-description_en').data('oldcontent');;
             base64Content=this.base64Content;
             fType=this.fType;
-            fName=this.fName.replace(/\W/g, '');
+            fName=this.fName;//.replace(/\W/g, '');
             fieldName=this.fieldName;
             console.debug(this);
             console.debug('fType:'+this.fType);
