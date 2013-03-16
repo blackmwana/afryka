@@ -738,8 +738,11 @@ $(document).ready(function() {
         classname:"page-region-content",
         events:{
             'click #product-edit-btn-upload':'filePick',
-            'change #product-pic-upload':'handleFileSelect'
+            'change #product-pic-upload':'handleFileSelect',
+            'click #products-edit-btn-save':'save',
+            'click #products-edit-btn-close':'goBack'
         },
+        modified:false,
         fieldName:'picture',
         fName:'',
         fType:'',
@@ -753,6 +756,75 @@ $(document).ready(function() {
             console.debug('rendering productsview');
             el.html(this.template(this.model.toJSON()));
             return this;    
+        },
+        save: function() {
+            var updated = {};
+            tit_pl = $('#products-edit-title_pl').val();
+            tit_en = $('#products-edit-title_en').val();
+            link = $('#products-edit-link').val();
+            price = $('#products-edit-price').val();
+            des_en = $('#products-edit-description_en').val();
+            des_pl = $('#products-edit-description_pl').val();
+            if (tit_pl != '') {
+                updated.title_pl = tit_pl;
+                this.modified = true;
+            }
+            if (tit_en != '') {
+                updated.title_en = tit_en;
+                this.modified = true;
+            }
+            if (link != '') {
+                updated.link = link;
+                this.modified = true;
+            }
+            if (price != '') {
+                updated.price = price;
+                this.modified = true;
+            }
+            if (des_en != '') {
+                updated.description_en = des_en;
+                this.modified = true;
+            }
+            if (des_pl != '') {
+                updated.description_pl = des_pl;
+                this.modified = true;
+            }
+            if (base64Content != '' && fType != '' && fName != '') {
+                this.model.setBinaryFile(fieldName, fName, fType, base64Content);
+                this.modified = true;
+            }
+            if (this.modified) {
+                me = this;
+                $('#ajax-loader').show();
+                if (updated !== {}) {
+                    this.model.save(updated, {
+                        success: function(model) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('success');
+                            this.parent.navProducts();
+                        },
+                        error: function(model, response) {
+                            mainView.showAlert('error');
+                        }
+                    });
+                }
+                else {
+                    this, model.save({
+                        success: function(model) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('success');
+                            this.parent.navProducts();
+                        },
+                        error: function(model, response) {
+                            mainView.showAlert('error');
+                        }
+                    });
+                }
+            }
+            else {
+                alert('You havent made any changes');
+            }
+            return this;
         },
         handleFileSelect: function(evt) {
             var files = evt.target.files; // FileList object
@@ -803,7 +875,26 @@ $(document).ready(function() {
                  alert('Uploading Files is not fully supported in this browser please try using a modern browser.');
             }
              
-         }
+         },
+        goBack:function(){
+            //check for changes if changes made then prompt to save yes/no
+            tit_pl = $('#products-edit-title_pl').val();
+            tit_en = $('#products-edit-title_en').val();
+            link = $('#products-edit-link').val();
+            price = $('#products-edit-price').val();
+            des_en = $('#products-edit-description_en').val();
+            dpl=$('#products-edit-description_pl');
+            den=$('#products-edit-description_en');
+            des_pl = $('#products-edit-description_pl');.val();
+            console.debug(pl.val());
+        if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== den.data('oldcontent')||des_pl !== depl.data('oldcontent')) {
+            var r = confirm('You have unsaved data are you sure you want to leave?');
+            if (r == true) {
+                this.parent.navProducts();
+            }
+            }
+        else this.parent.navProducts();
+        }
     });
     var CatsView = Backbone.View.extend({
         id:"categories-content",
@@ -965,6 +1056,7 @@ $(document).ready(function() {
                         $('.modal').modal('hide');
                     },
                     error: function(model, response) {
+                        mainView.showAlert('error');
                         $('.modal').modal('hide');
                     }
                 });
@@ -1072,6 +1164,7 @@ $(document).ready(function() {
                         $('.modal').modal('hide');
                     },
                     error: function(model, response) {
+                        mainView.showAlert('error');
                         $('.modal').modal('hide');
                     }
                 });
