@@ -1371,3 +1371,11 @@
 {"ts":1363455296685,"patch":[[{"diffs":[[0,"ddClass("],[1,"'u'"],[0,");\r\n    "]],"start1":31089,"start2":31089,"length1":16,"length2":19}]],"length":65130,"saved":false}
 {"ts":1363455301191,"patch":[[{"diffs":[[0,"dClass('"],[-1,"u"],[1,"iupdated"],[0,"');\r\n   "]],"start1":31090,"start2":31090,"length1":17,"length2":24}]],"length":65137,"saved":false}
 {"ts":1363455305442,"patch":[[{"diffs":[[0,"Class('i"],[1,"mage-"],[0,"updated'"]],"start1":31091,"start2":31091,"length1":16,"length2":21}]],"length":65142,"saved":false}
+{"ts":1363455968499,"patch":[[{"diffs":[[0,"ataURL(f);\r\n"],[1,"                console.\r\n"],[0,"            "]],"start1":31011,"start2":31011,"length1":24,"length2":50}]],"length":65168,"saved":false}
+{"ts":1363455972636,"patch":[[{"diffs":[[0,"console."],[1,"debug()"],[0,"\r\n      "]],"start1":31039,"start2":31039,"length1":16,"length2":23}]],"length":65175,"saved":false}
+{"ts":1363455974857,"patch":[[{"diffs":[[0,"e.debug("],[1,"file"],[0,")\r\n     "]],"start1":31045,"start2":31045,"length1":16,"length2":20}]],"length":65179,"saved":false}
+{"ts":1363455978836,"patch":[[{"diffs":[[0,"bug(file"],[1,"content"],[0,")\r\n     "]],"start1":31049,"start2":31049,"length1":16,"length2":23}]],"length":65186,"saved":false}
+{"ts":1363455984518,"patch":[[{"diffs":[[0,"file"],[-1,"c"],[1,"C"],[0,"ontent)"],[1,";"],[0,"\r\n  "]],"start1":31053,"start2":31053,"length1":16,"length2":17}]],"length":65187,"saved":false}
+{"ts":1363455986803,"patch":[[{"diffs":[[0,"(fileContent);\r\n"],[1,"                console.debug(fileContent)\r\n"],[0,"                "]],"start1":31052,"start2":31052,"length1":32,"length2":76}]],"length":65231,"saved":false}
+{"ts":1363455990617,"patch":[[{"diffs":[[0,"eContent"],[1,".result"],[0,")\r\n     "]],"start1":31101,"start2":31101,"length1":16,"length2":23}]],"length":65238,"saved":false}
+{"ts":1363456020228,"patch":[[{"diffs":[[0,".result)"],[1,";"],[0,"\r\n      "]],"start1":31109,"start2":31109,"length1":16,"length2":17}]],"length":65239,"saved":false}

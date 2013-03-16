@@ -787,6 +787,8 @@ $(document).ready(function() {
         
                 // Read in the file as a data URL
                 var fileContent = reader.readAsDataURL(f);
+                console.debug(fileContent);
+                console.debug(fileContent.result);
                  $('.product-modal-img').attr({src:fileContent}).addClass('image-updated');
             }
         },
