@@ -1379,3 +1379,4 @@
 {"ts":1363455986803,"patch":[[{"diffs":[[0,"(fileContent);\r\n"],[1,"                console.debug(fileContent)\r\n"],[0,"                "]],"start1":31052,"start2":31052,"length1":32,"length2":76}]],"length":65231,"saved":false}
 {"ts":1363455990617,"patch":[[{"diffs":[[0,"eContent"],[1,".result"],[0,")\r\n     "]],"start1":31101,"start2":31101,"length1":16,"length2":23}]],"length":65238,"saved":false}
 {"ts":1363456020228,"patch":[[{"diffs":[[0,".result)"],[1,";"],[0,"\r\n      "]],"start1":31109,"start2":31109,"length1":16,"length2":17}]],"length":65239,"saved":false}
+{"ts":1363456143838,"patch":[[{"diffs":[[0,"e.debug("],[-1,"fileContent"],[1,"reader"],[0,".result)"]],"start1":31090,"start2":31090,"length1":27,"length2":22}]],"length":65234,"saved":false}
