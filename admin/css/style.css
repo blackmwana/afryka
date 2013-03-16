@@ -121,6 +121,9 @@ td img{
     height:12em;
     padding-bottom:1em;
 }
+.image-updated{
+    border: solid 2px green;
+}
 .product-form{
     padding-top:3em;
 }

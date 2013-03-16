@@ -776,6 +776,7 @@ $(document).ready(function() {
                         this.fName = theFile.name;
                         //var fileType = theFile.type;
                         $('#product-edit-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
+                       
                         
                         this.fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
@@ -786,7 +787,7 @@ $(document).ready(function() {
         
                 // Read in the file as a data URL
                 var fileContent = reader.readAsDataURL(f);
-        
+                 $('.product-modal-img').attr({src:fileContent}).addClass('image-updated');
             }
         },
         filePick: function() {
