@@ -772,8 +772,8 @@ $(document).ready(function() {
             fName=this.fName;
             console.debug(this);
             console.debug('fType:'+this.fType);
-            console.debug('fName:'+this.fName;);
-            console.debug('base64Content:'+this.base64Content;);
+            console.debug('fName:'+this.fName);
+            console.debug('base64Content:'+this.base64Content);
             if (tit_pl != '') {
                 updated.title_pl = tit_pl;
                 this.modified = true;
