@@ -770,6 +770,7 @@ $(document).ready(function() {
             base64Content=this.base64Content;
             fType=this.fType;
             fName=this.fName;
+            fieldName=this.fieldName
             console.debug(this);
             console.debug('fType:'+this.fType);
             console.debug('fName:'+this.fName);
