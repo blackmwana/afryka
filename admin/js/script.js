@@ -561,6 +561,7 @@ $(document).ready(function() {
                     success: function() {
                         console.debug('mainview,goProduct:products have been fetched');
                         curProd = products.get(id);//if product isnt there display error
+                        console.debug(curProd.toJSON());
                         mv.productView = new ProductView({
                             model: curProd
                         });
@@ -571,7 +572,7 @@ $(document).ready(function() {
                     error: function() {
                         //do something
                         //show alert
-                        console.debug('mainview,goProducts:products have not been fetched');
+                        console.debug('mainview,goProduct:products have not been fetched');
                     }
                 });
             }
