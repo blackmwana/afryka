@@ -885,9 +885,9 @@ $(document).ready(function() {
             des_en = $('#products-edit-description_en').val();
             dpl=$('#products-edit-description_pl');
             den=$('#products-edit-description_en');
-            des_pl = $('#products-edit-description_pl');.val();
+            des_pl = $('#products-edit-description_pl').val();
             console.debug(pl.val());
-        if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== den.data('oldcontent')||des_pl !== depl.data('oldcontent')) {
+        if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== den.data('oldcontent')||des_pl !== dpl.data('oldcontent')) {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {
                 this.parent.navProducts();
