@@ -790,7 +790,8 @@ $(document).ready(function() {
                 updated.description_en = des_en;
                 this.modified = true;
             }
-            if (des_pl != dpl {
+            if (des_pl != dpl) {
+                
                 updated.description_pl = des_pl;
                 this.modified = true;
             }
