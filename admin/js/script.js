@@ -781,15 +781,16 @@ $(document).ready(function() {
                         this.fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
-        
+                        console.debug(theFile.target.result);
+                        $('.product-modal-img').attr({src:theFile.target.result}).addClass('image-updated');
                     };
                 })(f);
         
                 // Read in the file as a data URL
-                var fileContent = reader.readAsDataURL(f);
-                console.debug(fileContent);
-                console.debug(reader.result);
-                 $('.product-modal-img').attr({src:fileContent}).addClass('image-updated');
+              //  var fileContent = reader.readAsDataURL(f);
+                //console.debug(fileContent);
+                //console.debug(reader.result);
+                 
             }
         },
         filePick: function() {
