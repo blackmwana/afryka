@@ -765,6 +765,8 @@ $(document).ready(function() {
             price = $('#products-edit-price').val();
             des_en = $('#products-edit-description_en').val();
             des_pl = $('#products-edit-description_pl').val();
+            dpl=$('#products-edit-description_pl').data('oldcontent');
+            den=$('#products-edit-description_en').data('oldcontent');;
             base64Content=this.base64Content;
             fType=this.fType;
             fName=this.fName;
@@ -784,11 +786,11 @@ $(document).ready(function() {
                 updated.price = price;
                 this.modified = true;
             }
-            if (des_en != '') {
+            if (des_en != den) {
                 updated.description_en = des_en;
                 this.modified = true;
             }
-            if (des_pl != '') {
+            if (des_pl != dpl {
                 updated.description_pl = des_pl;
                 this.modified = true;
             }
