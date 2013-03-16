@@ -797,11 +797,12 @@ $(document).ready(function() {
                 me = this;
                 $('#ajax-loader').show();
                 if (updated !== {}) {
+                    console.debug(updated)
                     this.model.save(updated, {
                         success: function(model) {
                             $('#ajax-loader').hide();
                             mainView.showAlert('success');
-                            this.parent.navProducts();
+                            me.parent.navProducts();
                         },
                         error: function(model, response) {
                             mainView.showAlert('error');
@@ -813,7 +814,7 @@ $(document).ready(function() {
                         success: function(model) {
                             $('#ajax-loader').hide();
                             mainView.showAlert('success');
-                            this.parent.navProducts();
+                            me.parent.navProducts();
                         },
                         error: function(model, response) {
                             mainView.showAlert('error');
