@@ -116,11 +116,14 @@ td img{
 /*product page baba*/
 .product-modal-img{
     height:12em;
-    padding-bottom:2em;
+    padding-bottom:1em;
 }
 .product-form{
     padding-top:3em;
 }
 .product-form>.row-fluid:first-child{
-    padding-bottom:2em;
+    padding-bottom:1.5em;
+}
+#product-edit-btn-upload{
+    width:50%;
 }
