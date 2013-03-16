@@ -1635,3 +1635,4 @@
 {"ts":1363463880351,"patch":[[{"diffs":[[0,"'only im"],[1,"a"],[0,"ge"],[1," ch"],[0,"')\r\n    "]],"start1":32042,"start2":32042,"length1":18,"length2":22}]],"length":70104,"saved":false}
 {"ts":1363463882802,"patch":[[{"diffs":[[0,"image ch"],[1,"anged"],[0,"')\r\n    "]],"start1":32048,"start2":32048,"length1":16,"length2":21}]],"length":70109,"saved":false}
 {"ts":1363463887330,"patch":[[{"diffs":[[0,"ge changed')"],[1,";"],[0,"\r\n          "]],"start1":32051,"start2":32051,"length1":24,"length2":25}]],"length":70110,"saved":false}
+{"ts":1363463997980,"patch":[[{"diffs":[[0,"me=this.fName;\r\n"],[1,"            co\r\n"],[0,"            if ("]],"start1":30079,"start2":30079,"length1":32,"length2":48}]],"length":70126,"saved":false}
