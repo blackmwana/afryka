@@ -637,12 +637,12 @@ $(document).ready(function() {
            // var m = model.toJSON();
             
         },
-        goProductNew:function(mv,id){
-            console.debug('goproductsedit:rendering dialogbox');
+        goProductNew:function(mv){
+            console.debug('goproductsnew:rendering dialogbox');
             console.debug(this);
-            var model = p.get(id);
-            console.debug('id:'+id);
-            console.debug(model);
+            //var model = p.get(id);
+            //console.debug('id:'+id);
+            //console.debug(model);
             //mv.editCategoryModalView 
             var npmv = new NewProductModalView();
             mv.newProductModalView = npmv; 
@@ -684,6 +684,7 @@ $(document).ready(function() {
         goToNewProduct:function(){//popup
             //navigate
             // afrykaAdminApp.navigate('/product/new',true);
+            this.parent.goProductNew(this.parent)
         }
     });
     var ProductsView = Backbone.View.extend({
@@ -741,7 +742,8 @@ $(document).ready(function() {
             'click #product-edit-btn-upload':'filePick',
             'change #product-pic-upload':'handleFileSelect',
             'click #products-edit-btn-save':'save',
-            'click #products-edit-btn-close':'goBack'
+            'click #products-edit-btn-close':'goBack',
+            'click #products-edit-btn-delete':'delete'
         },
         modified:false,
         fieldName:'picture',
@@ -798,12 +800,11 @@ $(document).ready(function() {
                 this.modified = true;
             }
             if (des_pl != dpl) {
-                
                 updated.description_pl = des_pl;
                 this.modified = true;
             }
             if (base64Content != '' && fType != '' && fName != '') {
-                alert('picture changed');
+                //alert('picture changed');
                 this.model.setBinaryFile(fieldName, fName, fType, base64Content);
                 this.modified = true;
             }
@@ -897,7 +898,6 @@ $(document).ready(function() {
             else {
                  alert('Uploading Files is not fully supported in this browser please try using a modern browser.');
             }
-             
          },
         goBack:function(){
             //check for changes if changes made then prompt to save yes/no
@@ -920,7 +920,27 @@ $(document).ready(function() {
             }
             }
         else this.parent.navProducts();
+        },
+        delete: function() {
+            var r = confirm('Are you sure you want to delete this product?');
+            if (r == true) {
+                $('#ajax-loader').show();
+                this.model.destroy({
+                    success: function(model) {
+                        console.debug(model.toJSON());
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('success');
+                        me.parent.navProducts();
+                    },
+                    error: function(model, response) {
+                        console.debug(response);
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('error');
+                    }
+                });
+            }
         }
+        
     });
     var CatsView = Backbone.View.extend({
         id:"categories-content",
@@ -1022,19 +1042,189 @@ $(document).ready(function() {
     });
     var NewProductModalView = Backbone.View.extend({
         events: {
+            'click #product-new-btn-upload':'filePick',
+            'change #product-new-pic-upload':'handleFileSelect',
+            'click #products-new-btn-save':'save',
+            //'click #products-edit-btn-close':'goBack',
+            'click .modal-close':'hide',
+            'hidden .modal':'justClose',
         },
+        modified:false,
+        fieldName:'picture',
+        fName:'',
+        fType:'',
+        base64Content:'',
         initialize: function() {
             this.template = _.template($('#item-products-new').html());
         },
         render: function() {
             this.$el.html(this.template());
+            $(document.body).append(this.$el);
+            $('.modal').modal({
+                keyboard:true,
+                backdrop: 'static',
+                show:true
+                });
             return this;
         },
-        show: function() {
-            $(document.body).append(this.render().el);                
+        save: function() {
+            var updated = {};
+            tit_pl = $('#products-new-title_pl').val();
+            tit_en = $('#products-new-title_en').val();
+            link = $('#products-new-link').val();
+            price = $('#products-new-price').val();
+            des_en = $('#products-new-description_en').val();
+            des_pl = $('#products-new-description_pl').val();
+            dpl = $('#products-new-description_pl').data('oldcontent');
+            den = $('#products-new-description_en').data('oldcontent');;
+            base64Content = this.base64Content;
+            fType = this.fType;
+            fName = this.fName.replace(/\W/g, '');
+            fieldName = this.fieldName;
+            if (tit_pl != '') {
+                updated.title_pl = tit_pl;
+                this.modified = true;
+            }
+            if (tit_en != '') {
+                updated.title_en = tit_en;
+                this.modified = true;
+            }
+            if (link != '') {
+                updated.link = link;
+                this.modified = true;
+            }
+            if (price != '') {
+                updated.price = price;
+                this.modified = true;
+            }
+            if (des_en != den) {
+                updated.description_en = des_en;
+                this.modified = true;
+            }
+            if (des_pl != dpl) {
+                updated.description_pl = des_pl;
+                this.modified = true;
+            }
+            if (base64Content != '' && fType != '' && fName != '') {
+                //alert('picture changed');
+                this.model.setBinaryFile(fieldName, fName, fType, base64Content);
+                this.modified = true;
+            }
+            else{//workaround because stackmob is overwriting my picture
+                //updated.picture = this.model.toJSON().picture;
+            }
+            if (this.modified) {
+                me = this;
+                $('#ajax-loader').show();
+                if (updated !== {}) {
+                    console.debug(updated)
+                    this.model.save(updated, {
+                        success: function(model) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('success');
+                            $('.modal').modal('hide');
+                        },
+                        error: function(model, response) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('error');
+                            console.error(model);
+                            console.error(response);
+                        }
+                    });
+                }
+                else {
+                    console.debug('only image changed');
+                    this, model.save({
+                        success: function(model) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('success');
+                            $('.modal').modal('hide');
+                        },
+                        error: function(model, response) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('error');
+                        }
+                    });
+                }
+            }
+            else {
+                alert('You havent made any changes');
+            }
+            return this;
         },
-        close: function() {
-            this.remove();
+        handleFileSelect: function(evt) {
+            var files = evt.target.files; // FileList object
+            me=this;
+            // Loop through the FileList
+            for (var i = 0, f; f = files[i]; i++) {
+        
+                var reader = new FileReader();
+        
+                // Closure to capture the file information
+                reader.onload = (function(theFile) {
+                    return function(e) {
+        
+                        /*
+                             e.target.result will return "data:image/jpeg;base64,[base64 encoded data]...".
+                             We only want the "[base64 encoded data] portion, so strip out the first part
+                           */
+                        //var base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                         me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        //var fileName = theFile.name;
+                        me.fName = theFile.name;
+                        //var fileType = theFile.type;
+                        $('#product-new-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
+                       
+                        
+                        me.fType = theFile.type;        
+                        //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
+                        //todoInstance.save();
+                        console.debug(e.target.result);
+                        $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated');
+                    };
+                })(f);
+        
+                // Read in the file as a data URL
+                 fileContent = reader.readAsDataURL(f);
+                //console.debug(fileContent);
+                //console.debug(reader.result);
+                 
+            }
+        },
+        filePick: function() {
+            // Check for the various File API support.
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                // Great success! All the File APIs are supported.
+                $('#product-new-pic-upload').click();
+            }
+            else {
+                 alert('Uploading Files is not fully supported in this browser please try using a modern browser.');
+            }
+         },
+        hide:function(){
+            //check for changes if changes made then prompt to save yes/no
+            tit_pl = $('#products-edit-title_pl').val();
+            tit_en = $('#products-edit-title_en').val();
+            link = $('#products-edit-link').val();
+            price = $('#products-edit-price').val();
+            des_en = $('#products-edit-description_en').val();
+            dpl=$('#products-edit-description_pl');
+            den=$('#products-edit-description_en');
+            des_pl = $('#products-edit-description_pl').val();
+            base64Content=this.base64Content;
+            fType=this.fType;
+            fName=this.fName;
+            //console.debug(pl.val());
+            if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== den.data('oldcontent')||des_pl !== dpl.data('oldcontent')) {
+                var r = confirm('You have unsaved data are you sure you want to leave?');
+                if (r == true) {
+                    $('.modal').modal('hide');
+                }
+            }
+            else $('.modal').modal('hide');
+            },
+        justClose: function() {
+            afrykaAdminApp.mm.closeView(this);
         }
            
     });
@@ -1042,13 +1232,13 @@ $(document).ready(function() {
         events: {
             'click .modal-close':'hide',
             'hidden .modal':'justClose',
-            'click #cats-edit-btn-save':'save'
+            'click #cats-edit-btn-save':'save',
+            'click #cats-edit-btn-delete','delete'
         },
         modified:false,
         initialize: function() {
             this.template = _.template($('#item-cats-edit').html());
-           // this.loaderTemplate=_.template($('#item-loader').html());
-            
+           // this.loaderTemplate=_.template($('#item-loader').html());   
         },
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
@@ -1108,6 +1298,25 @@ $(document).ready(function() {
         justClose: function() {
         //    this.remove();
             afrykaAdminApp.mm.closeView(this);
+        },
+        delete: function() {
+            var r = confirm('Are you sure you want to delete this category?');
+            if (r == true) {
+                $('#ajax-loader').show();
+                this.model.destroy({
+                    success: function(model) {
+                        console.debug(model.toJSON());
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('success');
+                        $('.modal').modal('hide');
+                    },
+                    error: function(model, response) {
+                        console.debug(response);
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('error');
+                    }
+                });
+            }
         }
            
     });
