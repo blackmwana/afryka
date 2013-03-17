@@ -1233,7 +1233,7 @@ $(document).ready(function() {
             'click .modal-close':'hide',
             'hidden .modal':'justClose',
             'click #cats-edit-btn-save':'save',
-            'click #cats-edit-btn-delete','delete'
+            'click #cats-edit-btn-delete':'delete'
         },
         modified:false,
         initialize: function() {
