@@ -930,3 +930,7 @@
 {"ts":1363552042277,"patch":[[{"diffs":[[0,"ton "],[-1,"id=\"produ "],[0,"clas"]],"start1":21185,"start2":21185,"length1":18,"length2":8}]],"length":26221,"saved":false}
 {"ts":1363558203387,"patch":[[{"diffs":[[0,"les\""],[-1," id=\"new-product-pane\""],[0,">\r\n "]],"start1":5121,"start2":5121,"length1":30,"length2":8}]],"length":26199,"saved":false}
 {"ts":1363558206814,"patch":[[{"diffs":[[0,"s=\"tile\""],[1," id=\"new-product-pane\""],[0,">\r\n     "]],"start1":5153,"start2":5153,"length1":16,"length2":38}]],"length":26221,"saved":false}
+{"ts":1363558942870,"patch":[[{"diffs":[[0,"class=\"close"],[1," modal"],[0,"\" aria-hidde"]],"start1":17203,"start2":17203,"length1":24,"length2":30}]],"length":26227,"saved":false}
+{"ts":1363558946090,"patch":[[{"diffs":[[0,"\"close modal"],[1,"-close"],[0,"\" aria-hidde"]],"start1":17209,"start2":17209,"length1":24,"length2":30}]],"length":26233,"saved":false}
+{"ts":1363558977175,"patch":[[{"diffs":[[0,"ass=\"btn"],[1," modal-c"],[0,"\" aria-h"]],"start1":21203,"start2":21203,"length1":16,"length2":24}]],"length":26241,"saved":false}
+{"ts":1363558980270,"patch":[[{"diffs":[[0," modal-c"],[1,"lose"],[0,"\" aria-h"]],"start1":21211,"start2":21211,"length1":16,"length2":20}]],"length":26245,"saved":false}
