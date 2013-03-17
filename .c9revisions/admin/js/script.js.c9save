@@ -1773,3 +1773,17 @@
 {"ts":1363558435453,"patch":[[{"diffs":[[0,"s.parent"],[1,"."],[0,"(this.pa"]],"start1":26693,"start2":26693,"length1":16,"length2":17}]],"length":79996,"saved":false}
 {"ts":1363558451653,"patch":[[{"diffs":[[0,".parent."],[1,"goProductNew"],[0,"(this.pa"]],"start1":26694,"start2":26694,"length1":16,"length2":28}]],"length":80008,"saved":false}
 {"ts":1363558745764,"patch":[[{"diffs":[[0,"-delete'"],[-1,","],[1,":"],[0,"'delete'"]],"start1":50058,"start2":50058,"length1":17,"length2":17}]],"length":80008,"saved":false}
+{"ts":1363559284875,"patch":[[{"diffs":[[0,"his);\r\n        }"],[-1,"\r\n     "],[0,"      \r\n    });\r"]],"start1":49777,"start2":49777,"length1":39,"length2":32}]],"length":80001,"saved":false}
+{"ts":1363559350139,"patch":[[{"diffs":[[0,"_pl !== "],[-1,"dpl.data('oldconten"],[0,"t')) {\r\n"]],"start1":49400,"start2":49400,"length1":35,"length2":16}]],"length":79982,"saved":false}
+{"ts":1363559355915,"patch":[[{"diffs":[[0,"_pl !== "],[-1,"t')"],[1,"''"],[0,") {\r\n   "]],"start1":49400,"start2":49400,"length1":19,"length2":18}]],"length":79981,"saved":false}
+{"ts":1363559361325,"patch":[[{"diffs":[[0,"_en !== "],[-1,"den.data('oldcontent')"],[1,"'"],[0,"||des_pl"]],"start1":49365,"start2":49365,"length1":38,"length2":17}]],"length":79960,"saved":false}
+{"ts":1363559364337,"patch":[[{"diffs":[[0,"_en !== "],[1,"'"],[0,"'||des_p"]],"start1":49365,"start2":49365,"length1":16,"length2":17}]],"length":79961,"saved":false}
+{"ts":1363559417140,"patch":[[{"diffs":[[0," = $('#products-"],[-1,"edi"],[1,"new"],[0,"t-title_pl').val"]],"start1":48643,"start2":48643,"length1":35,"length2":35}]],"length":79961,"saved":false}
+{"ts":1363559423688,"patch":[[{"diffs":[[0,"ucts-new"],[-1,"t"],[0,"-title_p"]],"start1":48654,"start2":48654,"length1":17,"length2":16},{"diffs":[[0," = $('#products-"],[1,"new"],[0,"edit-title_en')."]],"start1":48700,"start2":48700,"length1":32,"length2":35}]],"length":79963,"saved":false}
+{"ts":1363559429516,"patch":[[{"diffs":[[0,"ucts-new"],[-1,"edit"],[0,"-title_e"]],"start1":48711,"start2":48711,"length1":20,"length2":16},{"diffs":[[0," = $('#products-"],[1,"new"],[0,"edit-link').val("]],"start1":48755,"start2":48755,"length1":32,"length2":35}]],"length":79962,"saved":false}
+{"ts":1363559432313,"patch":[[{"diffs":[[0,"ucts-new"],[-1,"edit"],[0,"-link')."]],"start1":48766,"start2":48766,"length1":20,"length2":16}]],"length":79958,"saved":false}
+{"ts":1363559437524,"patch":[[{"diffs":[[0," = $('#products-"],[-1,"edit"],[1,"new"],[0,"-price').val();\r"]],"start1":48807,"start2":48807,"length1":36,"length2":35}]],"length":79957,"saved":false}
+{"ts":1363559442565,"patch":[[{"diffs":[[0," = $('#products-"],[-1,"edit"],[1,"new"],[0,"-description_en'"]],"start1":48861,"start2":48861,"length1":36,"length2":35}]],"length":79956,"saved":false}
+{"ts":1363559450212,"patch":[[{"diffs":[[0,"pl=$('#products-"],[-1,"edit"],[1,"new"],[0,"-description_pl'"]],"start1":48919,"start2":48919,"length1":36,"length2":35},{"diffs":[[0,"en=$('#products-"],[-1,"edi"],[1,"new"],[0,"t-description_en"]],"start1":48971,"start2":48971,"length1":35,"length2":35}]],"length":79955,"saved":false}
+{"ts":1363559453041,"patch":[[{"diffs":[[0,"ucts-new"],[-1,"t"],[0,"-descrip"]],"start1":48982,"start2":48982,"length1":17,"length2":16}]],"length":79954,"saved":false}
+{"ts":1363559458335,"patch":[[{"diffs":[[0," = $('#products-"],[-1,"edit"],[1,"new"],[0,"-description_pl'"]],"start1":49028,"start2":49028,"length1":36,"length2":35}]],"length":79953,"saved":false}

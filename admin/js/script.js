@@ -1203,19 +1203,19 @@ $(document).ready(function() {
          },
         hide:function(){
             //check for changes if changes made then prompt to save yes/no
-            tit_pl = $('#products-edit-title_pl').val();
-            tit_en = $('#products-edit-title_en').val();
-            link = $('#products-edit-link').val();
-            price = $('#products-edit-price').val();
-            des_en = $('#products-edit-description_en').val();
-            dpl=$('#products-edit-description_pl');
-            den=$('#products-edit-description_en');
-            des_pl = $('#products-edit-description_pl').val();
+            tit_pl = $('#products-new-title_pl').val();
+            tit_en = $('#products-new-title_en').val();
+            link = $('#products-new-link').val();
+            price = $('#products-new-price').val();
+            des_en = $('#products-new-description_en').val();
+            dpl=$('#products-new-description_pl');
+            den=$('#products-new-description_en');
+            des_pl = $('#products-new-description_pl').val();
             base64Content=this.base64Content;
             fType=this.fType;
             fName=this.fName;
             //console.debug(pl.val());
-            if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== den.data('oldcontent')||des_pl !== dpl.data('oldcontent')) {
+            if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== ''||des_pl !== '') {
                 var r = confirm('You have unsaved data are you sure you want to leave?');
                 if (r == true) {
                     $('.modal').modal('hide');
@@ -1225,8 +1225,7 @@ $(document).ready(function() {
             },
         justClose: function() {
             afrykaAdminApp.mm.closeView(this);
-        }
-           
+        }      
     });
     var EditCategoryModalView = Backbone.View.extend({
         events: {

@@ -934,3 +934,5 @@
 {"ts":1363558946090,"patch":[[{"diffs":[[0,"\"close modal"],[1,"-close"],[0,"\" aria-hidde"]],"start1":17209,"start2":17209,"length1":24,"length2":30}]],"length":26233,"saved":false}
 {"ts":1363558977175,"patch":[[{"diffs":[[0,"ass=\"btn"],[1," modal-c"],[0,"\" aria-h"]],"start1":21203,"start2":21203,"length1":16,"length2":24}]],"length":26241,"saved":false}
 {"ts":1363558980270,"patch":[[{"diffs":[[0," modal-c"],[1,"lose"],[0,"\" aria-h"]],"start1":21211,"start2":21211,"length1":16,"length2":20}]],"length":26245,"saved":false}
+{"ts":1363560019128,"patch":[[{"diffs":[[0,"sh\">"],[-1,"\r\n                          "],[0,"</te"]],"start1":20883,"start2":20883,"length1":36,"length2":8}]],"length":26217,"saved":false}
+{"ts":1363560032554,"patch":[[{"diffs":[[0,"h\" >"],[-1,"\r\n                          "],[0,"</te"]],"start1":20366,"start2":20366,"length1":36,"length2":8}]],"length":26189,"saved":false}
