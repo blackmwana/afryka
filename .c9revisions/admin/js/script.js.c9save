@@ -1653,3 +1653,4 @@
 {"ts":1363515729564,"patch":[[{"diffs":[[0,"model.to"],[1,"JSON"],[0,"\r\n      "]],"start1":31552,"start2":31552,"length1":16,"length2":20}]],"length":70547,"saved":false}
 {"ts":1363515734326,"patch":[[{"diffs":[[0,"l.toJSON"],[1,"().picture"],[0,"\r\n      "]],"start1":31556,"start2":31556,"length1":16,"length2":26}]],"length":70557,"saved":false}
 {"ts":1363515739469,"patch":[[{"diffs":[[0,"ON().picture"],[1,"."],[0,"\r\n          "]],"start1":31562,"start2":31562,"length1":24,"length2":25}]],"length":70558,"saved":false}
+{"ts":1363515825011,"patch":[[{"diffs":[[0,".picture"],[-1,"."],[1,";"],[0,"\r\n      "]],"start1":31566,"start2":31566,"length1":17,"length2":17}]],"length":70558,"saved":false}

@@ -808,7 +808,7 @@ $(document).ready(function() {
                 this.modified = true;
             }
             else{//workaround because stackmob is overwriting my picture
-                updated.picture = this.model.toJSON().picture.
+                updated.picture = this.model.toJSON().picture;
             }
             if (this.modified) {
                 me = this;
