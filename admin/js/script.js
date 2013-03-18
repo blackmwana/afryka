@@ -640,11 +640,24 @@ $(document).ready(function() {
         goProductNew:function(mv){
             console.debug('goproductsnew:rendering dialogbox');
             console.debug(this);
-            //var model = p.get(id);
-            //console.debug('id:'+id);
-            //console.debug(model);
-            //mv.editCategoryModalView 
-            var npmv = new NewProductModalView();
+            if(!products) 
+                products = new Products();
+            /*products.fetch({
+                success:function(){
+                    console.debug('mainview,goProducts:products have been fetched');
+                    mv.productsView = new ProductsView({collection:products});
+                    mv.productsView.parent = mv;
+                    afrykaAdminApp.prm.showView(mv.productsView);
+                    afrykaAdminApp.activeNav('#m-products');
+                    $('#ajax-loader').hide();
+                },
+                error:function(){
+                    //do something
+                    //show alert
+                    console.debug('mainview,goProducts:products have not been fetched');
+                }
+            });*/
+            var npmv = new NewProductModalView({collection:products});
             mv.newProductModalView = npmv; 
             npmv.parent = mv;
             afrykaAdminApp.mm.showView(npmv);
@@ -1068,46 +1081,47 @@ $(document).ready(function() {
             return this;
         },
         save: function() {
-            var updated = {};
+            var newProduct = new Product();
+            var collection=this.collection;
             tit_pl = $('#products-new-title_pl').val();
             tit_en = $('#products-new-title_en').val();
             link = $('#products-new-link').val();
             price = $('#products-new-price').val();
             des_en = $('#products-new-description_en').val();
             des_pl = $('#products-new-description_pl').val();
-            dpl = $('#products-new-description_pl').data('oldcontent');
-            den = $('#products-new-description_en').data('oldcontent');;
+            dpl = $('#products-new-description_pl').val();
+            den = $('#products-new-description_en').val();;
             base64Content = this.base64Content;
             fType = this.fType;
             fName = this.fName.replace(/\W/g, '');
             fieldName = this.fieldName;
             if (tit_pl != '') {
-                updated.title_pl = tit_pl;
+                newProduct.set({title_pl:tit_pl});
                 this.modified = true;
             }
             if (tit_en != '') {
-                updated.title_en = tit_en;
+                newProduct.set({title_en:tit_en});
                 this.modified = true;
             }
             if (link != '') {
-                updated.link = link;
+                newProduct.set({link:link});
                 this.modified = true;
             }
             if (price != '') {
-                updated.price = price;
+                newProduct.set({price:price});
                 this.modified = true;
             }
-            if (des_en != den) {
-                updated.description_en = des_en;
+            if (des_en != '') {
+                newProduct.set({description_en:des_en});
                 this.modified = true;
             }
-            if (des_pl != dpl) {
-                updated.description_pl = des_pl;
+            if (des_pl != '') {
+                newProduct.set({description_pl:des_pl});
                 this.modified = true;
             }
             if (base64Content != '' && fType != '' && fName != '') {
                 //alert('picture changed');
-                this.model.setBinaryFile(fieldName, fName, fType, base64Content);
+                newProduct.setBinaryFile(fieldName, fName, fType, base64Content);
                 this.modified = true;
             }
             else{//workaround because stackmob is overwriting my picture
@@ -1116,36 +1130,22 @@ $(document).ready(function() {
             if (this.modified) {
                 me = this;
                 $('#ajax-loader').show();
-                if (updated !== {}) {
-                    console.debug(updated)
-                    this.model.save(updated, {
-                        success: function(model) {
-                            $('#ajax-loader').hide();
-                            mainView.showAlert('success');
-                            $('.modal').modal('hide');
-                        },
-                        error: function(model, response) {
-                            $('#ajax-loader').hide();
-                            mainView.showAlert('error');
-                            console.error(model);
-                            console.error(response);
-                        }
-                    });
-                }
-                else {
-                    console.debug('only image changed');
-                    this, model.save({
-                        success: function(model) {
-                            $('#ajax-loader').hide();
-                            mainView.showAlert('success');
-                            $('.modal').modal('hide');
-                        },
-                        error: function(model, response) {
-                            $('#ajax-loader').hide();
-                            mainView.showAlert('error');
-                        }
-                    });
-                }
+                //if (updated !== {}) {
+                console.debug(newProduct.toJSON());
+                newProduct.create({
+                    success: function(model) {
+                        collection.add(model);
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('success');
+                        $('.modal').modal('hide');
+                    },
+                    error: function(model, response) {
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('error');
+                        console.error(model);
+                        console.error(response);
+                    }
+                });
             }
             else {
                 alert('You havent made any changes');

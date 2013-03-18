@@ -114,7 +114,7 @@ td img{
     width:9em;
 }
 /*product page baba*/
-#product-pic-upload,#product--pic-upload{
+#product-pic-upload,#product-new-pic-upload{
     display:none;
 }
 .product-modal-img{
