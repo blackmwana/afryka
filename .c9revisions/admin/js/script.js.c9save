@@ -1874,3 +1874,12 @@
 {"ts":1363644119670,"patch":[[{"diffs":[[0,"escription_en')."],[-1,"d"],[1,"val()"],[0,"ata('oldcontent'"]],"start1":43717,"start2":43717,"length1":33,"length2":37}]],"length":80064,"saved":false}
 {"ts":1363644122615,"patch":[[{"diffs":[[0,"').val()"],[-1,"ata('oldcontent'"],[0,");;\r\n   "]],"start1":43730,"start2":43730,"length1":32,"length2":16}]],"length":80048,"saved":false}
 {"ts":1363644131326,"patch":[[{"diffs":[[0,"').val()"],[-1,")"],[0,";;\r\n    "]],"start1":43730,"start2":43730,"length1":17,"length2":16}]],"length":80047,"saved":false}
+{"ts":1363648368487,"patch":[[{"diffs":[[0,"roductsview');\r\n"],[1,"            \r\n            //\r\n"],[0,"            el.h"]],"start1":30055,"start2":30055,"length1":32,"length2":62}]],"length":80077,"saved":false}
+{"ts":1363648373751,"patch":[[{"diffs":[[0,"      //"],[1,"should check if "],[0,"\r\n      "]],"start1":30091,"start2":30091,"length1":16,"length2":32}]],"length":80093,"saved":false}
+{"ts":1363648379399,"patch":[[{"diffs":[[0,"heck if "],[1,"model is"],[0,"\r\n      "]],"start1":30107,"start2":30107,"length1":16,"length2":24}]],"length":80101,"saved":false}
+{"ts":1363648387956,"patch":[[{"diffs":[[0,"f model "],[-1,"is"],[0,"\r\n      "]],"start1":30113,"start2":30113,"length1":18,"length2":16}]],"length":80099,"saved":false}
+{"ts":1363648399074,"patch":[[{"diffs":[[0,"f model "],[1,"exists "],[0,"\r\n      "]],"start1":30113,"start2":30113,"length1":16,"length2":23}]],"length":80106,"saved":false}
+{"ts":1363648415438,"patch":[[{"diffs":[[0,"  //"],[-1,"should check if model exists "],[0,"\r\n  "]],"start1":30095,"start2":30095,"length1":37,"length2":8}]],"length":80077,"saved":false}
+{"ts":1363648421697,"patch":[[{"diffs":[[0,");\r\n"],[-1,"            \r\n            //\r\n"],[0,"    "]],"start1":30067,"start2":30067,"length1":38,"length2":8}]],"length":80047,"saved":false}
+{"ts":1363708625098,"patch":[[{"diffs":[[0,"bug(response);\r\n"],[1,"                        console.debug(response);\r\n"],[0,"                "]],"start1":53060,"start2":53060,"length1":32,"length2":82}]],"length":80097,"saved":false}
+{"ts":1363708627985,"patch":[[{"diffs":[[0,"nsole.debug("],[-1,"response"],[1,"model"],[0,");\r\n        "]],"start1":53052,"start2":53052,"length1":32,"length2":29}]],"length":80094,"saved":false}

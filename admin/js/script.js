@@ -1310,6 +1310,7 @@ $(document).ready(function() {
                         $('.modal').modal('hide');
                     },
                     error: function(model, response) {
+                        console.debug(model);
                         console.debug(response);
                         $('#ajax-loader').hide();
                         mainView.showAlert('error');
