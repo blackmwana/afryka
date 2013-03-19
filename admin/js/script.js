@@ -937,12 +937,13 @@ $(document).ready(function() {
         delete: function() {
             var r = confirm('Are you sure you want to delete this product?');
             if (r == true) {
+                var me=this;
                 $('#ajax-loader').show();
                 this.model.destroy({
                     success: function(model) {
                         console.debug(model.toJSON());
                         $('#ajax-loader').hide();
-                        mainView.showAlert('success');
+                        me.parent.showAlert('success');
                         me.parent.navProducts();
                     },
                     error: function(model, response) {
