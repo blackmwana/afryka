@@ -946,9 +946,10 @@ $(document).ready(function() {
                         me.parent.navProducts();
                     },
                     error: function(model, response) {
-                        console.debug(response);
+                        //console.debug(response);
                         $('#ajax-loader').hide();
-                        mainView.showAlert('error');
+                        //mainView.showAlert('error');
+                        me.parent.navProducts();
                     }
                 });
             }
@@ -1310,10 +1311,12 @@ $(document).ready(function() {
                         $('.modal').modal('hide');
                     },
                     error: function(model, response) {
-                        console.debug(model);
-                        console.debug(response);
+                        //strange things going on here
+                       // console.debug(model);
+                        //console.debug(response);
                         $('#ajax-loader').hide();
-                        mainView.showAlert('error');
+                        $('.modal').modal('hide');
+                        //mainView.showAlert('error');
                     }
                 });
             }
@@ -1408,6 +1411,28 @@ $(document).ready(function() {
             }
             return this;
         },
+        delete: function() {
+            var r = confirm('Are you sure you want to delete this status?');
+            if (r == true) {
+                $('#ajax-loader').show();
+                this.model.destroy({
+                    success: function(model) {
+                        console.debug(model.toJSON());
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('success');
+                        $('.modal').modal('hide');
+                    },
+                    error: function(model, response) {
+                        //strange things going on here
+                       // console.debug(model);
+                        //console.debug(response);
+                        $('#ajax-loader').hide();
+                        $('.modal').modal('hide');
+                        //mainView.showAlert('error');
+                    }
+                });
+            }
+        }
            
     });
     var NewStatusModalView = Backbone.View.extend({
