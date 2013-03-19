@@ -1345,7 +1345,8 @@ $(document).ready(function() {
         events: {
             'click .modal-close':'hide',
             'hidden .modal':'justClose',
-            'click #statii-edit-btn-save':'save'
+            'click #statii-edit-btn-save':'save',
+            'click #statii-edit-btn-delete':'delete'
         },
         modified:false,
         initialize: function() {

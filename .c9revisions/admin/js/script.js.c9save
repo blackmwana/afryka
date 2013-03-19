@@ -1883,3 +1883,5 @@
 {"ts":1363648421697,"patch":[[{"diffs":[[0,");\r\n"],[-1,"            \r\n            //\r\n"],[0,"    "]],"start1":30067,"start2":30067,"length1":38,"length2":8}]],"length":80047,"saved":false}
 {"ts":1363708625098,"patch":[[{"diffs":[[0,"bug(response);\r\n"],[1,"                        console.debug(response);\r\n"],[0,"                "]],"start1":53060,"start2":53060,"length1":32,"length2":82}]],"length":80097,"saved":false}
 {"ts":1363708627985,"patch":[[{"diffs":[[0,"nsole.debug("],[-1,"response"],[1,"model"],[0,");\r\n        "]],"start1":53052,"start2":53052,"length1":32,"length2":29}]],"length":80094,"saved":false}
+{"ts":1363713020685,"patch":[[{"diffs":[[0,"':'save'"],[1,",\r\n            'click #cats-edit-btn-delete':'delete'"],[0,"\r\n      "]],"start1":54201,"start2":54201,"length1":16,"length2":69}]],"length":81263,"saved":false}
+{"ts":1363713027355,"patch":[[{"diffs":[[0,"        'click #"],[-1,"cats"],[1,"statii"],[0,"-edit-btn-delete"]],"start1":54216,"start2":54216,"length1":36,"length2":38}]],"length":81265,"saved":false}
