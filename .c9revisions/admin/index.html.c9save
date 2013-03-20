@@ -1031,3 +1031,8 @@
 {"ts":1363645839704,"patch":[[{"diffs":[[0,"            "],[-1," "],[0,"aria-labelle"]],"start1":17064,"start2":17064,"length1":25,"length2":24}]],"length":26329,"saved":false}
 {"ts":1363645843100,"patch":[[{"diffs":[[0,"-new\">\r\n        "],[-1,"    "],[0,"<div id=\"product"]],"start1":16962,"start2":16962,"length1":36,"length2":32},{"diffs":[[0,"ialog\"\r\n"],[-1,"    "],[0,"        "]],"start1":17052,"start2":17052,"length1":20,"length2":16}]],"length":26321,"saved":false}
 {"ts":1363647386525,"patch":[[{"diffs":[[0,"holder=\""],[-1," "],[0,"enter po"]],"start1":19052,"start2":19052,"length1":17,"length2":16}]],"length":26320,"saved":false}
+{"ts":1363789924922,"patch":[[{"diffs":[[0,"e\"/>"],[-1,"/*need click to add picture image*/"],[1," "],[0,"\r\n  "]],"start1":17815,"start2":17815,"length1":43,"length2":9}]],"length":26286,"saved":false}
+{"ts":1363789924961,"patch":[[{"diffs":[[0,"picture\""],[1," src"],[0,"/> \r\n   "]],"start1":17809,"start2":17809,"length1":16,"length2":20}]],"length":26290,"saved":false}
+{"ts":1363789926357,"patch":[[{"diffs":[[0,"ure\" src"],[1,"="],[0,"/> \r\n   "]],"start1":17813,"start2":17813,"length1":16,"length2":17}]],"length":26291,"saved":false}
+{"ts":1363789927831,"patch":[[{"diffs":[[0,"re\" src="],[1,"''"],[0,"/> \r\n   "]],"start1":17814,"start2":17814,"length1":16,"length2":18}]],"length":26293,"saved":false}
+{"ts":1363789929343,"patch":[[{"diffs":[[0,"e\" src='"],[1,"http://afrykashop.s3.amazonaws.com/images/market.png"],[0,"'/> \r\n  "]],"start1":17815,"start2":17815,"length1":16,"length2":68}]],"length":26345,"saved":false}
