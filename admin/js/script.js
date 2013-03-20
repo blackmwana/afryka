@@ -827,7 +827,7 @@ $(document).ready(function() {
             if (this.modified) {
                 me = this;
                 $('#ajax-loader').show();
-                alert(_.isEmpty(updated));
+                console.deug(_.isEmpty(updated));
                 if (!_.isEmpty(updated)) {
                     console.debug(updated);
                     this.model.save(updated, {
