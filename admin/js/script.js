@@ -788,10 +788,10 @@ $(document).ready(function() {
             fName=this.fName.replace(/\W/g, '');
             fieldName=this.fieldName;
             console.debug(this);
-            console.debug('fType:'+this.fType);
-            console.debug('fName:'+this.fName);
-            console.debug('base64Content:'+this.base64Content);
-            console.debug('fieldName:'+this.fieldName)
+           // console.debug('fType:'+this.fType);
+            //console.debug('fName:'+this.fName);
+            //console.debug('base64Content:'+this.base64Content);
+            //console.debug('fieldName:'+this.fieldName)
             if (tit_pl != '') {
                 updated.title_pl = tit_pl;
                 this.modified = true;
