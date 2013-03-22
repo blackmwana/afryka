@@ -1058,3 +1058,4 @@
 {"ts":1363918945911,"patch":[[{"diffs":[[0,"ss=\"btn\""],[1," id="],[0," aria-hi"]],"start1":20864,"start2":20864,"length1":16,"length2":20}]],"length":25885,"saved":false}
 {"ts":1363918950706,"patch":[[{"diffs":[[0,"btn\" id="],[1,"\"products-new-btn-close\""],[0," aria-hi"]],"start1":20868,"start2":20868,"length1":16,"length2":40}]],"length":25909,"saved":false}
 {"ts":1363919154845,"patch":[[{"diffs":[[0,"=\"span10\">\r\n"],[-1,"             \r\n"],[0,"            "]],"start1":16920,"start2":16920,"length1":39,"length2":24}]],"length":25894,"saved":false}
+{"ts":1363948934403,"patch":[[{"diffs":[[0,"\"container-fluid"],[1," product-form"],[0,"\">\r\n            "]],"start1":16959,"start2":16959,"length1":32,"length2":45}]],"length":25907,"saved":false}
