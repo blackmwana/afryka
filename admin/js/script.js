@@ -951,7 +951,7 @@ $(document).ready(function() {
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
                         console.debug(e.target.result);
-                        $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated');
+                        $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated img-polaroid');
                     };
                 })(f);
         
@@ -1238,7 +1238,7 @@ $(document).ready(function() {
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
                         console.debug(e.target.result);
-                        $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated');
+                        $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated ');
                     };
                 })(f);
         
