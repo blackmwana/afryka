@@ -1548,7 +1548,7 @@ $(document).ready(function() {
             this.template = _.template($('#item-statii-new').html());
         },
         render: function() {
-            this.$el.html(this.template();
+            this.$el.html(this.template());
             $(document.body).append(this.$el);
             $('.modal').modal({
                 keyboard:true,
