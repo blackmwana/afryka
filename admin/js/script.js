@@ -452,7 +452,7 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/product/'+id,true);
         },
         navProductNew:function(id){//maybe not necessary??
-            afrykaAdminApp.navigate('/new/productnew',true);
+            afrykaAdminApp.navigate('/new/product' ,true);
         },
         navCategories:function(){
             afrykaAdminApp.navigate('/categories',true);

@@ -2043,3 +2043,5 @@
 {"ts":1363920609158,"patch":[[{"diffs":[[0,"      'n"],[-1,"/n"],[0,"ew"],[1,"/product"],[0,"':'toPro"]],"start1":66224,"start2":66224,"length1":20,"length2":26}]],"length":90073,"saved":false}
 {"ts":1363920625900,"patch":[[{"diffs":[[0,"nApp.navigate('/"],[1,"new"],[0,"product/new',tru"]],"start1":17287,"start2":17287,"length1":32,"length2":35}]],"length":90076,"saved":false}
 {"ts":1363920628919,"patch":[[{"diffs":[[0,"te('/new"],[-1,"product"],[0,"/new',tr"]],"start1":17298,"start2":17298,"length1":23,"length2":16}]],"length":90069,"saved":false}
+{"ts":1363920634305,"patch":[[{"diffs":[[0,"e('/new/"],[-1,"new"],[1,"product"],[0,"',true);"]],"start1":17299,"start2":17299,"length1":19,"length2":23}]],"length":90073,"saved":false}
+{"ts":1363920732440,"patch":[[{"diffs":[[0,"product'"],[1," "],[0,",true);\r"]],"start1":17307,"start2":17307,"length1":16,"length2":17}]],"length":90074,"saved":false}
