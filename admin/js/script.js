@@ -1192,7 +1192,8 @@ $(document).ready(function() {
                         collection.add(model);
                         $('#ajax-loader').hide();
                         mainView.showAlert('success');
-                        $('.modal').modal('hide');
+                       // $('.modal').modal('hide');
+                        me.parent.navProducts();
                     },
                     error: function(model, response) {
                         $('#ajax-loader').hide();
@@ -1272,10 +1273,11 @@ $(document).ready(function() {
             if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== ''||des_pl !== '') {
                 var r = confirm('You have unsaved data are you sure you want to leave?');
                 if (r == true) {
-                    $('.modal').modal('hide');//go back
+                    //$('.modal').modal('hide');//go back
+                    this.parent.navProducts();
                 }
             }
-            else $('.modal').modal('hide');//go back
+            else //$('.modal').modal('hide');//go back
             } 
     });
     var EditCategoryModalView = Backbone.View.extend({
@@ -1588,7 +1590,7 @@ $(document).ready(function() {
             if (this.modified) {
                 //me = this;
                 $('#ajax-loader').show();
-                console.debug(updated)
+                //console.debug(updated)
                 newStatus.create({
                     success: function(model) {
                         $('#ajax-loader').hide();
