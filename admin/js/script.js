@@ -1277,7 +1277,8 @@ $(document).ready(function() {
                     this.parent.navProducts();
                 }
             }
-            else //$('.modal').modal('hide');//go back
+            else this.parent.navProducts();
+            //$('.modal').modal('hide');//go back
             } 
     });
     var EditCategoryModalView = Backbone.View.extend({
