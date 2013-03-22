@@ -667,6 +667,7 @@ $(document).ready(function() {
             //afrykaAdminApp.mm.showView(npmv);
             afrykaAdminApp.prm.showView(npv);
            // var m = model.toJSON();
+           $('#ajax-loader').hide();
             
         },
         goStatusNew:function(mv){
@@ -693,6 +694,7 @@ $(document).ready(function() {
             mv.newStatusModalView = nsmv; 
             nsmv.parent = mv;
             afrykaAdminApp.mm.showView(nsmv);
+            $('#ajax-loader').hide();
         },
         goCatNew:function(mv){
             console.debug('gocatnew:rendering dialogbox');
@@ -718,6 +720,7 @@ $(document).ready(function() {
             mv.newCategoryModalView = ncmv; 
             ncmv.parent = mv;
             afrykaAdminApp.mm.showView(ncmv);
+            $('#ajax-loader').hide();
            // var m = model.toJSON();
         },
         showAlert:function(mode){
