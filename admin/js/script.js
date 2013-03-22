@@ -1336,7 +1336,7 @@ $(document).ready(function() {
             //check for changes if changes made then prompt to save yes/no
             pl=$('#cats-edit-title_pl').val();
             en=$('#cats-edit-title_en').val();
-            console.debug(pl;
+            console.debug(pl);
         if (pl !== '' || en !== '') {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {

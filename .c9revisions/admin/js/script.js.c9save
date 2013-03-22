@@ -2027,3 +2027,4 @@
 {"ts":1363919317603,"patch":[[{"diffs":[[0,"this.parent."],[-1,"go"],[1,"nav"],[0,"ProductNew(t"]],"start1":29865,"start2":29865,"length1":26,"length2":27}]],"length":89933,"saved":false}
 {"ts":1363919325377,"patch":[[{"diffs":[[0,"ductNew("],[-1,"this.parent"],[0,")\r\n     "]],"start1":29883,"start2":29883,"length1":27,"length2":16}]],"length":89922,"saved":false}
 {"ts":1363919329486,"patch":[[{"diffs":[[0,"uctNew()"],[1,";"],[0,"\r\n      "]],"start1":29884,"start2":29884,"length1":16,"length2":17}]],"length":89923,"saved":false}
+{"ts":1363919962881,"patch":[[{"diffs":[[0,"debug(pl"],[1,")"],[0,";\r\n     "]],"start1":54458,"start2":54458,"length1":16,"length2":17}]],"length":89924,"saved":false}
