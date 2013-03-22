@@ -452,7 +452,7 @@ $(document).ready(function() {
             afrykaAdminApp.navigate('/product/'+id,true);
         },
         navProductNew:function(id){//maybe not necessary??
-            afrykaAdminApp.navigate('/product/new',true);
+            afrykaAdminApp.navigate('/new/productnew',true);
         },
         navCategories:function(){
             afrykaAdminApp.navigate('/categories',true);
@@ -564,7 +564,7 @@ $(document).ready(function() {
                     success: function() {
                         console.debug('mainview,goProduct:products have been fetched');
                         curProd = products.get(id);//if product isnt there display error
-                        console.debug(curProd.toJSON());
+                        //console.debug(curProd.toJSON());
                         mv.productView = new ProductView({
                             model: curProd
                         });
@@ -1655,7 +1655,7 @@ $(document).ready(function() {
             'home':'main',
             'products':'toProducts',
             'product/:id':'toProduct',
-            'product/new':'toProductNew',
+            'new/product':'toProductNew',
             'categories':'toCats',
             'statii':'toStatii',
             'other':'toOther',
