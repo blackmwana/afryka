@@ -1036,3 +1036,25 @@
 {"ts":1363789926357,"patch":[[{"diffs":[[0,"ure\" src"],[1,"="],[0,"/> \r\n   "]],"start1":17813,"start2":17813,"length1":16,"length2":17}]],"length":26291,"saved":false}
 {"ts":1363789927831,"patch":[[{"diffs":[[0,"re\" src="],[1,"''"],[0,"/> \r\n   "]],"start1":17814,"start2":17814,"length1":16,"length2":18}]],"length":26293,"saved":false}
 {"ts":1363789929343,"patch":[[{"diffs":[[0,"e\" src='"],[1,"http://afrykashop.s3.amazonaws.com/images/market.png"],[0,"'/> \r\n  "]],"start1":17815,"start2":17815,"length1":16,"length2":68}]],"length":26345,"saved":false}
+{"ts":1363918516766,"patch":[[{"diffs":[[0,"    "],[-1,"<!-- <div id=\"product-container\" >-->"],[0,"\r\n  "]],"start1":6829,"start2":6829,"length1":45,"length2":8}]],"length":26274,"saved":false}
+{"ts":1363918525525,"patch":[[{"diffs":[[0,"    "],[-1,"<!-- </div>-->"],[1," "],[0,"\r\n  "]],"start1":11626,"start2":11626,"length1":22,"length2":9}]],"length":26261,"saved":false}
+{"ts":1363918632245,"patch":[[{"diffs":[[0,"    "],[-1,"<div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close modal-close\" aria-hidden=\"true\">×</button>\r\n                <h3 id=\"products-new-label\">Add new product</h3>\r\n            </div>"],[0,"\r\n  "]],"start1":17066,"start2":17066,"length1":215,"length2":8}]],"length":26054,"saved":false}
+{"ts":1363918659922,"patch":[[{"diffs":[[0,"de\" "],[-1,"tabindex=\"-1\" role=\"dialog\"\r\n        aria-labelledby=\"products-new-label\" aria-hidden=\"true\""],[1," "],[0,">\r\n "]],"start1":16959,"start2":16959,"length1":100,"length2":9}]],"length":25963,"saved":false}
+{"ts":1363918665932,"patch":[[{"diffs":[[0,"div "],[-1,"id=\"products-new-modal\""],[1," "],[0," cla"]],"start1":16911,"start2":16911,"length1":31,"length2":9}]],"length":25941,"saved":false}
+{"ts":1363918675474,"patch":[[{"diffs":[[0,"  <div   class=\""],[1,"span10"],[0,"modal hide fade\""]],"start1":16908,"start2":16908,"length1":32,"length2":38}]],"length":25947,"saved":false}
+{"ts":1363918680636,"patch":[[{"diffs":[[0,"=\"span10"],[-1,"modal hide fade"],[0,"\"  >\r\n  "]],"start1":16922,"start2":16922,"length1":31,"length2":16}]],"length":25932,"saved":false}
+{"ts":1363918684778,"patch":[[{"diffs":[[0,"   <div "],[-1,"  "],[0,"class=\"s"]],"start1":16907,"start2":16907,"length1":18,"length2":16}]],"length":25930,"saved":false}
+{"ts":1363918752520,"patch":[[{"diffs":[[0,"n10\""],[-1,"  >\r\n            "],[1,">"],[0,"\r\n  "]],"start1":16925,"start2":16925,"length1":25,"length2":9}]],"length":25914,"saved":false}
+{"ts":1363918764629,"patch":[[{"diffs":[[0,"v>\r\n            "],[-1,"</div>"],[1," "],[0,"\r\n            <d"]],"start1":20696,"start2":20696,"length1":38,"length2":33}]],"length":25909,"saved":false}
+{"ts":1363918771815,"patch":[[{"diffs":[[0,"    "],[-1,"<div class=\"modal-body\">"],[1," "],[0,"\r\n  "]],"start1":16940,"start2":16940,"length1":32,"length2":9}]],"length":25886,"saved":false}
+{"ts":1363918887399,"patch":[[{"diffs":[[0,"<div class=\""],[-1,"modal-footer"],[1,"class=\"product-buttons\""],[0,"\">\r\n        "]],"start1":20704,"start2":20704,"length1":36,"length2":47}]],"length":25897,"saved":false}
+{"ts":1363918892227,"patch":[[{"diffs":[[0,"\"class=\"product-"],[1,"new-"],[0,"buttons\"\">\r\n    "]],"start1":20715,"start2":20715,"length1":32,"length2":36}]],"length":25901,"saved":false}
+{"ts":1363918895500,"patch":[[{"diffs":[[0,"tons"],[-1,"\"\""],[0,">\r\n "]],"start1":20738,"start2":20738,"length1":10,"length2":8}]],"length":25899,"saved":false}
+{"ts":1363918897296,"patch":[[{"diffs":[[0,"-buttons"],[1,"\""],[0,">\r\n     "]],"start1":20734,"start2":20734,"length1":16,"length2":17}]],"length":25900,"saved":false}
+{"ts":1363918903792,"patch":[[{"diffs":[[0,"   <div "],[-1,"class=\""],[0,"class=\"p"]],"start1":20701,"start2":20701,"length1":23,"length2":16}]],"length":25893,"saved":false}
+{"ts":1363918913412,"patch":[[{"diffs":[[0,"tton class=\"btn "],[-1,"modal-"],[1," "],[0,"close\" aria-hidd"]],"start1":20856,"start2":20856,"length1":38,"length2":33}]],"length":25888,"saved":false}
+{"ts":1363918940685,"patch":[[{"diffs":[[0,"btn "],[-1," close"],[0,"\" ar"]],"start1":20868,"start2":20868,"length1":14,"length2":8}]],"length":25882,"saved":false}
+{"ts":1363918943687,"patch":[[{"diffs":[[0,"ass=\"btn"],[-1," "],[0,"\" aria-h"]],"start1":20863,"start2":20863,"length1":17,"length2":16}]],"length":25881,"saved":false}
+{"ts":1363918945911,"patch":[[{"diffs":[[0,"ss=\"btn\""],[1," id="],[0," aria-hi"]],"start1":20864,"start2":20864,"length1":16,"length2":20}]],"length":25885,"saved":false}
+{"ts":1363918950706,"patch":[[{"diffs":[[0,"btn\" id="],[1,"\"products-new-btn-close\""],[0," aria-hi"]],"start1":20868,"start2":20868,"length1":16,"length2":40}]],"length":25909,"saved":false}
+{"ts":1363919154845,"patch":[[{"diffs":[[0,"=\"span10\">\r\n"],[-1,"             \r\n"],[0,"            "]],"start1":16920,"start2":16920,"length1":39,"length2":24}]],"length":25894,"saved":false}

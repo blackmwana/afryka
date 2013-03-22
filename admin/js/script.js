@@ -287,7 +287,6 @@ $(document).ready(function() {
                 price:'0',
                 categories:[],
                 status:[]
-                
             }
         }
     })
@@ -452,6 +451,9 @@ $(document).ready(function() {
         navProduct:function(id){//maybe not necessary??
             afrykaAdminApp.navigate('/product/'+id,true);
         },
+        navProductNew:function(id){//maybe not necessary??
+            afrykaAdminApp.navigate('/product/new',true);
+        },
         navCategories:function(){
             afrykaAdminApp.navigate('/categories',true);
         },
@@ -556,7 +558,7 @@ $(document).ready(function() {
             console.debug('going product, showing productview');
         
             // afrykaAdminApp.navigate('/home',true);
-            if (!products) {
+            if (!products){
                 products = new Products();
                 products.fetch({
                     success: function() {
@@ -570,7 +572,7 @@ $(document).ready(function() {
                         afrykaAdminApp.prm.showView(mv.productView);
                         $('#ajax-loader').hide();
                     },
-                    error: function() {
+                    error: function(){
                         //do something
                         //show alert
                         console.debug('mainview,goProduct:products have not been fetched');
@@ -579,7 +581,7 @@ $(document).ready(function() {
             }
             else {
                 curProd = products.get(id);//if product isnt there display error
-                 console.debug(curProd.toJSON());
+                console.debug(curProd.toJSON());
                 mv.productView = new ProductView({
                     model: curProd
                 });
@@ -638,7 +640,7 @@ $(document).ready(function() {
             
         },
         goProductNew:function(mv){
-            console.debug('goproductsnew:rendering dialogbox');
+            console.debug('goproductnew:rendering dialogbox');
             console.debug(this);
             if(!products) 
                 products = new Products();
@@ -657,12 +659,66 @@ $(document).ready(function() {
                     console.debug('mainview,goProducts:products have not been fetched');
                 }
             });*/
-            var npmv = new NewProductModalView({collection:products});
-            mv.newProductModalView = npmv; 
-            npmv.parent = mv;
-            afrykaAdminApp.mm.showView(npmv);
+            //var npmv = new NewProductModalView({collection:products});
+            var npv = new NewProductView({collection:products});
+            //mv.newProductModalView = npmv;
+            mv.newProductView = npv; 
+            npv.parent = mv;
+            //afrykaAdminApp.mm.showView(npmv);
+            afrykaAdminApp.prm.showView(npv);
            // var m = model.toJSON();
             
+        },
+        goStatusNew:function(mv){
+            console.debug('gostatusnew:rendering dialogbox');
+            console.debug(this);
+            if(!statii) 
+                statii = new Statii();
+            /*products.fetch({
+                success:function(){
+                    console.debug('mainview,goProducts:products have been fetched');
+                    mv.productsView = new ProductsView({collection:products});
+                    mv.productsView.parent = mv;
+                    afrykaAdminApp.prm.showView(mv.productsView);
+                    afrykaAdminApp.activeNav('#m-products');
+                    $('#ajax-loader').hide();
+                },
+                error:function(){
+                    //do something
+                    //show alert
+                    console.debug('mainview,goProducts:products have not been fetched');
+                }
+            });*/
+            var nsmv = new NewStatusModalView({collection:statii});
+            mv.newStatusModalView = nsmv; 
+            nsmv.parent = mv;
+            afrykaAdminApp.mm.showView(nsmv);
+        },
+        goCatNew:function(mv){
+            console.debug('gocatnew:rendering dialogbox');
+            console.debug(this);
+            if(!cats) 
+                cats = new Cats();
+            /*products.fetch({
+                success:function(){
+                    console.debug('mainview,goProducts:products have been fetched');
+                    mv.productsView = new ProductsView({collection:products});
+                    mv.productsView.parent = mv;
+                    afrykaAdminApp.prm.showView(mv.productsView);
+                    afrykaAdminApp.activeNav('#m-products');
+                    $('#ajax-loader').hide();
+                },
+                error:function(){
+                    //do something
+                    //show alert
+                    console.debug('mainview,goProducts:products have not been fetched');
+                }
+            });*/
+            var ncmv = new NewCategoryModalView({collection:cats});
+            mv.newCategoryModalView = ncmv; 
+            ncmv.parent = mv;
+            afrykaAdminApp.mm.showView(ncmv);
+           // var m = model.toJSON();
         },
         showAlert:function(mode){
             switch(mode){
@@ -697,7 +753,7 @@ $(document).ready(function() {
         goToNewProduct:function(){//popup
             //navigate
             // afrykaAdminApp.navigate('/product/new',true);
-            this.parent.goProductNew(this.parent)
+            this.parent.navProductNew();
         }
     });
     var ProductsView = Backbone.View.extend({
@@ -1056,14 +1112,16 @@ $(document).ready(function() {
             
         }
     });
-    var NewProductModalView = Backbone.View.extend({
+    var NewProductView = Backbone.View.extend({
+        id:"product-new-content",
+        classname:"page-region-content",
         events: {
             'click #product-new-btn-upload':'filePick',
             'change #product-new-pic-upload':'handleFileSelect',
             'click #products-new-btn-save':'save',
-            //'click #products-edit-btn-close':'goBack',
-            'click .modal-close':'hide',
-            'hidden .modal':'justClose',
+            'click #products-new-btn-close':'goBack'
+            //'click .modal-close':'hide',
+             
         },
         modified:false,
         fieldName:'picture',
@@ -1075,19 +1133,13 @@ $(document).ready(function() {
         },
         render: function() {
             this.$el.html(this.template());
-            $(document.body).append(this.$el);
-            $('.modal').modal({
-                keyboard:true,
-                backdrop: 'static',
-                show:true
-                });
             return this;
         },
         save: function() {
             var newProduct = new Product();
             var collection=this.collection;
-            tit_pl = $('#products-new-title_pl').val();
-            tit_en = $('#products-new-title_en').val();
+            var tit_pl = $('#products-new-title_pl').val();
+            var tit_en = $('#products-new-title_en').val();
             link = $('#products-new-link').val();
             price = $('#products-new-price').val();
             des_en = $('#products-new-description_en').val();
@@ -1166,7 +1218,6 @@ $(document).ready(function() {
                 // Closure to capture the file information
                 reader.onload = (function(theFile) {
                     return function(e) {
-        
                         /*
                              e.target.result will return "data:image/jpeg;base64,[base64 encoded data]...".
                              We only want the "[base64 encoded data] portion, so strip out the first part
@@ -1204,7 +1255,7 @@ $(document).ready(function() {
                  alert('Uploading Files is not fully supported in this browser please try using a modern browser.');
             }
          },
-        hide:function(){
+        goBack:function(){
             //check for changes if changes made then prompt to save yes/no
             tit_pl = $('#products-new-title_pl').val();
             tit_en = $('#products-new-title_en').val();
@@ -1221,14 +1272,11 @@ $(document).ready(function() {
             if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== ''||des_pl !== '') {
                 var r = confirm('You have unsaved data are you sure you want to leave?');
                 if (r == true) {
-                    $('.modal').modal('hide');
+                    $('.modal').modal('hide');//go back
                 }
             }
-            else $('.modal').modal('hide');
-            },
-        justClose: function() {
-            afrykaAdminApp.mm.closeView(this);
-        }      
+            else $('.modal').modal('hide');//go back
+            } 
     });
     var EditCategoryModalView = Backbone.View.extend({
         events: {
@@ -1254,14 +1302,14 @@ $(document).ready(function() {
         },
         save: function() {
             var updated = {};
-            pl = $('#cats-edit-title_pl');
-            en = $('#cats-edit-title_en');
-            if (pl.val() != '') {
-                updated.title_pl = pl.val();
+            pl = $('#cats-edit-title_pl').val();
+            en = $('#cats-edit-title_en').val();
+            if (pl != '') {
+                updated.title_pl = pl;
                 this.modified = true;
             }
-            if (en.val() != '') {
-                updated.title_en = en.val();
+            if (en != '') {
+                updated.title_en = en;
                 this.modified = true;
             }
             if (this.modified) {
@@ -1286,10 +1334,10 @@ $(document).ready(function() {
         },
         hide:function(){
             //check for changes if changes made then prompt to save yes/no
-            pl=$('#cats-edit-title_pl');
-            en=$('#cats-edit-title_en');
-            console.debug(pl.val());
-        if (pl.val() !== '' || en.val() !== '') {
+            pl=$('#cats-edit-title_pl').val();
+            en=$('#cats-edit-title_en').val();
+            console.debug(pl;
+        if (pl !== '' || en !== '') {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {
                 $('.modal').modal('hide');
@@ -1327,21 +1375,76 @@ $(document).ready(function() {
     });
     var NewCategoryModalView = Backbone.View.extend({
         events: {
+             'click #cats-new-btn-save':'save',
+            //'click #products-edit-btn-close':'goBack',
+            'click .modal-close':'hide',
+            'hidden .modal':'justClose',
         },
+        modified:false,
         initialize: function() {
             this.template = _.template($('#item-cats-new').html());
         },
         render: function() {
             this.$el.html(this.template());
+            $(document.body).append(this.$el);
+            $('.modal').modal({
+                keyboard:true,
+                backdrop: 'static',
+                show:true
+                });
             return this;
         },
-        show: function() {
-            $(document.body).append(this.render().el);                
+        save: function() {
+            var newCat = new Cat();
+            var collection=this.collection;
+            pl = $('#cats-new-title_pl').val();
+            en = $('#cats-new-title_en').val();
+            if (pl != '') {
+                newCat.set({title_pl: pl});
+                this.modified = true;
+            }
+            if (en != '') {
+                newCat.set({title_en:en});
+                this.modified = true;
+            }
+            if (this.modified) {
+                 
+                me = this;
+                $('#ajax-loader').show();
+                newCat.create({
+                    success: function(model) {
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('success');
+                        $('.modal').modal('hide');
+                    },
+                    error: function(model, response) {
+                        mainView.showAlert('error');
+                        $('.modal').modal('hide');
+                    }
+                });
+            }
+            else{
+                alert('You havent made any changes');
+            }
+            return this;
         },
-        close: function() {
-            this.remove();
-        }
-           
+        hide:function(){
+            //check for changes if changes made then prompt to save yes/no
+            pl=$('#cats-new-title_pl').val();
+            en=$('#cats-new-title_en').val();
+            //console.debug(pl);
+        if (pl !== '' || en !== '') {
+            var r = confirm('You have unsaved data are you sure you want to leave?');
+            if (r == true) {
+                $('.modal').modal('hide');
+            }
+            }
+        else $('.modal').modal('hide');
+        },
+        justClose: function() {
+        //    this.remove();
+            afrykaAdminApp.mm.closeView(this);
+        }  
     });
     var EditStatusModalView = Backbone.View.extend({
         events: {
@@ -1364,14 +1467,11 @@ $(document).ready(function() {
                 });
             return this;
         },
-        show: function() {
-            $(document.body).append(this.render().el);                
-        },
         hide:function(){
             //check for changes if changes made then prompt to save yes/no
-            nm = $('#statii-edit-name');
-            des = $('#statii-edit-description');
-        if (nm.val() !== '' || des.val() !== des.data('oldcontent')) {
+            nm = $('#statii-edit-name').val();
+            des = $('#statii-edit-description').val();
+        if (nm !== '' || des !== des.data('oldcontent')) {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {
                 $('.modal').modal('hide');
@@ -1385,14 +1485,14 @@ $(document).ready(function() {
         },
         save: function() {
             var updated = {};
-            nm = $('#statii-edit-name');
-            des = $('#statii-edit-description');
-            if (nm.val() != '') {
-                updated.name = nm.val();
+            nm = $('#statii-edit-name').val();
+            des = $('#statii-edit-description').val();
+            if (nm != '') {
+                updated.name = nm;
                 this.modified = true;
             }
-            if (des.val() !== des.data('oldcontent')) {
-                updated.description = des.val();
+            if (des !== des.data('oldcontent')) {
+                updated.description = des;
                 this.modified = true;
             }
             if (this.modified) {
@@ -1440,19 +1540,69 @@ $(document).ready(function() {
     });
     var NewStatusModalView = Backbone.View.extend({
         events: {
+            'click .modal-close':'hide',
+            'hidden .modal':'justClose',
+            'click #statii-new-btn-save':'save'
         },
         initialize: function() {
             this.template = _.template($('#item-statii-new').html());
         },
         render: function() {
-            this.$el.html(this.template());
+            this.$el.html(this.template();
+            $(document.body).append(this.$el);
+            $('.modal').modal({
+                keyboard:true,
+                backdrop: 'static',
+                show:true
+                });
             return this;
         },
-        show: function() {
-            $(document.body).append(this.render().el);                
+        hide:function(){
+            //check for changes if changes made then prompt to save yes/no
+            nm = $('#statii-new-name').val();
+            des = $('#statii-new-description').val();
+        if (nm !== '' || des !== '') {
+            var r = confirm('You have unsaved data are you sure you want to leave?');
+            if (r == true) {
+                $('.modal').modal('hide');
+            }
+            }
+        else $('.modal').modal('hide');
         },
-        close: function() {
-            this.remove();
+        justClose: function() {
+        //    this.remove();
+            afrykaAdminApp.mm.closeView(this);
+        },
+        save: function() {
+            var newStatus= new Status();
+            nm = $('#statii-new-name').val();
+            des = $('#statii-new-description').val();
+            if (nm !== '') {
+                newStatus.set({name:nm});
+                this.modified = true;
+            }
+            if (des !== '') {
+                newStatus.set({description:des});
+                this.modified = true;
+            }
+            if (this.modified) {
+                //me = this;
+                $('#ajax-loader').show();
+                console.debug(updated)
+                newStatus.create({
+                    success: function(model) {
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('success');
+                        $('.modal').modal('hide');
+                    },
+                    error: function(model, response) {
+                        $('#ajax-loader').hide();
+                        mainView.showAlert('error');
+                        $('.modal').modal('hide');
+                    }
+                });
+            }
+            return this;
         }
            
     });
@@ -1490,7 +1640,7 @@ $(document).ready(function() {
         this.showView = function(view){
             view.render();
         }
-        this.closeView= function(view){
+        this.closeView = function(view){
             view.close();
         }
     }
@@ -1502,6 +1652,7 @@ $(document).ready(function() {
             'home':'main',
             'products':'toProducts',
             'product/:id':'toProduct',
+            'product/new':'toProductNew',
             'categories':'toCats',
             'statii':'toStatii',
             'other':'toOther',
@@ -1736,6 +1887,58 @@ $(document).ready(function() {
                     ////////////////////
                     
                     
+                },
+                no:function(){
+                    console.log("no user logged in");
+                   ar.brm.showView(new LoginView());
+                }/*,
+                error:function(){
+                    console.log("error");
+                }*/
+            });
+        },
+        toProductNew:function(){
+            $('#ajax-loader').show();
+              console.debug('toproductnew function :routing to new product');
+            ar = this;
+            StackMob.isLoggedIn({
+                yes:function(username){
+                    console.log(username+" :is logged in");
+                    if (!admin) {
+                        //console.debug('getUser:about to fetch user');
+                        var user = new StackMob.User({
+                            username: username
+                        });
+                        //console.debug('getUser:fetching user');
+                        user.fetch({
+                            success: function() {
+                                admin = user;
+                                console.debug('user fetched');
+                                console.debug(user);
+                                if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                              
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goProductNew(mainView);
+                            },
+                            error: function() {
+                                console.debug('user  fetch error');
+                            }
+                        });
+                        // return user;
+                    }
+                    else {
+                        console.debug('admin already exists');
+                        console.debug(admin);
+                         if (!mainView) mainView = new MainView({
+                                    model: admin
+                                });
+                                ar.brm.showView(mainView); // user model to be passed into the constructor
+                                mainView.goProductNew(mainView);
+                        //   return admin;
+                    }
+                    ////////////////////
                 },
                 no:function(){
                     console.log("no user logged in");
