@@ -1019,7 +1019,7 @@ $(document).ready(function() {
     });
     var CatsView = Backbone.View.extend({
         id:"categories-content",
-        classname:"page-region-content",
+        classname:"page-region-content container-fluid",
         events:{
             "click tbody tr":"showCatEdit"
         },
