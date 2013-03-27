@@ -10,7 +10,7 @@ body {
 #ajax-loader{
     z-index:9999;
     display:none;
-    position:absolute;
+    position:fixed;
     opacity:0.5;
     width:128px;
     height:41px;
