@@ -763,7 +763,7 @@ $(document).ready(function() {
         //el:'',
         //tagName:'ul',
         id:"products-content",
-        classname:"page-region-content",
+        className:"page-region-content",
         events:{
              "click tbody tr":"goProductPage"
         },
@@ -809,7 +809,7 @@ $(document).ready(function() {
     });
     var ProductView = Backbone.View.extend({// pass in type in the options 
         id:"product-content",
-        classname:"page-region-content",
+        classame:"page-region-content",
         events:{
             'click #product-edit-btn-upload':'filePick',
             'change #product-pic-upload':'handleFileSelect',
@@ -1019,7 +1019,7 @@ $(document).ready(function() {
     });
     var CatsView = Backbone.View.extend({
         id:"categories-content",
-        classname:"page-region-content container-fluid",
+        className:"page-region-content container-fluid",
         events:{
             "click tbody tr":"showCatEdit"
         },
@@ -1062,7 +1062,7 @@ $(document).ready(function() {
     });//dialog box no need for view object
     var OtherView = Backbone.View.extend({
         id:"other-content",
-        classname:"page-region-content",
+        className:"page-region-content",
         events:{},
         initialize:function(){
             this.template = _.template($('#item-other').html());   
@@ -1117,7 +1117,7 @@ $(document).ready(function() {
     });
     var NewProductView = Backbone.View.extend({
         id:"product-new-content",
-        classname:"page-region-content",
+        className:"page-region-content",
         events: {
             'click #product-new-btn-upload':'filePick',
             'change #product-new-pic-upload':'handleFileSelect',
