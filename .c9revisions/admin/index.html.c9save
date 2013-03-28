@@ -1072,3 +1072,14 @@
 {"ts":1364504569659,"patch":[[{"diffs":[[0,"v>\r\n            "],[-1,"    "],[0,"</div>\r\n        "]],"start1":2124,"start2":2124,"length1":36,"length2":32}]],"length":26660,"saved":false}
 {"ts":1364504576509,"patch":[[{"diffs":[[0,"            "],[-1,"        "],[0,"<div class=\""]],"start1":1963,"start2":1963,"length1":32,"length2":24},{"diffs":[[0,"ar-inner\">\r\n"],[-1,"        "],[0,"            "]],"start1":1991,"start2":1991,"length1":32,"length2":24}]],"length":26644,"saved":false}
 {"ts":1364504584532,"patch":[[{"diffs":[[0,"            "],[-1,"        "],[0,"</div>\r\n    "]],"start1":2084,"start2":2084,"length1":32,"length2":24}]],"length":26636,"saved":false}
+{"ts":1364505303895,"patch":[[{"diffs":[[0,"\"ajax-loader\">\r\n"],[1,"            \r\n"],[0,"                "]],"start1":26412,"start2":26412,"length1":32,"length2":46}]],"length":26650,"saved":false}
+{"ts":1364505315397,"patch":[[{"diffs":[[0,"ader\">\r\n"],[-1,"            \r\n"],[0,"        "]],"start1":26420,"start2":26420,"length1":30,"length2":16}]],"length":26636,"saved":false}
+{"ts":1364505319664,"patch":[[{"diffs":[[0,"\"item-loader\">\r\n"],[1,"            <>\r\n"],[0,"            <div"]],"start1":26376,"start2":26376,"length1":32,"length2":48}]],"length":26652,"saved":false}
+{"ts":1364505321789,"patch":[[{"diffs":[[0,"       <"],[1,"div"],[0,">\r\n     "]],"start1":26397,"start2":26397,"length1":16,"length2":19}]],"length":26655,"saved":false}
+{"ts":1364505331513,"patch":[[{"diffs":[[0,"    <div"],[1," id=ove></div"],[0,">\r\n     "]],"start1":26400,"start2":26400,"length1":16,"length2":29}]],"length":26668,"saved":false}
+{"ts":1364505335985,"patch":[[{"diffs":[[0,"v id=ove"],[1,"rlay"],[0,"></div>\r"]],"start1":26407,"start2":26407,"length1":16,"length2":20}]],"length":26672,"saved":false}
+{"ts":1364505339092,"patch":[[{"diffs":[[0,"=overlay"],[1,"\""],[0,"></div>\r"]],"start1":26411,"start2":26411,"length1":16,"length2":17}]],"length":26673,"saved":false}
+{"ts":1364505346800,"patch":[[{"diffs":[[0,"<div id="],[1,"\""],[0,"overlay\""]],"start1":26404,"start2":26404,"length1":16,"length2":17}]],"length":26674,"saved":false}
+{"ts":1364505450551,"patch":[[{"diffs":[[0,"div id=\""],[1,"my-"],[0,"overlay\""]],"start1":26405,"start2":26405,"length1":16,"length2":19}]],"length":26677,"saved":false}
+{"ts":1364505631635,"patch":[[{"diffs":[[0,"    "],[-1,"<div id=\"my-overlay\"></div>"],[0,"\r\n  "]],"start1":26400,"start2":26400,"length1":35,"length2":8},{"diffs":[[0,"\"ajax-loader\">\r\n"],[1,"            \r\n"],[0,"                "]],"start1":26426,"start2":26426,"length1":32,"length2":46}]],"length":26664,"saved":false}
+{"ts":1364505635076,"patch":[[{"diffs":[[0,"\">\r\n            "],[1,"<div id=\"my-overlay\"></div>"],[0,"\r\n              "]],"start1":26438,"start2":26438,"length1":32,"length2":59}]],"length":26691,"saved":false}
