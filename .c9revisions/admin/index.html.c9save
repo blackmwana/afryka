@@ -1083,3 +1083,4 @@
 {"ts":1364505450551,"patch":[[{"diffs":[[0,"div id=\""],[1,"my-"],[0,"overlay\""]],"start1":26405,"start2":26405,"length1":16,"length2":19}]],"length":26677,"saved":false}
 {"ts":1364505631635,"patch":[[{"diffs":[[0,"    "],[-1,"<div id=\"my-overlay\"></div>"],[0,"\r\n  "]],"start1":26400,"start2":26400,"length1":35,"length2":8},{"diffs":[[0,"\"ajax-loader\">\r\n"],[1,"            \r\n"],[0,"                "]],"start1":26426,"start2":26426,"length1":32,"length2":46}]],"length":26664,"saved":false}
 {"ts":1364505635076,"patch":[[{"diffs":[[0,"\">\r\n            "],[1,"<div id=\"my-overlay\"></div>"],[0,"\r\n              "]],"start1":26438,"start2":26438,"length1":32,"length2":59}]],"length":26691,"saved":false}
+{"ts":1364505918527,"patch":[[{"diffs":[[0,"\">\r\n            "],[1,"    "],[0,"<div id=\"my-over"]],"start1":26438,"start2":26438,"length1":32,"length2":36}]],"length":26695,"saved":false}
