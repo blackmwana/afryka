@@ -59,7 +59,7 @@ body {
 .sidebar a{
     color:#ddd;
 }
-.sidebar a:hov{
+.sidebar>li>a:hover{
     color:#555;
 }
 .alert{
