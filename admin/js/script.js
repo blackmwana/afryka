@@ -890,6 +890,7 @@ $(document).ready(function() {
                 if (!_.isEmpty(updated)) {
                     console.debug(updated);
                     if(!this.base64Content){
+                        console.debug('image unchanged');
                     this.model.save(updated, {
                         remote_ignore: ['picture'],
                         success: function(model) {
