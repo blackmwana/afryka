@@ -765,7 +765,8 @@ $(document).ready(function() {
         id:"products-content",
         className:"page-region-content",
         events:{
-             "click tbody tr":"goProductPage"
+             "click tbody tr":"goProductPage",
+             "click #products-add-btn":"goNewProduct"
         },
         initialize:function(){
             this.collection.bind('all', this.render,this);
@@ -793,6 +794,9 @@ $(document).ready(function() {
             console.debug(this.parent);
              
             this.parent.navProduct($(ev.target).parent().data('id'));
+        },
+        goNewProduct:function(){ 
+            this.parent.navProductNew();
         },
         showProductEdit:function(ev){
             console.debug('showproductedit:tr clicked')
@@ -1040,7 +1044,8 @@ $(document).ready(function() {
         id:"categories-content",
         className:"page-region-content container-fluid",
         events:{
-            "click tbody tr":"showCatEdit"
+            "click tbody tr":"showCatEdit",
+            "click #cats-add-btn":"goNewCat"
         },
         initialize:function(){
             //this.model = this.options.model;
@@ -1074,6 +1079,9 @@ $(document).ready(function() {
             this.parent.goCatsEdit(this.parent,$(ev.target).parent().data('id'));
             
         },
+        goNewCat:function(){
+            this.parent.goCatNew();
+        },
         refresh:function(){
             //refresh the catview somehow
             //remove
@@ -1097,7 +1105,8 @@ $(document).ready(function() {
         id:"statii-content",
         className:"page-region-content ",
         events: {
-              "click tbody tr":"showStatEdit"
+              "click tbody tr":"showStatEdit",
+              "click #statii-add-btn":"goNewStatus"
         },
         initialize: function() {
             this.collection.bind('all', this.render,this);
@@ -1132,6 +1141,9 @@ $(document).ready(function() {
             //this.parent.sideBarView.goCatsEdit($(ev.target).parent().data('id'));
             this.parent.goStatiiEdit(this.parent,$(ev.target).parent().data('id'));
             
+        },
+        goNewStatus:function(){
+            this.parent.goStatusNew();
         }
     });
     var NewProductView = Backbone.View.extend({
