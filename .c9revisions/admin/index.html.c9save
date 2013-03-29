@@ -1123,3 +1123,10 @@
 {"ts":1364517409976,"patch":[[{"diffs":[[0,"       <"],[1,"i></i"],[0,">\r\n     "]],"start1":27191,"start2":27191,"length1":16,"length2":21}]],"length":27412,"saved":false}
 {"ts":1364517413218,"patch":[[{"diffs":[[0,"     <i>"],[1,"loading"],[0,"</i>\r\n  "]],"start1":27193,"start2":27193,"length1":16,"length2":23}]],"length":27419,"saved":false}
 {"ts":1364517418513,"patch":[[{"diffs":[[0,">loading"],[1,"....."],[0,"</i>\r\n  "]],"start1":27200,"start2":27200,"length1":16,"length2":21}]],"length":27424,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1364518239304,"patch":[[{"diffs":[[0,"=\"stylesheet\">\r\n"],[1,"        \r\n"],[0,"        <link hr"]],"start1":551,"start2":551,"length1":32,"length2":42}]],"length":27434,"saved":false}
+{"ts":1364518247152,"patch":[[{"diffs":[[0,"heet\">\r\n        "],[1,"font-awesome.min.css"],[0,"\r\n        <link "]],"start1":559,"start2":559,"length1":32,"length2":52}]],"length":27454,"saved":false}
+{"ts":1364518253137,"patch":[[{"diffs":[[0,"=\"stylesheet\">\r\n"],[1,"        <link href=\"http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/css/bootstrap-responsive.min.css\" rel=\"stylesheet\">\r\n"],[0,"        font-awe"]],"start1":551,"start2":551,"length1":32,"length2":168}]],"length":27590,"saved":false}
+{"ts":1364518261695,"patch":[[{"diffs":[[0,"\">\r\n"],[-1,"        font-awesome.min.css"],[0,"\r\n  "]],"start1":699,"start2":699,"length1":36,"length2":8}]],"length":27562,"saved":false}
+{"ts":1364518264989,"patch":[[{"diffs":[[0,"heet\">\r\n"],[-1,"\r\n"],[0,"        "]],"start1":695,"start2":695,"length1":18,"length2":16}]],"length":27560,"saved":false}
+{"ts":1364518271909,"patch":[[{"diffs":[[0,"css/"],[-1,"bootstrap-responsive.min.css"],[0,"\" re"]],"start1":650,"start2":650,"length1":36,"length2":8}]],"length":27532,"saved":false}
+{"ts":1364518275906,"patch":[[{"diffs":[[0,"min/css/"],[1,"font-awesome.min.css"],[0,"\" rel=\"s"]],"start1":646,"start2":646,"length1":16,"length2":36}]],"length":27552,"saved":false}
