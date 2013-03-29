@@ -1133,3 +1133,6 @@
 {"ts":1364518687459,"patch":[[{"diffs":[[0,"    "],[-1,"<div id=\"home-greeting\">\r\n                <h3>Welcome</h3>\r\n            </div>"],[0,"\r\n  "]],"start1":5353,"start2":5353,"length1":86,"length2":8}]],"length":27474,"saved":false}
 {"ts":1364518690927,"patch":[[{"diffs":[[0,"tem-home\">\r\n"],[-1,"            \r\n"],[0,"            "]],"start1":5333,"start2":5333,"length1":38,"length2":24}]],"length":27460,"saved":false}
 {"contributors":[],"silentsave":true,"ts":1364579873719,"patch":[[{"diffs":[[0,"on\">"],[-1,"\r\n                          "],[0,"</te"]],"start1":25155,"start2":25155,"length1":36,"length2":8}]],"length":27432,"saved":false}
+{"ts":1364579948370,"patch":[[{"diffs":[[0,"atii-new-label\">"],[-1,"Edit"],[1,"A"],[0," status</h3>\r\n  "]],"start1":24249,"start2":24249,"length1":36,"length2":33}]],"length":27429,"saved":false}
+{"ts":1364579951734,"patch":[[{"diffs":[[0,"label\">A"],[1,"dd new"],[0," status<"]],"start1":24258,"start2":24258,"length1":16,"length2":22}]],"length":27435,"saved":false}
+{"ts":1364579968115,"patch":[[{"diffs":[[0,"cats-new-label\">"],[-1,"Edit"],[1,"Add new"],[0," category</h3>\r\n"]],"start1":16354,"start2":16354,"length1":36,"length2":39}]],"length":27438,"saved":false}
