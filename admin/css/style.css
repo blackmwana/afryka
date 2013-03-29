@@ -1,6 +1,6 @@
 body {
     background-color:#aaa !important;
-    background-image: url(http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/images/mirrored_squares.png);
+    background-image: url(http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/img/mirrored_squares.png);
     background-repeat: repeat;
 }
 #frm-login {
@@ -24,7 +24,6 @@ body {
     z-index:9999;
     display:none;
     position:fixed;
-
     width:128px;
     height:41px;
     top:40%;

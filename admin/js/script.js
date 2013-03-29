@@ -283,7 +283,7 @@ $(document).ready(function() {
                 description_en:'not set',
                 description_pl:'not set',
                 link:"http://afroeuro.istore.pl/",
-                picture:"http://afrykashop.s3.amazonaws.com/images/market.png",//change to main folder not admin
+                picture:"http://afrykashop.s3.amazonaws.com/img/market.png",//change to main folder not admin
                 price:'0',
                 categories:[],
                 status:[]

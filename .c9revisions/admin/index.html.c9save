@@ -1117,3 +1117,4 @@
 {"ts":1364516497088,"patch":[[{"diffs":[[0,"                "],[1,"<i class=\"icon-search\"></i>"],[0,"\r\n              "]],"start1":5400,"start2":5400,"length1":32,"length2":59}]],"length":27388,"saved":false}
 {"ts":1364516504143,"patch":[[{"diffs":[[0,"        "],[1,"    "],[0,"<i class"]],"start1":5408,"start2":5408,"length1":16,"length2":20},{"diffs":[[0,"s=\"icon-"],[1,"plus"],[0,"search\">"]],"start1":5427,"start2":5427,"length1":16,"length2":20}]],"length":27396,"saved":false}
 {"ts":1364516510026,"patch":[[{"diffs":[[0,"con-plus"],[-1,"search"],[0,"\"></i>\r\n"]],"start1":5431,"start2":5431,"length1":22,"length2":16}]],"length":27390,"saved":false}
+{"ts":1364516661226,"patch":[[{"diffs":[[0,"admin/im"],[-1,"ages"],[1,"g"],[0,"/ajax-lo"]],"start1":27265,"start2":27265,"length1":20,"length2":17}]],"length":27387,"saved":false}
