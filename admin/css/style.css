@@ -25,7 +25,7 @@ body {
     display:none;
     position:fixed;
     width:128px;
-    height:41px;
+    height:60px;
     top:40%;
     left:40%;
     background-color: black;
@@ -39,9 +39,11 @@ body {
     /*margin:0 auto;*/
     height:30%;
     margin-left:10%;
-    margin-top:10%;
-    z-index:10000;
-    
+ /*   margin-top:10%;*/
+    z-index:10000; 
+}
+#ajax-loader i{
+    margin-left:2em;
 }
 .sidebar{
     
