@@ -1080,7 +1080,8 @@ $(document).ready(function() {
             
         },
         goNewCat:function(){
-            this.parent.goCatNew();
+            var mv= this.parent;
+            mv.goCatNew(this);
         },
         refresh:function(){
             //refresh the catview somehow
@@ -1143,7 +1144,8 @@ $(document).ready(function() {
             
         },
         goNewStatus:function(){
-            this.parent.goStatusNew();
+            var mv= this.parent;
+            mv.goStatusNew(mv);
         }
     });
     var NewProductView = Backbone.View.extend({
