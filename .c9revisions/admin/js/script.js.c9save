@@ -2101,3 +2101,10 @@
 {"ts":1364578305171,"patch":[[{"diffs":[[0,"        "],[-1,"this."],[1,"m"],[0,".goStatu"]],"start1":46259,"start2":46259,"length1":21,"length2":17}]],"length":91504,"saved":false}
 {"ts":1364578310073,"patch":[[{"diffs":[[0,"       m"],[1,"v"],[0,".goStatu"]],"start1":46260,"start2":46260,"length1":16,"length2":17}]],"length":91505,"saved":false}
 {"ts":1364578352979,"patch":[[{"diffs":[[0,"(){\r\n           "],[1," var mv="],[0," this.parent.goC"]],"start1":43855,"start2":43855,"length1":32,"length2":40},{"diffs":[[0," this.parent"],[1,";\r\n            mv"],[0,".goCatNew(th"]],"start1":43879,"start2":43879,"length1":24,"length2":41}]],"length":91530,"saved":false}
+{"ts":1364578717294,"patch":[[{"diffs":[[0,"ction(model) {\r\n"],[1,"                        \r\n"],[0,"                "]],"start1":58831,"start2":58831,"length1":32,"length2":58}]],"length":91556,"saved":false}
+{"ts":1364578720337,"patch":[[{"diffs":[[0,"                "],[1," collection.add(model);"],[0,"\r\n              "]],"start1":58855,"start2":58855,"length1":32,"length2":55}]],"length":91579,"saved":false}
+{"ts":1364578724318,"patch":[[{"diffs":[[0,"                "],[-1," "],[0,"collection.add(m"]],"start1":58855,"start2":58855,"length1":33,"length2":32}]],"length":91578,"saved":false}
+{"ts":1364578757911,"patch":[[{"diffs":[[0," Status();\r\n"],[1,"            var colle\r\n"],[0,"            "]],"start1":64899,"start2":64899,"length1":24,"length2":47}]],"length":91601,"saved":false}
+{"ts":1364578760919,"patch":[[{"diffs":[[0,"ar colle"],[1,"ction= this."],[0,"\r\n      "]],"start1":64924,"start2":64924,"length1":16,"length2":28}]],"length":91613,"saved":false}
+{"ts":1364578765061,"patch":[[{"diffs":[[0,"n= this."],[1,"collection;"],[0,"\r\n      "]],"start1":64936,"start2":64936,"length1":16,"length2":27}]],"length":91624,"saved":false}
+{"ts":1364578772200,"patch":[[{"diffs":[[0,"ction(model) {\r\n"],[1,"                        collection.add(model);\r\n"],[0,"                "]],"start1":65539,"start2":65539,"length1":32,"length2":80}]],"length":91672,"saved":false}

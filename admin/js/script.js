@@ -1452,6 +1452,7 @@ $(document).ready(function() {
                 $('#ajax-loader').show();
                 newCat.create({
                     success: function(model) {
+                        collection.add(model);
                         $('#ajax-loader').hide();
                         mainView.showAlert('success');
                         $('.modal').modal('hide');
@@ -1614,6 +1615,7 @@ $(document).ready(function() {
         },
         save: function() {
             var newStatus= new Status();
+            var collection= this.collection;
             nm = $('#statii-new-name').val();
             des = $('#statii-new-description').val();
             if (nm !== '') {
@@ -1630,6 +1632,7 @@ $(document).ready(function() {
                 //console.debug(updated)
                 newStatus.create({
                     success: function(model) {
+                        collection.add(model);
                         $('#ajax-loader').hide();
                         mainView.showAlert('success');
                         $('.modal').modal('hide');
