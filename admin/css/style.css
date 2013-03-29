@@ -59,7 +59,7 @@ body {
 .sidebar a{
     color:#ddd;
 }
-.sidebar a{
+.sidebar a:hov{
     color:#555;
 }
 .alert{
