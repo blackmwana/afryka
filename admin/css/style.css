@@ -1,6 +1,6 @@
 body {
     background-color:#aaa !important;
-    background-image: url(http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/img/mirrored_squares.png);
+    background-image: url(http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/img/diagonales_decalees.png);
     background-repeat: repeat;
 }
 #frm-login {
@@ -85,7 +85,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#414141', endC
     height: 100%;
     width: 100%;
 }
-.page-region-container{
+.page-region-content{
     background-color: white;
 -webkit-border-radius: 11px;
 -moz-border-radius: 11px;
