@@ -70,6 +70,11 @@ body {
 .nav a{
     cursor:pointer;
 }
+.navbar-inner{
+     -webkit-border-radius:px;
+    -moz-border-radius:0px;
+    border-radius:0px;
+}
 #avatar {
     cursor: pointer;
     border-left: 1px solid gray;
