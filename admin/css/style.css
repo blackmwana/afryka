@@ -1,5 +1,5 @@
 body {
-    background-color:#aaa !important;
+    background-color:#ccc !important;
     background-image: url(http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/img/diagonales_decalees.png);
     background-repeat: repeat;
 }
@@ -86,12 +86,18 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#414141', endC
     width: 100%;
 }
 .page-region-content{
-    background-color: white;
+    background-color: #ddd;
 -webkit-border-radius: 11px;
 -moz-border-radius: 11px;
 border-radius: 11px;
+padding: 2em;
+border-right: 2px solid #eee;
+border-bottom: 2px solid #eee;
+border-left: 1px solid #777;
+border-top: 1px solid #777;
 }
 .tile {
+    background-color:#ccc;
     cursor:pointer;
     height: 8em;
     width: 8em;
@@ -101,8 +107,17 @@ border-radius: 11px;
     margin: 0 auto;
     display: inline-block;
     -webkit-border-radius: 30px;
--moz-border-radius: 30px;
-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+.tile:hover{
+    background-color:#eee;
+}
+.tile:active{
+    border-right: 2px solid #777;
+    border-bottom: 2px solid #777;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
 }
 .tiles{
     width: 60%;
