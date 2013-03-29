@@ -889,7 +889,23 @@ $(document).ready(function() {
                 console.debug(_.isEmpty(updated));
                 if (!_.isEmpty(updated)) {
                     console.debug(updated);
+                    if(!this.base64Content){
                     this.model.save(updated, {
+                        remote_ignore: ['picture'],
+                        success: function(model) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('success');
+                            me.parent.navProducts();
+                        },
+                        error: function(model, response) {
+                            $('#ajax-loader').hide();
+                            mainView.showAlert('error');
+                            console.error(model);
+                            console.error(response);
+                        }
+                    });}
+                    else{
+                        this.model.save(updated, {
                         success: function(model) {
                             $('#ajax-loader').hide();
                             mainView.showAlert('success');
@@ -902,6 +918,8 @@ $(document).ready(function() {
                             console.error(response);
                         }
                     });
+                    }
+                    
                 }
                 else {
                     console.debug('only image changed');
