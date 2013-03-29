@@ -91,10 +91,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#414141', endC
 -moz-border-radius: 11px;
 border-radius: 11px;
 padding: 2em;
-border-right: 2px solid #eee;
-border-bottom: 2px solid #eee;
-border-left: 1px solid #777;
-border-top: 1px solid #777;
 }
 .tile {
     background-color:#ccc;
@@ -109,6 +105,10 @@ border-top: 1px solid #777;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
+    border-right: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    border-left: 1px solid #777;
+    border-top: 1px solid #777;
 }
 .tile:hover{
     background-color:#eee;
