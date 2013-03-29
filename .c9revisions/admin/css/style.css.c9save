@@ -606,3 +606,12 @@
 {"ts":1364580488780,"patch":[[{"diffs":[[0,"idebar{\n    "],[1,"color:;"],[0,"\n    backgro"]],"start1":911,"start2":911,"length1":24,"length2":31}]],"length":3783,"saved":false}
 {"ts":1364580491011,"patch":[[{"diffs":[[0,"  color:"],[1,"#"],[0,";\n    ba"]],"start1":921,"start2":921,"length1":16,"length2":17}]],"length":3784,"saved":false}
 {"ts":1364580493153,"patch":[[{"diffs":[[0," color:#"],[1,"ddd"],[0,";\n    ba"]],"start1":922,"start2":922,"length1":16,"length2":19}]],"length":3787,"saved":false}
+{"ts":1364581585424,"patch":[[{"diffs":[[0,"    "],[-1,"color:#ddd;"],[0,"\n   "]],"start1":919,"start2":919,"length1":19,"length2":8}]],"length":3776,"saved":false}
+{"ts":1364581587071,"patch":[[{"diffs":[[0,"idebar{\n"],[-1,"    \n"],[0,"    back"]],"start1":911,"start2":911,"length1":21,"length2":16}]],"length":3771,"saved":false}
+{"ts":1364581589334,"patch":[[{"diffs":[[0,"e=0);\n}\n"],[1,"\n"],[0,".alert{\n"]],"start1":1510,"start2":1510,"length1":16,"length2":17}]],"length":3772,"saved":false}
+{"ts":1364581591310,"patch":[[{"diffs":[[0,"e=0);\n}\n"],[1,".side"],[0,"\n.alert{"]],"start1":1510,"start2":1510,"length1":16,"length2":21}]],"length":3777,"saved":false}
+{"ts":1364581593489,"patch":[[{"diffs":[[0,"\n}\n.side"],[1,"bar"],[0,"\n.alert{"]],"start1":1515,"start2":1515,"length1":16,"length2":19}]],"length":3780,"saved":false}
+{"ts":1364581595467,"patch":[[{"diffs":[[0,".sidebar"],[1," "],[0,"\n.alert{"]],"start1":1518,"start2":1518,"length1":16,"length2":17}]],"length":3781,"saved":false}
+{"ts":1364581596966,"patch":[[{"diffs":[[0,"sidebar "],[1,"a{"],[0,"\n.alert{"]],"start1":1519,"start2":1519,"length1":16,"length2":18}]],"length":3783,"saved":false}
+{"ts":1364581598487,"patch":[[{"diffs":[[0,"ebar a{\n"],[1,"    \n}\n"],[0,".alert{\n"]],"start1":1522,"start2":1522,"length1":16,"length2":23}]],"length":3790,"saved":false}
+{"ts":1364581600552,"patch":[[{"diffs":[[0,"ebar a{\n    "],[1,"color:#ddd;"],[0,"\n}\n.alert{\n "]],"start1":1522,"start2":1522,"length1":24,"length2":35}]],"length":3801,"saved":false}
