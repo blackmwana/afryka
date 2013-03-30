@@ -821,6 +821,7 @@ $(document).ready(function() {
         },
         search:function(){
             //maybe strip preceeding whitespaces
+            console.debug('searching are we');
             var sq=$('.search-query').val().toLocaleLowerCase().trim();
             if(sq!==''){ 
                var searchCollection = new Products();
