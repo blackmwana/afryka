@@ -795,6 +795,19 @@ $(document).ready(function() {
                 });
             return this;   
         },
+        renderTable:function(){
+            var el = this.$el;
+            console.debug('rendering table products');
+            //$('.page-sidebar').empty();//can be remove on this.class
+            var collection = this.collection;
+            var rowTemplate = this.rowTemplate;
+            //el.html(this.template());
+            el.find('tbody').html('');
+            collection.each(function(product){
+                el.find('tbody').append(rowTemplate(product.toJSON()));       
+                });
+            return this;   
+        },
         goProductPage:function(ev){
             console.debug('going product page');
             console.debug($(ev.target).data('id'));
@@ -845,12 +858,12 @@ $(document).ready(function() {
                 console.debug(searchCollection.toJSON());
                 if(searchCollection.length!==0){
                    this.collection=searchCollection; 
-                   this.render();
+                   this.renderTable();
                 }
             }
             else{
                 this.collection=products;
-                this.render();
+                this.renderTable();
             }
             console.debug('searching for:'+sq+':are we?');
         }
