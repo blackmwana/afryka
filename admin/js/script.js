@@ -821,8 +821,9 @@ $(document).ready(function() {
         },
         search:function(){
             //maybe strip preceeding whitespaces
-            console.debug('searching are we');
+            
             var sq=$('.search-query').val().toLocaleLowerCase().trim();
+            console.debug('searching for:'+sq+':are we?');
             if(sq!==''){ 
                var searchCollection = new Products();
                 //var collection=this.c
@@ -841,6 +842,7 @@ $(document).ready(function() {
                         searchCollection.add(product);
                     } 
                 });
+                console.debug(searchCollection.toJSON());
                 if(searchCollection.length!==0){
                    this.collection=searchCollection; 
                 }
