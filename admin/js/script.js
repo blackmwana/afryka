@@ -240,6 +240,12 @@ function get_gravatar(email, size) {
 
         return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size+'&d='+d;
     }
+if (!String.prototype.trim) {
+ String.prototype.trim = function() {
+  return this.replace(/^\s+|\s+$/g,'');
+ }
+}
+
 $(document).ready(function() {
     
     var admin;
@@ -274,8 +280,11 @@ $(document).ready(function() {
     var Statii = StackMob.Collection.extend({
         model:Status
     });
+    //var Profile = StackMob.Model.extend({ binaryFields: ['pic', 'largepic'] }); 
     var Product = StackMob.Model.extend({
+        
         schemaName:"product",
+       // binaryFields:['picture'],
         defaults:function(){
             return{
                 title_en:'not set',
@@ -765,8 +774,9 @@ $(document).ready(function() {
         id:"products-content",
         className:"page-region-content",
         events:{
-             "click tbody tr":"goProductPage",
-             "click #products-add-btn":"goNewProduct"
+            "click tbody tr":"goProductPage",
+            "click #products-add-btn":"goNewProduct",
+            'keypress .search-query':'search'
         },
         initialize:function(){
             this.collection.bind('all', this.render,this);
@@ -778,7 +788,7 @@ $(document).ready(function() {
             console.debug('rendering productsview');
             //$('.page-sidebar').empty();//can be remove on this.class
             var collection = this.collection;
-            rowTemplate = this.rowTemplate;
+           var rowTemplate = this.rowTemplate;
             el.html(this.template());
             collection.each(function(product){
                 el.find('tbody').append(rowTemplate(product.toJSON()));       
@@ -808,6 +818,35 @@ $(document).ready(function() {
              
             this.parent.goProductsEdit(this.parent,$(ev.target).parent().data('id'));
             
+        },
+        search:function(){
+            //maybe strip preceeding whitespaces
+            var sq=$('.search-query').val().toLocaleLowerCase().trim();
+            if(sq!==''){ 
+               var searchCollection = new Products();
+                //var collection=this.c
+                products.each(function(product){
+                  var  p=product.toJSON();
+                    if (p.title_en&&p.title_en.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(product);
+                    } 
+                    else if (p.title_pl&&p.title_pl.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(product); 
+                    }    
+                    else if (p.description_en&&p.description_en.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(product);
+                    }
+                    else if (p.description_pl&&p.description_pl.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(product);
+                    } 
+                });
+                if(searchCollection.length!==){
+                   this.collection=searchCollection; 
+                }
+            }
+            else{
+                this.collection=products;
+            }
         }
         
     });
@@ -824,7 +863,7 @@ $(document).ready(function() {
         modified:false,
         fieldName:'picture',
         fName:'',
-        fType:'',
+        fType:'', 
         base64Content:'',
         
         initialize:function(){
