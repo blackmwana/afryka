@@ -776,7 +776,7 @@ $(document).ready(function() {
         events:{
             "click tbody tr":"goProductPage",
             "click #products-add-btn":"goNewProduct",
-            'keypress .search-query':'search'
+            'keyup .search-query':'search'
         },
         initialize:function(){
             this.collection.bind('all', this.render,this);
@@ -788,7 +788,7 @@ $(document).ready(function() {
             console.debug('rendering productsview');
             //$('.page-sidebar').empty();//can be remove on this.class
             var collection = this.collection;
-           var rowTemplate = this.rowTemplate;
+            var rowTemplate = this.rowTemplate;
             el.html(this.template());
             collection.each(function(product){
                 el.find('tbody').append(rowTemplate(product.toJSON()));       
@@ -808,10 +808,13 @@ $(document).ready(function() {
                 });
             return this;   
         },
+        noResults:function(){
+            this.$el.find('tbody').html('No results found');
+        },
         goProductPage:function(ev){
             console.debug('going product page');
             console.debug($(ev.target).data('id'));
-           console.debug(ev);
+            console.debug(ev);
             console.debug(ev.target);
             console.debug($(ev.target).parent());
             console.debug(this.parent);
@@ -824,7 +827,7 @@ $(document).ready(function() {
         showProductEdit:function(ev){
             console.debug('showproductedit:tr clicked')
             console.debug($(ev.target).data('id'));
-           console.debug(ev);
+            console.debug(ev);
             console.debug(ev.target);
             console.debug($(ev.target).parent());
             console.debug(this.parent);
@@ -839,7 +842,6 @@ $(document).ready(function() {
             console.debug('searching for:'+sq+':are we?');
             if(sq!==''){ 
                var searchCollection = new Products();
-                //var collection=this.c
                 products.each(function(product){
                   var  p=product.toJSON();
                     if (p.title_en&&p.title_en.toLocaleLowerCase().indexOf(sq)!==-1) {
@@ -859,6 +861,9 @@ $(document).ready(function() {
                 if(searchCollection.length!==0){
                    this.collection=searchCollection; 
                    this.renderTable();
+                }
+                else{
+                    
                 }
             }
             else{
