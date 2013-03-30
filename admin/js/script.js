@@ -845,10 +845,12 @@ $(document).ready(function() {
                 console.debug(searchCollection.toJSON());
                 if(searchCollection.length!==0){
                    this.collection=searchCollection; 
+                   this.render();
                 }
             }
             else{
                 this.collection=products;
+                
             }
         }
         
