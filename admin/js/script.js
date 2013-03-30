@@ -863,7 +863,7 @@ $(document).ready(function() {
                    this.renderTable();
                 }
                 else{
-                    
+                    this.noResults();
                 }
             }
             else{
