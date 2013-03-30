@@ -850,8 +850,9 @@ $(document).ready(function() {
             }
             else{
                 this.collection=products;
-                
+                this.render();
             }
+            console.debug('searching for:'+sq+':are we?');
         }
         
     });
