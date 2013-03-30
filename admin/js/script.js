@@ -840,7 +840,7 @@ $(document).ready(function() {
                         searchCollection.add(product);
                     } 
                 });
-                if(searchCollection.length!==){
+                if(searchCollection.length!==0){
                    this.collection=searchCollection; 
                 }
             }
