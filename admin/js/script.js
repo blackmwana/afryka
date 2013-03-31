@@ -926,12 +926,13 @@ $(document).ready(function() {
                     }
                 }
             });
-            var c=this.$el.find('.products-cats-select');
-            var s=this.$el.find('.products-statii-select');
+            var c=this.$el.find('#products-cats-select');
+            var s=this.$el.find('#products-statii-select');
             console.debug(this.options.cats);
-            console.debug(this.cats);
+             
             this.options.cats.each(function(cat){
                 var ca=cat.toJSON();
+                console.de
                 c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
             });
             this.options.statii.each(function(status){
