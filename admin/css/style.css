@@ -58,7 +58,7 @@ body {
 }
 .sidebar>li>a{
     /*color:#ddd;*/
-    color:#999;
+    color:black;
     width: 80%;
     margin-left:2%;
     border: none !important;
@@ -67,7 +67,7 @@ body {
     color:#555;
 }
 .sidebar>i{
-    color:#ddd;
+    color:#444;
 }
 .multiselect-btn{
     width:96%;
