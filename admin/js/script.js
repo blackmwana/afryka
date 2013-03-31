@@ -1641,7 +1641,8 @@ $(document).ready(function() {
             //check for changes if changes made then prompt to save yes/no
             nm = $('#statii-edit-name').val();
             des = $('#statii-edit-description').val();
-        if (nm !== '' || des !== des.data('oldcontent')) {
+            desEl = $('#statii-edit-description');
+        if (nm !== '' || des !== desEl.data('oldcontent')) {
             var r = confirm('You have unsaved data are you sure you want to leave?');
             if (r == true) {
                 $('.modal').modal('hide');
