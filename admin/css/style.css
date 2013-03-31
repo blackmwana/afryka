@@ -61,6 +61,7 @@ body {
     color:#999;
     width: 80%;
     margin-left: 2%;
+    
 }
 .sidebar>li>a:hover{
     color:#555;
@@ -174,8 +175,9 @@ body {
 }
 table{
     background-color:white;
-    border-color:#999;
+    border: 1px solid #999;
     margin: 0;
+    margin-bottom:0;
 }
 thead{
     background-color: #eee;
