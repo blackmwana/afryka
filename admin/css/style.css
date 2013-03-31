@@ -56,12 +56,12 @@ body {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#414141', endColorstr='#323232', GradientType=0);*/
 }
-.sidebar>li> a{
+.sidebar>li>a{
     /*color:#ddd;*/
     color:#999;
     width: 80%;
-    margin-left: 2%;
-    
+    margin-left:2%;
+    border: none !important;
 }
 .sidebar>li>a:hover{
     color:#555;
@@ -175,9 +175,9 @@ body {
 }
 table{
     background-color:white;
-    border: 1px solid #999;
-    margin: 0;
-    margin-bottom:0;
+    border: 1px solid #999!important;
+    margin: 0 !important;
+   
 }
 thead{
     background-color: #eee;
