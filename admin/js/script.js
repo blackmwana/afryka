@@ -813,13 +813,14 @@ $(document).ready(function() {
             var collection = this.collection;
             var rowTemplate = this.rowTemplate;
             el.html(this.template());
+            this.initMultiselect();
             collection.each(function(product){
                 el.find('tbody').append(rowTemplate(product.toJSON()));       
                 });
             return this;   
         },
         renderTable:function(){
-            var el = this.$el;
+            var el = this.$el; 
             console.debug('rendering table products');
             //$('.page-sidebar').empty();//can be remove on this.class
             var collection = this.collection;
@@ -894,6 +895,29 @@ $(document).ready(function() {
                 this.renderTable();
             }
             console.debug('searching for:'+sq+':are we?');
+        },
+        initMultiselect: function() {
+            this.$el.find('.multiselect').multiselect({
+                buttonClass: 'btn',
+                buttonWidth: 'auto',
+                buttonContainer: '<div class="btn-group" />',
+                maxHeight: false,
+                buttonText: function(options) {
+                    if (options.length === 0) {
+                        return 'None selected <b class="caret"></b>';
+                    }
+                    else if (options.length > 3) {
+                        return options.length + ' selected  <b class="caret"></b>';
+                    }
+                    else {
+                        var selected = '';
+                        options.each(function() {
+                            selected += $(this).text() + ', ';
+                        });
+                        return selected.substr(0, selected.length - 2) + ' <b class="caret"></b>';
+                    }
+                }
+            });
         }
         
     });
