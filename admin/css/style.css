@@ -154,10 +154,10 @@ body {
     font-size:3em;
 }
 .span2{
-    border: solid 1px blue;
+ /*   border: solid 1px blue;*/
 }
 .span10{
-    border: solid 1px red;
+    /*border: solid 1px red;*/
     
 }
 .table-holder{
