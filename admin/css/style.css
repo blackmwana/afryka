@@ -6,7 +6,7 @@ body {
 #frm-login {
     max-width:300px;
     border: 1px solid #e5e5e5;
-    margin: 0 auto;
+    margin: 0 auto; 
     padding:4em;
 }
 #my-overlay{

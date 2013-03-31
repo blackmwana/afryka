@@ -877,7 +877,7 @@ $(document).ready(function() {
                var searchCollection = new Products();
                 products.each(function(product){
                   var  p=product.toJSON();
-                    if (p.title_en&&p.title_en.toLocaleLowerCase().indexOf(sq)!==-1) {
+                    if (p.title_en &&p.title_en.toLocaleLowerCase().indexOf(sq)!==-1) {
                         searchCollection.add(product);
                     } 
                     else if (p.title_pl&&p.title_pl.toLocaleLowerCase().indexOf(sq)!==-1) {
