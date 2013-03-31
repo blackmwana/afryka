@@ -1687,7 +1687,7 @@ $(document).ready(function() {
                     }
                 });
             }
-            return this;
+            return this; 
         },
         delete: function() {
             var r = confirm('Are you sure you want to delete this status?');
@@ -1702,6 +1702,7 @@ $(document).ready(function() {
                     },
                     error: function(model, response) {
                         //strange things going on here
+                        //the error callback is being called even though the model is deleted
                        // console.debug(model);
                         //console.debug(response);
                         $('#ajax-loader').hide();

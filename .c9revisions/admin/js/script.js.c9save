@@ -2433,3 +2433,11 @@
 {"ts":1364770972120,"patch":[[{"diffs":[[0,"-select');\r\n"],[-1,"        \r\n"],[0,"            "]],"start1":36382,"start2":36382,"length1":34,"length2":24}]],"length":97715,"saved":false}
 {"ts":1364770978572,"patch":[[{"diffs":[[0,");\r\n"],[-1,"                //console.de\r\n"],[0,"    "]],"start1":36581,"start2":36581,"length1":38,"length2":8}]],"length":97685,"saved":false}
 {"ts":1364771000128,"patch":[[{"diffs":[[0,"ca=cat.toJSON();"],[1," "],[0,"\r\n              "]],"start1":36567,"start2":36567,"length1":32,"length2":33}]],"length":97686,"saved":false}
+{"ts":1364771159844,"patch":[[{"diffs":[[0," going on here\r\n"],[1,"                        \r\n"],[0,"                "]],"start1":69229,"start2":69229,"length1":32,"length2":58}]],"length":97712,"saved":false}
+{"ts":1364771164345,"patch":[[{"diffs":[[0,"                "],[1,"the error cal"],[0,"\r\n              "]],"start1":69253,"start2":69253,"length1":32,"length2":45}]],"length":97725,"saved":false}
+{"ts":1364771175855,"patch":[[{"diffs":[[0,"rror cal"],[1,"lback is being called"],[0,"\r\n      "]],"start1":69274,"start2":69274,"length1":16,"length2":37}]],"length":97746,"saved":false}
+{"ts":1364771185029,"patch":[[{"diffs":[[0,"g called"],[1," even though"],[0,"\r\n      "]],"start1":69295,"start2":69295,"length1":16,"length2":28}]],"length":97758,"saved":false}
+{"ts":1364771189369,"patch":[[{"diffs":[[0,"n though"],[1," the "],[0,"\r\n      "]],"start1":69307,"start2":69307,"length1":16,"length2":21}]],"length":97763,"saved":false}
+{"ts":1364771197222,"patch":[[{"diffs":[[0,"ugh the "],[1,"model is deleted"],[0,"\r\n      "]],"start1":69312,"start2":69312,"length1":16,"length2":32}]],"length":97779,"saved":false}
+{"ts":1364771204330,"patch":[[{"diffs":[[0,"        "],[1,"//"],[0,"the erro"]],"start1":69261,"start2":69261,"length1":16,"length2":18}]],"length":97781,"saved":false}
+{"ts":1364771286441,"patch":[[{"diffs":[[0,"    return this;"],[1," "],[0,"\r\n        },\r\n  "]],"start1":68597,"start2":68597,"length1":32,"length2":33}]],"length":97782,"saved":false}
