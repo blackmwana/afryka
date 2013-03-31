@@ -821,7 +821,6 @@ $(document).ready(function() {
         render: function(){
             var el = this.$el;
             console.debug('rendering productsview');
-            //$('.page-sidebar').empty();//can be remove on this.class
             var collection = this.collection;
             var rowTemplate = this.rowTemplate;
             el.html(this.template());
@@ -829,6 +828,8 @@ $(document).ready(function() {
             collection.each(function(product){
                 el.find('tbody').append(rowTemplate(product.toJSON()));   
                 });
+            if(collection.length===0)
+                el.find('tbody').html('No products have been found');
             return this;   
         },
         renderTable:function(){
@@ -1192,12 +1193,14 @@ $(document).ready(function() {
         render:function(){
            var el = this.$el;
             var collection = this.collection;
-            rowTemplate = this.rowTemplate;
+            var rowTemplate = this.rowTemplate;
           //  $('.page-region-content').remove();
             el.html(this.template());
             collection.each(function(cat){
                 el.find('tbody').append(rowTemplate(cat.toJSON()));       
                 });
+                if(collection.length===0)
+                el.find('tbody').html('No categories have been found');
             return this;
         },
         showCatEdit:function(ev){
@@ -1258,11 +1261,9 @@ $(document).ready(function() {
             collection.each(function(status){
                 el.find('tbody').append(rowTemplate(status.toJSON()));       
                 });
+            if(collection.length===0)
+                el.find('tbody').html('No statii have been found');
             return this;
-        },
-        refresh:function(){
-            //refresh the statiiview somehow
-            //remove
         },
         showStatEdit:function(ev){
             console.debug('showStatedit:tr clicked')
