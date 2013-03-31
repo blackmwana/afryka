@@ -567,10 +567,16 @@ $(document).ready(function() {
             console.debug('going productlist, showing productsview');
             if(!products) 
                 products = new Products();
+                if(!cats)
+                    cats = new Cats();
+                    cats.fetch({async:false});
+                if(!statii)
+                    statii = new Statii();
+                    statii.fetch({async:false});
             products.fetch({
                 success:function(){
                     console.debug('mainview,goProducts:products have been fetched');
-                    mv.productsView = new ProductsView({collection:products});
+                    mv.productsView = new ProductsView({collection:products,statii:statii,cats:cats});
                     mv.productsView.parent = mv;
                     afrykaAdminApp.prm.showView(mv.productsView);
                     afrykaAdminApp.activeNav('#m-products');
@@ -815,7 +821,7 @@ $(document).ready(function() {
             el.html(this.template());
             this.initMultiselect();
             collection.each(function(product){
-                el.find('tbody').append(rowTemplate(product.toJSON()));       
+                el.find('tbody').append(rowTemplate(product.toJSON()));   
                 });
             return this;   
         },
@@ -917,6 +923,16 @@ $(document).ready(function() {
                         return selected.substr(0, selected.length - 2) + ' <b class="caret"></b>';
                     }
                 }
+            });
+            var c=this.$el.find('.products-cats-select');
+            var s=this.$el.find('.products-statii-select');
+            this.options.cats.each(function(cat){
+                var ca=cat.toJSON();
+                c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
+            });
+            this.options.statii.each(function(status){
+                var st =status.toJSON();
+                s.append('<option value="'+st.status_id+'">'+st.name+'</option>');
             });
         }
         
