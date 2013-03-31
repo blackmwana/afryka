@@ -569,7 +569,9 @@ $(document).ready(function() {
                 products = new Products();
                 if(!cats)
                     cats = new Cats();
+                    console.debug('cats async before');
                     cats.fetch({async:false});
+                    console.debug('cats async after');
                 if(!statii)
                     statii = new Statii();
                     statii.fetch({async:false});
@@ -926,6 +928,8 @@ $(document).ready(function() {
             });
             var c=this.$el.find('.products-cats-select');
             var s=this.$el.find('.products-statii-select');
+            console.debug(this.options.cats);
+            console.debug(this.cats);
             this.options.cats.each(function(cat){
                 var ca=cat.toJSON();
                 c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
