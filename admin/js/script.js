@@ -905,6 +905,19 @@ $(document).ready(function() {
             console.debug('searching for:'+sq+':are we?');
         },
         initMultiselect: function() {
+            var c=this.$el.find('#products-cats-select');
+            var s=this.$el.find('#products-statii-select');
+            console.debug(this.options.cats);
+             
+            this.options.cats.each(function(cat){
+                var ca=cat.toJSON();
+                console.de
+                c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
+            });
+            this.options.statii.each(function(status){
+                var st =status.toJSON();
+                s.append('<option value="'+st.status_id+'">'+st.name+'</option>');
+            });
             this.$el.find('.multiselect').multiselect({
                 buttonClass: 'btn',
                 buttonWidth: '100%',
@@ -926,21 +939,7 @@ $(document).ready(function() {
                     }
                 }
             });
-            var c=this.$el.find('#products-cats-select');
-            var s=this.$el.find('#products-statii-select');
-            console.debug(this.options.cats);
-             
-            this.options.cats.each(function(cat){
-                var ca=cat.toJSON();
-                console.de
-                c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
-            });
-            this.options.statii.each(function(status){
-                var st =status.toJSON();
-                s.append('<option value="'+st.status_id+'">'+st.name+'</option>');
-            });
         }
-        
     });
     var ProductView = Backbone.View.extend({// pass in type in the options 
         id:"product-content",
