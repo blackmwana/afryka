@@ -1202,3 +1202,4 @@
 {"ts":1364747084198,"patch":[[{"diffs":[[0,"    "],[-1,"  \r\n                     "],[0,"\r\n  "]],"start1":13467,"start2":13467,"length1":33,"length2":8}]],"length":28034,"saved":false}
 {"ts":1364747086988,"patch":[[{"diffs":[[0," </ul>\r\n"],[-1,"                    \r\n"],[0,"        "]],"start1":13443,"start2":13443,"length1":38,"length2":16}]],"length":28012,"saved":false}
 {"ts":1364747108555,"patch":[[{"diffs":[[0,"-btn\"><a"],[1," class=\"btn\""],[0,">add new"]],"start1":26595,"start2":26595,"length1":16,"length2":28}]],"length":28024,"saved":false}
+{"ts":1364747437240,"patch":[[{"diffs":[[0,"n\"><a class=\"btn"],[1," "],[0,"\">add new status"]],"start1":26598,"start2":26598,"length1":32,"length2":33}]],"length":28025,"saved":false}
