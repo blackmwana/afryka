@@ -900,7 +900,7 @@ $(document).ready(function() {
             this.$el.find('.multiselect').multiselect({
                 buttonClass: 'btn',
                 buttonWidth: 'auto',
-                buttonContainer: '<div class="btn-group" />',
+                buttonContainer: '<div class="btn-group multiselect-btn" />',
                 maxHeight: false,
                 buttonText: function(options) {
                     if (options.length === 0) {
