@@ -910,15 +910,13 @@ $(document).ready(function() {
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
             var s=this.$el.find('#products-statii-select');
-            console.debug(this.options.cats);
             if(this.options.cats.length===0) 
                 c.append('<i>no categories set</i>');
             this.options.cats.each(function(cat){
-                var ca=cat.toJSON();
-                //console.de
+                var ca=cat.toJSON(); 
                 c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
             });
-            if(this.options.statiicats.length===0) 
+            if(this.options.statii.length===0) 
                 s.append('<i>no status set</i>');
             this.options.statii.each(function(status){
                 var st =status.toJSON();
