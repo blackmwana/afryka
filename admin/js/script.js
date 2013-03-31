@@ -910,15 +910,7 @@ $(document).ready(function() {
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
             var s=this.$el.find('#products-statii-select');
-            if(this.options.cats.length===0) 
-                c.append('<i>no categories set</i>');
-            this.options.cats.each(function(cat){
-                var ca=cat.toJSON(); 
-                c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
-            });
-            if(this.options.statii.length===0) 
-               // s.next().find('ul').append('<i>no status set</i>');
-               console.debug(s.next().find('ul'));
+           
             this.options.statii.each(function(status){
                 var st =status.toJSON();
                 s.append('<option value="'+st.status_id+'">'+st.name+'</option>');
@@ -944,6 +936,15 @@ $(document).ready(function() {
                     }
                 }
             });
+             if(this.options.cats.length===0) 
+                c.append('<i>no categories set</i>');
+            this.options.cats.each(function(cat){
+                var ca=cat.toJSON(); 
+                c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
+            });
+            if(this.options.statii.length===0) 
+               // s.next().find('ul').append('<i>no status set</i>');
+               console.debug(s.next().find('ul'));
         }
     });
     var ProductView = Backbone.View.extend({// pass in type in the options 
