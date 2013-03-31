@@ -12,6 +12,7 @@
         <link href="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/css/style.css" rel="stylesheet">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/js/bootstrap-multiselect.js"></script>
         <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.8.1-bundled-min.js"></script>
         <!--<script type=" text/javascript" src="../js/preloadjs-0.2.0.min.js"></script>-->
         <script type="text/javascript" src="http://dev.afrykashop.blackmwanagmailcom.stackmobapp.com/admin/js/stackmobinit.js"></script>
@@ -67,7 +68,7 @@
                         </li>
                     </ul>
                     <div id="avatar" class="pull-right">
-                        <div class="pull-right">
+                        <div     class="pull-right">
                             <div class="username"><%=username%></div>
                             <div class="logout"><small>logout</small></div>
                         </div>
@@ -104,7 +105,29 @@
                 <div class="span2">
                     <ul class="nav nav-tabs nav-stacked sidebar">
                         <li id="products-search"><a><input type="text" class="search-query span12" placeholder="Search"></a></li>
-                        <li id="products-add-btn"><a>add new product</a></li>            
+                        <li id="products-add-btn"><a>add new product</a></li> 
+                        <i>categories</i>
+                        <li >
+                            <select id="products-cats-select" class="multiselect" multiple="multiple">
+                                <option value="cheese">Cheese</option>
+                                <option value="tomatoes">Tomatoes</option>
+                                <option value="mozarella">Mozzarella</option>
+                                <option value="mushrooms">Mushrooms</option>
+                                <option value="pepperoni">Pepperoni</option>
+                                <option value="onions">Onions</option>
+                            </select>
+                        </li>
+                        <i>Status</i>
+                        <li >
+                            <select id="products-statii-select" class="multiselect" multiple="multiple">
+                                <option value="scheese">Cheese</option>
+                                <option value="stomatoes">Tomatoes</option>
+                                <option value="smozarella">Mozzarella</option>
+                                <option value="smushrooms">Mushrooms</option>
+                                <option value="spepperoni">Pepperoni</option>
+                                <option value="sonions">Onions</option>
+                            </select>
+                        </li>
                     </ul>
                 </div>
                 <div class="span10">
