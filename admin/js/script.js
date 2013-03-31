@@ -807,7 +807,9 @@ $(document).ready(function() {
         events:{
             "click tbody tr":"goProductPage",
             "click #products-add-btn":"goNewProduct",
-            'keyup .search-query':'search'
+            'keyup .search-query':'search',
+            'change #products-cats-select':'filterCategories()',
+            'change #products-statii-select':'filterStatii()'
         },
         initialize:function(){
             this.collection.bind('all', this.render,this);
@@ -904,7 +906,9 @@ $(document).ready(function() {
             }
             console.debug('searching for:'+sq+':are we?');
         },
-        initMultiselect: function() {
+        filterCategories:function(){},
+        filterStatii:function(ev){},
+        initMultiselect: function(ev) {
             var c=this.$el.find('#products-cats-select');
             var s=this.$el.find('#products-statii-select');
             console.debug(this.options.cats);
