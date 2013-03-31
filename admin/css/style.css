@@ -64,10 +64,14 @@ body {
     border: none !important;
 }
 .sidebar>li>a:hover{
-    color:#555;
+    color:#999;
 }
 .sidebar>i{
     color:#444;
+    margin-bottom:0.5em;
+}
+.sidebar>li{
+    margin-bottom:0.5em;
 }
 .multiselect-btn{
     width:96%;
