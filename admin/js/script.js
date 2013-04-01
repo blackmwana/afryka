@@ -936,11 +936,12 @@ $(document).ready(function() {
                     
                     case 'statii':
                         console.debug('statii change');
-                        qs=_.without(qs,val)
+                        qs=_.without(qs,val);
                         break;
                     case 'cats':
                         console.debug('statii change');
-                        qc=_.without(qc,val)
+//                        qc=_.without(qc,val);
+                        this.parent.queryCats=_.without(this.parent.queryCats,val);
                         break;
                 }
             }
