@@ -911,9 +911,35 @@ $(document).ready(function() {
             console.debug(checked);
         },
         filterSelects:function(el,checked){
-            console.debug(el);
-            window.pusy=el
-            console.debug(checked);
+            var qc=this.queryCats;
+            var qs= this.queryStatii;
+            var val=el.val();
+            if(checked){
+                switch(el.attr('id')){
+                    case 'statii':
+                        qs.push(val);
+                        break;
+                    case 'cats':
+                        qc.push(val);
+                        break;
+                }
+            }
+            else{
+                switch(el.attr('id')){
+                    case 'statii':
+                        qs=_.without(qs,val)
+                        break;
+                    case 'cats':
+                        qc=_.without(qc,val)
+                        break;
+                }
+            }
+        
+            //console.debug(el);
+            //window.pusy=el;
+            //console.debug(checked);
+            console.debug('cats'+qc);
+            console.debug('statii'+qs);
         },
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
@@ -921,11 +947,11 @@ $(document).ready(function() {
             var me=this;
             this.options.cats.each(function(cat){
                 var ca=cat.toJSON(); 
-                c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
+                c.append('<option class="cats" value="'+ca.category_id+'">'+ca.title_en+'</option>');
             });
             this.options.statii.each(function(status){
                 var st =status.toJSON();
-                s.append('<option value="'+st.status_id+'">'+st.name+'</option>');
+                s.append('<option class="statii" value="'+st.status_id+'">'+st.name+'</option>');
             });
             this.$el.find('.multiselect').multiselect({
                 buttonClass: 'btn',
