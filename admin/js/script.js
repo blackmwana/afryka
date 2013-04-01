@@ -452,7 +452,8 @@ $(document).ready(function() {
             "click #m-categories":"navCategories",
             "click #m-other":"navOther",
             "click #m-statii":"navStatii",
-            "click #avatar":"showUserDialogue"
+            "click #avatar":"showUserDialogue",
+            'click #logout-btn':'adminLogout'
         },
         initialize: function() {
            console.debug(this.model.toJSON());
@@ -741,21 +742,6 @@ $(document).ready(function() {
             console.debug(this);
             if(!cats) 
                 cats = new Cats();
-            /*products.fetch({
-                success:function(){
-                    console.debug('mainview,goProducts:products have been fetched');
-                    mv.productsView = new ProductsView({collection:products});
-                    mv.productsView.parent = mv;
-                    afrykaAdminApp.prm.showView(mv.productsView);
-                    afrykaAdminApp.activeNav('#m-products');
-                    $('#ajax-loader').hide();
-                },
-                error:function(){
-                    //do something
-                    //show alert
-                    console.debug('mainview,goProducts:products have not been fetched');
-                }
-            });*/
             var ncmv = new NewCategoryModalView({collection:cats});
             mv.newCategoryModalView = ncmv; 
             ncmv.parent = mv;
@@ -772,6 +758,16 @@ $(document).ready(function() {
                     $('.alert-error').fadeIn().delay(3000).fadeOut();
                     break;
             }       
+        },
+        adminLogout:function(){
+            admin.logout({
+                success:function(){
+                console.debug(this);
+                },
+                error:function(){
+                console.debug(this);    
+                }    
+            });
         }
     });
     ////////////////////////////////////////////////////////
