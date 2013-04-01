@@ -902,8 +902,14 @@ $(document).ready(function() {
             }
             console.debug('searching for:'+sq+':are we?');
         },
-        filterCategories:function(ev){},
-        filterStatii:function(ev){},
+        filterCategories:function(el,checked){
+            console.debug(el);
+            console.debug(checked);
+        },
+        filterStatii:function(el,checked){
+            console.debug(el);
+            console.debug(checked);
+        },
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
             var s=this.$el.find('#products-statii-select');
