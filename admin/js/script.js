@@ -912,6 +912,7 @@ $(document).ready(function() {
         },
         filterSelects:function(el,checked){
             console.debug(el);
+            window.pusy=el
             console.debug(checked);
         },
         initMultiselect: function() {
