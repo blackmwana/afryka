@@ -2485,3 +2485,5 @@
 {"ts":1364815158780,"patch":[[{"diffs":[[0,"      ''"],[1,":"],[0,"''\r\n    "]],"start1":17302,"start2":17302,"length1":16,"length2":17}]],"length":98064,"saved":false}
 {"ts":1364815163122,"patch":[[{"diffs":[[0,"       '"],[1,"click #l"],[0,"':''\r\n  "]],"start1":17301,"start2":17301,"length1":16,"length2":24}]],"length":98072,"saved":false}
 {"ts":1364835591893,"patch":[[{"diffs":[[0,"   class"],[1,"N"],[0,"ame:\"pag"]],"start1":37900,"start2":37900,"length1":16,"length2":17}]],"length":98189,"saved":false}
+{"ts":1364836927579,"patch":[[{"diffs":[[0,"                "],[-1,"//"],[0,"console.debug(re"]],"start1":69320,"start2":69320,"length1":34,"length2":32}]],"length":98187,"saved":false}
+{"ts":1364836936677,"patch":[[{"diffs":[[0,"                "],[-1,"//"],[0," console.debug(m"]],"start1":69270,"start2":69270,"length1":34,"length2":32}]],"length":98185,"saved":false}

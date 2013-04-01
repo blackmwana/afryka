@@ -1702,8 +1702,8 @@ $(document).ready(function() {
                     error: function(model, response) {
                         //strange things going on here
                         //the error callback is being called even though the model is deleted
-                       // console.debug(model);
-                        //console.debug(response);
+                        console.debug(model);
+                        console.debug(response);
                         $('#ajax-loader').hide();
                         $('.modal').modal('hide');
                         //mainView.showAlert('error');
