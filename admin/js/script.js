@@ -911,6 +911,7 @@ $(document).ready(function() {
             console.debug(checked);
         },
         filterSelects:function(el,checked){
+            console.debug(this)
             var qc=this.queryCats;
             var qs= this.queryStatii;
             var val=el.val();
