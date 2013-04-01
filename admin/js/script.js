@@ -914,6 +914,7 @@ $(document).ready(function() {
             console.debug(this);
             console.debug(this.parent);
             console.debug(el.attr('id'));
+            window.pusy=el
             var qc=this.parent.queryCats;
             var qs= this.parent.queryStatii;
             var val=el.val();
