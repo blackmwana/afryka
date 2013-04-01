@@ -1861,7 +1861,7 @@ $(document).ready(function() {
                 },
                 error:function(){
                     console.debug('user  fetch error');
-                    window.localStorage.clear() 
+                    window.localStorage.clear(); 
                 }
             });
            // return user;
@@ -1923,6 +1923,7 @@ $(document).ready(function() {
                             },
                             error: function() {
                                 console.debug('user  fetch error');
+                                window.localStorage.clear();
                             }
                         });
                         // return user;
@@ -1990,6 +1991,7 @@ $(document).ready(function() {
                             },
                             error: function() {
                                 console.debug('user  fetch error');
+                                window.localStorage.clear();
                             }
                         });
                         // return user;
@@ -2048,6 +2050,7 @@ $(document).ready(function() {
                             },
                             error: function() {
                                 console.debug('user  fetch error');
+                                window.localStorage.clear();
                             }
                         });
                         // return user;
@@ -2160,6 +2163,7 @@ $(document).ready(function() {
                             },
                             error: function() {
                                 console.debug('user  fetch error');
+                                window.localStorage.clear();
                             }
                         });
                         // return user;
@@ -2218,6 +2222,7 @@ $(document).ready(function() {
                             },
                             error: function() {
                                 console.debug('user  fetch error');
+                                window.localStorage.clear();
                             }
                         });
                         // return user;
@@ -2280,6 +2285,7 @@ $(document).ready(function() {
                             },
                             error: function() {
                                 console.debug('user  fetch error');
+                                window.localStorage.clear();
                             }
                         });
                         // return user;
@@ -2340,6 +2346,7 @@ $(document).ready(function() {
                             },
                             error: function() {
                                 console.debug('user  fetch error');
+                                window.localStorage.clear();
                             }
                         });
                         // return user;
