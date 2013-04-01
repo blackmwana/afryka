@@ -69,15 +69,17 @@
                     </ul>
                     <div id="avatar" class="pull-right">
                         <div class="dropdown">
-                            <div class="pull-right">
-                                <div class="username"><%=username%></div>
-                                <div class="logout"><small>logout</small></div>
-                            </div>
-                            <div class="pull-left" id="avatar-image">
-                                <img alt="error"
-                                />
-                            </div>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <a id="user-menu" class="dropdown-toggle" role="button" data-toggle="dropdown">
+                                <div class="pull-right">
+                                    <div class="username"><%=username%></div>
+                                    <div class="logout"><small>logout</small></div>
+                                </div>
+                                <div class="pull-left" id="avatar-image">
+                                    <img alt="error"
+                                    />
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="user-menu">
                                 <li><a tabindex="-1" href="#">Action</a></li>
                                 <li><a tabindex="-1" href="#">Another action</a></li>
                                 <li><a tabindex="-1" href="#">Something else here</a></li>
