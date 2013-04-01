@@ -915,19 +915,19 @@ $(document).ready(function() {
             console.debug(this.parent);
             //console.debug(el.attr('class'));
           //  window.pusy=el;
-            var qc=this.parent.queryCats;
-            var qs= this.parent.queryStatii;
+            //var qc=this.parent.queryCats;
+            //var qs= this.parent.queryStatii;
             var val=el.val();
             if(checked){
                 console.debug('checked is true');
                 switch(el.attr('class')){
                     case 'statii':
                         console.debug('statii change');
-                        qs.push(val);
+                        this.parent.queryStatii.push(val);
                         break;
                     case 'cats':
                         console.debug('cats change');
-                        qc.push(val);
+                        this.parent.queryCats.push(val);
                         break;
                 }
             }
@@ -936,7 +936,7 @@ $(document).ready(function() {
                     
                     case 'statii':
                         console.debug('statii change');
-                        qs=_.without(qs,val);
+                        this.parent.queryStatii=_.without(this.parent.queryStatii,val);
                         break;
                     case 'cats':
                         console.debug('statii change');
@@ -950,7 +950,7 @@ $(document).ready(function() {
             //window.pusy=el;
             //console.debug(checked);
             console.debug('cats'+this.parent.queryCats);
-            console.debug('statii'+qs);
+            console.debug('statii'+this.parent.queryStatii);
         },
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
