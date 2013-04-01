@@ -6,10 +6,9 @@ body {
 #frm-login {
     max-width:300px;
     background-color:#ccc;
-    /*border-right:1px solid #eee;
-    border-bottom:1px solid #eee;
-    border-left:1px solid #777;
-    border-top:1px solid #777;*/
+    -webkit-border-radius:11px;
+    -moz-border-radius:11px;
+    border-radius:11px; 
     border-right: 1px solid #777;
     border-bottom: 1px solid #777;
     border-left: 1px solid #eee;
