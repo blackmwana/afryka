@@ -913,25 +913,32 @@ $(document).ready(function() {
         filterSelects:function(el,checked){
             console.debug(this);
             console.debug(this.parent);
+            console.debug(el.attr('id'));
             var qc=this.parent.queryCats;
             var qs= this.parent.queryStatii;
             var val=el.val();
             if(checked){
+                console.debug('checked is true');
                 switch(el.attr('id')){
                     case 'statii':
+                        console.debug('statii change');
                         qs.push(val);
                         break;
                     case 'cats':
+                        console.debug('cats change');
                         qc.push(val);
                         break;
                 }
             }
-            else{
+            else{console.debug('checked is false');
                 switch(el.attr('id')){
+                    
                     case 'statii':
+                        console.debug('statii change');
                         qs=_.without(qs,val)
                         break;
                     case 'cats':
+                        console.debug('statii change');
                         qc=_.without(qc,val)
                         break;
                 }
