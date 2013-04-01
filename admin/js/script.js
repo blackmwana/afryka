@@ -949,7 +949,7 @@ $(document).ready(function() {
             //console.debug(el);
             //window.pusy=el;
             //console.debug(checked);
-            console.debug('cats'+qc);
+            console.debug('cats'+this.parent.queryCats);
             console.debug('statii'+qs);
         },
         initMultiselect: function() {
