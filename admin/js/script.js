@@ -452,7 +452,6 @@ $(document).ready(function() {
             "click #m-categories":"navCategories",
             "click #m-other":"navOther",
             "click #m-statii":"navStatii",
-            "click #avatar":"showUserDialogue",
             'click #logout-btn':'adminLogout'
         },
         initialize: function() {
@@ -648,9 +647,6 @@ $(document).ready(function() {
             // afrykaAdminApp.navigate('/home',true);
             afrykaAdminApp.prm.showView(mv.userView);
             $('#ajax-loader').hide();
-        },
-        showUserDialogue:function(){
-            console.debug('user dialog');
         },
         goCatsEdit:function(mv,id){
             console.debug('gocatsedit:rendering dialogbox');
