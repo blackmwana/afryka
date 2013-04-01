@@ -804,7 +804,7 @@ $(document).ready(function() {
             "click tbody tr":"goProductPage",
             "click #products-add-btn":"goNewProduct",
             'keyup .search-query':'search',
-            'change #products-cats-select':'filterCategories',
+            'onCchange #products-cats-select':'filterCategories',
             'change #products-statii-select':'filterStatii'
         },
         queryCats:[],
