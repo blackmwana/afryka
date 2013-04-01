@@ -807,12 +807,12 @@ $(document).ready(function() {
             'onChange #products-cats-select':'filterCategories',
             'change #products-statii-select':'filterStatii'
         },
-        queryCats:[],
-        queryStatii:[],
         initialize:function(){
             this.collection.bind('all', this.render,this);
             this.template=_.template($('#item-products').html());
             this.rowTemplate= _.template($('#item-products-row').html());
+            this.queryCats=[];
+            this.queryStatii=[];
         },
         render: function(){
             var el = this.$el;
