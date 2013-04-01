@@ -946,7 +946,7 @@ $(document).ready(function() {
     });
     var ProductView = Backbone.View.extend({// pass in type in the options 
         id:"product-content",
-        classame:"page-region-content",
+        className:"page-region-content",
         events:{
             'click #product-edit-btn-upload':'filePick',
             'change #product-pic-upload':'handleFileSelect',
