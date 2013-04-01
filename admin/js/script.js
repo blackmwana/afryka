@@ -804,7 +804,7 @@ $(document).ready(function() {
             "click tbody tr":"goProductPage",
             "click #products-add-btn":"goNewProduct",
             'keyup .search-query':'search',
-            'onCchange #products-cats-select':'filterCategories',
+            'onChange #products-cats-select':'filterCategories',
             'change #products-statii-select':'filterStatii'
         },
         queryCats:[],
@@ -910,9 +910,14 @@ $(document).ready(function() {
             console.debug(el);
             console.debug(checked);
         },
+        filterSelects:function(el,checked){
+            console.debug(el);
+            console.debug(checked);
+        },
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
             var s=this.$el.find('#products-statii-select');
+            var me=this;
             this.options.cats.each(function(cat){
                 var ca=cat.toJSON(); 
                 c.append('<option value="'+ca.category_id+'">'+ca.title_en+'</option>');
@@ -926,6 +931,7 @@ $(document).ready(function() {
                 buttonWidth: '100%',
                 buttonContainer: '<div class="btn-group multiselect-btn" />',
                 maxHeight: false,
+                onChange:me.filterSelects,
                 buttonText: function(options) {
                     if (options.length === 0) {
                         return 'None selected <b class="caret"></b>';
