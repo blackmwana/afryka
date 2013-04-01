@@ -912,7 +912,7 @@ $(document).ready(function() {
         },
         filterSelects:function(el,checked){
             // console.debug(this);
-            //console.debug(this.parent);
+            console.debug(this.parent);
             //console.debug(el.attr('class'));
           //  window.pusy=el;
             var qc=this.parent.queryCats;
