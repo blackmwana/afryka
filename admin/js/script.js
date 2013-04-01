@@ -1861,6 +1861,7 @@ $(document).ready(function() {
                 },
                 error:function(){
                     console.debug('user  fetch error');
+                    window.localStorage.clear() 
                 }
             });
            // return user;
