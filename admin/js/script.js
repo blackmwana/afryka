@@ -1659,13 +1659,14 @@ $(document).ready(function() {
         },
         save: function() {
             var updated = {};
-            nm = $('#statii-edit-name').val();
-            des = $('#statii-edit-description').val();
+            var nm = $('#statii-edit-name').val();
+            var des = $('#statii-edit-description').val();
+            var desEl=$('#statii-edit-description');
             if (nm != '') {
                 updated.name = nm;
                 this.modified = true;
             }
-            if (des !== des.data('oldcontent')) {
+            if (des !== desEl.data('oldcontent')) {
                 updated.description = des;
                 this.modified = true;
             }
