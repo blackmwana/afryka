@@ -911,16 +911,16 @@ $(document).ready(function() {
             console.debug(checked);
         },
         filterSelects:function(el,checked){
-            console.debug(this);
-            console.debug(this.parent);
-            console.debug(el.attr('id'));
-            window.pusy=el
+            /console.debug(this);
+            //console.debug(this.parent);
+            //console.debug(el.attr('class'));
+          //  window.pusy=el;
             var qc=this.parent.queryCats;
             var qs= this.parent.queryStatii;
             var val=el.val();
             if(checked){
                 console.debug('checked is true');
-                switch(el.attr('id')){
+                switch(el.attr('class')){
                     case 'statii':
                         console.debug('statii change');
                         qs.push(val);
@@ -932,7 +932,7 @@ $(document).ready(function() {
                 }
             }
             else{console.debug('checked is false');
-                switch(el.attr('id')){
+                switch(el.attr('class')){
                     
                     case 'statii':
                         console.debug('statii change');
