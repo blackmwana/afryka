@@ -149,81 +149,78 @@
             </tr>
         </script>
         <script type="text/template" id="item-product">
-             
-                    <div class="span10">
-                        <div class="container-fluid product-form">
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <label title="enter product description in english">Picture</label>
-                                </div>
-                                <div class="span6">
-                                    <div class="row-fluid">
-                                    <img class="product-modal-img img-polaroid" id="products-edit-picture" src="<%=picture%>"
-                                    />
-                                    </div>
-                                    <div class="row-fluid">
-                                        <button id="product-edit-btn-upload" class="btn btn-primary">upload</button>
-                                        <input type="file" id="product-pic-upload" accept="image/jpg,image/jpeg,image/png,image/gif,image/bmp,image/tiff"/>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <label for="products-edit-title_en">Title (en)</label>
-                                </div>
-                                <div class="span6">
-                                    <input id="products-edit-title_en" type="text" placeholder="<%=title_en%>">
-                                </div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <label for="products-edit-title_pl">Title (pl)</label>
-                                </div>
-                                <div class="span6">
-                                    <input id="products-edit-title_pl" type="text" placeholder="<%=title_pl%>">
-                                </div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <label for="products-edit-link" title="enter the link to this product on the webstore">Shop link</label>
-                                </div>
-                                <div class="span6">
-                                    <input id="products-edit-link" type="text" placeholder="<%=link%>">
-                                </div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <label for="products-edit-price">Price (zl)</label>
-                                </div>
-                                <div class="span6">
-                                    <input id="products-edit-price" type="text" placeholder="<%=price%>">
-                                </div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <label for="products-edit-description_en" title="enter product description in english">Description (en)</label>
-                                </div>
-                                <div class="span6">
-                                    <textarea rows="4" id="products-edit-description_en" data-oldcontent="<%=description_en%>"><%=description_en%></textarea>
-                                </div>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <label for="products-edit-description_pl" title="enter product description in polish">Description (pl)</label>
-                                </div>
-                                <div class="span6">
-                                    <textarea rows="4" id="products-edit-description_pl" data-oldcontent="<%=description_pl%>"><%=description_pl%></textarea>
-                                </div>
-                            </div>
-                            <div class="product-buttons">
-                                <button id="products-edit-btn-save" class="btn btn-primary">Save changes</button>
-                                <button id="products-edit-btn-delete" class="btn btn-danger">Delete Entry</button>
-                                <button class="btn" id="products-edit-btn-close">Close</button>
-                            </div>
-                        </div>
+
+            <div class="container-fluid product-form">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label title="enter product description in english">Picture</label>
                     </div>
-                
+                    <div class="span6">
+                        <div class="row-fluid">
+                        <img class="product-modal-img img-polaroid" id="products-edit-picture" src="<%=picture%>"
+                        />
+                        </div>
+                        <div class="row-fluid">
+                            <button id="product-edit-btn-upload" class="btn btn-primary">upload</button>
+                            <input type="file" id="product-pic-upload" accept="image/jpg,image/jpeg,image/png,image/gif,image/bmp,image/tiff"/>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label for="products-edit-title_en">Title (en)</label>
+                    </div>
+                    <div class="span6">
+                        <input id="products-edit-title_en" type="text" placeholder="<%=title_en%>">
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label for="products-edit-title_pl">Title (pl)</label>
+                    </div>
+                    <div class="span6">
+                        <input id="products-edit-title_pl" type="text" placeholder="<%=title_pl%>">
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label for="products-edit-link" title="enter the link to this product on the webstore">Shop link</label>
+                    </div>
+                    <div class="span6">
+                        <input id="products-edit-link" type="text" placeholder="<%=link%>">
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label for="products-edit-price">Price (zl)</label>
+                    </div>
+                    <div class="span6">
+                        <input id="products-edit-price" type="text" placeholder="<%=price%>">
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label for="products-edit-description_en" title="enter product description in english">Description (en)</label>
+                    </div>
+                    <div class="span6">
+                        <textarea rows="4" id="products-edit-description_en" data-oldcontent="<%=description_en%>"><%=description_en%></textarea>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label for="products-edit-description_pl" title="enter product description in polish">Description (pl)</label>
+                    </div>
+                    <div class="span6">
+                        <textarea rows="4" id="products-edit-description_pl" data-oldcontent="<%=description_pl%>"><%=description_pl%></textarea>
+                    </div>
+                </div>
+                <div class="product-buttons">
+                    <button id="products-edit-btn-save" class="btn btn-primary">Save changes</button>
+                    <button id="products-edit-btn-delete" class="btn btn-danger">Delete Entry</button>
+                    <button class="btn" id="products-edit-btn-close">Close</button>
+                </div>
+            </div>
         </script>
         <script type="text/template" id="item-cats">
             <div class="row-fluid">
