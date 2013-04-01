@@ -951,6 +951,7 @@ $(document).ready(function() {
             //console.debug(checked);
             console.debug('cats'+this.parent.queryCats);
             console.debug('statii'+this.parent.queryStatii);
+            //do something li'ke in search
         },
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
