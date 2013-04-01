@@ -760,12 +760,13 @@ $(document).ready(function() {
             }       
         },
         adminLogout:function(){
+            console.debug(this);
             admin.logout({
                 success:function(){
                 console.debug(this);
                 },
                 error:function(){
-                console.debug(this);    
+                    
                 }    
             });
         }
