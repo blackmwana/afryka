@@ -911,7 +911,7 @@ $(document).ready(function() {
             console.debug(checked);
         },
         filterSelects:function(el,checked){
-            /console.debug(this);
+            // console.debug(this);
             //console.debug(this.parent);
             //console.debug(el.attr('class'));
           //  window.pusy=el;
