@@ -911,9 +911,10 @@ $(document).ready(function() {
             console.debug(checked);
         },
         filterSelects:function(el,checked){
-            console.debug(this)
-            var qc=this.queryCats;
-            var qs= this.queryStatii;
+            console.debug(this);
+            console.debug(this.parent);
+            var qc=this.parent.queryCats;
+            var qs= this.parent.queryStatii;
             var val=el.val();
             if(checked){
                 switch(el.attr('id')){
@@ -960,6 +961,7 @@ $(document).ready(function() {
                 buttonContainer: '<div class="btn-group multiselect-btn" />',
                 maxHeight: false,
                 onChange:me.filterSelects,
+                parent:me,
                 buttonText: function(options) {
                     if (options.length === 0) {
                         return 'None selected <b class="caret"></b>';
