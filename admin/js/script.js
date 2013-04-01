@@ -757,12 +757,15 @@ $(document).ready(function() {
         },
         adminLogout:function(){
             console.debug(this);
+            me=this;
             admin.logout({
-                success:function(){
-                console.debug(this);
+                success:function(model){
+                //console.debug(this);
+                console.debug('succes'+model)
                 },
-                error:function(){
-                    
+                error:function(model,response){
+                     console.debug('error'+model);
+                      console.debug(response);
                 }    
             });
         }
