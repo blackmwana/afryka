@@ -16,6 +16,9 @@ body {
     margin: 0 auto;
     padding:4em;
 }
+.login-btns{
+    font-size:1em;
+}
 .product-form{
     max-width:500px;
     margin:0 auto;
