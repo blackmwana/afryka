@@ -16,6 +16,9 @@ body {
     margin: 0 auto;
     padding:4em;
 }
+product-form{
+    max-width:300px;
+}
 #my-overlay{
     position:fixed;
     top:0; 
