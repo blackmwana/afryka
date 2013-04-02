@@ -17,7 +17,8 @@ body {
     padding:4em;
 }
 .product-form{
-    max-width:00px;
+    max-width:500px;
+    margin:0;
 }
 #my-overlay{
     position:fixed;
