@@ -762,7 +762,7 @@ $(document).ready(function() {
                 success:function(model){
                 //console.debug(this);
                 console.debug('succes'+model)
-                this.refresh();
+                me.refresh();
                 },
                 error:function(model,response){
                      console.debug('error'+model);

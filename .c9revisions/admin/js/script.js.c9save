@@ -2510,3 +2510,4 @@
 {"ts":1364937436681,"patch":[[{"diffs":[[0,"model)\r\n"],[1,"                \r\n"],[0,"        "]],"start1":30247,"start2":30247,"length1":16,"length2":34}]],"length":102384,"saved":false}
 {"ts":1364937476515,"patch":[[{"diffs":[[0,"                "],[1,"this.refresh"],[0,"\r\n              "]],"start1":30255,"start2":30255,"length1":32,"length2":44}]],"length":102396,"saved":false}
 {"ts":1364937481087,"patch":[[{"diffs":[[0,".refresh"],[1,"();"],[0,"\r\n      "]],"start1":30275,"start2":30275,"length1":16,"length2":19}]],"length":102399,"saved":false}
+{"ts":1364937570418,"patch":[[{"diffs":[[0,"        "],[-1,"this"],[1,"me"],[0,".refresh"]],"start1":30263,"start2":30263,"length1":20,"length2":18}]],"length":102397,"saved":false}
