@@ -762,6 +762,7 @@ $(document).ready(function() {
                 success:function(model){
                 //console.debug(this);
                 console.debug('succes'+model)
+                this.refresh();
                 },
                 error:function(model,response){
                      console.debug('error'+model);
@@ -1014,6 +1015,8 @@ $(document).ready(function() {
         
         initialize:function(){
             this.template=_.template($('#item-product').html());
+            this.selectedCats=[];
+            this.selectedStatii=[];
         },
         render:function(){
             var el = this.$el;
@@ -1222,6 +1225,48 @@ $(document).ready(function() {
                     }
                 });
             }
+        },
+        initMultiselect:function(){
+            var c=this.$el.find('#product-cats-select');
+            var s=this.$el.find('#product-statii-select');
+            var me=this;
+            this.options.cats.each(function(cat){
+                var ca=cat.toJSON(); 
+                c.append('<option class="cats" value="'+ca.category_id+'">'+ca.title_en+'</option>');
+            });
+            this.options.statii.each(function(status){
+                var st =status.toJSON();
+                s.append('<option class="statii" value="'+st.status_id+'">'+st.name+'</option>');
+            });
+            this.$el.find('.multiselect').multiselect({
+                buttonClass: 'btn',
+                buttonWidth: '100%',
+                buttonContainer: '<div class="btn-group multiselect-btn" />',
+                maxHeight: false,
+                onChange:me.filterSelects,
+                parent:me,
+                buttonText: function(options) {
+                    if (options.length === 0) {
+                        return 'None selected <b class="caret"></b>';
+                    }
+                    else if (options.length > 3) {
+                        return options.length + ' selected  <b class="caret"></b>';
+                    }
+                    else {
+                        var selected = '';
+                        options.each(function() {
+                            selected += $(this).text() + ', ';
+                        });
+                        return selected.substr(0, selected.length - 2) + ' <b class="caret"></b>';
+                    }
+                }
+            });
+             if(this.options.cats.length===0) 
+                c.next().find('ul').append('<i>no categories set</i>');
+            
+            if(this.options.statii.length===0) 
+                s.next().find('ul').append('<i>no status set</i>');
+               //console.debug(s.next().find('ul'));
         }
         
     });
