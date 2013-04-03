@@ -299,6 +299,7 @@ $(document).ready(function() {
             }
         }
     })
+    window.Product=Product;\ikm 
     var Products = StackMob.Collection.extend({
         model:Product
     });
