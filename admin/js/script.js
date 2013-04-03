@@ -299,7 +299,7 @@ $(document).ready(function() {
             }
         }
     })
-    window.Product=Product;\ikm 
+    window.Product=Product;
     var Products = StackMob.Collection.extend({
         model:Product
     });
