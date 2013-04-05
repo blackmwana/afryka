@@ -273,7 +273,8 @@ $(document).ready(function() {
         defaults:function(){
             return{
                 name:'not set',
-                description:'not set'
+                description:'not set',
+                count:0
             }
         }
     })
@@ -281,8 +282,7 @@ $(document).ready(function() {
         model:Status
     });
     //var Profile = StackMob.Model.extend({ binaryFields: ['pic', 'largepic'] }); 
-    var Product = StackMob.Model.extend({
-        
+    var Product = StackMob.Model.extend({       
         schemaName:"product",
        // binaryFields:['picture'],
         defaults:function(){

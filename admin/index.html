@@ -470,6 +470,16 @@
                         <textarea rows="4" id="statii-edit-description" type="text" data-oldcontent="<%=description%>"><%=description%></textarea>
                       </div>
                   </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label>Count</label>
+                      </div>
+                      <div class="span6">
+                          <span>
+                              <%=count%>
+                          </span>
+                      </div>
+                  </div>
               </div>
           </div>
           <div class="modal-footer">
@@ -504,6 +514,16 @@
                       <textarea rows="4" id="statii-new-description" type="text" placeholder="enter status description"></textarea>
                       </div>
                   </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <label>Count</label>
+                      </div>
+                      <div class="span6">
+                          <span>
+                              0 
+                          </span>
+                      </div>
+                  </div>
               </div>
           </div>
           <div class="modal-footer">
@@ -531,6 +551,7 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Description</th>
+                                    <th>Count</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -545,6 +566,7 @@
             <tr data-id="<%=status_id%>">
                 <td> <%=name%> </td>
                 <td> <%=description%> </td>
+                <td> <%=count%> </td>
             </tr>
         </script>
         <script type="text/template" id="item-loader">
