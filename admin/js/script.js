@@ -1383,7 +1383,8 @@ $(document).ready(function() {
         className:"page-region-content container-fluid",
         events:{
             "click tbody tr":"showCatEdit",
-            "click #cats-add-btn":"goNewCat"
+            "click #cats-add-btn":"goNewCat",
+            'keyup .search-query':'search' 
         },
         initialize:function(){
             //this.model = this.options.model;
@@ -1426,6 +1427,53 @@ $(document).ready(function() {
         refresh:function(){
             //refresh the catview somehow
             //remove
+        },
+        renderTable:function(){
+            var el = this.$el; 
+            console.debug('rendering table cats');
+            //$('.page-sidebar').empty();//can be remove on this.class
+            var collection = this.collection;
+            var rowTemplate = this.rowTemplate;
+            //el.html(this.template());
+            el.find('tbody').html('');
+            collection.each(function(cat){
+                el.find('tbody').append(rowTemplate(cat.toJSON()));       
+                });
+            return this;   
+        },
+        noResults:function(){
+            this.$el.find('tbody').html('No results found');
+        },
+        search:function(){
+            //maybe strip preceeding whitespaces
+            
+            var sq=$('.search-query').val().toLocaleLowerCase().trim();
+            console.debug('searching for:'+sq+':are we?');
+            if(sq!==''){ 
+               var searchCollection = new Cats();
+                cats.each(function(cat){
+                  var  c=cat.toJSON();
+                    if (c.title_en &&c.title_en.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(cat);
+                    } 
+                    else if (c.title_pl&&c.title_pl.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(cat);
+                    }
+                });
+                console.debug(searchCollection.toJSON());
+                if(searchCollection.length!==0){
+                   this.collection=searchCollection; 
+                   this.renderTable();
+                }
+                else{
+                    this.noResults();
+                }
+            }
+            else{
+                this.collection=products;
+                this.renderTable();
+            }
+//            console.debug('searching for:'+sq+':are we?');
         }
     });//dialog box no need for view object
     var OtherView = Backbone.View.extend({
@@ -1446,8 +1494,9 @@ $(document).ready(function() {
         id:"statii-content",
         className:"page-region-content ",
         events: {
-              "click tbody tr":"showStatEdit",
-              "click #statii-add-btn":"goNewStatus"
+            "click tbody tr":"showStatEdit",
+            "click #statii-add-btn":"goNewStatus",
+            'keyup .search-query':'search' 
         },
         initialize: function() {
             this.collection.bind('all', this.render,this);
@@ -1484,6 +1533,53 @@ $(document).ready(function() {
         goNewStatus:function(){
             var mv= this.parent;
             mv.goStatusNew(mv);
+        },
+        renderTable:function(){
+            var el = this.$el; 
+            console.debug('rendering table statii');
+            //$('.page-sidebar').empty();//can be remove on this.class
+            var collection = this.collection;
+            var rowTemplate = this.rowTemplate;
+            //el.html(this.template());
+            el.find('tbody').html('');
+            collection.each(function(status){
+                el.find('tbody').append(rowTemplate(status.toJSON()));       
+                });
+            return this;   
+        },
+        noResults:function(){
+            this.$el.find('tbody').html('No results found');
+        },
+        search:function(){
+            //maybe strip preceeding whitespaces
+            
+            var sq=$('.search-query').val().toLocaleLowerCase().trim();
+            console.debug('searching for:'+sq+':are we?');
+            if(sq!==''){ 
+               var searchCollection = new Statii();
+                statii.each(function(status){
+                  var  s=status.toJSON();
+                    if (.title &&s.title.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(status);
+                    } 
+                    else if (s.description&&s.description.toLocaleLowerCase().indexOf(sq)!==-1) {
+                        searchCollection.add(status);
+                    }
+                });
+                console.debug(searchCollection.toJSON());
+                if(searchCollection.length!==0){
+                   this.collection=searchCollection; 
+                   this.renderTable();
+                }
+                else{
+                    this.noResults();
+                }
+            }
+            else{
+                this.collection=products;
+                this.renderTable();
+            }
+//            console.debug('searching for:'+sq+':are we?');
         }
     });
     var NewProductView = Backbone.View.extend({
