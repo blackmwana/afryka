@@ -794,7 +794,7 @@ $(document).ready(function() {
         id:"home-content",
         className:"page-region-content", 
         events: {
-            'click #new-product-pane': 'parent.navProductNew'//goToNewProduct'
+            'click #new-product-pane': 'goToNewProduct'
         },
         initialize: function() {
             this.template = _.template($('#item-home').html());
@@ -1014,7 +1014,8 @@ $(document).ready(function() {
             'click #product-edit-btn-save':'save',
             'click #product-edit-btn-close':'goBack',
             'click #product-edit-btn-delete':'delete',
-            'click #select-add-status':'this.parent.goStatusNew'
+            'click #select-add-status':'goStatusNew',
+            'click #select-add-category':'goCatNew'
         },
         modified:false,
         fieldName:'picture',
@@ -1342,6 +1343,12 @@ $(document).ready(function() {
             //if(this.options.statii.length===0) 
                 s.next().find('ul').append('<a class="btn" id="select-add-status">add new status</a>');
                //console.debug(s.next().find('ul'));
+        },
+        goStatusNew: function(){
+            this.parent.goStatusNew();
+        },
+        goCatNew: function(){
+            this.parent.goCatNew();
         }
         
     });
