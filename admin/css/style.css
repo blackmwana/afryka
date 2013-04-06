@@ -257,5 +257,8 @@ td img{
     width:50%;
 }
 .product-selects{
-    margin-bottom:1;
+    margin-bottom:1em;
+}
+.product-select-button{
+    width:90%;
 }

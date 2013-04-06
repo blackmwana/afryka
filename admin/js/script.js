@@ -1343,7 +1343,7 @@ $(document).ready(function() {
             this.$el.find('.multiselect').multiselect({
                 buttonClass: 'btn btn-small',
                 buttonWidth: '100%',
-                buttonContainer: '<div class="btn-group multiselect-btn" />',
+                buttonContainer: '<div class="btn-group multiselect-btn product-select-button" />',
                 maxHeight: false,
                 onChange:me.filterSelects,
                 parent:me,
