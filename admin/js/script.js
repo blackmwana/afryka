@@ -1371,10 +1371,10 @@ $(document).ready(function() {
                //console.debug(s.next().find('ul'));
         },
         goStatusNew: function(){
-            this.parent.goStatusNew();
+            this.parent.goStatusNew(this);
         },
         goCatNew: function(){
-            this.parent.goCatNew();
+            this.parent.goCatNew(this);
         }
         
     });
