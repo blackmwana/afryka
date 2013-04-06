@@ -245,6 +245,20 @@ if (!String.prototype.trim) {
   return this.replace(/^\s+|\s+$/g,'');
  }
 }
+function arraysEqual(array1,array2){
+    if(!$.isArray(array1) || !$.isArray(array2))
+        return false;
+    //check if lengths are different
+    if(array1.length !== array2.length) 
+        return false;    
+    //slice so we do not effect the original
+    //sort makes sure they are in order
+    //join makes it a string so we can do a string compare
+    var cA = array1.slice().sort().join(","); 
+    var cB = array2.slice().sort().join(",");
+
+    return cA===cB;
+}
 
 $(document).ready(function() {
     
@@ -427,6 +441,7 @@ $(document).ready(function() {
             return this;
         }
     });
+    
     var UserView = Backbone.View.extend({
         //el: 'body',
         id:"user-content",
@@ -445,6 +460,7 @@ $(document).ready(function() {
             return this;
         }
     });
+    
     var MainView = Backbone.View.extend({
         el: 'body',
         events: {
@@ -902,17 +918,10 @@ $(document).ready(function() {
                 this.collection=products;
                 this.renderTable();
             }
-            console.debug('searching for:'+sq+':are we?');
-        },
-        filterCategories:function(el,checked){
-            console.debug(el);
-            console.debug(checked);
-        },
-        filterStatii:function(el,checked){
-            console.debug(el);
-            console.debug(checked);
+//            console.debug('searching for:'+sq+':are we?');
         },
         filterSelects:function(el,checked){
+            //im using this.parent here because this is not the view but the button :P
             // console.debug(this);
             console.debug(this.parent);
             //console.debug(el.attr('class'));
@@ -1004,9 +1013,9 @@ $(document).ready(function() {
         events:{
             'click #product-edit-btn-upload':'filePick',
             'change #product-pic-upload':'handleFileSelect',
-            'click #products-edit-btn-save':'save',
-            'click #products-edit-btn-close':'goBack',
-            'click #products-edit-btn-delete':'delete'
+            'click #product-edit-btn-save':'save',
+            'click #product-edit-btn-close':'goBack',
+            'click #product-edit-btn-delete':'delete'
         },
         modified:false,
         fieldName:'picture',
@@ -1016,8 +1025,16 @@ $(document).ready(function() {
         
         initialize:function(){
             this.template=_.template($('#item-product').html());
+            var p= this.model.toJSON();
             this.selectedCats=[];
             this.selectedStatii=[];
+            //populate arrays with initial data from model
+            for(i=0;i<p.categories.length;i++){
+                this.selectedCats.push(p.categories[i]);
+            }
+            for(i=0;i<p.status.length;i++){
+                this.selectedStatii.push(p.status[i]);
+            }
         },
         render:function(){
             var el = this.$el;
@@ -1027,23 +1044,32 @@ $(document).ready(function() {
         },
         save: function() {
             var updated = {};
-            tit_pl = $('#products-edit-title_pl').val();
-            tit_en = $('#products-edit-title_en').val();
-            link = $('#products-edit-link').val();
-            price = $('#products-edit-price').val();
-            des_en = $('#products-edit-description_en').val();
-            des_pl = $('#products-edit-description_pl').val();
-            dpl=$('#products-edit-description_pl').data('oldcontent');
-            den=$('#products-edit-description_en').data('oldcontent');;
-            base64Content=this.base64Content;
-            fType=this.fType;
-            fName=this.fName.replace(/\W/g, '');
-            fieldName=this.fieldName;
+            var p =this.model.toJSON();
+            var tit_pl = $('#product-edit-title_pl').val();
+            var tit_en = $('#product-edit-title_en').val();
+            var link = $('#product-edit-link').val();
+            var price = $('#product-edit-price').val();
+            var des_en = $('#product-edit-description_en').val();
+            var des_pl = $('#product-edit-description_pl').val();
+            var dpl=$('#product-edit-description_pl').data('oldcontent');
+            var den=$('#product-edit-description_en').data('oldcontent');;
+            var base64Content=this.base64Content;
+            var fType=this.fType;
+            var fName=this.fName.replace(/\W/g, '');
+            var fieldName=this.fieldName;
             console.debug(this);
            // console.debug('fType:'+this.fType);
             //console.debug('fName:'+this.fName);
             //console.debug('base64Content:'+this.base64Content);
             //console.debug('fieldName:'+this.fieldName)
+            if(!arraysEqual(this.selectedCats,p.categories)){
+                updated.categories = this.selectedCats;
+                this.modified = true;
+            }
+            if(!arraysEqual(this.selectedStatii,p.status)){
+                updated.status = this.selectedStatii;
+                this.modified = true;
+            }
             if (tit_pl != '') {
                 updated.title_pl = tit_pl;
                 this.modified = true;
@@ -1077,27 +1103,28 @@ $(document).ready(function() {
                // updated.picture = this.model.toJSON().picture;
             }
             if (this.modified) {
-                me = this;
+                var me = this;
                 $('#ajax-loader').show();
                 console.debug(_.isEmpty(updated));
-                if (!_.isEmpty(updated)) {
+               // if (!_.isEmpty(updated)) {
                     console.debug(updated);
-                    if(!this.base64Content){
+                    if (!this.base64Content) {
                         console.debug('image unchanged');
-                    this.model.save(updated, {
-                        remote_ignore: ['picture'],
-                        success: function(model) {
-                            $('#ajax-loader').hide();
-                            mainView.showAlert('success');
-                            me.parent.navProducts();
-                        },
-                        error: function(model, response) {
-                            $('#ajax-loader').hide();
-                            mainView.showAlert('error');
-                            console.error(model);
-                            console.error(response);
-                        }
-                    });}
+                        this.model.save(updated, {
+                            remote_ignore: ['picture'],
+                            success: function(model) {
+                                $('#ajax-loader').hide();
+                                mainView.showAlert('success');
+                                me.parent.navProducts();
+                            },
+                            error: function(model, response) {
+                                $('#ajax-loader').hide();
+                                mainView.showAlert('error');
+                                console.error(model);
+                                console.error(response);
+                            }
+                        });
+                    }
                     else{
                         this.model.save(updated, {
                         success: function(model) {
@@ -1114,7 +1141,7 @@ $(document).ready(function() {
                     });
                     }
                     
-                }
+                /*}
                 else {
                     console.debug('only image changed');
                     this.model.save({
@@ -1128,10 +1155,10 @@ $(document).ready(function() {
                             mainView.showAlert('error');
                         }
                     });
-                }
+                }*/
             }
             else {
-                alert('You havent made any changes');
+                alert('You have not made any changes');
             }
             return this;
         },
@@ -1186,21 +1213,25 @@ $(document).ready(function() {
          },
         goBack:function(){
             //check for changes if changes made then prompt to save yes/no
-            tit_pl = $('#products-edit-title_pl').val();
-            tit_en = $('#products-edit-title_en').val();
-            link = $('#products-edit-link').val();
-            price = $('#products-edit-price').val();
-            des_en = $('#products-edit-description_en').val();
-            dpl=$('#products-edit-description_pl');
-            den=$('#products-edit-description_en');
-            des_pl = $('#products-edit-description_pl').val();
-            base64Content=this.base64Content;
-            fType=this.fType;
-            fName=this.fName;
+            var pc=this.model.toJSON().categories;
+            var ps=this.model.toJSON().status;
+            var sc=this.selectedCats;
+            var ss=this.selectedStatii;
+            var tit_pl = $('#product-edit-title_pl').val();
+            var tit_en = $('#product-edit-title_en').val();
+            var link = $('#product-edit-link').val();
+            var price = $('#product-edit-price').val();
+            var des_en = $('#product-edit-description_en').val();
+            var dpl=$('#product-edit-description_pl');
+            var den=$('#product-edit-description_en');
+            var des_pl = $('#product-edit-description_pl').val();
+            var base64Content=this.base64Content;
+            var fType=this.fType;
+            var fName=this.fName;
             //console.debug(pl.val());
-        if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== den.data('oldcontent')||des_pl !== dpl.data('oldcontent')) {
+        if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== den.data('oldcontent')||des_pl !== dpl.data('oldcontent')||!arraysEqual(sc,pc)||!arraysEqual(ss,ps)) {
             var r = confirm('You have unsaved data are you sure you want to leave?');
-            if (r == true) {
+            if (r === true) {
                 this.parent.navProducts();
             }
             }
@@ -1208,7 +1239,7 @@ $(document).ready(function() {
         },
         delete: function() {
             var r = confirm('Are you sure you want to delete this product?');
-            if (r == true) {
+            if (r === true) {
                 var me=this;
                 $('#ajax-loader').show();
                 this.model.destroy({
@@ -1228,8 +1259,8 @@ $(document).ready(function() {
             }
         },
         initMultiselect:function(){
-            var c=this.$el.find('#product-cats-select');
-            var s=this.$el.find('#product-statii-select');
+            var c=this.$el.find('#product-edit-cats-select');
+            var s=this.$el.find('#product-edit-statii-select');
             var me=this;
             this.options.cats.each(function(cat){
                 var ca=cat.toJSON(); 
@@ -1385,8 +1416,8 @@ $(document).ready(function() {
         events: {
             'click #product-new-btn-upload':'filePick',
             'change #product-new-pic-upload':'handleFileSelect',
-            'click #products-new-btn-save':'save',
-            'click #products-new-btn-close':'goBack'
+            'click #product-new-btn-save':'save',
+            'click #product-new-btn-close':'goBack'
             //'click .modal-close':'hide',
              
         },
@@ -1396,7 +1427,7 @@ $(document).ready(function() {
         fType:'',
         base64Content:'',
         initialize: function() {
-            this.template = _.template($('#item-products-new').html());
+            this.template = _.template($('#item-product-new').html());
         },
         render: function() {
             this.$el.html(this.template());
@@ -1405,14 +1436,14 @@ $(document).ready(function() {
         save: function() {
             var newProduct = new Product();
             var collection=this.collection;
-            var tit_pl = $('#products-new-title_pl').val();
-            var tit_en = $('#products-new-title_en').val();
-            link = $('#products-new-link').val();
-            price = $('#products-new-price').val();
-            des_en = $('#products-new-description_en').val();
-            des_pl = $('#products-new-description_pl').val();
-            dpl = $('#products-new-description_pl').val();
-            den = $('#products-new-description_en').val();;
+            var tit_pl = $('#product-new-title_pl').val();
+            var tit_en = $('#product-new-title_en').val();
+            link = $('#product-new-link').val();
+            price = $('#product-new-price').val();
+            des_en = $('#product-new-description_en').val();
+            des_pl = $('#product-new-description_pl').val();
+            dpl = $('#product-new-description_pl').val();
+            den = $('#product-new-description_en').val();;
             base64Content = this.base64Content;
             fType = this.fType;
             fName = this.fName.replace(/\W/g, '');
@@ -1525,14 +1556,14 @@ $(document).ready(function() {
          },
         goBack:function(){
             //check for changes if changes made then prompt to save yes/no
-            tit_pl = $('#products-new-title_pl').val();
-            tit_en = $('#products-new-title_en').val();
-            link = $('#products-new-link').val();
-            price = $('#products-new-price').val();
-            des_en = $('#products-new-description_en').val();
-            dpl=$('#products-new-description_pl');
-            den=$('#products-new-description_en');
-            des_pl = $('#products-new-description_pl').val();
+            tit_pl = $('#product-new-title_pl').val();
+            tit_en = $('#product-new-title_en').val();
+            link = $('#product-new-link').val();
+            price = $('#product-new-price').val();
+            des_en = $('#product-new-description_en').val();
+            dpl=$('#product-new-description_pl');
+            den=$('#product-new-description_en');
+            des_pl = $('#product-new-description_pl').val();
             base64Content=this.base64Content;
             fType=this.fType;
             fName=this.fName;

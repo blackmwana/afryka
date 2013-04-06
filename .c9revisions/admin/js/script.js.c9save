@@ -2519,3 +2519,41 @@
 {"ts":1365121589965,"patch":[[{"diffs":[[0,"ot set',"],[1,"\r\n                "],[0,"count\r\n "]],"start1":10731,"start2":10731,"length1":16,"length2":34}]],"length":102450,"saved":false}
 {"ts":1365121601888,"patch":[[{"diffs":[[0,"   count"],[1,":0"],[0,"\r\n      "]],"start1":10754,"start2":10754,"length1":16,"length2":18}]],"length":102452,"saved":false}
 {"ts":1365121647856,"patch":[[{"diffs":[[0,"del.extend({"],[-1,"\r\n "],[0,"       \r\n   "]],"start1":10991,"start2":10991,"length1":27,"length2":24}]],"length":102449,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1365166843462,"patch":[[{"diffs":[[0,"    }\r\n    });\r\n"],[1,"    \r\n"],[0,"    var UserView"]],"start1":16428,"start2":16428,"length1":32,"length2":38}]],"length":102455,"saved":false}
+{"ts":1365166878670,"patch":[[{"diffs":[[0,"    }\r\n    });\r\n"],[1,"    \r\n"],[0,"    var MainView"]],"start1":16980,"start2":16980,"length1":32,"length2":38}]],"length":102461,"saved":false}
+{"ts":1365173310832,"patch":[[{"diffs":[[0,"\n            }\r\n"],[1,"//"],[0,"            cons"]],"start1":35879,"start2":35879,"length1":32,"length2":34}]],"length":102463,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1365182283708,"patch":[[{"diffs":[[0,"n(el,checked){\r\n"],[1,"            //\r\n"],[0,"            // c"]],"start1":36252,"start2":36252,"length1":32,"length2":48}]],"length":102479,"saved":false}
+{"ts":1365182283709,"patch":[[{"diffs":[[0,"      //"],[1,"im "],[0,"\r\n      "]],"start1":36274,"start2":36274,"length1":16,"length2":19}]],"length":102482,"saved":false}
+{"ts":1365201060042,"patch":[[{"diffs":[[0,"uct').html());\r\n"],[1,"            \r\n"],[0,"            this"]],"start1":40472,"start2":40472,"length1":32,"length2":46}]],"length":102311,"saved":false}
+{"ts":1365201069704,"patch":[[{"diffs":[[0,");\r\n            "],[1,"p="],[0,"\r\n            th"]],"start1":40484,"start2":40484,"length1":32,"length2":34}]],"length":102313,"saved":false}
+{"ts":1365201078581,"patch":[[{"diffs":[[0,"      p="],[1," this.model.toJSO"],[0,"\r\n      "]],"start1":40494,"start2":40494,"length1":16,"length2":33}]],"length":102330,"saved":false}
+{"ts":1365201083593,"patch":[[{"diffs":[[0,"el.toJSO"],[1,"N()"],[0,"\r\n      "]],"start1":40511,"start2":40511,"length1":16,"length2":19}]],"length":102333,"saved":false}
+{"ts":1365201092274,"patch":[[{"diffs":[[0,"toJSON()"],[1,";"],[0,"\r\n      "]],"start1":40514,"start2":40514,"length1":16,"length2":17}]],"length":102334,"saved":false}
+{"ts":1365201105494,"patch":[[{"diffs":[[0,"ctedStatii=[];\r\n"],[1,"            \r\n"],[0,"        },\r\n    "]],"start1":40581,"start2":40581,"length1":32,"length2":46}]],"length":102348,"saved":false}
+{"ts":1365201484640,"patch":[[{"diffs":[[0,"];\r\n            "],[1,"for"],[0,"\r\n        },\r\n  "]],"start1":40593,"start2":40593,"length1":32,"length2":35}]],"length":102351,"saved":false}
+{"ts":1365201494234,"patch":[[{"diffs":[[0,"     for"],[1,"(i){\r\n                \r\n            }"],[0,"\r\n      "]],"start1":40604,"start2":40604,"length1":16,"length2":53}]],"length":102388,"saved":false}
+{"ts":1365201499448,"patch":[[{"diffs":[[0,"   for(i"],[1,"=0"],[0,"){\r\n    "]],"start1":40606,"start2":40606,"length1":16,"length2":18}]],"length":102390,"saved":false}
+{"ts":1365201508123,"patch":[[{"diffs":[[0," for(i=0"],[1,";i"],[0,"){\r\n    "]],"start1":40608,"start2":40608,"length1":16,"length2":18}]],"length":102392,"saved":false}
+{"ts":1365201516972,"patch":[[{"diffs":[[0,"or(i=0;i"],[1,"<p.cats"],[0,"){\r\n    "]],"start1":40610,"start2":40610,"length1":16,"length2":23}]],"length":102399,"saved":false}
+{"ts":1365201539290,"patch":[[{"diffs":[[0,";i<p.cat"],[-1,"s"],[1,"e"],[0,"){\r\n    "]],"start1":40616,"start2":40616,"length1":17,"length2":17}]],"length":102399,"saved":false}
+{"ts":1365201543889,"patch":[[{"diffs":[[0,"i<p.cate"],[1,"gories"],[0,"){\r\n    "]],"start1":40617,"start2":40617,"length1":16,"length2":22}]],"length":102405,"saved":false}
+{"ts":1365201552696,"patch":[[{"diffs":[[0,"tegories"],[1,".l"],[0,"){\r\n    "]],"start1":40623,"start2":40623,"length1":16,"length2":18}]],"length":102407,"saved":false}
+{"ts":1365201561709,"patch":[[{"diffs":[[0,"gories.l"],[1,"ength;i++"],[0,"){\r\n    "]],"start1":40625,"start2":40625,"length1":16,"length2":25}]],"length":102416,"saved":false}
+{"ts":1365201639463,"patch":[[{"diffs":[[0,"                "],[1,"this.selectedCats.push(p.categories[i])"],[0,"\r\n            }\r"]],"start1":40646,"start2":40646,"length1":32,"length2":71},{"diffs":[[0,"\n            }\r\n"],[1,"            \r\n"],[0,"        },\r\n    "]],"start1":40702,"start2":40702,"length1":32,"length2":46}]],"length":102469,"saved":false}
+{"ts":1365201644160,"patch":[[{"diffs":[[0," }\r\n            "],[1,"for(i=0;i<p.categories.length;i++){\r\n                this.selectedCats.push(p.categories[i])\r\n            }"],[0,"\r\n        },\r\n  "]],"start1":40714,"start2":40714,"length1":32,"length2":139}]],"length":102576,"saved":false}
+{"ts":1365201653084,"patch":[[{"diffs":[[0,"for(i=0;i<p."],[-1,"categorie"],[1,"stat"],[0,"s.length;i++"]],"start1":40730,"start2":40730,"length1":33,"length2":28}]],"length":102571,"saved":false}
+{"ts":1365201661849,"patch":[[{"diffs":[[0,"i<p.stat"],[1,"u"],[0,"s.length"]],"start1":40738,"start2":40738,"length1":16,"length2":17}]],"length":102572,"saved":false}
+{"ts":1365201678081,"patch":[[{"diffs":[[0,"   this.selected"],[1,"S"],[0,"Cats.push(p.cate"]],"start1":40776,"start2":40776,"length1":32,"length2":33}]],"length":102573,"saved":false}
+{"ts":1365201686770,"patch":[[{"diffs":[[0,"electedS"],[-1,"Cats"],[1,"tatii"],[0,".push(p."]],"start1":40785,"start2":40785,"length1":20,"length2":21}]],"length":102574,"saved":false}
+{"ts":1365201691733,"patch":[[{"diffs":[[0,"edStatii.push(p."],[-1,"catego"],[1,"status"],[0,"ries[i])\r\n      "]],"start1":40790,"start2":40790,"length1":38,"length2":38}]],"length":102574,"saved":false}
+{"ts":1365201700264,"patch":[[{"diffs":[[0,"p.categories[i])"],[1,";"],[0,"\r\n            }\r"]],"start1":40685,"start2":40685,"length1":32,"length2":33},{"diffs":[[0,"p.status"],[-1,"ries"],[0,"[i])\r\n  "]],"start1":40805,"start2":40805,"length1":20,"length2":16}]],"length":102571,"saved":false}
+{"ts":1365201711325,"patch":[[{"diffs":[[0,"            for("],[1,"var "],[0,"i=0;i<p.categori"]],"start1":40597,"start2":40597,"length1":32,"length2":36},{"diffs":[[0,"atus[i])"],[1,";"],[0,"\r\n      "]],"start1":40813,"start2":40813,"length1":16,"length2":17}]],"length":102576,"saved":false}
+{"ts":1365201740422,"patch":[[{"diffs":[[0,"    for("],[-1,"var"],[0," i=0;i<p"]],"start1":40605,"start2":40605,"length1":19,"length2":16}]],"length":102573,"saved":false}
+{"ts":1365201745182,"patch":[[{"diffs":[[0,"    for("],[-1," "],[0,"i=0;i<p."]],"start1":40605,"start2":40605,"length1":17,"length2":16}]],"length":102572,"saved":false}
+{"ts":1365201753263,"patch":[[{"diffs":[[0,"ctedStatii=[];\r\n"],[1,"            \r\n"],[0,"            for("]],"start1":40581,"start2":40581,"length1":32,"length2":46}]],"length":102586,"saved":false}
+{"ts":1365201757910,"patch":[[{"diffs":[[0,"];\r\n            "],[1,"//popula"],[0,"\r\n            fo"]],"start1":40593,"start2":40593,"length1":32,"length2":40}]],"length":102594,"saved":false}
+{"ts":1365201762477,"patch":[[{"diffs":[[0,"//popula"],[1,"te "],[0,"\r\n      "]],"start1":40609,"start2":40609,"length1":16,"length2":19}]],"length":102597,"saved":false}
+{"ts":1365201767062,"patch":[[{"diffs":[[0,"opulate "],[1,"selectedca"],[0,"\r\n      "]],"start1":40612,"start2":40612,"length1":16,"length2":26}]],"length":102607,"saved":false}
+{"ts":1365201771732,"patch":[[{"diffs":[[0,"lectedca"],[1,"ts with "],[0,"\r\n      "]],"start1":40622,"start2":40622,"length1":16,"length2":24}]],"length":102615,"saved":false}
+{"ts":1365201776633,"patch":[[{"diffs":[[0,"ate "],[-1,"selectedcats with "],[0,"\r\n  "]],"start1":40616,"start2":40616,"length1":26,"length2":8}]],"length":102597,"saved":false}
+{"ts":1365201781448,"patch":[[{"diffs":[[0,"opulate "],[1,"arrays with"],[0,"\r\n      "]],"start1":40612,"start2":40612,"length1":16,"length2":27}]],"length":102608,"saved":false}
