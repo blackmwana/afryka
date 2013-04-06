@@ -821,9 +821,7 @@ $(document).ready(function() {
         events:{
             "click tbody tr":"goProductPage",
             "click #products-add-btn":"goNewProduct",
-            'keyup .search-query':'search',
-            'onChange #products-cats-select':'filterCategories',
-            'change #products-statii-select':'filterStatii'
+            'keyup .search-query':'search' 
         },
         initialize:function(){
             this.collection.bind('all', this.render,this);
