@@ -1040,6 +1040,7 @@ $(document).ready(function() {
             var el = this.$el;
             console.debug('rendering productsview');
             el.html(this.template(this.model.toJSON()));
+            this.initMultiselect();
             return this;    
         },
         save: function() {
