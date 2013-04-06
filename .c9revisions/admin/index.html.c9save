@@ -1358,3 +1358,9 @@
 {"ts":1365203112877,"patch":[[{"diffs":[[0,"nput id=\"product"],[-1,"s"],[0,"-edit-title_en\" "]],"start1":9239,"start2":9239,"length1":33,"length2":32}]],"length":29594,"saved":false}
 {"ts":1365203116511,"patch":[[{"diffs":[[0,"bel for=\"product"],[-1,"s"],[0,"-edit-title_pl\">"]],"start1":9474,"start2":9474,"length1":33,"length2":32}]],"length":29593,"saved":false}
 {"ts":1365203120730,"patch":[[{"diffs":[[0," id=\"product"],[-1,"s"],[0,"-edit-title_"]],"start1":9625,"start2":9625,"length1":25,"length2":24}]],"length":29592,"saved":false}
+{"ts":1365214012337,"patch":[[{"diffs":[[0,"alue=\"mozarella\""],[1," "],[0,">Mozzarella</opt"]],"start1":10288,"start2":10288,"length1":32,"length2":33}]],"length":31424,"saved":false}
+{"ts":1365214014498,"patch":[[{"diffs":[[0,"arella\" "],[1,"sel"],[0,">Mozzare"]],"start1":10297,"start2":10297,"length1":16,"length2":19}]],"length":31427,"saved":false}
+{"ts":1365214018362,"patch":[[{"diffs":[[0,"lla\" sel"],[1,"ected"],[0,">Mozzare"]],"start1":10300,"start2":10300,"length1":16,"length2":21}]],"length":31432,"saved":false}
+{"ts":1365214166362,"patch":[[{"diffs":[[0,"ass=\"multiselect"],[1,"\""],[0," product-edit-ca"]],"start1":10034,"start2":10034,"length1":32,"length2":33}]],"length":31433,"saved":false}
+{"ts":1365214170569,"patch":[[{"diffs":[[0,"iselect\""],[1,"id="],[0," product"]],"start1":10043,"start2":10043,"length1":16,"length2":19}]],"length":31436,"saved":false}
+{"ts":1365214261051,"patch":[[{"diffs":[[0,"lect\"id="],[-1," "],[1,"\""],[0,"product-"]],"start1":10046,"start2":10046,"length1":17,"length2":17},{"diffs":[[0,"ass=\"multiselect"],[-1," "],[1,"\"id=\""],[0,"product-edit-sta"]],"start1":10955,"start2":10955,"length1":33,"length2":37}]],"length":31440,"saved":false}
