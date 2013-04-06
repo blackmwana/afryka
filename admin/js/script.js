@@ -1493,7 +1493,9 @@ $(document).ready(function() {
             'click #product-new-btn-upload':'filePick',
             'change #product-new-pic-upload':'handleFileSelect',
             'click #product-new-btn-save':'save',
-            'click #product-new-btn-close':'goBack'
+            'click #product-new-btn-close':'goBack',
+            'click #select-add-status':'goStatusNew',
+            'click #select-add-category':'goCatNew'
             //'click .modal-close':'hide',
              
         },

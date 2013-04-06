@@ -72,3 +72,5 @@
 {"ts":1365247753055,"patch":[[{"diffs":[[0,"SON();\r\n"],[-1,"                 \r\n"],[0,"        "]],"start1":71784,"start2":71784,"length1":35,"length2":16}]],"length":112086,"saved":false}
 {"ts":1365247761171,"patch":[[{"diffs":[[0,"status_id+'\""],[-1,"'+selected+'"],[0,">'+st.name+'"]],"start1":71854,"start2":71854,"length1":36,"length2":24}]],"length":112074,"saved":false}
 {"ts":1365247777922,"patch":[[{"diffs":[[0,"ON(); \r\n"],[-1,"                 \r\n"],[0,"        "]],"start1":71546,"start2":71546,"length1":35,"length2":16}]],"length":112055,"saved":false}
+{"ts":1365248168476,"patch":[[{"diffs":[[0,"'goBack'"],[1,",\r\n            "],[0,"\r\n      "]],"start1":61663,"start2":61663,"length1":16,"length2":31}]],"length":112070,"saved":false}
+{"ts":1365248170375,"patch":[[{"diffs":[[0,"',\r\n            "],[1,"'click #select-add-status':'goStatusNew',\r\n            'click #select-add-category':'goCatNew'"],[0,"\r\n            //"]],"start1":61670,"start2":61670,"length1":32,"length2":126}]],"length":112164,"saved":false}
