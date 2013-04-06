@@ -2634,3 +2634,7 @@
 {"ts":1365241779793,"patch":[[{"diffs":[[0,"n produc"],[1,"t-sele"],[0,"\" />',\r\n"]],"start1":55538,"start2":55538,"length1":16,"length2":22}]],"length":107276,"saved":false}
 {"ts":1365241788584,"patch":[[{"diffs":[[0,"uct-sele"],[1,"ct-button"],[0,"\" />',\r\n"]],"start1":55544,"start2":55544,"length1":16,"length2":25}]],"length":107285,"saved":false}
 {"ts":1365241870296,"patch":[[{"diffs":[[0,"   }\r\n        },"],[1," "],[0,"\r\n        render"]],"start1":42481,"start2":42481,"length1":32,"length2":33}]],"length":107286,"saved":false}
+{"ts":1365242161475,"patch":[[{"diffs":[[0,"d('<a class=\"btn"],[1," se"],[0,"\" id=\"select-add"]],"start1":56495,"start2":56495,"length1":32,"length2":35}]],"length":107289,"saved":false}
+{"ts":1365242166097,"patch":[[{"diffs":[[0,"=\"btn se"],[1,"lect-"],[0,"\" id=\"se"]],"start1":56506,"start2":56506,"length1":16,"length2":21}]],"length":107294,"saved":false}
+{"ts":1365242174847,"patch":[[{"diffs":[[0," select-"],[1,"menu"],[0,"\" id=\"se"]],"start1":56511,"start2":56511,"length1":16,"length2":20}]],"length":107298,"saved":false}
+{"ts":1365242280356,"patch":[[{"diffs":[[0,"ect-menu"],[1,"-btn"],[0,"\" id=\"se"]],"start1":56515,"start2":56515,"length1":16,"length2":20},{"diffs":[[0,"ass=\"btn"],[1," select-menu-btn"],[0,"\" id=\"se"]],"start1":56693,"start2":56693,"length1":16,"length2":32}]],"length":107318,"saved":false}

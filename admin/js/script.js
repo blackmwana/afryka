@@ -1364,10 +1364,10 @@ $(document).ready(function() {
                 }
             });
             // if(this.options.cats.length===0) 
-                c.next().find('ul').append('<a class="btn" id="select-add-category">add new category</a>');
+                c.next().find('ul').append('<a class="btn select-menu-btn" id="select-add-category">add new category</a>');
             
             //if(this.options.statii.length===0) 
-                s.next().find('ul').append('<a class="btn" id="select-add-status">add new status</a>');
+                s.next().find('ul').append('<a class="btn select-menu-btn" id="select-add-status">add new status</a>');
                //console.debug(s.next().find('ul'));
         },
         goStatusNew: function(){
