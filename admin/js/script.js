@@ -617,6 +617,14 @@ $(document).ready(function() {
             // afrykaAdminApp.navigate('/home',true);
             if (!products){
                 products = new Products();
+                 if(!cats)
+                    cats = new Cats();
+                    console.debug('cats async before');
+                    cats.fetch({async:false});
+                    console.debug('cats async after');
+                if(!statii)
+                    statii = new Statii();
+                    statii.fetch({async:false});
                 products.fetch({
                     success: function() {
                         console.debug('mainview,goProduct:products have been fetched');
@@ -639,6 +647,14 @@ $(document).ready(function() {
             else {
                 curProd = products.get(id);//if product isnt there display error
                 console.debug(curProd.toJSON());
+                 if(!cats)//crying for optimisation
+                    cats = new Cats();
+                    console.debug('cats async before');
+                    cats.fetch({async:false});
+                    console.debug('cats async after');
+                if(!statii)
+                    statii = new Statii();
+                    statii.fetch({async:false});
                 mv.productView = new ProductView({
                     model: curProd,statii:statii,cats:cats
                 });
@@ -696,8 +712,17 @@ $(document).ready(function() {
         goProductNew:function(mv){
             console.debug('goproductnew:rendering dialogbox');
             console.debug(this);
-            if(!products) 
-                products = new Products();
+            if (!products) products = new Products();
+            if (!cats) cats = new Cats();
+            console.debug('cats async before');
+            cats.fetch({
+                async: false
+            });
+            console.debug('cats async after');
+            if (!statii) statii = new Statii();
+            statii.fetch({
+                async: false
+            });
             /*products.fetch({
                 success:function(){
                     console.debug('mainview,goProducts:products have been fetched');
