@@ -313,7 +313,7 @@ $(document).ready(function() {
             }
         }
     })
-    window.Product=Product;
+    //window.Product=Product;
     var Products = StackMob.Collection.extend({
         model:Product
     });
@@ -1342,7 +1342,7 @@ $(document).ready(function() {
             });
             this.$el.find('.multiselect').multiselect({
                 buttonClass: 'btn btn-small',
-                buttonWidth: '80%',
+                buttonWidth: '100%',
                 buttonContainer: '<div class="btn-group multiselect-btn" />',
                 maxHeight: false,
                 onChange:me.filterSelects,
