@@ -1060,7 +1060,7 @@ $(document).ready(function() {
             for(i=0;i<p.status.length;i++){
                 this.selectedStatii.push(p.status[i]);
             }
-        },
+        }, 
         render:function(){
             var el = this.$el;
             console.debug('rendering productsview');
