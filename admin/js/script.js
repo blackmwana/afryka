@@ -1559,7 +1559,7 @@ $(document).ready(function() {
                var searchCollection = new Statii();
                 statii.each(function(status){
                   var  s=status.toJSON();
-                    if (.title &&s.title.toLocaleLowerCase().indexOf(sq)!==-1) {
+                    if (s.title &&s.title.toLocaleLowerCase().indexOf(sq)!==-1) {
                         searchCollection.add(status);
                     } 
                     else if (s.description&&s.description.toLocaleLowerCase().indexOf(sq)!==-1) {
