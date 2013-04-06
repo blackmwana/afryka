@@ -623,7 +623,7 @@ $(document).ready(function() {
                         curProd = products.get(id);//if product isnt there display error
                         //console.debug(curProd.toJSON());
                         mv.productView = new ProductView({
-                            model: curProd
+                            model: curProd,statii:statii,cats:cats
                         });
                         mv.productView.parent = mv;
                         afrykaAdminApp.prm.showView(mv.productView);
@@ -640,7 +640,7 @@ $(document).ready(function() {
                 curProd = products.get(id);//if product isnt there display error
                 console.debug(curProd.toJSON());
                 mv.productView = new ProductView({
-                    model: curProd
+                    model: curProd,statii:statii,cats:cats
                 });
                 mv.productView.parent = mv;
                 afrykaAdminApp.prm.showView(mv.productView);
@@ -714,7 +714,7 @@ $(document).ready(function() {
                 }
             });*/
             //var npmv = new NewProductModalView({collection:products});
-            var npv = new NewProductView({collection:products});
+            var npv = new NewProductView({collection:products,statii:statii,cats:cats});
             //mv.newProductModalView = npmv;
             mv.newProductView = npv; 
             npv.parent = mv;
@@ -794,7 +794,7 @@ $(document).ready(function() {
         id:"home-content",
         className:"page-region-content", 
         events: {
-            'click #new-product-pane': 'goToNewProduct'
+            'click #new-product-pane': 'this.parent.navProductNew'//goToNewProduct'
         },
         initialize: function() {
             this.template = _.template($('#item-home').html());
@@ -1013,7 +1013,8 @@ $(document).ready(function() {
             'change #product-pic-upload':'handleFileSelect',
             'click #product-edit-btn-save':'save',
             'click #product-edit-btn-close':'goBack',
-            'click #product-edit-btn-delete':'delete'
+            'click #product-edit-btn-delete':'delete',
+            'click #select-add-status':'this.parent.goStatusNew'
         },
         modified:false,
         fieldName:'picture',
@@ -1256,17 +1257,61 @@ $(document).ready(function() {
                 });
             }
         },
+        filterSelects:function(el,checked){
+            //im using this.parent here because this is not the view but the button :P
+            // console.debug(this);
+            console.debug(this.parent);
+            var val=el.val();
+            if(checked){
+                console.debug('checked is true');
+                switch(el.attr('class')){
+                    case 'statii':
+                        console.debug('statii change');
+                        this.parent.selectedStatii.push(val);
+                        break;
+                    case 'cats':
+                        console.debug('cats change');
+                        this.parent.selectedCats.push(val);
+                        break;
+                }
+            }
+            else{console.debug('checked is false');
+                switch(el.attr('class')){
+                    
+                    case 'statii':
+                        console.debug('statii change');
+                        this.parent.selectedStatii=_.without(this.parent.selectedStatii,val);
+                        break;
+                    case 'cats':
+                        console.debug('statii change');
+//                        qc=_.without(qc,val);
+                        this.parent.selectedCats=_.without(this.parent.selectedCats,val);
+                        break;
+                }
+            }
+        
+            //console.debug(el);
+            //window.pusy=el;
+            //console.debug(checked);
+            console.debug('cats'+this.parent.selectedCats);
+            console.debug('statii'+this.parent.selectedStatii);
+            //do something like in search
+        },
         initMultiselect:function(){
             var c=this.$el.find('#product-edit-cats-select');
             var s=this.$el.find('#product-edit-statii-select');
             var me=this;
+            var pc=this.model.toJSON().categories;
+            var ps=this.model.toJSON().status;
             this.options.cats.each(function(cat){
                 var ca=cat.toJSON(); 
-                c.append('<option class="cats" value="'+ca.category_id+'">'+ca.title_en+'</option>');
+                var selected=pc.indexOf(ca.category_id)!==-1?"selected":"";
+                c.prepend('<option class="cats" value="'+ca.category_id+'"'+selected+'>'+ca.title_en+'</option>');
             });
             this.options.statii.each(function(status){
                 var st =status.toJSON();
-                s.append('<option class="statii" value="'+st.status_id+'">'+st.name+'</option>');
+                var selected=ps.indexOf(st.status_id)!==-1?"selected":"";
+                s.prepend('<option class="statii" value="'+st.status_id+'"'+selected+'>'+st.name+'</option>');
             });
             this.$el.find('.multiselect').multiselect({
                 buttonClass: 'btn',
@@ -1291,11 +1336,11 @@ $(document).ready(function() {
                     }
                 }
             });
-             if(this.options.cats.length===0) 
-                c.next().find('ul').append('<i>no categories set</i>');
+            // if(this.options.cats.length===0) 
+                c.next().find('ul').append('<a class="btn" id="select-add-category">add new category</a>');
             
-            if(this.options.statii.length===0) 
-                s.next().find('ul').append('<i>no status set</i>');
+            //if(this.options.statii.length===0) 
+                s.next().find('ul').append('<a class="btn" id="select-add-status">add new status</a>');
                //console.debug(s.next().find('ul'));
         }
         
