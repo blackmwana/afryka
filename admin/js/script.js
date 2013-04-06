@@ -794,7 +794,7 @@ $(document).ready(function() {
         id:"home-content",
         className:"page-region-content", 
         events: {
-            'click #new-product-pane': 'this.parent.navProductNew'//goToNewProduct'
+            'click #new-product-pane': 'parent.navProductNew'//goToNewProduct'
         },
         initialize: function() {
             this.template = _.template($('#item-home').html());

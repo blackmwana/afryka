@@ -2593,3 +2593,4 @@
 {"ts":1365212627468,"patch":[[{"diffs":[[0,"-pane': "],[1,"'"],[0,"'goToNew"]],"start1":31384,"start2":31384,"length1":16,"length2":17}]],"length":105927,"saved":false}
 {"ts":1365212631882,"patch":[[{"diffs":[[0,"pane': '"],[1,"this.parent.navProductNew"],[0,"'goToNew"]],"start1":31385,"start2":31385,"length1":16,"length2":41}]],"length":105952,"saved":false}
 {"ts":1365212702365,"patch":[[{"diffs":[[0,"ductNew'"],[1,"//"],[0,"goToNewP"]],"start1":31411,"start2":31411,"length1":16,"length2":18},{"diffs":[[0,"tatus':'"],[1,"this.parent.goStatusNew"],[0,"'\r\n     "]],"start1":40736,"start2":40736,"length1":16,"length2":39}]],"length":105977,"saved":false}
+{"ts":1365212794490,"patch":[[{"diffs":[[0,"pane': '"],[-1,"this."],[0,"parent.n"]],"start1":31385,"start2":31385,"length1":21,"length2":16}]],"length":105972,"saved":false}
