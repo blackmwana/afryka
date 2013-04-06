@@ -1504,9 +1504,12 @@ $(document).ready(function() {
         base64Content:'',
         initialize: function() {
             this.template = _.template($('#item-product-new').html());
+            this.selectedCats=[];
+            this.selectedStatii=[];
         },
         render: function() {
             this.$el.html(this.template());
+            this.initMultiselect();
             return this;
         },
         save: function() {
@@ -1514,16 +1517,27 @@ $(document).ready(function() {
             var collection=this.collection;
             var tit_pl = $('#product-new-title_pl').val();
             var tit_en = $('#product-new-title_en').val();
-            link = $('#product-new-link').val();
-            price = $('#product-new-price').val();
-            des_en = $('#product-new-description_en').val();
-            des_pl = $('#product-new-description_pl').val();
-            dpl = $('#product-new-description_pl').val();
-            den = $('#product-new-description_en').val();;
-            base64Content = this.base64Content;
-            fType = this.fType;
-            fName = this.fName.replace(/\W/g, '');
-            fieldName = this.fieldName;
+            var link = $('#product-new-link').val();
+            var price = $('#product-new-price').val();
+            var des_en = $('#product-new-description_en').val();
+            var des_pl = $('#product-new-description_pl').val();
+            var dpl = $('#product-new-description_pl').val();
+            var den = $('#product-new-description_en').val();;
+            var base64Content = this.base64Content;
+            var fType = this.fType;
+            var fName = this.fName.replace(/\W/g, '');
+            var fieldName = this.fieldName;
+            
+            if(this.selectedCats.length>0){
+                var sc=this.selectedCats;
+                newProduct.set({categories:sc});
+                this.modified = true;
+            }
+            if(this.selectedStatii.length>0){
+                var ss=this.selectedStatii;
+                newProduct.set({status:ss});
+                this.modified = true;
+            }
             if (tit_pl != '') {
                 newProduct.set({title_pl:tit_pl});
                 this.modified = true;
@@ -1564,6 +1578,7 @@ $(document).ready(function() {
                 newProduct.create({
                     success: function(model) {
                         collection.add(model);
+                        console.debug(model);
                         $('#ajax-loader').hide();
                         mainView.showAlert('success');
                        // $('.modal').modal('hide');
@@ -1632,19 +1647,21 @@ $(document).ready(function() {
          },
         goBack:function(){
             //check for changes if changes made then prompt to save yes/no
-            tit_pl = $('#product-new-title_pl').val();
-            tit_en = $('#product-new-title_en').val();
-            link = $('#product-new-link').val();
-            price = $('#product-new-price').val();
-            des_en = $('#product-new-description_en').val();
-            dpl=$('#product-new-description_pl');
-            den=$('#product-new-description_en');
-            des_pl = $('#product-new-description_pl').val();
-            base64Content=this.base64Content;
-            fType=this.fType;
-            fName=this.fName;
+            var sc=this.selectedCats;
+            var ss=this.selectedStatii;
+            var tit_pl = $('#product-new-title_pl').val();
+            var tit_en = $('#product-new-title_en').val();
+            var link = $('#product-new-link').val();
+            var price = $('#product-new-price').val();
+            var des_en = $('#product-new-description_en').val();
+            var dpl=$('#product-new-description_pl');
+            var den=$('#product-new-description_en');
+            var des_pl = $('#product-new-description_pl').val();
+            var base64Content=this.base64Content;
+            var fType=this.fType;
+            var fName=this.fName;
             //console.debug(pl.val());
-            if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== ''||des_pl !== '') {
+            if (tit_pl !== '' || tit_en !== ''||link !== ''||price !== ''|| (base64Content !== '' && fType !== '' && fName !== '')||des_en !== ''||des_pl !== ''||ss.length>0||sc.length>0) {
                 var r = confirm('You have unsaved data are you sure you want to leave?');
                 if (r == true) {
                     //$('.modal').modal('hide');//go back
@@ -1653,7 +1670,99 @@ $(document).ready(function() {
             }
             else this.parent.navProducts();
             //$('.modal').modal('hide');//go back
-            } 
+            },
+        filterSelects:function(el,checked){
+            //im using this.parent here because this is not the view but the button :P
+            // console.debug(this);
+            console.debug(this.parent);
+            var val=el.val();
+            if(checked){
+                console.debug('checked is true');
+                switch(el.attr('class')){
+                    case 'statii':
+                        console.debug('statii change');
+                        this.parent.selectedStatii.push(val);
+                        break;
+                    case 'cats':
+                        console.debug('cats change');
+                        this.parent.selectedCats.push(val);
+                        break;
+                }
+            }
+            else{console.debug('checked is false');
+                switch(el.attr('class')){
+                    
+                    case 'statii':
+                        console.debug('statii change');
+                        this.parent.selectedStatii=_.without(this.parent.selectedStatii,val);
+                        break;
+                    case 'cats':
+                        console.debug('statii change');
+    //                        qc=_.without(qc,val);
+                        this.parent.selectedCats=_.without(this.parent.selectedCats,val);
+                        break;
+                }
+            }
+        
+            //console.debug(el);
+            //window.pusy=el;
+            //console.debug(checked);
+            console.debug('cats'+this.parent.selectedCats);
+            console.debug('statii'+this.parent.selectedStatii);
+            //do something like in search
+        },
+        initMultiselect:function(){
+            var c=this.$el.find('#product-new-cats-select');
+            var s=this.$el.find('#product-new-statii-select');
+            var me=this;
+            var pc=this.model.toJSON().categories;
+            var ps=this.model.toJSON().status;
+            this.options.cats.each(function(cat){
+                var ca=cat.toJSON(); 
+                var selected=pc.indexOf(ca.category_id)!==-1?"selected":"";
+                c.prepend('<option class="cats" value="'+ca.category_id+'"'+selected+'>'+ca.title_en+'</option>');
+            });
+            this.options.statii.each(function(status){
+                var st =status.toJSON();
+                var selected=ps.indexOf(st.status_id)!==-1?"selected":"";
+                s.prepend('<option class="statii" value="'+st.status_id+'"'+selected+'>'+st.name+'</option>');
+            });
+            this.$el.find('.multiselect').multiselect({
+                buttonClass: 'btn btn-small',
+                buttonWidth: '100%',
+                buttonContainer: '<div class="btn-group multiselect-btn product-select-button" />',
+                maxHeight: false,
+                onChange:me.filterSelects,
+                parent:me,
+                buttonText: function(options) {
+                    if (options.length === 0) {
+                        return 'None selected <b class="caret"></b>';
+                    }
+                    else if (options.length > 3) {
+                        return options.length + ' selected  <b class="caret"></b>';
+                    }
+                    else {
+                        var selected = '';
+                        options.each(function() {
+                            selected += $(this).text() + ', ';
+                        });
+                        return selected.substr(0, selected.length - 2) + ' <b class="caret"></b>';
+                    }
+                }
+            });
+            // if(this.options.cats.length===0) 
+                c.next().find('ul').append('<a class="btn select-menu-btn" id="select-add-category">add new category</a>');
+            
+            //if(this.options.statii.length===0) 
+                s.next().find('ul').append('<a class="btn select-menu-btn" id="select-add-status">add new status</a>');
+               //console.debug(s.next().find('ul'));
+        },
+        goStatusNew: function(){
+            this.parent.goStatusNew(this);
+        },
+        goCatNew: function(){
+            this.parent.goCatNew(this);
+        } 
     });
     var EditCategoryModalView = Backbone.View.extend({
         events: {
