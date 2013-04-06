@@ -1341,8 +1341,8 @@ $(document).ready(function() {
                 s.prepend('<option class="statii" value="'+st.status_id+'"'+selected+'>'+st.name+'</option>');
             });
             this.$el.find('.multiselect').multiselect({
-                buttonClass: 'btn',
-                buttonWidth: '100%',
+                buttonClass: 'btn btn-small',
+                buttonWidth: '80%',
                 buttonContainer: '<div class="btn-group multiselect-btn" />',
                 maxHeight: false,
                 onChange:me.filterSelects,

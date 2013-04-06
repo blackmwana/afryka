@@ -256,3 +256,6 @@ td img{
 #product-edit-btn-upload,#product-new-btn-upload{
     width:50%;
 }
+.product-selects{
+    margin-bottom:1;
+}
