@@ -1715,17 +1715,13 @@ $(document).ready(function() {
             var c=this.$el.find('#product-new-cats-select');
             var s=this.$el.find('#product-new-statii-select');
             var me=this;
-            var pc=this.model.toJSON().categories;
-            var ps=this.model.toJSON().status;
             this.options.cats.each(function(cat){
                 var ca=cat.toJSON(); 
-                var selected=pc.indexOf(ca.category_id)!==-1?"selected":"";
-                c.prepend('<option class="cats" value="'+ca.category_id+'"'+selected+'>'+ca.title_en+'</option>');
+                c.prepend('<option class="cats" value="'+ca.category_id+'">'+ca.title_en+'</option>');
             });
             this.options.statii.each(function(status){
                 var st =status.toJSON();
-                var selected=ps.indexOf(st.status_id)!==-1?"selected":"";
-                s.prepend('<option class="statii" value="'+st.status_id+'"'+selected+'>'+st.name+'</option>');
+                s.prepend('<option class="statii" value="'+st.status_id+'">'+st.name+'</option>');
             });
             this.$el.find('.multiselect').multiselect({
                 buttonClass: 'btn btn-small',
