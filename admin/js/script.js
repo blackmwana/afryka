@@ -1470,7 +1470,7 @@ $(document).ready(function() {
                 }
             }
             else{
-                this.collection=products;
+                this.collection=cats;
                 this.renderTable();
             }
 //            console.debug('searching for:'+sq+':are we?');
@@ -1576,7 +1576,7 @@ $(document).ready(function() {
                 }
             }
             else{
-                this.collection=products;
+                this.collection=statii;
                 this.renderTable();
             }
 //            console.debug('searching for:'+sq+':are we?');
