@@ -183,3 +183,9 @@
 {"ts":1365252797478,"patch":[[{"diffs":[[0,"n=statii"],[-1,"oducts"],[0,";\r\n     "]],"start1":65066,"start2":65066,"length1":22,"length2":16}]],"length":116074,"saved":false}
 {"ts":1365252818482,"patch":[[{"diffs":[[0,"this.collection="],[1,"ca"],[0,"products;\r\n     "]],"start1":60806,"start2":60806,"length1":32,"length2":34}]],"length":116076,"saved":false}
 {"ts":1365252820900,"patch":[[{"diffs":[[0,"ction=ca"],[-1,"produc"],[0,"ts;\r\n   "]],"start1":60816,"start2":60816,"length1":22,"length2":16}]],"length":116070,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1365333990939,"patch":[[{"diffs":[[0,":'delete"],[1,"Product"],[0,"',\r\n    "]],"start1":41715,"start2":41715,"length1":16,"length2":23}]],"length":116077,"saved":false}
+{"ts":1365333998925,"patch":[[{"diffs":[[0,"\r\n        delete"],[1,"Product"],[0,": function() {\r\n"]],"start1":51870,"start2":51870,"length1":32,"length2":39}]],"length":116084,"saved":false}
+{"ts":1365334008945,"patch":[[{"diffs":[[0,"-delete':'delete"],[1,"Cat"],[0,"'\r\n        },\r\n "]],"start1":77847,"start2":77847,"length1":32,"length2":35}]],"length":116087,"saved":false}
+{"ts":1365334014160,"patch":[[{"diffs":[[0,"\r\n        delete"],[1,"Cat"],[0,": function() {\r\n"]],"start1":80195,"start2":80195,"length1":32,"length2":35}]],"length":116090,"saved":false}
+{"ts":1365334021744,"patch":[[{"diffs":[[0,":'delete"],[1,"Status"],[0,"'\r\n     "]],"start1":84044,"start2":84044,"length1":16,"length2":22}]],"length":116096,"saved":false}
+{"ts":1365334029589,"patch":[[{"diffs":[[0,"  delete"],[1,"Status"],[0,": functi"]],"start1":86467,"start2":86467,"length1":16,"length2":22}]],"length":116102,"saved":false}

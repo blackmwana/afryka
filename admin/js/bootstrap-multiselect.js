@@ -116,7 +116,7 @@
 			buttonContainer: '<div class="btn-group" />',
 			// Maximum height of the dropdown menu.
 			// If maximum height is exceeded a scrollbar will be displayed.
-			maxHeight: false,
+			maxHeight: false
 		},
 
 		constructor: Multiselect,

@@ -1038,7 +1038,7 @@ $(document).ready(function() {
             'change #product-pic-upload':'handleFileSelect',
             'click #product-edit-btn-save':'save',
             'click #product-edit-btn-close':'goBack',
-            'click #product-edit-btn-delete':'delete',
+            'click #product-edit-btn-delete':'deleteProduct',
             'click #select-add-status':'goStatusNew',
             'click #select-add-category':'goCatNew'
         },
@@ -1263,7 +1263,7 @@ $(document).ready(function() {
             }
         else this.parent.navProducts();
         },
-        delete: function() {
+        deleteProduct: function() {
             var r = confirm('Are you sure you want to delete this product?');
             if (r === true) {
                 var me=this;
@@ -1863,7 +1863,7 @@ $(document).ready(function() {
             'click .modal-close':'hide',
             'hidden .modal':'justClose',
             'click #cats-edit-btn-save':'save',
-            'click #cats-edit-btn-delete':'delete'
+            'click #cats-edit-btn-delete':'deleteCat'
         },
         modified:false,
         initialize: function() {
@@ -1929,7 +1929,7 @@ $(document).ready(function() {
         //    this.remove();
             afrykaAdminApp.mm.closeView(this);
         },
-        delete: function() {
+        deleteCat: function() {
             var r = confirm('Are you sure you want to delete this category?');
             if (r == true) {
                 $('#ajax-loader').show();
@@ -2032,7 +2032,7 @@ $(document).ready(function() {
             'click .modal-close':'hide',
             'hidden .modal':'justClose',
             'click #statii-edit-btn-save':'save',
-            'click #statii-edit-btn-delete':'delete'
+            'click #statii-edit-btn-delete':'deleteStatus'
         },
         modified:false,
         initialize: function() {
@@ -2097,7 +2097,7 @@ $(document).ready(function() {
             }
             return this; 
         },
-        delete: function() {
+        deleteStat: function() {
             var r = confirm('Are you sure you want to delete this status?');
             if (r == true) {
                 $('#ajax-loader').show();
