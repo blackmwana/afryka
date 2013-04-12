@@ -41,16 +41,16 @@
                 <div class="navbar-inner">
                     <a class="brand" href="#">Afryka Shop <small> Admin</small> </a>
                     <ul class="nav">
-                        <li id="m-home">
+                        <li >
                             <a >Home</a>
                         </li>
-                        <li id="m-products">
+                        <li  >
                             <a >Products</a>
                         </li>
-                        <li id="m-categories">
+                        <li >
                             <a >Categories</a>
                         </li>
-                        <li id="m-statii">
+                        <li >
                             <a >Statii</a>
                         </li>
                         <li id="m-other">
@@ -87,8 +87,8 @@
             			</a>
             			<div class="subnav-collapse collapse">
             				<ul class="mainnav">
-            					<li class="active">
-            						<a href="./index.html">
+            					<li id="m-home" class="active">
+            						<a>
             							<i class="icon-home"></i>
             							<span>Home</span>
             						</a>	    				
@@ -96,35 +96,56 @@
             					<li class="dropdown">					
             						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             							<i class="icon-th"></i>
-            							<span>Components</span>
+            							<span>Products</span>
             							<b class="caret"></b>
             						</a>	    
             						<ul class="dropdown-menu">
-            							<li><a href="./elements.html">Elements</a></li>
-            							<li><a href="./validation.html">Validation</a></li>
-            							<li><a href="./jqueryui.html">jQuery UI</a></li>
-            							<li><a href="./charts.html">Charts</a></li>
-            							<li><a href="./popups.html">Popups/Notifications</a></li>
+            							<li><a>Add new product</a></li>
+                                        <li class="divider"></li>
+            							<li><a id="m-products">View product list</a></li>
+            						 
             						</ul> 				
             					</li>
             					<li class="dropdown">					
             						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             							<i class="icon-copy"></i>
-            							<span>Sample Pages</span>
+            							<span>Categories</span>
             							<b class="caret"></b>
             						</a>	    
             						<ul class="dropdown-menu">
-            							<li><a href="./pricing.html">Pricing Plans</a></li>
-            							<li><a href="./faq.html">FAQ's</a></li>
-            							<li><a href="./gallery.html">Gallery</a></li>
-            							<li><a href="./reports.html">Reports</a></li>
-            							<li><a href="./account.html">User Account</a></li>
+            							<li><a href="./elements.html">Add new category</a></li>
+                                        <li class="divider"></li>
+                						<li><a id="m-categories">View category list</a></li>
+            						</ul> 				
+            					</li>
+                                <li class="dropdown">    				
+            						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            							<i class="icon-copy"></i>
+            							<span>Categories</span>
+            							<b class="caret"></b>
+            						</a>	    
+            						<ul class="dropdown-menu">
+            							<li><a href="./elements.html">Add new category</a></li>
+                                        <li class="divider"></li>
+                						<li><a href="./validation.html">View category list</a></li>
+            						</ul> 				
+            					</li>
+                                 <li class="dropdown">        			
+            						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            							<i class="icon-copy"></i>
+            							<span>Status</span>
+            							<b class="caret"></b>
+            						</a>	    
+            						<ul class="dropdown-menu">
+            							<li><a href="./elements.html">Add new status</a></li>
+                                        <li class="divider"></li>
+                						<li><a id="m-statii">View status list</a></li>
             						</ul> 				
             					</li>
             					<li class="dropdown">					
             						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             							<i class="icon-external-link"></i>
-            							<span>Extra Pages</span>
+            							<span>Other</span>
             							<b class="caret"></b>
             						</a>	   					
             						<ul class="dropdown-menu">
