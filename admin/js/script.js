@@ -1030,6 +1030,7 @@ $(document).ready(function() {
             console.debug('cats'+this.parent.queryCats);
             console.debug('statii'+this.parent.queryStatii);
             //do something like in search
+            this.parent.search();//last line here
         },
         initMultiselect: function() {
             var c=this.$el.find('#products-cats-select');
