@@ -908,7 +908,8 @@ $(document).ready(function() {
         },
         search:function(){
             //maybe strip preceeding whitespaces
-            
+            queryCats=this.queryCats;
+            queryStatii=this.queryStatii;
             var sq=$('.search-query').val().toLocaleLowerCase().trim();
             console.debug('searching for:'+sq+':are we?');
             if(sq!==''){ 
