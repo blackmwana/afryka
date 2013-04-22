@@ -913,7 +913,7 @@ $(document).ready(function() {
             console.debug('searching for:'+sq+':are we?');
             if(sq!==''){ 
                var searchCollection = new Products();
-                products.each(function(product){
+                this.collection.each(function(product){//changed from products//maybe this.collection so that we dont start all over from scratch
                   var  p=product.toJSON();
                     if (p.title_en &&p.title_en.toLocaleLowerCase().indexOf(sq)!==-1) {
                         searchCollection.add(product);
@@ -927,6 +927,61 @@ $(document).ready(function() {
                     else if (p.description_pl&&p.description_pl.toLocaleLowerCase().indexOf(sq)!==-1) {
                         searchCollection.add(product);
                     } 
+                });
+                var secondSearchCollection=new Products(searchCollection.toJSON());//clone to hold results of first filtering
+                console.debug("2searchColl has "+secondSearchCollection.length+"elements");
+                secondSearchCollection.each(function(product){//maybe this.collection so that we dont start all over from scratch
+                    var  p=product.toJSON();
+                    for(var i=0;p.status.length>i;i++){
+                        if (queryStatii.indexOf(p.status[i])===-1){
+                            searchCollection.remove(product);
+                            i=p.status.length;
+                        }
+                    }  
+                });
+                var thirdSearchCollection=new Products(searchCollection.toJSON());//clone to hold results of first filtering
+                console.debug("3searchColl has "+thirdSearchCollection.length+"elements");
+                thirdSearchCollection.each(function(product){//maybe this.collection so that we dont start all over from scratch
+                    var  p=product.toJSON();
+                    for(var i=0;p.categories.length>i;i++){
+                        if (queryCats.indexOf(p.categories[i])!==-1){
+                            searchCollection.add(product);
+                            i=p.categories.length;
+                        }
+                    }  
+                });
+               
+                console.debug(searchCollection.toJSON());
+                console.debug(searchCollection.toJSON());
+                if(searchCollection.length!==0){
+                   this.collection=searchCollection; 
+                   this.renderTable();
+                }
+                else{
+                    this.noResults();
+                }
+            }
+            else if(queryCats.length>0||queryStatii.length>0){
+                var searchCollection = new Products();
+                this.collection.each(function(product){//maybe this.collection so that we dont start all over from scratch
+                    var  p=product.toJSON();
+                    for(var i=0;p.categories.length>i;i++){
+                        if (queryCats.indexOf(p.categories[i])!==-1){
+                            searchCollection.add(product);
+                            i=p.categories.length;
+                        }
+                    }  
+                });
+                var secondSearchCollection=new Products(searchCollection.toJSON());//clone to hold results of first filtering
+                console.debug("2searchColl has "+secondSearchCollection.length+"elements");
+                secondSearchCollection.each(function(product){//maybe this.collection so that we dont start all over from scratch
+                    var  p=product.toJSON();
+                    for(var i=0;p.status.length>i;i++){
+                        if (queryStatii.indexOf(p.status[i])===-1){
+                            searchCollection.remove(product);
+                            i=p.status.length;
+                        }
+                    }  
                 });
                 console.debug(searchCollection.toJSON());
                 if(searchCollection.length!==0){
@@ -945,12 +1000,7 @@ $(document).ready(function() {
         },
         filterSelects:function(el,checked){
             //im using this.parent here because this is not the view but the button :P
-            // console.debug(this);
             console.debug(this.parent);
-            //console.debug(el.attr('class'));
-          //  window.pusy=el;
-            //var qc=this.parent.queryCats;
-            //var qs= this.parent.queryStatii;
             var val=el.val();
             if(checked){
                 console.debug('checked is true');
@@ -967,22 +1017,16 @@ $(document).ready(function() {
             }
             else{console.debug('checked is false');
                 switch(el.attr('class')){
-                    
                     case 'statii':
                         console.debug('statii change');
                         this.parent.queryStatii=_.without(this.parent.queryStatii,val);
                         break;
                     case 'cats':
                         console.debug('statii change');
-//                        qc=_.without(qc,val);
                         this.parent.queryCats=_.without(this.parent.queryCats,val);
                         break;
                 }
             }
-        
-            //console.debug(el);
-            //window.pusy=el;
-            //console.debug(checked);
             console.debug('cats'+this.parent.queryCats);
             console.debug('statii'+this.parent.queryStatii);
             //do something like in search
