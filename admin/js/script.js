@@ -906,98 +906,166 @@ $(document).ready(function() {
             console.debug(this.parent);
             this.parent.goProductsEdit(this.parent,$(ev.target).parent().data('id'));
         },
-        search:function(){
+        search: function() {
             //maybe strip preceeding whitespaces
-            queryCats=this.queryCats;
-            queryStatii=this.queryStatii;
-            var sq=$('.search-query').val().toLocaleLowerCase().trim();
-            console.debug('searching for:'+sq+':are we?');
-            if(sq!==''){ 
-               var searchCollection = new Products();
-                this.collection.each(function(product){//changed from products//maybe this.collection so that we dont start all over from scratch
-                  var  p=product.toJSON();
-                    if (p.title_en &&p.title_en.toLocaleLowerCase().indexOf(sq)!==-1) {
-                        searchCollection.add(product);
-                    } 
-                    else if (p.title_pl&&p.title_pl.toLocaleLowerCase().indexOf(sq)!==-1) {
-                        searchCollection.add(product); 
-                    }    
-                    else if (p.description_en&&p.description_en.toLocaleLowerCase().indexOf(sq)!==-1) {
+            queryCats = this.queryCats;
+            queryStatii = this.queryStatii;
+            var sq = $('.search-query').val().toLocaleLowerCase().trim();
+            console.debug('searching for:' + sq + ':are we?');
+            if (sq !== '') {
+                var searchCollection = new Products();
+                this.collection.each(function(product) { //changed from products//maybe this.collection so that we dont start all over from scratch
+                    var p = product.toJSON();
+                    if (p.title_en && p.title_en.toLocaleLowerCase().indexOf(sq) !== -1) {
                         searchCollection.add(product);
                     }
-                    else if (p.description_pl&&p.description_pl.toLocaleLowerCase().indexOf(sq)!==-1) {
+                    else if (p.title_pl && p.title_pl.toLocaleLowerCase().indexOf(sq) !== -1) {
                         searchCollection.add(product);
-                    } 
+                    }
+                    else if (p.description_en && p.description_en.toLocaleLowerCase().indexOf(sq) !== -1) {
+                        searchCollection.add(product);
+                    }
+                    else if (p.description_pl && p.description_pl.toLocaleLowerCase().indexOf(sq) !== -1) {
+                        searchCollection.add(product);
+                    }
                 });
-                var secondSearchCollection=new Products(searchCollection.toJSON());//clone to hold results of first filtering
-                console.debug("2searchColl has "+secondSearchCollection.length+"elements");
-                secondSearchCollection.each(function(product){//maybe this.collection so that we dont start all over from scratch
-                    var  p=product.toJSON();
-                    for(var i=0;p.status.length>i;i++){
-                        if (queryStatii.indexOf(p.status[i])===-1){
-                            searchCollection.remove(product);
-                            i=p.status.length;
+                if (queryCats.length > 0 && queryStatii.length === 0) {
+                    var secondSearchCollection = new Products(searchCollection.toJSON());
+                    secondSearchCollection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                        var p = product.toJSON();
+                        for (var i = 0; p.categories.length > i; i++) {
+                            if (queryCats.indexOf(p.categories[i]) === -1) {
+                                searchCollection.remove(product);
+                                i = p.categories.length;
+                            }
                         }
-                    }  
-                });
-                var thirdSearchCollection=new Products(searchCollection.toJSON());//clone to hold results of first filtering
-                console.debug("3searchColl has "+thirdSearchCollection.length+"elements");
-                thirdSearchCollection.each(function(product){//maybe this.collection so that we dont start all over from scratch
-                    var  p=product.toJSON();
-                    for(var i=0;p.categories.length>i;i++){
-                        if (queryCats.indexOf(p.categories[i])!==-1){
-                            searchCollection.add(product);
-                            i=p.categories.length;
-                        }
-                    }  
-                });
-               
-                console.debug(searchCollection.toJSON());
-                console.debug(searchCollection.toJSON());
-                if(searchCollection.length!==0){
-                   this.collection=searchCollection; 
-                   this.renderTable();
+                    });
                 }
-                else{
+                else if (queryCats.length === 0 && queryStatii.length > 0) {
+                    var searchCollection = new Products();
+                    this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                        var p = product.toJSON();
+                        for (var i = 0; p.status.length > i; i++) {
+                            if (queryStatii.indexOf(p.status[i]) === -1) {
+                                searchCollection.add(product);
+                                i = p.status.length;
+                            }
+                        }
+                    });
+                }
+                else if (queryCats.length > 0 && queryStatii.length > 0) {
+                    //var searchCollection = new Products();
+                    var secondSearchCollection = new Products(searchCollection.toJSON());
+                    this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                        var p = product.toJSON();
+                        for (var i = 0; p.categories.length > i; i++) {
+                            if (queryCats.indexOf(p.categories[i]) === -1) {
+                                searchCollection.remove(product);
+                                i = p.categories.length;
+                            }
+                        }
+                    });
+                    console.debug(searchCollection.toJSON());
+                    var thirdSearchCollection = new Products(searchCollection.toJSON()); //clone to hold results of first filtering;
+                    console.debug("2searchColl has " + secondSearchCollection.length + "elements");
+                    thirdSearchCollection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                        var p = product.toJSON();
+                        for (var i = 0; p.status.length > i; i++) {
+                            if (queryStatii.indexOf(p.status[i]) === -1) {
+                                searchCollection.remove(product);
+                                i = p.status.length;
+                            }
+                        }
+                    });
+                }
+                ///////////
+                console.debug(searchCollection.toJSON());
+                if (searchCollection.length !== 0) {
+                    this.collection = searchCollection;
+                    this.renderTable();
+                }
+                else {
                     this.noResults();
                 }
             }
-            else if(queryCats.length>0||queryStatii.length>0){
+            else if (queryCats.length > 0 && queryStatii.length === 0) {
                 var searchCollection = new Products();
-                this.collection.each(function(product){//maybe this.collection so that we dont start all over from scratch
-                    var  p=product.toJSON();
-                    for(var i=0;p.categories.length>i;i++){
-                        if (queryCats.indexOf(p.categories[i])!==-1){
+                this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                    var p = product.toJSON();
+                    for (var i = 0; p.categories.length > i; i++) {
+                        if (queryCats.indexOf(p.categories[i]) !== -1) {
                             searchCollection.add(product);
-                            i=p.categories.length;
+                            i = p.categories.length;
                         }
-                    }  
-                });
-                var secondSearchCollection=new Products(searchCollection.toJSON());//clone to hold results of first filtering
-                console.debug("2searchColl has "+secondSearchCollection.length+"elements");
-                secondSearchCollection.each(function(product){//maybe this.collection so that we dont start all over from scratch
-                    var  p=product.toJSON();
-                    for(var i=0;p.status.length>i;i++){
-                        if (queryStatii.indexOf(p.status[i])===-1){
-                            searchCollection.remove(product);
-                            i=p.status.length;
-                        }
-                    }  
+                    }
                 });
                 console.debug(searchCollection.toJSON());
-                if(searchCollection.length!==0){
-                   this.collection=searchCollection; 
-                   this.renderTable();
+                if (searchCollection.length !== 0) {
+                    this.collection = searchCollection;
+                    this.renderTable();
                 }
-                else{
+                else {
                     this.noResults();
                 }
             }
-            else{
-                this.collection=products;
+            else if (queryCats.length === 0 && queryStatii.length > 0) {
+                var searchCollection = new Products();
+                this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                    var p = product.toJSON();
+                    for (var i = 0; p.status.length > i; i++) {
+                        if (queryStatii.indexOf(p.status[i]) === -1) {
+                            searchCollection.add(product);
+                            i = p.status.length;
+                        }
+                    }
+                });
+                console.debug(searchCollection.toJSON());
+                if (searchCollection.length !== 0) {
+                    this.collection = searchCollection;
+                    this.renderTable();
+                }
+                else {
+                    this.noResults();
+                }
+            }
+            else if (queryCats.length > 0 && queryStatii.length > 0) {
+                var searchCollection = new Products();
+                this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                    var p = product.toJSON();
+                    for (var i = 0; p.categories.length > i; i++) {
+                        if (queryCats.indexOf(p.categories[i]) !== -1) {
+                            searchCollection.add(product);
+                            i = p.categories.length;
+                        }
+                    }
+                });
+                console.debug(searchCollection.toJSON());
+                var secondSearchCollection = new Products(
+                console.debug(searchCollection.toJSON())); //clone to hold results of first filtering;
+                console.debug("2searchColl has " + secondSearchCollection.length + "elements");
+                secondSearchCollection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                    var p = product.toJSON();
+                    for (var i = 0; p.status.length > i; i++) {
+                        if (queryStatii.indexOf(p.status[i]) === -1) {
+                            searchCollection.remove(product);
+                            i = p.status.length;
+                        }
+                    }
+                });
+                console.debug(searchCollection.toJSON());
+                if (searchCollection.length !== 0) {
+                    this.collection = searchCollection;
+                    this.renderTable();
+                }
+                else {
+                    this.noResults();
+                }
+            }
+            else {
+                this.collection = products;
                 this.renderTable();
             }
-//            console.debug('searching for:'+sq+':are we?');
+            //            console.debug('searching for:'+sq+':are we?');
         },
         filterSelects:function(el,checked){
             //im using this.parent here because this is not the view but the button :P
