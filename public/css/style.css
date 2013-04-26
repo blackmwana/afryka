@@ -132,7 +132,7 @@ a:focus,a:hover{
  
 #avatar {
     cursor: pointer;
-    border-left: 1px solid gray;
+    /*border-left: 1px solid gray;*/
     padding-left: 1em;
     height: 90%;
     width: 9em;
@@ -142,6 +142,7 @@ a:focus,a:hover{
     height: 2em;
     width: 2em;
     margin-top: 0.5em;
+    border:1px solid white;
 }
 #avatar-image img {
     height: 100%;
