@@ -119,6 +119,8 @@ body {
      -webkit-border-radius:0px;
     -moz-border-radius:0px;
     border-radius:0px;
+     background-color:#444;
+    background-image:none;
 }
 #avatar {
     cursor: pointer;

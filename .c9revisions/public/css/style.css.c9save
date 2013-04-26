@@ -882,3 +882,5 @@
 {"ts":1365808391488,"patch":[[{"diffs":[[0,"bottom:0"],[1," !"],[0,";\n}\n.nav"]],"start1":2566,"start2":2566,"length1":16,"length2":18}]],"length":13690,"saved":false}
 {"ts":1365808393624,"patch":[[{"diffs":[[0,"ttom:0 !"],[1,"import"],[0,";\n}\n.nav"]],"start1":2568,"start2":2568,"length1":16,"length2":22}]],"length":13696,"saved":false}
 {"ts":1365808395950,"patch":[[{"diffs":[[0," !import"],[1,"ant"],[0,";\n}\n.nav"]],"start1":2574,"start2":2574,"length1":16,"length2":19}]],"length":13699,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1366985353157,"patch":[[{"diffs":[[0,"p://"],[-1,"dev."],[0,"afry"]],"start1":74,"start2":74,"length1":12,"length2":8},{"diffs":[[0,"hop."],[-1,"blackmwanagmailcom.stackmobapp"],[1,"my.phpcloud"],[0,".com"]],"start1":85,"start2":85,"length1":38,"length2":19},{"diffs":[[0,"radius:0px;\n"],[1,"    back\n"],[0,"}\n#avatar {\n"]],"start1":2652,"start2":2652,"length1":24,"length2":33}]],"length":13685,"saved":false}
+{"ts":1366985355577,"patch":[[{"diffs":[[0,"    back"],[1,"ground-"],[0,"\n}\n#avat"]],"start1":2664,"start2":2664,"length1":16,"length2":23}]],"length":13692,"saved":false}
