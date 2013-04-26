@@ -1848,12 +1848,12 @@ $(document).ready(function() {
                         var compressedImage=new Image();
                         
                         compressedImage.onload=function(){
-                        console.debug(jic.compress(this,50));   
-                        //me.base64Content = jic.compress(this,50).substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        //console.debug(jic.compress(this,50));   //success
+                        me.base64Content = jic.compress(this,50).substring(e.target.result.indexOf(',') + 1, e.target.result.length);
                         }
                         compressedImage.src=e.target.result;
                        //
-                        me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        //me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
                         me.fName = theFile.name;
                         //var fileType = theFile.type;
                         $('#product-new-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
