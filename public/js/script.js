@@ -1840,15 +1840,23 @@ $(document).ready(function() {
                              We only want the "[base64 encoded data] portion, so strip out the first part
                            */
                         //var base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
-                        console.debug(e.target);
-                        console.debug(e.target.result);
-                        console.debug(jic.compress(e.target.result,50));
-                         me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                      //  console.debug(e.target);
+                    //    console.debug(e.target.result);
+                       // console.debug(jic.compress(e.target.result,50));
+                       //
+                        var compressedImage=new Image();
+                        
+                        compressedImage.onload=function(){
+                        console.debug(jic.compress(this,50));   
+                        //me.base64Content = jic.compress(this,50).substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        }
+                        compressedImage.src=e.target.result;
+                       //
+                        me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
                         //var fileName = theFile.name;
                         me.fName = theFile.name;
                         //var fileType = theFile.type;
                         $('#product-new-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
-                       
                         
                         me.fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
@@ -1861,7 +1869,7 @@ $(document).ready(function() {
         
                 // Read in the file as a data URL
                  fileContent = reader.readAsDataURL(f);
-                //console.debug(fileContent);
+                console.debug(fileContent);
                 //console.debug(reader.result);
                  
             }
