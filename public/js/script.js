@@ -1351,7 +1351,8 @@ $(document).ready(function() {
                 })(f);
         
                 // Read in the file as a data URL
-                fileContent = reader.readAsDataURL(f);
+                //fileContent = reader.readAsDataURL(f);
+                reader.readAsDataURL(f);
                 //console.debug(fileContent);
                 //console.debug(reader.result);
             }
@@ -1868,7 +1869,8 @@ $(document).ready(function() {
                 })(f);
         
                 // Read in the file as a data URL
-                 fileContent = reader.readAsDataURL(f);
+                //fileContent = reader.readAsDataURL(f);
+                reader.readAsDataURL(f);
                 console.debug(fileContent);
                 //console.debug(reader.result);
                  
