@@ -3,6 +3,12 @@ body {
     background-image: url(http://afrykashop.my.phpcloud.com/admin/img/diagonales_decalees.png);
     background-repeat: repeat;
 }
+a{
+    color:#1c1;!important;
+}
+a:focus,a:hover{
+    color:#1831;!important;
+}
 #frm-login {
     max-width:300px;
     background-color:#ccc;
@@ -123,9 +129,7 @@ body {
      background-color:#444 !important;
     background-image:none !important;
 }
-li .active{
-    background-color:blue !important;
-}
+ 
 #avatar {
     cursor: pointer;
     border-left: 1px solid gray;
@@ -366,7 +370,7 @@ td img{
   text-decoration: none;
 }
 .subnavbar .mainnav > li.active > a {
-  background: #333;
+  background: #1c1;
   color: #F90;
 }
 .subnavbar .dropdown > .dropdown-menu {
