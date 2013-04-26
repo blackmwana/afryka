@@ -1854,7 +1854,6 @@ $(document).ready(function() {
                         compressedImage.src=e.target.result;
                        //
                         me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
-                        //var fileName = theFile.name;
                         me.fName = theFile.name;
                         //var fileType = theFile.type;
                         $('#product-new-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
@@ -1871,7 +1870,7 @@ $(document).ready(function() {
                 // Read in the file as a data URL
                 //fileContent = reader.readAsDataURL(f);
                 reader.readAsDataURL(f);
-                console.debug(fileContent);
+                //console.debug(fileContent);
                 //console.debug(reader.result);
                  
             }
