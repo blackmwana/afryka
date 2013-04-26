@@ -124,7 +124,7 @@ body {
     background-image:none !important;
 }
 li .active{
-    background-color:blue;
+    background-color:blue !important;
 }
 #avatar {
     cursor: pointer;
