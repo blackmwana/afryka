@@ -259,7 +259,18 @@ function arraysEqual(array1,array2){
 
     return cA===cB;
 }
-
+var jic = {
+    compress: function(source_img_obj, quality) {
+        var cvs = document.createElement('canvas');
+        cvs.width = source_img_obj.naturalWidth;
+        cvs.height = source_img_obj.naturalHeight;
+        var ctx = cvs.getContext("2d").drawImage(source_img_obj, 0, 0);
+        var newImageData = cvs.toDataURL("image/jpeg", quality);
+        //var result_image_obj = new Image();
+        //result_image_obj.src = newImageData;
+        return cvs.toDataURL("image/jpeg", quality); //result_image_obj;
+    }
+};
 $(document).ready(function() {
     
     var admin;
@@ -1304,7 +1315,7 @@ $(document).ready(function() {
         },
         handleFileSelect: function(evt) {
             var files = evt.target.files; // FileList object
-            me=this;
+            me = this;
             // Loop through the FileList
             for (var i = 0, f; f = files[i]; i++) {
         
@@ -1315,30 +1326,33 @@ $(document).ready(function() {
                     return function(e) {
         
                         /*
-                             e.target.result will return "data:image/jpeg;base64,[base64 encoded data]...".
-                             We only want the "[base64 encoded data] portion, so strip out the first part
-                           */
+                                     e.target.result will return "data:image/jpeg;base64,[base64 encoded data]...".
+                                     We only want the "[base64 encoded data] portion, so strip out the first part
+                                   */
                         //var base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
-                         me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        console.debug(e.target);
+                        me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
                         //var fileName = theFile.name;
                         me.fName = theFile.name;
                         //var fileType = theFile.type;
-                        $('#product-edit-btn-upload').html(theFile.name).attr({title:theFile.name+': uploaded'}).addClass('btn-success');
-                       
-                        
-                        me.fType = theFile.type;        
+                        $('#product-edit-btn-upload').html(theFile.name).attr({
+                            title: theFile.name + ': uploaded'
+                        }).addClass('btn-success');
+        
+                        me.fType = theFile.type;
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
                         console.debug(e.target.result);
-                        $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated');
+                        $('.product-modal-img').attr({
+                            src: e.target.result
+                        }).addClass('image-updated');
                     };
                 })(f);
         
                 // Read in the file as a data URL
-                 fileContent = reader.readAsDataURL(f);
+                fileContent = reader.readAsDataURL(f);
                 //console.debug(fileContent);
                 //console.debug(reader.result);
-                 
             }
         },
         filePick: function() {
