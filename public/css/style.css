@@ -112,6 +112,7 @@ body {
 .nav a{
     cursor:pointer;
 } 
+
 .navbar{
     margin-bottom:0 !important;
 }
@@ -121,6 +122,9 @@ body {
     border-radius:0px;
      background-color:#444 !important;
     background-image:none !important;
+}
+li .active{
+    background-color:blue;
 }
 #avatar {
     cursor: pointer;
