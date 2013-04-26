@@ -1840,6 +1840,9 @@ $(document).ready(function() {
                              We only want the "[base64 encoded data] portion, so strip out the first part
                            */
                         //var base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        console.debug(e.target);
+                        console.debug(e.target.result);
+                        console.debug(jic.compress(e.target,50));
                          me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
                         //var fileName = theFile.name;
                         me.fName = theFile.name;
@@ -1850,7 +1853,8 @@ $(document).ready(function() {
                         me.fType = theFile.type;        
                         //todoInstance.setBinaryFile(fieldname, fileName, fileType, base64Content);
                         //todoInstance.save();
-                        console.debug(e.target.result);
+                        
+                         
                         $('.product-modal-img').attr({src: e.target.result}).addClass('image-updated');
                     };
                 })(f);
