@@ -925,7 +925,7 @@ $(document).ready(function() {
             console.debug('searching for:' + sq + ':are we?');
             if (sq !== '') {
                 var searchCollection = new Products();
-                this.collection.each(function(product) { //changed from products//maybe this.collection so that we dont start all over from scratch
+                products.each(function(product) { //changed from products//maybe this.collection so that we dont start all over from scratch
                     var p = product.toJSON();
                     if (p.title_en && p.title_en.toLocaleLowerCase().indexOf(sq) !== -1) {
                         searchCollection.add(product);
@@ -958,7 +958,7 @@ $(document).ready(function() {
                         var p = product.toJSON();
                         for (var i = 0; p.status.length > i; i++) {
                             if (queryStatii.indexOf(p.status[i]) === -1) {
-                                searchCollection.add(product);
+                                searchCollection.remove(product);
                                 i = p.status.length;
                             }
                         }
@@ -1001,7 +1001,7 @@ $(document).ready(function() {
             }
             else if (queryCats.length > 0 && queryStatii.length === 0) {
                 var searchCollection = new Products();
-                this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                products.each(function(product) { //maybe this.collection so that we dont start all over from scratch
                     var p = product.toJSON();
                     for (var i = 0; p.categories.length > i; i++) {
                         if (queryCats.indexOf(p.categories[i]) !== -1) {
@@ -1021,7 +1021,7 @@ $(document).ready(function() {
             }
             else if (queryCats.length === 0 && queryStatii.length > 0) {
                 var searchCollection = new Products();
-                this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                products.each(function(product) { //maybe this.collection so that we dont start all over from scratch
                     var p = product.toJSON();
                     for (var i = 0; p.status.length > i; i++) {
                         if (queryStatii.indexOf(p.status[i]) === -1) {
@@ -1041,7 +1041,7 @@ $(document).ready(function() {
             }
             else if (queryCats.length > 0 && queryStatii.length > 0) {
                 var searchCollection = new Products();
-                this.collection.each(function(product) { //maybe this.collection so that we dont start all over from scratch
+                products.each(function(product) { //maybe this.collection so that we dont start all over from scratch
                     var p = product.toJSON();
                     for (var i = 0; p.categories.length > i; i++) {
                         if (queryCats.indexOf(p.categories[i]) !== -1) {
@@ -1330,10 +1330,18 @@ $(document).ready(function() {
                                      We only want the "[base64 encoded data] portion, so strip out the first part
                                    */
                         //var base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
-                        console.debug(e.target);
-                        console.debug(jic.compress(e.target,50));
-                        me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                       // console.debug(e.target);
+                        //console.debug(jic.compress(e.target,50));
+                        //me.base64Content = e.target.result.substring(e.target.result.indexOf(',') + 1, e.target.result.length);
                         //var fileName = theFile.name;
+                        var compressedImage=new Image();
+                        
+                        compressedImage.onload=function(){
+                        //console.debug(jic.compress(this,50));   //success
+                        me.base64Content = jic.compress(this,50).substring(e.target.result.indexOf(',') + 1, e.target.result.length);
+                        }
+                        compressedImage.src=e.target.result;
+                        
                         me.fName = theFile.name;
                         //var fileType = theFile.type;
                         $('#product-edit-btn-upload').html(theFile.name).attr({
