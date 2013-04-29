@@ -1024,7 +1024,7 @@ $(document).ready(function() {
                 products.each(function(product) { //maybe this.collection so that we dont start all over from scratch
                     var p = product.toJSON();
                     for (var i = 0; p.status.length > i; i++) {
-                        if (queryStatii.indexOf(p.status[i]) === -1) {
+                        if (queryStatii.indexOf(p.status[i]) !== -1) {
                             searchCollection.add(product);
                             i = p.status.length;
                         }
